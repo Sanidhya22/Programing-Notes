@@ -1,0 +1,207 @@
+  What do you mean by React?
+->React is a free and open-source front-end JavaScript library for building user interfaces
+  based on UI components. It is maintained by Meta (formerly Facebook).
+  It is used to develop single page Applications.
+
+  What do you mean by JSX?
+->JSX Stands for JavaSrcipt XML. JSX Allows us to write HTML in React.
+
+  What are Components in React?
+->Components are Independent and resuable bit of codes.They serve the same work
+  Like JavaScript function does.
+
+  What do you mean by Class Component in React?
+->These components are made of simple classes that add functionality to the application.
+  A class component requires us to extend from React.Component and create a render function
+  which returns a React element.
+
+  What do you mean by Functional Component in React?
+->A React functional component is a simple JavaScript function that accepts props and returns
+  a React element.
+  
+  What are the differences between react Class Components and function Components?
+->      Class Components               |             Function Componentss  
+  1.These Components are made up of      1. These are Component are like simple JavaScript 
+    simple classes.                         function that accepts props and return React elements.
+
+  2.There is a render method in class    2.There is no any render method in function component.
+    component which returns react
+    element.  
+
+  3.Constructors are used.               3.Constructors are not used.
+
+  What is State in React?
+->The state is an object where we store property values that belongs to the component. 
+
+  What do you mean by Props?
+->Props are like functional arguments that are passed to the components as Attributes.
+
+  What are the diffrence between state and Props in React?
+->     Props                              |                   State  
+   1.Data Passed from one component          1.Data passed within the component only.
+     to other component.
+
+   2.It is immutable.                        2.It is mutable.
+
+   3.Props are readonly.                     3.State is both read and write.
+
+   4.Props can be used with both class       4.State can only be used with class component
+     and functional component.                 and functional component.     
+
+  What is defaultProps in React ?
+->The defaultProps is a React component property that allows us to set default values for the
+  props argument. 
+
+  What is PropTypes in React ?
+->PropTypes are a way to validate the values types that are passed to the component as props.
+
+  Why we specify Key during passing Attributes for Props?
+->Keys are used in React to identify which items in the list are changed, updated, or deleted.
+
+  What are the different LifeCycles Methods of React Class components?
+->These following are the different Life Cycle Methods of class Component --
+
+  1.ComponentWillMount -- This Function is called before the Component is rendered into DOM.
+  2.ComponenDidMount -- This function is called after the Component is renderd into DOM.
+  3.ComponentWillUpdate -- This function is invoked before the Component Updation occurs.
+  4.ComponentDidUpdate -- This function is called after the Component is Updated.
+  5.ComponentWillUnMount -- This function is called before the component is removed or 
+    Destroyed Permanently.
+
+  What do you mean by hooks in react?
+->Hooks are the concepts were added in the react 16.8 version.
+  Hooks makes react better Because we have simpler code that implements similar functionality
+  like class components faster and more effectively.
+
+  What are the differnet types of hooks in React?
+-> The Different types of Hooks in React -
+    1. useEffect
+    2. useState
+    3. useContext
+    4. useReducer
+    5. useMemo
+    6. useRef
+
+    What do you mean useState ?
+->  UseState is a Hook that allows us to have state variables in functional components.
+    The React useState Hook allows us to keep track of state variable in a function component.
+       
+    Why we extends our class from React.Component in creating React Class Component?
+->  The component has to include the extends React.Component statement, this statement 
+    creates an inheritance to React.Component, and gives your component access to 
+    React.Component's functions.
+
+12. Why we use render Method inside class Component ?
+    React renders HTML to the web page by using a function called render(). The purpose of the 
+    function is to display the specified HTML code inside the specified HTML element. In the
+    render() method, we can read props and state and return our JSX code to the root component
+    of our app.
+
+    What do you mean by UseEffect in React?
+->  useEffect tells our component What needs to be done after Component rendering and Component 
+    Upation.
+    useEffect(<function>, <dependency>)
+
+    What do you mean by createContext in React?
+->  createContext is used to create common data that have access throughout the component 
+    hierarchy without passing the props down manually to each level.
+
+    What do you mean by Prop Drilling ?
+->  Prop Drilling means Passing data through several nested children components in order 
+    to deliver the data to the deeply nested Components.    
+
+    What do you mean useContext ?
+->  The React useContext provides data to components no matter how deep they are in the 
+    components tree. The useContext is used to manage global data.   
+
+    what do you mean by ContextAPI ?
+->  The Context API is a React structure that enables you to exchange data to several 
+    component without passing the props down manually to each level.
+    It is Consisting of Providers and Consumers.    
+
+    What do you mean by useParams?
+->  useParams returns an object of key/value pairs of url parameters.
+
+    What do you mean by useLocation ?
+->  useLocation hook returns the location object used by the react-router-dom.
+
+    What do you mean by useMemo ?
+->  React useMemo Hook returns a  memoized Value.
+    The useMemo Hook only runs when one of its Dependencies Update.  
+
+    The useMemo Hook can be used to avoid expensive resource, intensive functions from 
+    needlessly running.
+    The useMemo Hook to memorize the expensiveCalculation function. This will cause the function
+    to only run when needed.
+    The useMemoHook accepts a second parameter to declare dependencies. The expensive function
+    will only run when its dependencies have changed.
+
+    What do you Mean by useRef ?
+->  UseRef Hook is used to persist values between Renders.
+    It can be used to access a HTML DOM elements directly.
+    When we use ref as Attribute in any HTML element then specified value provided to ref will 
+    access to all of the properties of that HTML element.
+
+    useRef() only returns one item. It returns an Object called current.
+    When we initialize useRef we set the initial value: useRef(0).
+
+     What do you mean by Pure Component in React ?
+->  A React Component is said to be Pure if it renders the same output for the same State and 
+    Props.
+
+    What do you mean by useCallback ?
+->  useCallback hooks returns a memoized callback function. 
+    useCallback hooks only runs when one of its dependencies update. 
+    The useCallback and useMemo Hooks are similar. The main difference is that useMemo returns
+    a memoized value and useCallback returns a memorised function.
+    
+    What do you mean by useReducer ?
+->  UseReducer is similar to useState Hook.
+    It is used for Custom Logic.
+    if we have keep track of multiple states in big Projects that rely on Complex Logic.
+
+    UseReducer hook takes two arguments reducer function and intial state.
+    UseReducer hook returns the state and a dispatch method.
+
+    What do you mean by UseHistory?
+->  useHistory hook allows us to access React Router's DOM history object.
+
+    What do you mean by Redux in react?
+->  Redux is a Pattern or libaray for managing and updating the application state using events
+    called actions.It serves as a centeralized store for state that needs to be used across
+    our entire application.
+
+    What do you mean By Actions?
+->  Actions are Plain JavaScript Objects that have a type field actions that only tell what to do
+    ,but they don't tell how to do it. 
+
+    What do you mean by Reducers?
+->  Reducers are functions that take the current state and an action as arguments and return
+    a new state result.
+
+    What do you mean by Store?
+->  A store is a state container which holds the application's state.
+    Every Redux store has a single root reducer function.
+
+Notes- The only way to change the state is to dispatch an action.
+       The global state of our application is stored as an object inside a single store.
+
+    What do you mean by Jest?
+->  Jest is a free open source test framework created by facebook that has a great integration
+    with React.js.
+    It was primarily designed for React based apps but could be used to write automation
+    scenarios for any Javascript Based Codebases.
+
+    What do you mean by Enzyme ?
+->  Enzyme is a JavaScript Testing utility for React that makes it easier to test your React
+    Components' output. we can also manipulate, traverse, and in some ways simulate runtime
+    given the output.    
+
+    What do you mean by Redux Thunk ?
+->  Redux Thunk middleware allows you to write action creators that return a function instead 
+    of an action.    
+
+
+  
+
+ 

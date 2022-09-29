@@ -1,0 +1,270 @@
+   What do you mean by Spring FrameWork ?
+-> Spring is a powerful lightweight application development framework used for Java Enterprise
+   Edition (JEE). 
+   It is a Dependency Injection FrameWork to make Java Application loosely Coupled.
+   It makes the development of JEE Application easy.
+
+   What do you mean Design Pattern ?
+-> Dependency Injection is a design pattern in which an object receives other objects that it
+   depends on.
+
+   What are the Different Layers During Application Dependent ?
+-> There are Three main layers during Application Development -- 
+   1. UI Layers -- Deals With Accepting the Client Request for a Service.
+   2. Business / Service Layer -- Deals with the Business Logic Implementation.
+   3. Data Access Layer  -- Deals with Making connection with the database and performing 
+      database operations.
+
+
+    Spring Modules ---->
+
+    Spring Core Modules - Core, Beans, Context, SPEL(Spring Expression Language) 
+
+
+    What do you mean by Spring IOC Conatiner ?
+->  Spring IoC Container is the core of Spring Framework. It creates the objects, configures
+    and assembles their dependencies, manages their entire life cycle from the creation of
+    Objects till the Dependency Injection of Objects.
+
+    It Requires two things
+    1. Bean Objects  
+    2. Configuration File
+
+    ApplicationContext is an interface for providing configuration information to an 
+    application. There are multiple classes provided by springframework that implements this
+    interface and helps us use configuration information in applications.Its Object Provides us
+    IOC Container.
+
+    Note - 
+    We cannot create objects of ApplicationContext because It is an Interface so for creating 
+    objects we have to use ApplicationContext Implementing Classes.
+    Some Classes Implementing ApplicationContext Interface 
+
+    1. AnnotationConfigApplicationContext - AnnotationConfigApplicationContext is a standalone
+       application context which accepts annotated classes as input.
+    2. FileSystemXMLApplicationContext - It searches for the XML config file from the File
+       System.
+    3. ClasspathXMLApplicationContext - It searches for the XML config file from the classpath.
+
+
+    Dependency Injection --
+    Dependency Injection is a Design Pattern in which a class Requests Dependencies from
+    External Sources rather than creating them.
+
+    class Address{
+
+       String street;
+       String city;
+       String state;
+       String Country;
+    }
+
+   class Student{
+
+       int id ;
+       String Name;
+       Address address;
+    }
+
+    Note ---
+    Here IOC Container is Responsible for Creating Object of Address Class and and Providing it 
+    to the Student class during creation of Student class Object.
+    During Creating Object of Address class IOC Conatainer injects all the fields of 
+    Address class.
+
+    There are Two ways through which Dependency can be done by IOC Container
+
+    1. Using Setter Injection --
+    In This case Setters are called by IOC Container during Object Creation.
+
+    2. Using Constructor Injection --
+    In This case Constructors are called by IOC Container during Object Creation.
+
+    Configuration File --
+    Configuration file is XML file which is providing meta information Dependencies class
+    and Here we declare beans and its Dependency Classes.
+
+
+    Different Datatypes of Dependencies that Configuration File Support -
+
+    1. Primitive DataTypes  - Byte, short, char, int, float, double, long, boolean
+    2. Collection Types - List, Set, Map and Properties
+    3. Reference Types - References of Classes or Userdefined Types.
+
+
+    Life Cycle Methods of Spring Bean
+
+    1. public void init() - init() is a method which is to be called on the bean
+       immediately upon instantiation.
+       It is called often during Initialization, Loading, Connecting database, Webservice.
+       We can change the name of the method but singnature remains same.
+    2. public void destroy() - destroy() is a method which is to be called just before
+       bean is removed from the Container.
+       It is often called before Object Destruction and used as a cleanup code.
+
+
+       Life Cycle Steps - 
+       1. Object of bean is created by the  IOc Container.
+       2. Using Setter Injection or Constructor Injection value of the Object Property is 
+          Set.
+       3. Init Method is invoked.
+       4. Now we can read and Use the bean.
+       5. Destroy Method is invoked.   
+
+
+    What do you mean by AutoWiring in Spring ?
+->  AutoWiring is a feature of Spring FrameWork in which spring Container inject the 
+    dependencies automatically. 
+    AutoWiring can not be used to inject Primitive and String values.It works With
+    References only.   
+
+    AutoWiring can be done in two ways 
+    1. By Using XML
+    2. By Using Annoatations
+
+    There are four types of AutoWiring Modes --
+    1. No Mode  - No AutoWiring
+    2. ByName -  AutoWiring ByName(Setter Injection)
+    3. ByType - AutoWiring By DataType(Setter Injection)
+    4. Constructor - AutoWiring based on Constructor Call(Constructor Injection)  
+    5. Autodetect - It is now Deprecated Mode.
+
+    Advanatges of AutoWiring
+    1. It is Automatic.
+    2. It Requires Less Code.  
+
+    AutoWired Annotation -  This Annotation is used for Automatic Injection of Dependencies
+    by Sping IOC Conatiner for AutoWiring.
+    It can be used with the variables, setters, Constructors.
+
+    Qaulifier Annotation - The @Qualifier annotation is used to resolve the autowiring 
+    conflict, when there are multiple beans of same type.
+
+    Types of Bean Scopes 
+
+    1. Singleton - 
+       the Spring IoC container creates exactly one instance of the object defined by that
+       bean definition and This single instance is stored in a cache of such singleton beans,
+       and for all subsequent requests and references for that named bean return the 
+       cached object.
+
+    2. Prototype - 
+       The Spring IoC container creates a new bean instance of the object every 
+       time a request for that specific bean is made.
+
+    3. Request - 
+       The Spring IOC container creates an instance of the bean class for every HTTP request.
+       The instance exists only for that specific HTTP request.
+
+    4. Session -
+       The Spring IOC container creates an instance of the bean class and keeps the instance 
+       in the server's memory for the full HTTP session.
+
+    5. GlobalSession -
+       This Scope has a single bean definition to the lifecycle of a global HTTP Session.
+
+
+       We can Configure Bean Scope in two ways
+
+       1. <bean class="" name="" scope="" />
+       2. @Scope("") in the specific Class file
+      
+
+    What do you mean by Spring Expression Language ?
+->  The Spring Expression Language (SpEL for short) is a powerful expression language that 
+    supports querying and manipulating an object at runtime.
+    SPEL supports Parsing and Executing Expression with the help of @Value Annotation.
+    @Value("{Expression}")
+
+    e.g @Value("#{temp}")
+
+    Features of SPEL
+    ----------------------------------------
+    It can be used to solve Expression in the value Annotation. 
+    Inside SPEL Expression we can use Variables ,Static Methods, Object Methods. 
+
+    What do you mean by Spring JDBC ?
+->  Spring JDBC is a Powerful mechanism to connect to the database and Execute SQL Queries.
+    Spring JDBC is an API to perform Operation with the Database. 
+
+    Java Program  <---->  Spring JDBC Module(JDBC Template)  <----> Database
+
+    Problems with the Traditional Way of Writing JDBC Code
+
+    1. We need to write a lot of Code.
+    2. Exception handling Problem(Checked Exception).
+    3. Repeating of all these Codes.  
+
+   Note - 
+    Solution of JDBC Problems are provdided by Spring JDBC
+    Spring JDBC Provide class Jdbc Template which has all the Important methods to perform
+    Operation with Database.
+    The DriverManagerDataSource is used to contain the information about the database such as
+    driver class name, connnection URL, username and password.
+
+    There are a property named datasource in the JdbcTemplate class of DriverManagerDataSource
+    type. So, we need to provide the reference of DriverManagerDataSource object in the 
+    JdbcTemplate class for the datasource property.
+
+    What do you mean by DataSource ?
+->  A DataSource is a factory for connections to the physical databases. It is an alternative
+    to the DriverManager facility. A datasource uses a URL along with username/password 
+    credentials to establish the database connection. In Java, a datasource implements the 
+    javax. sql.
+
+    What do you mean by DriverManagerDataSource ?
+->  public class DriverManagerDataSource extends AbstractDriverBasedDataSource. It is a Simple
+    implementation of the standard JDBC DataSource interface, configuring the plain old JDBC 
+    DriverManager via bean properties, and returning a new Connection from every getConnection
+    call.    
+
+   What do you mean by Row Mapper ?
+-> Row Mapper is an interface which allows to map a row of the ResultSet with the instance of
+   the user defined class.
+   it Iterates the ResultSet internally and adds it into the Collection.
+
+   Selecting Data using Spring JDBC
+   1. public T queryForObject(String sql,RowMapper<T> rowMapper,Object args) -
+   It is used for Single Record Fetching from the Database.
+   2. public List<T> query(String args,RowMapper<T> rowMapper) - 
+   It is used for Fetching Multiple Records from the Database 
+
+   Note -
+   Here sql is the select query and rowMapper Converts ResultSet into Objects.
+   ResultSet Object ---> Row Mapper ---> Class Objects
+
+   What do you mean by Spring ORM ?
+-> Spring-ORM is a technique or a Design Pattern used to access a relational database from 
+   an object-oriented language. 
+   Spring-ORM is an umbrella module that covers many persistence technologies, namely JPA,
+   Hibernate and iBatis.   
+   Spring ORM Provides Hibernate Template using which we can Perform Operations like 
+   Save , Update, Insert, Get, GetAll.
+ 
+   Advantages of Spring ORM 
+
+   1. Less Coding is required.
+   2. Easy to Test.
+   3. Better Exception Handling.
+   4. Intregated Transaction Management.
+
+   How to work with Spring ORM ?
+-> There are Follwing Steps for working with Spring ORM -
+   1. We have to create a Dao file.
+   2. Then we have to create Hibernate Template Reference and pass that reference to The
+      Dao file.
+   3. For the Creation of Hibernate Template we need Session Factory Interface Reference
+      whose Object can be created by the LocalSessionFactoryBean Class.
+   4. For the Creation of LocalSessionFactoryBean Object we need Three Resources
+      DataSource, Hibernate Properties, Annotated Classes.
+   5. For the Creation of LocalSessionFactoryBean Object we need DataSource class Reference 
+      for which we need these Three Properties URL, Username, Password.        
+
+
+
+
+
+
+
+
+       

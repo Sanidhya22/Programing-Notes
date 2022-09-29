@@ -1,0 +1,26 @@
+                                           Angular Testing 
+                            -----------------------------------------------
+
+    Inportant Angular Testing methods
+    ----------------------------------
+    fail() - Using this method we can fail a Testcase.
+    pending() - Using this method we can make a Testcase in a Pending state.  
+
+    What do you mean by createSpyObj in Angular ?
+->  createSpyObj is used to create a mock that will spy on one or more methods.    
+
+    What do you mean by Testbed in Angular ?
+->  TestBed is the primary api for writing unit tests for Angular applications and libraries.    
+    TestBed we can use to test both the template and class file of a Component.
+
+    TestBed.confugureTestingModule({declarations:[ComponentName]});
+    const fixture = TestBed.createComponent(ComponentName);
+    const component = fixture.componentInstance();
+    expect(component).toBeDefined();
+
+    Note ---
+
+    fixture is consisting of both componentInstance and Template HTML elements reference.
+    Using componentInstance we will get the Instance of the Component.
+    Using nativeElement and debugElement we will the reference of HTML elements.
+    

@@ -1,0 +1,351 @@
+                                       JavaScipt
+          ---------------------------------------------------------------------------------                             
+ 
+    What is JavsScript ?
+->  JavaScript is a programming language used both on the client-side and server-side
+    that allows you to make our web pages interactive.
+     
+    Note  - 
+    JavsScript is Synchronous Single threaded language
+
+    What is Call Function in JavaScript?
+->  Call function is a JavaScript predefined method using which we can call methods of another
+    objects by passing another object as an argument in call function.
+    The call() method takes arguments separately.
+
+    What is Apply Function in JavaScript?
+->  Apply function is similar like Call function but only difference it has is it take
+    arguments as an array whereas Call function take arguments seprately.
+
+    What is Bind Function in JavaScript?
+->  Bind method is a function using which we can borrow a method from another object.
+
+    What do you mean by Synchronous?
+->  Synchronous means to be in a sequence, i.e. every statement of the code gets executed one
+    by one. So, basically a statement has to wait for the earlier statement to get executed.
+  
+    What do you mean by ASynchronus?  
+->  Asynchronous means Executions running in parrallel .eg Statements running parallely  
+
+    What do you mean by Async Await?
+->  The Purpose of async / await is to simplify the syntax necessary to consume promise-based
+    APIs. The behavior of async / await is similar to combining generators and promises. Async
+    functions always return a promise.
+
+    What do you mean by Objects ?
+->  A JavaScript object is an entity having state and behavior (properties and method)
+    Datas in the object are stored in the key value pairs.
+  
+    What do you mean by Eventloop in JavaScript ?
+->  The event loop is a constantly running process that monitors both the callback queue and the 
+    call stack.
+
+    If the call stack is not empty, the event loop waits until it is empty and places the next 
+    function from the callback queue to the call stack. If the callback queue is empty, nothing
+    will happen.
+
+    The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all 
+    operations on a single thread, but using a few smart data structures, it gives us the illusion
+    of multi-threading.
+
+    What do you mean by Call Stack ?
+->  A call stack is a way for the Javascript engine to keep track of its place in code that calls
+    multiple functions. It has the information which function is currently runnimg and what 
+    functions are invoked from within that function.
+
+    The call stack is responsible for keeping track of all the operations in line to be executed.
+    Whenever a function is finished, it is popped from the stack.
+
+    What do you mean by Event Queue ?
+->  The event queue is responsible for sending new functions to the call stack for processing.
+    It follows the queue data structure to maintain the correct sequence in which all operations
+    should be sent for execution.   
+
+    What do you mean by callback Queue ?
+->  This is where your asynchronous code gets pushed to, and waits for the execution.
+    
+    callback queue start getting executed only after We have reached the end of the program or
+    There are no functions left to be executed in the call stack.
+
+    The Callback queue waits until the call stack is empty. Afterwards, the codes in it are 
+    executed in First In, First Out (FIFO) order. As more functions or codes are added to the
+    callback queue, they stay at the back and wait for the ones in the front to leave the queue first.
+
+    What do you mean by Microtask queue in JavaScript ?
+->  Asynchronous tasks need proper management. For that, the ECMA standard specifies an internal queue
+    PromiseJobs, more often referred to as the microtask queue.
+
+    Microtask queue is first-in-first-out: tasks enqueued first are run first.
+    Execution of a task is initiated only when nothing else is running.   
+
+    Microtask Queue get higher Priorty over Callback Queue, once Microtask Queue is empty then only 
+    Callback Queue is executed.  
+
+    What are the different Web APIs we get along with the browser ?
+->  1. setTimeout
+    2. DOM APIs 
+    3. fetch
+    4. LocalStorage
+    5. console
+    6. Location   
+
+    How does JavaScipt Program executes ?
+->  When Javascript Program A Global Execution Context is created and moved 
+    to the Callstack and it will poped out until whole Synchronous JavsScript
+    Code will get executed.
+
+    Whenever It Encounter Asynchronus Code a callback with setTimeout
+    then that Callaback function goes to Web API of the browser and 
+    get the callback register there and wait for specified Millisecond 
+    time , when it completes, it goes to the Callback Queue and waits 
+    Until Whole Javascript code will get executed and Callstack will
+    have no more code to execute then it is moved to the Callstack
+    for the Execution.
+
+    Whenever It Encounters Asynchronous Code Promise based code then It
+    register that callback function in the Web API of the browser
+    and moved to the Microtask Queue , here it executes in the background 
+    and once Its execution is done It is moved to the Callstack for 
+    Execution.
+    Microtask Queue has higher Priorty than Callback Queue.
+
+
+   
+    What are the different ways in which JavsScript Object can be created ?
+->  JavaScipt Objects can be Created by Following ways --
+
+    Case 1. Using Object Constructor --  
+    <Script> //Script tag in the body tag
+     var e1 = new Object();
+     e1.name = "Sujit";
+     e1.age =  23;
+     e1.salary = 4000;
+     e1.designation = "Junior Software Engineer";
+     e1.salary += 5000;
+     display(e1);
+    </Script>
+
+
+    Case 2. Using Functional Constructor --
+    <Script>//Script tag in the head Section
+      function Emp(name,age,sal,desig)
+     {
+         this.name = name;
+         this.age =  age;
+         this.salary = sal;
+         this.designation = desig
+     }
+     var e1 = new Emp("Suman",33,4500,"Progammer");
+     console.log(e1.name);
+    </Script>
+
+    Case 3. Using JSON --
+    <Script>//Script tag in the body Section
+     var e1 = {"name":"Sujit","age":25,"salary":2500,"designation":"Junior Software Engineer"};
+     var e1 = {"name":"Anjali","age":22,"salary":2000,"designation":"Application Development Associate"};
+
+     e1 = e2 ;{Here we are asigning the ref of object e2 to object e1}
+     e2.name = "Manoj";
+     display(e1);
+     display(e2);
+    </Script>
+
+   What do you mean by JavsScript Arrays ?   
+-> JavaScript Array - It is a collection of ELements of Different types.
+
+   There are Following ways through which we can create Arrays --
+
+   Case 1. Creating Empty Array
+           var arr = [];
+           arr[0] = "Rajesh";
+           arr[1] = 32;
+           arr[2] = true;
+           arr[3] = 32.234
+           cosole.log(arr);
+
+   Case 2. By Using Array Constructor
+           var arr2 = new Array("Suman",32,2500,"SOftware Engineer");
+           cosole.log(arr2);
+
+   Case 3. By Directly Intializing
+           var arr3 = ["Hi",23,2500];
+           console.log(arr3);`
+
+   Case 4. Creating Empty Array and Pushing Elements into it
+           var arr4 = [];
+           arr4.push(33);
+           arr4.push("Suraj");
+           arr4.push(32223);
+           cosole.log(arr4);
+
+   What are the Different Methods of Array ?
+-> These are Differnt Array Methods --
+
+   1. pop() --    this method pops last element from the array and returns poped element from 
+                  the array.
+
+   2. shift() --  this method pops first element from the array  and shifts all the elments to 
+                  lower index and returns poped element from the array.
+
+   3. push() --   this method appends element at the end of the array.It retuns the length of 
+                  the new Array.
+
+   4. unshift() --this method appends element at the begining of the array.It returns the new 
+                  Array Length.
+                  e.g - 
+                     const fruits = ["Banana","Mango","Orange"];
+                     fruits.unshift("Guava","Apple")
+                     [ 'Guava', 'Apple', 'Banana', 'Mango', 'Orange' ]
+                     we can unshift more than one element at a time.
+
+   5. del arr[index] -- this method clear particular index element but memory exits there
+                        fruits = ["Apple",Empty item,"Mango];
+                        fruits[1] = "Orange"
+
+   6. splice() -- this method does both insertion and removal operation.
+                  It Returns the updated Array.
+
+                  At position 2, add 2 elements:
+                  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+                  fruits.splice(2, 0, "Lemon", "Kiwi"); 
+                  [ 'Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango' ]
+  
+                  At position 2, remove 2 items:
+                  const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+                  fruits.splice(2, 2); 
+                  [ 'Banana', 'Orange', 'Kiwi' ]
+
+   7. slice() -- this method slice out elements from the given array but does not affect
+                 Original array(Here we provide starting and ending Position not including current last index).
+                 e.g - arr4 = ["Mango","Apple","Potato","Tomato","Chilli"];
+                     const arr5  = arr4.slice(3);
+                     console.log(arr5)
+                     OUTPUT - ["Tomato","Chilli"]
+
+  8. concat() -- this method concates two arrays but this method does not affect original
+                 arrays ,it will return concatenated array as a output
+                 e.g arr1.concat(arr2)
+
+                 It can be done in other way also  
+                 arr3 = [...arr1,...arr2]; the result will be concatenated array
+
+  9. sort() --    this method will sort the array.
+
+  10.reverse() -- this method Sorts the array Elements in the Descending Order.
+
+   
+   What do you mean by Babel?
+-> Babel is a javascript Compiler
+   Babel is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of
+   JavaScript in  browsers environments.
+
+   What do you mean by Webpack?
+-> Webpack is a Static Module Bundler for modern JavaScript applications.
+
+   What do you mean by Use Strict ?
+-> "use strict" Defines that JavaScript code should be executed in "strict mode".
+   Strict mode makes it easier to write "secure" JavaScript Code.
+   Strict mode changes previously accepted "bad syntax" into real errors.
+
+   What do you mean by async and defer Attribute in Script Tag ?
+-> When load a Webpage Two major things are Happening there 
+   1. HTML Parsing 
+   2. Loading of the Scripts
+   
+   Here Loading of the Scripts is also consisting of two Parts -
+   1. Loading of the Scripts from the Server
+   2. Execution of the Scripts Line by Line
+
+   async - With async The Script file gets downloaded asynchronously and then executed as
+   soon as it's downloaded.
+   The async attribute is a boolean attribute
+   
+   defer -  With defer , The Script file gets downloaded asynchronously, but executed only 
+   when the document parsing is completed. With defer , scripts will execute in the same 
+   order as they are called.
+   The defer attribute is a boolean attribute.
+
+
+   What are the different types of scopes in JavsScript ?
+-> There are two types of scopes in JavsScript
+    1.Based on Accessibility - 
+      1.Global
+      2.local;
+    2.Based on Methodology - 
+      1.Lexical
+      2.Dynamic
+
+   What do you mean by Global Scope in JavsScript ?
+-> Global Scope is the Global Execution Context in the Javascript.    
+
+   What do you mean by Block Scope ?
+-> Block Scope is the Temporary Scope for variables and functions.
+
+   What do you mean by Shadowing in JavaScipt ?
+-> Shaowding in Javascript happens when a variable declared in a certain scope (e.g. 
+   a local variable) has the same name as a variable in an outer scope (e.g. a
+   global variable).
+   
+   What do you mean by IndexedDB ?
+-> IndexedDB is a transactional database System in our Web browsers.
+   It is a Builtin DB in our web browser
+
+    How does IndexDB works ?
+    IndexDB has something like Object Store (Like a Table and a Collection Storing data in the key
+    value pairs)    
+    It is a client side database and here the data is stored in the client browser.
+ 
+    Advantages of Using IndexDB Database 
+    ------------------------------------
+
+    1. It can store a significat amount of data.
+    2. It is very fast because It performs reads using indexes.
+    3. It stores any kind of data by key and value pairs.
+    4. Here Every Operation is a Transaction so more reliability.
+    5. It also Works with offline apps.
+    6. It also works well with web workers.
+    7. Less UI blockage.
+
+    Difference between IndexDB and LocalStorage 
+                        IndexDB                     |                    LocalStorage 
+
+      1. Stores Any kind of Data in key value           1. Stores String data only.
+         pairs.                  
+
+      2. Full Web Workers support.                      2. No Web Workers support. 
+      3. Complex API                                    3. Simpler API 
+      4. Asynchronous API                               4. Synchronous API
+      5  It can store upto 2 GB data.                   5. It can store 2MB to 10MB data.
+      6  It uses indexing concept for                   6. It do not uses Indexing concept. 
+         accessing data.      
+
+      
+       Working with IndexDB
+       -----------------------
+       Uers Writes  ->  IndexDB   -> Server 
+
+       IndexedDB have some Limitations also It can cause UI Blockage becuase it uses Structured 
+       Clone Alogrithm.          
+        
+        Sends Objects to IndexDB   ---------->    Clone   ------------->  Data Stored
+                                   Main Thread
+
+        Larger the size of Object more will be chances of UI Blockage 
+
+
+        We can Prevent IndexDB causing UI Blockage using two ways 
+        1. Skiping Sending Larger size of data to IndexDB.
+        2. Skiping Structured Clone Alogrithm by sending data in buffer format.
+
+
+
+    What are the different functions in Javascript ?
+->  Different Timer functions in JavaScipt are - 
+    1. SetTimeout 
+    2. ClearTimeout 
+    3. SetImmediate 
+    4. SetInterval
+    5. ClearInterval
+    6. RequestAnimationFrame     
+
+

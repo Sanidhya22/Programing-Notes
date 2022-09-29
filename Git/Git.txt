@@ -1,0 +1,138 @@
+                                              GIT 
+                                ---------------------------------
+
+    What do you mean by Git ?
+->  Git is a DevOps tool used for source code management. It is a free and open-source version control 
+    system used to handle small to very large projects efficiently. Git is used to tracking changes in 
+    the source code, enabling multiple developers to work together on non-linear development.
+    Git is a Distributed Version Control System.
+
+    What do you mean by Repository in Git ?
+->  A Git repository tracks and saves the history of all changes made to the files in a Git project. It
+    saves this data in a directory called . git , also known as the repository folder. Git uses a version
+    control system to track all changes made to the project and save them in the repository.  
+
+    What do you by Version Control System ?
+->  Version Control System helps in maintaing the different versions of the source code for the 
+    different changes in the source Code and It maintains a history of what changes have happened.   
+
+    What do you mean by Distributed Version Control System ? 
+->  Git has a remote repository which is stored in a server and a local repository which is stored in the
+    computer of each developer. This means that the code is not just stored in a central server, but the 
+    full copy of the code is present in all the developers’ computers. Git is a Distributed Version 
+    Control System since the code is present in every developer’s computer.  
+
+    What do you mean by Stagging area ?
+->  The Staging area is a file, generally contained in your Git directory, that stores information 
+    about what will go into your next commit.
+
+    What do you mean by Peroforming Stashing ?
+->  Git stash saves the uncommitted changes locally, allowing you to make changes, switch branches, and
+    perform other Git operations.    
+
+    Need for Statshing Changes 
+    1. When we do Changes in current branch and try to checkout to another branch without commiting those
+       changes then git does not allow us to checkout to another branch.
+
+    2. If Sometimes Git allow us to checkout to another branch without commiting those changes then In that 
+       we have a problem of having those changes in our another branch which was not supposed to happen.   
+
+    What do you mean by Untracted files in git ?
+->  Untracked files are files that have been created within your repo's working directory but have not 
+    yet been added to the Staging area.    
+
+    How to configure Username or Password in gitbash ?
+->  we have to run following commands for Setting Username and Password in gitbash 
+    git config --global user.name "Username"
+    git config --global user.email "EmailId"
+    git config --global user.password "Password" 
+
+
+    Working Directory ------->  Stagging Area/ -------->  Local Repository/  -------> Remote Repository
+                                 Cache Area               Committed Area          
+                  git add filename        git commit -m "msg"           git push origin branchname 
+
+
+    What is the diffrence between git pull and git fetch ?
+->  Git Pull basically download the changes from the remote Repository and merge those changes to 
+    the Working Repository.
+    Git Fetch basically download the changes from the remote Repository but It does not merge those
+    changes to the Working Repository.
+
+    What do you mean git Fetch Command ?
+->  The git fetch command downloads commits, files, and refs from a remote repository into 
+    your local repo.  
+    It basically updates the remote tracking banches. 
+
+    What do you mean by Merging Code in Git ?
+->  Merging code allows multiple software developers to integrate changes into their codebase.
+    Note - When we merge one Branch to another then Commits from one Branch will get added to 
+           Another Branch. 
+
+    What do you mean by Hash Value ?
+->  Git uses a Secure Hash Algorithm 1 to generate Hash value for each Commit.   
+
+    What do you mean by Conflicts in Git ?
+->  A Conflict arises when two separate branches have made edits to the same line in a file, or when a 
+    file has been deleted in one branch but edited in the other.    
+
+    What does soft and hard option does in git reset ?
+->    
+
+
+    Important Git Commands
+    --------------------------------------------------------------------------------------------------
+    git init                             -  For Intializing git 
+    git add .                            -  Will add all changed or updated files to the staging area.
+    git checkout branchname              -  Will move to specified branchname
+    git checkout -b branchname           -  Will create new branch with specified branchname and move 
+                                            to it.
+    git commit -m "Commit Messsage"      -  Will do commit for specified changes
+    git status                           -  The git status command displays the state of the working 
+                                            directory and the staging area. It lets you see which changes
+                                            have been staged, which haven't, and which files aren't being
+                                            tracked by Git.
+    git log                              -  The git log command displays all of the commits history of 
+                                            git repository. 
+    git stash                            -  Git stash saves the uncommitted changes locally, allowing you
+                                            to make changes, switch branches, and perform other Git 
+                                            operations.
+    git remote add origin "Url"          -  Git remote add origin basically adds remote Repository 
+                                            Url.
+
+    git restore --staged <filename>      -  This Command will unstage specific file from Staging area.
+    git restore --staged .               -  This Command will unstage all the file from the Staging area.
+    git pull                             -  The git pull command is used to fetch and download content 
+                                            from a remote repository and immediately update the local 
+                                            repository to match that content.        
+    git log --oneline                    -  The Oneline option is used to display the output as 
+                                            one commit per line.
+    git branch -a                        -  List the the names of branches in the Git Repository.
+    git fetch origin branchname          -  The git fetch command downloads commits, files, and refs 
+                                            from a remote repository into your local repo. 
+    git stash                            -  It is used to Stash files.
+                                            It will only stash stagged area files.
+    git stash apply                      -  It is used to apply stash to Working Repository.
+    git reset HEAD~<no of commits>       -  It is used to undo commit.
+
+    git branch branchname                -  It is used to create new branch. 
+    git merge branchname                 -  It is used to merge current branch to specified branchname.
+    git branch -d branchname             -  It is used to delete specified branchname.
+                                            But this will not delete branch from the remote Repository.
+   git push -d origin branchname         -  It is used to delete specified branchname.
+                                            It will delete Branch from the remote Repository. 
+
+   git stash list                        -  It will show us the list of stashes. 
+   git stash apply stash@{i}             -  It will allow us to apply specified stash.  
+   git stash save "Messsage"             -  It will stash the changes with the specified Messsage.  
+   git stash save -u/--all "Messsage"    -  It will stash the changes with the specified Messsage.
+                                            It will also stash Untracked files.
+   git stash clear                       -  It will clear the stash files.                                                               
+
+
+
+
+
+
+
+

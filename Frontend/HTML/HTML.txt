@@ -1,0 +1,60 @@
+1. What are the new tags which were added in HTML5?
+-> These are the few tag which were added in HTML5--
+   <audio>
+   <video>
+   <aside> -- it represents a portion of document whose content is indirectly related to 
+   main content
+   <header>
+   <footer>
+   <section>
+   These are the few Input Types Added in HTML5--
+   color
+   date
+   time
+   search 
+
+2. What do you mean By Box Model?
+-> Box Model Basically Wraps HTML elements Into Box. It Consists of Margin,Padding, Border
+   and Actual Content.
+
+3. What do you mean by Flex Display?
+-> Display flex is the property of flex container to use flexbox.
+
+4. What do you mean by Semantic tags and Non Semantic Tags?
+-> Semantic element clearly describes its meaning to both the browser and the developer.
+   Semantic elements: <form>, <table>,<article>,<footer>,<header>and <section>   
+   Non-Semantic elements: <div> and <span> - Tells nothing about its content.
+
+5. What do you mean by HTML Quatations ?
+-> The HTML Quotations is used to create quotation in HTML. The HTML <q> tag is used to 
+   define a short quotation. Browsers normally insert quotation marks around the quotation.
+   and HTML <blockquote> tag is used to define a section that is quoted from another source.
+   Browsers usually indent <blockquote> elements.
+
+6. What do you mean by Citation Elements ?
+-> The <cite> HTML element is used to describe a reference to a cited creative work, and 
+   must include the title of that work. 
+
+7. What do you mean by <aside> Element ?
+->  The aside content should be indirectly related to the surrounding content. Tip: The
+    <aside> content is often placed as a sidebar in a document.
+
+8. How we can Display Emoji in HTML Pages ?
+-> Emojis look like images, or icons, but they are not.
+   They are letters (characters) from the UTF-8 (Unicode) character set. 
+   <meta charset="UTF-8">     
+   Many UTF-8 characters cannot be typed on a keyboard, but they can always be displayed using
+   numbers (called entity numbers)
+   <p>I will display &#65; &#66; &#67;</p>
+
+
+9. What is the difference between get and post ?
+-> Get -
+   1. Appends the form data in the url in the key-value pairs.
+   2. Get Method can send limited amount of data(2048 Characters).
+   3. Get method is not secure.
+
+   Post -
+   1. Appends the form data in the body of the HTTP request.
+   2. Post method can send unlimited amount of data.
+   3. Post method is secure.

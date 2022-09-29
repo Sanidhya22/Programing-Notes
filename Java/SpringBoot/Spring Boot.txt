@@ -1,0 +1,125 @@
+   What do you mean by Springboot ?
+-> Springboot is a Module of a Spring from which we speed up the development process.
+   
+   Springboot makes it easy to create standalone production-grade spring based Applications
+   that we can just run with the jar file.
+
+   Springboot = Spring FrameWork + Embedded Servers - Configuration
+
+
+   What are the differences between Spring and Springboot ?
+->              Spring                        |                    Springboot
+
+  1. Widely used for building enterprise         1.  Widely used for building REST APIs.
+     Java applications.
+
+  2. Involves writing lots of boilerplate code.  2. It Reduces boilerplate code.
+
+  3. Configuration is not auto.                  3. Configuration is auto.
+     we have to write Configuration in 
+     xml or using Annoatation.
+
+  4. It Involves setting up server manually.     4. It Includes embedded server like Tomcat 
+                                                    and Jetty.
+
+  5. Needs dependencies to be defined manually.  5. Starters take care of dependencies.  
+
+  
+  
+  Note - 
+  Springboot scans the classpath and find the dependency it will automatically configure 
+  the things.
+
+
+  Advantages of Springboot        
+
+  1. It Creates StandAlone Spring applications that can be started using Java jar.
+  2. Tomcat , Jetty are the Embedded Servers provided with Springboot.
+  3. Provide Opinionated Starter dependencies to simplify your build Configuration.
+  4. Automatic Configure Spring and 3rd Party Libaries.
+  5. No requirement of XML Configuration.
+
+
+  Ways to Start With the Springboot Project Development
+
+  1. Create a Maven Project and Add Starter Dependencies.
+  2. Use Spring Intializr
+  3. Use IDEs like STS 
+  4. Springboot Command line Interface. 
+
+  
+    What is the Use of Application Properties File in Springboot ?
+->  It is a File used to keep 'N' number of properties in a single file to run the application
+    in a different environment.  
+
+    What do you mean by JPA in Springboot ?
+->  JPA Stands for Java Persistence API. It is a Specification for Object Relational mapping
+    in Java.    
+    It is Implemented by Different ORM Frameworks. ORM like Hibernate Implements JPA for 
+    Performing Operations with Database.
+
+    What do you mean by Custom Finders methods ?
+->  Custom Finder Methods in Springboot is used for Dynamic queries and custom SQL Queries.
+
+   Supported Queries in SQL
+
+   1.  And   -> findByLastnameAndFirstname  ->    where x.firstname =?1 and x.lastname =?2
+   2.  Or    -> findByLastnameOrFirstName   ->    where x.firstname =?1 or x.lastname =?2
+   3.  Is, Equals  ->     findByFirstname , findByFirstnameIs ,findByFirstnameEquals  ->
+       where x.firstname =? 1
+   4.  Between ->  findByStartDateBetween  ->     where x.startDate between ?1 and ?2
+   5.  LessThan  ->  findByAgeLessThan  -         where x.age <? 1
+   6.  GreaterThan ->  findByAgeGreaterThan ->    where x.age >? 1
+   7.  LessThanEqual -> findByAgeLessThanEquals  ->  where x.age <=? 1
+   8.  GreaterThanEquals -> findByAgeGreaterThanEquals  -> where x.age >=? 1
+   9.  IsNull,Null    -> findByAge(Is)Null    ->   where x.age is Null
+   10. IsNotNull,NotNull  -> findByAge(Is)NotNull  -> where  x.age is not Null
+   11. StartingWith  ->    findByFirstnameStartingWith -> where x.firstname like ?1 (Parameter
+       Bound with apppended %)
+   12. EndingWith  - findByFirstnameEndingWith  ->   where x.firstname like ?1 (Parameter 
+       Preponed with %)   
+
+   What do you mean by JPSQL ?
+-> The Java Persistence query language (JPQL) is used to define queries against persistent
+   entities independent of the mechanism used to store those entities.   
+
+   JPQL allows you to express the queries in terms of the Java entities rather than the
+   (native) SQL tables and columns.
+
+   What do you mean by Native SQL Queries ?
+-> Native SQL Queries Refers to the Actual SQL Queries.
+   These queries are the SQL statements which can be directly executed in database using a 
+   database client.   
+
+   What do you mean By REST APIS ?
+-> REST stands for representational state transfer used to for Transfering Data over Web. 
+   
+   A REST API is a way for two Computer Systems to Communicate Over HTTP in a similar way
+   to Web browers and Servers.
+   The primary goal of API is to standardize data exchange between web services.
+
+   The Important HTTP Verbs -
+   GET  - It Reads a Resource.
+   PUT - It Updates an Existing Resource.
+   POST - It Creates a new Resource.
+   DELTE - It Deletes a Resource.
+  
+   Standard Status Code - 
+
+   404 - Resource Not Found
+   200 - Success
+   201 - created
+   401 - UnAuthorized
+   500 - Server Error
+
+   What do you mean by Spring DevTools ?
+-> DevTools Stands for Developer Tool. SpringBoot DevTools Picks Up The Server Changes and 
+   Restart the Application.  
+
+
+      
+
+   
+
+
+

@@ -1,0 +1,35 @@
+JDBC( Java Database Connectivity) -- 
+
+It is an API in java by which we can connect a java Program with Database.
+Java.sql package contains all the JDBC related API. 
+
+We can Java Program with the Database Using Following ways --
+1. JDBC
+2. ODBC
+3. Vendor Specific API
+
+JDBC API
+-----------
+
+1. Driver(I)
+2. Connection(I)
+3. DriverManger(C)
+4. Statement(I)
+5. PreparedStatement(I)
+6. ResultSet(I)
+7. ResultSetMetaData(C)
+8. DatabaseMetaData(C)
+9. CallableStatement(I)
+10.SQLException(C)
+
+
+Drawback of Statement Interface --
+---------------------------------------
+1. Anybody can do SQLInjection or Can do Insertion of Malicious Code into the Database and 
+  Currupt Our Database.
+We can Eliminate This by using PreparedStatement instead of Statement interface. 
+
+2.For Large number of Records Insertion or operations it takes unneccessary time for the 
+  same process.
+  we can Eliminate this By using PreparedStatement we create a Userdefined frame for the same
+  process.

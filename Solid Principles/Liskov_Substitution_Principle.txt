@@ -1,0 +1,24 @@
+                            LiskovSubstitution Principle
+                            -----------------------------
+
+This avoids overuse/misuse of inheritance. It helps us conform to the “is-a” relationship. 
+We can also say that subclasses must fulfil a contract defined by the base class.
+
+public class Bird{
+    public void fly(){}
+}
+public class Duck extends Bird{}
+
+The duck can fly because it is a bird, but what about This:
+public class Ostrich extends Bird{}
+
+Ostrich is a bird, but it can't fly, Ostrich class is a subtype of class Bird, but it 
+shouldn't be able to use the fly method, that means we are breaking the LSP Principle.
+
+public class Bird{}
+public class FlyingBirds extends Bird{
+    public void fly(){}
+}
+public class Duck extends FlyingBirds{}
+public class Ostrich extends Bird{}
+

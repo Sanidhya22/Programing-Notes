@@ -1,0 +1,104 @@
+1. What are the Different Types of Selector we have in CSS ?
+-> 1. Simple Selector - Select ELements based on name,id and class.
+   2. Combinator Selector - Select ELements based on Specific Relationship between them.
+   3. Pseudo-class Selector - Select ELements based on Certain States of an HTML element.
+   4. Pseudo-element Selector- Pseudo-element Selector is used to Select Specifc part
+      of an HTML element.
+   5. Attribute Selector - Selects ELements based on an Specific Attribute or Attribute value.
+
+
+ 2. What are the Different Positions we have in CSS ?
+ -> The Position Propery Specifies the type of Positioning Method used for an Element.
+    The Different Types Of Positions are 
+    1. Static - Static Postion is the default Position in a Web Page.An ELement with Static
+       Position is placed According to the flow of the Page.
+    2. Relative - An ELement with Position Relative is Positioned Relative to its normal 
+       Position.
+    3. Fixed - An Element with Position Fixed is Positioned Fixed with the Viewport which 
+       means it remains in its Position Fixed.
+    4. Absoulte -  An ELement with Position Absoulte is placed Relative to its nearest
+       Ancestor.
+    5. Sticky - An ELement with Position Sticky is placed based on the users Scroll 
+       Position. Sticky ELement Toogles between relative and Fixed.
+
+3.  What are the Different types of Combinator Selectors ?
+->  There are four Types of Combinator Selector
+    1. Descendent Selector(Space) - The descendant selector matches all elements that are 
+       descendants of a specified element.
+    2. Child Selector(>) - The child selector selects all elements that are the children of 
+       a specified element.
+    3. Adjacent Sibling Selector(+) - The adjacent sibling selector is used to select an element 
+       that is directly after specified element.
+    4. General Sibling Selector(~) - The general sibling selector selects all elements that 
+       are next siblings of a specified element.
+
+4. What do you mean by Media Queries ?
+-> Media Queries is a Concept/Technique in CSS for Creating Responsive Web Designs.    
+   e.g: @media only screen and (max-width: 600px) {
+          body {
+            background-color: lightblue;
+         }
+       }
+
+
+5. What do you mean by Flexbox in CSS ?
+-> FlexBox in CSS is a Flex Container that treat all the elements inside the box as flex 
+   Elements or inline Elements. 
+
+6. What is the Difference between CSS Grid and CSS Flexbox ?
+->                 CSS Grid           |                    CSS FlexBox
+
+   1. Two Dimentional                        1. One Dimentional
+
+7  Which is better CSS Grid or CSS Flexbox ?
+-> CSS Flexbox is better than CSS Grid for Normal Design Layout and CSS Grid is Better 
+   than CSS FlexBox for Complex Design Layouts.
+    
+
+8. What do you mean by Cascading in CSS ?
+-> Cascading is Rules based Priorty and Hierarchy in Applying Styles.
+    Priorties of Styling in CSS - 
+      
+    Note --
+    If we Provide Multiple Styles to the same element in the same Scope then Last Style will 
+    get Implemented.
+    Styling Proprioties
+    -------------------------------------------------------------
+    Inline Style > Internal Style > External CSS
+
+    Parent Style Properties values. >  Default Style Properties Values of the Browser in
+    Which it is Openned.
+
+    Id > Class > Generic Selector
+
+    !Important Keyword has the Heightest Proiorty Over other Elements.
+
+9.  What do you mean by Specificity in CSS ?
+->  If there are two or more CSS rules that point to the same element, the selector with the
+    highest specificity value will get Applied to the ELement.
+    There is a Specificity value Calculator that Calculates the Specificity Value.
+
+10. What do you mean by Inheritence in CSS ?
+->  CSS Inheritence is the Process Where Child HTML ELement Inherites CSS Properties value 
+    from the Parent HTML ELements.  
+
+    There are Three Main Properties of Inheritence -
+    1.Inherit - In Case of Inherit the ELement will Inherit Properties from the Parent to
+    the Child ELement.
+    2.Intial - In Case of Intial ELement Will get Intialized with the default Value as Per 
+    Default Value Provided by the Browser.
+    3.Unset - In This Case ELement Properties will Reset to its Natural Values as Per as 
+    Provided by the CSS rules, It may be Inherit Parent Property Value or Intial Value.
+
+11. How does Semantics Tags help both Developer and the Browser ?     
+->  Semantics Tags describes its Meaning to the Developer So that He Can Know Meaning of the Tag 
+    and Where it Should go and what Should be placed In.
+
+    
+
+
+    
+
+
+       
+

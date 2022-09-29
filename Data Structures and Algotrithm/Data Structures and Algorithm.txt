@@ -1,0 +1,60 @@
+   What do you mean Algorithm ?
+-> An algorithm is a set of well-defined instructions to solve a particular problem. 
+   It takes a set of input and produces a desired output.
+   
+   What you mean by Data Strutures ?
+-> Data Structures is a way to store and organize so that it can be accessed and updated
+   Efficently.
+
+   What are the different types of Data Structures ?
+-> There are two types of Data Structures - 
+   1. Linear data Structures - 
+      In Linear data Structures, the elements are arranged in sequence one after the other.
+      Since elements are arranged in particular order.
+
+      Data Structures that comes under Linear Data Structures
+      1. Array - 
+         Array is a Collection of Elements of similar types.Here Elements are arranged in
+         Continous memory location.
+      2. Stack- 
+         Stack is a type of linear data strucutres that follows the principle of 
+         LIFO.
+      3. Queue - 
+         Stack is a type of linear data strcutures that follows the principle of 
+         FIFO.
+      4 LinkedList - 
+        LinkedList is a type of linear data structures where data elements 
+        are connected through the series of nodes and each node contains the data item
+        and address to the next node.
+
+   2. Non-Linear data Structure - 
+      In Non Linear Data Structures the elements are not arranged in the sequencial order
+      Instead they are arranged in the hierarchical manner where one element is
+      connected to one or more elements.
+
+      Data Structures that Comes under Non-Linear Data Structures
+      1. Graph - 
+         In Graph data structure, each node is called vertex and each vertex is connected
+         to other vertices through edges.
+      2. Tree - 
+         Tree data structure is similar like graph data structure, it is a collection of 
+         Vertices and Edges.However In tree data structure, there can only be one edge 
+         between two vertices.
+        
+
+   What is the difference between Linear and Non-Linear Data structures ?
+->            Linear Data Structure      |     Non-Linear Data Structure
+     
+       1.The data items are arranged in      1.The data items are arranged in non-sequential 
+         sequential order, one after the       order (hierarchical manner).
+         other.
+ 
+       2.All the items are present on the    2.The data items are present at different layers.
+         single layer.
+   
+       3.The time complexity increase with   3.The time complexity remains same.
+         the data size.
+       
+      4.It can be traversed on a single      4.It can be Traversed on a multiple run.
+        run. 
+        

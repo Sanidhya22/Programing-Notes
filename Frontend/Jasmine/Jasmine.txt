@@ -1,0 +1,198 @@
+                                            Jasmine
+                           -----------------------------------------
+
+    What do you mean by Jasmine ?
+->  Jasmine is an open-source testing framework for JavaScript. It aims to run on any JavaScript-enabled
+    platform.
+
+    What are the common naming file extensions for testing file in Jasmine ?
+->  Common file extensions are - 
+    1. .spec.js 
+    2. .test.js 
+
+    What do you mean by Test Suite ?
+->  A Test suite is simply a group of specs or a group of tests.    
+
+    What do you mean by Spec in a Jasmine ?
+->  A Spec is a short form of Specification.
+    A Spec is a set or group of expectations that test the state of the code.    
+
+    When we can call Spec is Passed ?
+->  Spec with all the true expectations is a Passing spec.
+    All the Expectations should be true.  
+    If we have one or more false expectations then it is a failing spec. 
+
+    What do you mean by Disabled Spec ?
+->  Disabled Spec is a Spec that will report as pending and will not be executed.
+    Even the expectations are false in that Disabled spec it will show as pending not as failed spec.     
+
+    How to Make a test suite Disabled ?
+->  Simply put letter x before it for Disabling specific Spec and put x before describe for Disabling 
+    Suite.   
+
+    What are Matchers ?
+->  A Matcher is just a function and it implements a boolean comparision between the actual
+    value and expected value.
+    A Matcher is also responsible to report to the Jasmine if the expectation is true or false. 
+
+    What do you mean by toBe Matcher ?
+->  Expect the Actual value to be === the expected value.   
+
+    What do you mean by toEqual Matcher ?
+->  Expect the Actual value to be equal to the Expected value using deep equality comparision.
+    ToEqual during deep checking checks the key and the value pairs of both the objects.  
+
+    What do you mean by toBeTruthy ?
+->  Expect the actual value to be true.
+
+    Note -
+    Boolean values of values are as follows
+    true - true
+    54(Non Zero Number) - true
+    {}(Empty Object) - true
+    {"name":"Sujit"} - true
+    "Sujit" - true
+  
+    What do you mean by toBeFalsy ?
+->  Expect the actual value to be false.    
+    
+    Note -
+    Boolean values of values are as follows
+    false - false
+    0 - false
+    NaN - false
+    null - false
+    "" - false
+    undefined - false
+
+    What do you mean by not Matcher ?
+->  not Matcher Invert the Matcher.
+
+    What do you mean by toBeUndefined Matcher ?
+->  Expect the Actual value to be undefined.    
+
+    What do you mean by toBeNull Matcher ?
+->  Expect the Actual value to be null.    
+
+     What do you mean by toContain Matcher ?
+->   Expect the actual value to contain a specific value.
+
+     What do you mean by toBeNaN Matcher ?  
+->   Expect the actual value to be NaN. 
+
+     What do you mean by toThrow Matcher ?
+->   Expect a function to throw Something.
+     Value that should be thrown If not provided, simply the fact that Something thrown will be
+     checked.
+
+     What do you mean by toThrowError Matcher ?
+->   Expect a function to throw an Error.    
+     Here it also checks whether thrown error is instance of Error class or not.
+
+     What do you mean by toMatch Matcher ?
+->   Expect the actual value to match a regular expression.      
+
+     What do you mean by AsymmetricEqualityTester ?
+->   AsymmetricEqualityTester  is an Object that can match multiple objects.
+     e.g - jasmine.any(), jasmine.anything() and jasmine.objectContaining();
+
+     Note - 
+     jasmine.anything() will expect all values expect null and undefined.   
+
+     What do you mean by any Matcher ?
+->   This Matcher uses Jasmine equality(ToEqual, toContain or toHaveBeenCalledWith), that will 
+     succeed if the actual value being compared is an instance of the specified class/constructor.
+
+     What do you mean by anything Matcher ?
+->   This Matcher uses Jasmine equality(ToEqual, toContain or toHaveBeenCalledWith), that will
+     succeed if the actual value being compared is not null and undefined.    
+
+     What do you mean by Custom Matcher ?
+->   Custom Matcher is a comparison function that takes an actual value and expected value. 
+
+     The Custom Matcher method should retun an object with a compare function that will be
+     called to check the expectation.
+
+     The compare function receives the value passed to expect() as the first argument -actual argument
+     and the value passed to the matcher itself as the second argument - expect value.
+
+     The compare function must return a result object with a pass property that is a boolean result
+     of the matcher.
+
+     The pass property tells the expectation whether the matcher was successful or unsuccessul.
+
+
+     e.g - 
+
+     const customMatcher = {
+        retun{
+            compare:function(actual,expected){
+                retun{
+                    pass:true,
+                    message:""
+                }
+            }
+        }
+     }
+
+     Register the customMatcher with Jasmine.addMatchers()
+
+     What do you mean by nested suites ?
+->   Writing suites inside suites are called nested suites.  
+
+     What do you mean by Setup in Jasmine ?
+->   Setup is where we place prerequites for your specs.It executes before speces are run.
+     Jasmine offers two methods for Setup
+     1. beforeEach - beforeEach is executed before each spec in the suite in which it is called. 
+     2. beforeAll - beforeAll is executed only once before all the specs in the suite in which it 
+        is called.
+
+     What do you mean by Teardown in Jasmine ?
+->   Teardown is used to perform clean up. these are executed after specs are run.  
+     Jasmine offers two methods for Teardown
+     1. afterEach - afterEach is executed after all the specs in the suite in which it is called.
+     2. afterAll  - afterAll is executed only once after all the specs in the suite is executed.   
+
+     What do you mean by Jasmine spies and why we need it ?
+->   Jasmine spy is another functionality which does the exact same as its name specifies. It will 
+     allow you to spy on your application function calls. There are two types of spying technology 
+     available in Jasmine.  
+     The first methodology can be implemented by using spyOn() and the second methodology can be 
+     implemented using createSpy().      
+
+     What do you mean by Test double ?
+->   Test double is an object that do replacement of real objects in a test. 
+     It's like a duplicate object of the original object.
+     Jasmine has test double functions called as spies.
+     A spy can stub any function and track calls to it and all arguments which means It does not
+     call the original function, It will act as like it is called duplicate function and behaves 
+     like it is called and count the number of time it is called. 
+     A spy can only exist in the suite or in the spec block in which it is defined and will be 
+     removed after each spec.
+
+     There are different spy matchers we use with spies
+     1. toHaveBeenCalled  
+     2. toHaveBeenCalledWith
+     3. toHaveBeenCalledTimes
+
+     What do you mean by toHaveBeenCalled Matcher ?
+->   This Matcher checks whether particular function is being called on or not.    
+
+     What do you mean by toHaveBeenCalledWith Matcher ?
+->   This Matcher checks whether particular function is being called with specific argument or not.
+
+     What do you mean by toHaveBeenCalledTimes Matcher ?
+->   This Matcher checks whether particular function is being called specified times or not.  
+
+     What do you mean by callThrough Matcher ?
+->   callThrough spy Matcher will track calls to the function it is spying on, but it will also allow 
+     function to run. 
+
+     What do you mean by callFake ?
+->   callFake spy Matcher will track calls to the function it is spying on and tell the spy to call 
+     a fake implementation when invoked.
+
+     What do you mean by retunValue ?
+->   It is a shorthand Matcher for callFake Matcher which returns a specified value.             
+
+         

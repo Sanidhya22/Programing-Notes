@@ -1,0 +1,58 @@
+                                 Interface Segregation Principle
+                                 -------------------------------
+
+Here We have created some code for a burger place where a customer can order a burger, fries or 
+a combo of both.
+
+interface OrderService {
+    void orderBurger(int quantity);
+    void orderFries(int fries);
+    void orderCombo(int quantity, int fries);
+}
+
+
+class BurgerOrderService implements OrderService {
+    @Override
+    public void orderBurger(int quantity) {
+        System.out.println("Received order of "+quantity+" burgers");
+    }
+
+    @Override
+    public void orderFries(int fries) {
+        throw new UnsupportedOperationException("No fries in burger only order");
+    }
+
+    @Override
+    public void orderCombo(int quantity, int fries) {
+        throw new UnsupportedOperationException("No combo in burger only order");
+    }
+}
+
+Here In the Above Code we have Created BurgerOrderService Class which implements OrderService
+so that,s why we are forced to Override all the Methods of OrderService but some of them 
+are not Needed.
+So To implement a burger-only order, we are forced to throw an exception in the orderFries() 
+and orderCombo method.
+
+
+In Order to deal with this Problem and we use Interface Segregation Principle
+
+
+interface BurgerOrderService {
+    void orderBurger(int quantity);
+}
+
+interface FriesOrderService {
+    void orderFries(int fries);
+}
+
+
+class BurgerOrderService implements BurgerOrderService {
+    
+    @Override
+    public void orderBurger(int quantity) {
+        System.out.println("Received order of "+quantity+" burgers");
+    }
+}
+
+

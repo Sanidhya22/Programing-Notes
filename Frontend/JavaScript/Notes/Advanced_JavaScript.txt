@@ -1,0 +1,213 @@
+                                   Advanced Javascript Concepts 
+                        ------------------------------------------------------
+
+
+    What do you mean by Function Statement ?
+->  Defining function with the specified parameters
+
+    function show(){
+        console.log("Sujit Kumar Verma");
+    }                      
+
+    What do you mean by Function Expression ?
+->  Function expressions are when you create a function and assign it to a variable.
+
+    var res = function (){
+        console.log("Rresult");
+    }
+
+    What do you mean by Anonymous Function ?
+->  Functions Declared without names are Anonymous Functions.  
+
+    Anonymous function don't exist standalone It will give us error 
+    They are passed as parameter to a function or return as a function.
+
+    show(function(){
+        console.log("Hello");
+    })
+
+    What is the Difference between Function Statment and Function Expression ?
+->  In case of Hoisting Concept     
+
+    function show(){
+        console.log("Sujit Kumar Verma");
+    } 
+
+    var res = function (){
+        console.log("Rresult");
+    }
+
+    If we call function show before Defining it will execute successfully and will give the result.
+    but In case of function res it will give undefined because During Hoisting memory is created for
+    res but function is not assigned to it.
+
+
+    What do you mean by Named Function Expression ?
+->  Function defined with name assigned to any variable is known as Named Function
+    Expression.     
+
+    var result = function show(){
+        console.log("Sujit Kumar Vemra");
+    }
+
+    show(); Error
+    result();
+
+    Here This is will give error because the reference of the function of the 
+    is asssigned variable  result and show does not point function in the global 
+    context anymore.
+
+    What do you mean by First Class Functions ?
+->  The ability of Functions to be used as values , can be passed as parameter to another function or to 
+    return function to another function are called as First Class Functions.
+
+    What do you mnean by Arrow functions ?
+->  Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows you to 
+    create functions in a cleaner way compared to regular functions.       
+    It cannot exist standalone.
+
+    What is the Difference between Syntax Error, Reference Error and Type Error ?
+->  Syntax Error -
+    Syntax Errors are the Errors which will get Trigerd because of Syntax Errors
+    In case of Syntax Errors None of the code will get executed.
+
+    Reference Error -
+    Reference Error we will get when the variable does not exist in the memory but 
+    we try to excess it and also because of Temporal Dead Zone in case of let 
+    and const.
+
+    Type Error -
+    When we do reassignment of const Declared variable then it will give us type
+    Error.   
+
+    What do you mean by SetTimeout ?
+->  setTimeout() The global setTimeout() method sets a timer which executes a function
+    or specified piece of code once the timer expires.
+    Here These functions are registered in the timer Queue. 
+
+    What do you mean by ClearTimeout ?
+->  The clearTimeout() method clears a timer set with the setTimeout() method. 
+
+    What do you mean by SetInterval ?
+->  SetInterval Functon repeatedly calls a function or executes a code snippet, with
+    a fixed time delay between each call.
+
+    What do you mean by ClearInterval ?
+->  The clearInterval() method clears a timer set with the setInterval() method.
+
+    What do you mean by SetImmediate Function ?
+->  The setImmediate() method is used to execute a function right after the current 
+    event loop finishes.
+    Here These functions are registered in the check Handler Queue. 
+    Those functions who are registered in the timer queue has high Priorty
+    than those functions who are registered with the check Handler queue.
+
+    What do you mean by Process.nextTick Function ?
+->  process. nextTick() is used to schedule a callback function to be invoked in the 
+    next iteration of the Event Loop.        
+
+    What do you mean by Functional Programming ?
+->  Functional Programming is the Programming language which Majorly deals
+    with the functions.  
+
+    What do you mean by setPrototype method of JavaScript ?
+->  The Object.setPrototypeOf() method sets the prototype (i.e., the internal 
+    [[Prototype]] property) of a specified object to another object or null.    
+
+    e.g - Object.setPrototypeOf(obj, prototype)
+
+    obj - 
+    The object which is to have its prototype set.
+
+    prototype - 
+    The object's new prototype (an object or null).  
+
+    What do you mean by Events in JavaScript ?
+->  JavaScript's interaction with HTML is handled through events that occur when the
+    user or the browser manipulates a page.
+
+    What are the Different Phase of Events in JavsScript ?
+->  There are three phases of Events in JavaScript
+    1. Capturing Phase
+    2. Target Phase
+    3. Bubbling Phase
+
+    Capturing Phase is the Phase when the event goes down to the element.
+    Target Phase is the Phase when the Event reaches the element.
+    Bubbling Phase is the Phase when the Event Bubbles up from the element.
+
+
+    <html>
+    <body>
+    <div class="container">
+        <button id="btn">Click Me!</button>
+    </div>
+      
+    <script type="text/javascript">
+        document.getElementById('btn')
+            .addEventListener('click', 
+            function () {
+                alert('Button Clicked!');
+            })
+    </script>
+    </body>
+    </html>
+
+    The addEventListener() method will be called during the Bubbling phase. The code
+    shown above will use addEventListener() with two arguments. However, in the above
+    code, .addEventListener() can be called with the third argument as “true” which 
+    will invoke the listener earlier during the capturing phase.
+
+    What do you mean by Evenet Propagation ?
+->  Event propagation is a mechanism that defines how events propagate or travel 
+    through the DOM tree to arrive at its target and what happens to it afterward.   
+
+    What do you mean by Event Delegation ? 
+->  Event delegation refers to the process of using event propagation (bubbling) to
+    handle events at a higher level in the DOM than the element on which the event 
+    originated.
+
+    Intead of adding an event listener to each and every similar element, we can add 
+    an event listener to a parent element and call an event on a particular target 
+    using the .target property of the event object. 
+
+    Now there is a single event listener and a single responding function. In the 
+    above-shown method, we have improved the performance, but we have lost access
+    to individual <li> elements so to resolve this issue, we will use a technique
+    called event delegation. 
+
+    The event object has a special property call .target which will help us in 
+    getting access to individual <li> elements with the help of phases.
+
+    <ul> element is clicked.
+    The event goes in the capturing phase.
+    It reaches the target (<li> in our case).
+    It switches to the bubbling phase.
+    When it hits the <ul> element, it runs the event listener.
+    Inside the listener function event.target is the element that was clicked.
+    Event.target provides us access to the <li> element that was clicked.
+
+    The .nodeName property of the .target allows us to identify a specific node. 
+    If our parent element contains more than one child element then we can identify
+    specific elements by using the .nodeName property.
+  
+    const customUI = document.createElement('ul');
+
+    function responding(evt) {
+    if (evt.target.nodeName === 'li')
+        console.log('Responding')
+    }
+
+    for (var i = 1; i <= 10; i++) {
+    const newElement = document.createElement('li');
+    newElement.textContent = "This is line " + i;
+    customUI.appendChild(newElement);
+    }
+
+    customUI.addEventListener('click', responding);
+
+
+
+   
+
+    

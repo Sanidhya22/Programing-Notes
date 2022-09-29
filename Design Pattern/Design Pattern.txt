@@ -1,0 +1,97 @@
+  What do you mean by Design Pattern ?
+->Design Pattern Provides a general solution to a design problem that occurs repeatedly 
+  in many projects. 
+
+Creational Design Pattern --
+Creational design patterns are concerned with the way of creating objects
+1. Singleton Design Pattern -
+In Singleton Only single instance of a class will be created in the memory.
+
+2. Prototype Design Pattern - 
+In Prototype DesignPattern we Make Copy of object.
+
+3. Builder Design Pattern- 
+In Builder Deisgn Pattern  Builds the Complex Objects Step by Step by indivisual Classes are 
+brought Together for Building user Requirement Complex Objects. 
+
+4. Factory Design Pattern - 
+Abstract Factory Pattern says that just define an interface or abstract class for creating
+families of related (or dependent) objects but without specifying their concrete sub-classes.
+
+5. Abstract Factory Design Pattern -
+Group of Factory Objects
+
+6. Object Pool Design Pattern  - 
+In Pool Design Patten Pools of Objects which will be created and kept ready .whenever a program 
+ask for it. it will be released from the pool and once it is used by it will back to the pool
+again.
+e.g db Connection
+
+
+Structural Design Pattern -
+Structural design patterns are concerned with how classes and objects can be composed, to
+form larger structures.
+
+1.Adapter Design Pattern -
+Adapter Design Pattern converts the one interface into another interface that client wants.
+
+2. Bridge Design Pattern - 
+Bridge is a structural design pattern that lets you split a large class or a set of
+closely related classes into two separate hierarchies abstraction and implementation
+which can be developed independently of each other.
+Abstraction is the Bridge Design Pattern.
+
+3.Composite Design Pattern - 
+Composite is a structural design pattern that lets you compose objects into tree structures
+and then work with these structures as if they were individual objects.
+It Treats all the Objects Equally iresspective of the Positions of the Object. 
+
+4.Decorator Design Pattern -  
+Adding the new functionality to the existing functionality.
+The decorator design pattern allows us to dynamically add functionality and behavior to
+an object without affecting the behavior of other existing objects within the same class.
+
+5.Facade Design Pattern -
+Facade is a structural design pattern that provides a simplified (but limited) interface
+to a complex system of classes, library or framework.
+
+6.Flywieght Design Pattern - 
+A Flyweight Pattern says that just to reuse already existing similar kind of objects by
+storing them and create new object when no matching object is found.
+
+7.Porxy Design Pattern  -
+Proxy Design Pattern means an object representing another object (provides the control for
+accessing the original object)
+Note - Controls and manage access to the object we are protecting
+
+
+
+Behavioural Design Pattern -
+Behavioral design patterns are concerned with the interaction and responsibility of objects.
+
+1.Chain of Responsibility - Responsibilty is given to indivisual modules based on that 
+ request crossponding functionality is executed. 
+2.Interpreter - we are Interpreting the given format and converting into required stuff. 
+3.Commad - Instructions are there in the object based on which Execution takes place.
+4.Iterator - Iterating over the Objects.
+5.Mediator-  Connects between two similar Objects.
+6.Observer - In the Observer Design Pattern Objects called observer observes to obseravables.
+7.State -    If we have to change behavior of an object based on its state, we can have a 
+             state variable in the Object and use if-else condition block to perform different
+             actions based on the state. 
+8.Strategy  - It enables selecting algorithm at runntime.
+9.Template -  Template design pattern that allows you to defines a skeleton of an algorithm
+              in a base class and let subclasses override the steps without changing the 
+              overall algorithm's structure.
+10.Visitor -  Visitor Design pattern that allows adding new behaviors to existing class 
+              hierarchy without altering any existing code.
+11.Memento - it provides the ability to restore an object to its previous state 
+	
+
+
+
+
+
+
+
+

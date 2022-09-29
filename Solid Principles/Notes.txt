@@ -1,0 +1,36 @@
+                                 Solid Principles
+                                 -----------------
+
+   What do you mean by Solid Principles ?
+-> Solid Principles is a coding standard that all developers should have a clear concept for
+   developing software properly to avoid a bad design.
+
+   There are Main 5 Solid Principles
+
+   1. Single Responsibility Principle 
+   2. Open and Closed Principle
+   3. Liskov Substitution Principle
+   4. Interface Segregation Principle
+   5. Dependency Interversion Principle
+
+
+   1. Single Responsibility Principle - 
+      Each class should have one responsibility, one single purpose.
+   2. Open and Closed Principle - 
+      Every class is open for extension but closed for modification.
+   3. Liskov Substitution Principle - 
+      Any subclass object should be substitutable for the superclass object from which it 
+      is derived.
+   4. Interface Segregation Principle - 
+      We should break larger interfaces into smaller ones.  
+   5. Dependency Interversion Principle - 
+      High level modules should not depend on low level modules; both should depend on 
+      Abstractions.   
+
+      In Other Words we can Say 
+      While An Application The Interaction between High Level Modules and Low Level Modules
+      Should be Thought of an Abstract Interaction between Them.
+
+      While Designing an Application Sometimes High Level Modules Depends Directly on Low Level
+      Modules to Acheieve Some Task and there that Limits the Reuse of High Level Modules
+      and Ends Up as a Bad Design.  

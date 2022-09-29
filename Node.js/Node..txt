@@ -1,0 +1,70 @@
+What is Node.js ?
+Node.js is an Openserver Enviroment that allows us to run JavaSCript on the Server.
+
+What is Sequelize ?
+Sequelize is a promise-based Node. js ORM for Postgres, MySQL, MariaDB, SQLite and
+Microsoft SQL Server. 
+Sequelize is an open-source Node. js module that enables JavaScript developers to work
+with relational databases more easily.
+
+What is ORM ?
+ORM stands for Object-Relational Mapping (ORM) is a programming technique for Mapping
+data between relational databases and object oriented programming languages such as Java,
+C#.
+
+What is the Advantage of ORM ?
+You won't have to write any other low-level data access code.
+
+What is Dialect ?
+Dialect classes are used to generate SQL queries. The available Dialect classes are:
+sql and Postgre etc.
+
+What is Idle in Pool ?
+It Specifies after how time of no use of object A client, server, or proxy MAY close the
+transport connection.
+
+What is Pool in Sequelize ?
+The pool is the collection of these saved, reusable connections Objects.
+
+What is Acquire in Sequelize ?
+It Specifies in How much time Pool object will be available for Making Connections or Make
+Connection with the Database.
+
+What do you mean by Cors?
+CORS Stands for Cross Origin Resource Sharing.
+It allows us to relax the security applied to an API.
+
+what is Express?
+Express is a Node.js web application framework that provides a robust set of features for
+web and mobile applications.
+
+What is Middleware in Node.js?
+Middle functions that are used to modify req and res objects.
+Middleware functions are functions that have access to the request object (req), the 
+response object (res), and the next middleware function in the application’s request-response
+cycle.
+
+What is express.json()?
+The express.json() function is a built-in middleware function in Express. It parses 
+incoming requests with JSON payloads and is based on body-parser.
+
+What is RXJS ?
+RxJS (Reactive Extensions for JavaScript) is a library for reactive programming using 
+observables that makes it easier to compose asynchronous or callback-based code.
+
+Why we use res.status?
+The res.status() function set the HTTP status for the response. 
+Types of HTTP Response --
+Informational responses (100–199) -- This response indicates that the client should continue the request or ignore the response if the request is already finished.
+Successful responses (200–299)
+Redirection messages (300–399) -- The request has more than one possible response. 
+Client error responses (400–499)
+Server error responses (500–599)
+Successful responses (200–299)
+Redirection messages (300–399)
+Client error responses (400–499)
+Server error responses (500–599)
+
+What are the differnet Http Verbs?
+-> PUT,POST,GET,DELETE,UPDATE
+

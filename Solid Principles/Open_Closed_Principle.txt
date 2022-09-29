@@ -1,0 +1,85 @@
+                               Open Closed Principles
+                               ----------------------
+Here In the below Greeter Class has Method Greet which Greets in English, Suppose we have 
+Change The Functionality for Any French Client So We Modified the Greet Method in French 
+Greet Message but that will lead to Bad Design.
+
+ public class Greeter {
+
+    public void greet() {
+        System.out.println("Hello, World!");
+    }
+}  
+
+public class GreeterApp {
+
+    public static void main(String[] args) {
+        Greeter greeter = new Greeter();
+        greeter.greet();
+    }
+}
+
+
+So In Order To implement Open Closed Principle we Create another new Class Extend the Above 
+Class and Override the Method According to Requirement.
+But Even implementing This Also using Inheritance creates a Tight Coupling so if the superclass
+Changes subclass needs to be Modified.
+
+public class Greeter {
+
+    public void greet() {
+        System.out.println("Hello, World!");
+    }
+}  
+
+public class FrenchGreeter extends Greeter {
+
+    @Override
+    public void greet() {
+        System.out.println("Bonjour!");
+    }
+}
+
+public class GreeterApp {
+
+    public static void main(String[] args) {
+        Greeter greeter = new FrenchGreeters;
+        greeter.greet();
+    }
+}
+
+
+So The Best Choice Should be Using Abstraction and Using Interface
+
+public interface GreeterService {
+    void greet();   
+}
+
+
+public class Greeter implements GreeterService{
+
+    public void greet() {
+        System.out.println("Hello, World!");
+    }
+}
+
+
+public class FrenchGreeter implements GreeterService {
+
+    @Override
+    public void greet() {
+        System.out.println("Bonjour!");
+    }
+}
+
+
+public class GreeterApp {
+
+    public static void main(String[] args) {
+        GreeterService greeterService = new FrenchGreeters;
+        greeterService.greet();
+    }
+}
+
+
+
