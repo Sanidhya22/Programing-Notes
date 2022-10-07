@@ -14,13 +14,80 @@
     TestBed we can use to test both the template and class file of a Component.
 
     TestBed.confugureTestingModule({declarations:[ComponentName]});
+
+    There is no need to declare or import anything else. the default test module is pre-configured 
+    with something like the BrowserModule from @angular/platform-browser.
+
     const fixture = TestBed.createComponent(ComponentName);
+
+    TestBed.createComponent creates an instance of the specified component and also adds a 
+    crossponding element to the test-runner DOM, and returns a Component Fixture.
+
     const component = fixture.componentInstance();
+
+    This will us access to all the properties and methods in the component class.
+    Using fixture nativeElement and debugElement  we will acccess the elements in the 
+    component template.
+
     expect(component).toBeDefined();
 
     Note ---
 
-    fixture is consisting of both componentInstance and Template HTML elements reference.
-    Using componentInstance we will get the Instance of the Component.
-    Using nativeElement and debugElement we will the reference of HTML elements.
-    
+    * The Component which we want to test that component Name we specify in the declarations in 
+      TestBed ConfigueTestingModule.
+    * Fixture is consisting of both componentInstance and Template HTML elements reference.
+    * Using componentInstance we will get the Instance of the Component.
+    * Using nativeElement and debugElement we will the reference of HTML elements.
+
+    NativeElement ---
+
+    The Value of ComponentFixture.nativeElement has the any type. Angular can't know at compile 
+    time what kind of HTML element the nativeElement is or if It is an HTML element.
+    The Application might be running on a non browser platofrm such as the server or a web 
+    worker. 
+
+    The tests we do are designed to run in a browser so a nativeElement value will always be 
+    an HTMLElement or one of its derived class.we can use the querySelector to traverse
+    the HTML element tree.  
+
+
+    it('should have <p> with Sujit Kumar Verma',()=>{
+        const bannerElement:HTMLElement = fixture.nativeElement;
+        const p = bannerElement.querySelector('p');
+        expect(p.textContent).toEqual("Sujit Kumar Verma');
+    })
+
+
+    Why we debugElement property on fixture instead of nativeElement for accessing template elements?
+->  The Properties of the nativeElement depend upon the runntime enviroment.It might be 
+    possible we could be runnig our application tests in a non browser platform that doesn't 
+    have a DOM or whose DOM emulation does not support the full HTMLElement API.
+    so In this It might create problem for us, so we can go for debugElement.       
+     
+    Angular relies on the debugElement abstraction to work safely across all supported platforms.
+    Instead of creating an HTMLElement tree, Angular creates a debugElement tree that wraps 
+    the native elements for the runntime platform.
+
+
+    it('should have <p> with Sujit Kumar Verma',()=>{
+        const bannerDe:debugElement = fixture.debugElement;
+        const bannerE1:HTMLElement = bannerDe.nativeElement;
+        const p = bannerE1.querySelector('p');
+        expect(p.textContent).toEqual('Sujit Kumar Verma');
+    })
+
+    it('should have <p> with Sujit Kumar Verma',()=>{
+        const bannerDe:debugElement = fixture.debugElement;
+        const paragraphDe = bannerDe.query(By.css('p'));
+        const p:HTMLElement = paragraphDe.nativeElement;
+        expect(p.textContent).toEqual('Sujit Kumar Verma');
+    })
+
+    Note - 
+    -> By.css() static method selects debugElement nodes with a standard css selector.
+    -> InOrder to remove console errors we can add schemas property in the TestBed.confugureTestingModule
+       passed argument object with value [NO_ERRORS_SCHEMA]
+
+       e.g - TestBed.configureTestingModule({declarations:[ComponentName],schemas:[NO_ERRORS_SCHEMA]})
+
+       
