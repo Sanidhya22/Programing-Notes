@@ -23,8 +23,7 @@ console.log(fullname());
 
 /* Diffrence between Apply and Bind
    
-   Apply( ): Invokes the function and allows you to pass in arguments as an 
-   array. 
-   Bind(): returns a new function, allowing you to pass in an array and any 
-   number of arguments.
+   Apply( ): Invokes the function and allows us to pass arguments as an array. 
+   Bind():   returns a new function, allows us to pass any number of arguments.
+   Call():   Invokes the function  and allows us to pass any number of arguments.
 */ 

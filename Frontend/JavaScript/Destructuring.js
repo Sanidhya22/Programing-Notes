@@ -1,4 +1,4 @@
-/* What do you mean by Destructuring in JavsScript ?
+/* What do you mean by Destructuring in JavaScript ?
 -> Destructuring is an efficient way to extract multiple values from data that is stored in 
    arrays or objects. 
    e.g - */

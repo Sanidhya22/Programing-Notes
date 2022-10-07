@@ -77,8 +77,8 @@ OUTPUT -
 
 /* A Closure is the combination of a function bundled together with Reference to its 
    Surrounding state(Lexical Enviroment).
-   In Other words we can say a closure gives us access to an outer function  scope
-   from an inner function.
+   Closure means that an inner function always has access to the vars and parameters of 
+   its outer function, even after the outer function has returned inner function.
    */
 
 /* function x() {

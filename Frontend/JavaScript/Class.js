@@ -44,8 +44,8 @@ let c1 = new Clerk(); */
 
 Note--
 Here Child class Constructor does not call Parent class Constructor Technically,
-Actually Due to inheritance all the Properties, Methods and Constructor is Available to the 
-Child class so that Why Parent class Contructor is called when we create object of child.
+Actually Due to inheritance all the Properties, Methods and Constructor of the Parent class is Available
+to the Child class so that Why Parent class Contructor is called when we create object of child.
 
 In JavaScript it is not mandatory to specify super keyword in the first Line of the
 constructor.

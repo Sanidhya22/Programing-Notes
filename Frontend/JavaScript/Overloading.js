@@ -1,5 +1,5 @@
 /* Overloading --  
-   If one or more methods may have the same name if they differ in parameters
+   If one or more methods have the same name but they differ in parameters
   (different number of parameters, different types of parameters, or both). 
   in the same class then These methods are called overloaded methods and this 
   feature is called method overloading.*/

@@ -1,7 +1,7 @@
 /* Overridng 
 Whatever the Parent has by default available to the Child through inheritance, if
-the Child is not satisfied with Parent class method implementation then Child iss
-allow to redefine that Parent class method in Child class in its own way this
+the Child is not satisfied with Parent class method implementation then Child is
+allowed to redefine that Parent class method in Child class in its own way this
 process is called overriding.
 
 In overriding method names and arguments must be same. That is method

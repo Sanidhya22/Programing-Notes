@@ -1,6 +1,6 @@
 /* Rest --
    The rest parameter allows a function to accept an indefinite number of arguments
-   as an array. */
+   as an array in function defination. */
 
    function add(...a){
    var res = 0;
