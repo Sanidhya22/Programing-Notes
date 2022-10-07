@@ -1,7 +1,7 @@
 /*  Reduce - 
     The reduce() method runs a function on each array element to produce (reduce it to)
     a single value.
-    Reduce Function is also known as  */
+*/
 
 arr = [12, 13, 14, 15, 16, 17, 18];
 

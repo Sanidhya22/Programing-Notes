@@ -52,7 +52,7 @@ const circumference = function(radius){
     return 2 * Math.PI * radius;
 }
 
-const diatmeter = function (radius){
+const diameter = function (radius){
     return  2 * radius;
 }
 
@@ -66,4 +66,4 @@ const calculate = function(radius,logic){
 
 console.log(calculate(radius,area));
 console.log(calculate(radius, circumference));
-console.log(calculate(radius, diatmeter));
+console.log(calculate(radius, diameter));

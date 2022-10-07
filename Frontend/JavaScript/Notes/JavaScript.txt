@@ -3,14 +3,14 @@
  
     What is JavsScript ?
 ->  JavaScript is a programming language used both on the client-side and server-side
-    that allows you to make our web pages interactive.
+    that allows us to make our web pages interactive.
      
     Note  - 
     JavsScript is Synchronous Single threaded language
 
     What is Call Function in JavaScript?
-->  Call function is a JavaScript predefined method using which we can call methods of another
-    objects by passing another object as an argument in call function.
+->  Call function is a JavaScript predefined method using which we can call method of an object on  
+    on different objects by passing owner object as an argument in call function.
     The call() method takes arguments separately.
 
     What is Apply Function in JavaScript?
@@ -18,68 +18,24 @@
     arguments as an array whereas Call function take arguments seprately.
 
     What is Bind Function in JavaScript?
-->  Bind method is a function using which we can borrow a method from another object.
+->  Bind method is a builtin function in Javascript using which we can borrow a method from an object
+    on different Objects.
 
     What do you mean by Synchronous?
 ->  Synchronous means to be in a sequence, i.e. every statement of the code gets executed one
-    by one. So, basically a statement has to wait for the earlier statement to get executed.
+    by one. So, basically a statement has to wait for the earlier statement to get executed
+    then only it will move to the next line.
   
     What do you mean by ASynchronus?  
-->  Asynchronous means Executions running in parrallel .eg Statements running parallely  
+->  Asynchronous means Executions running in parrallel .eg Statements running parallely.
 
     What do you mean by Async Await?
-->  The Purpose of async / await is to simplify the syntax necessary to consume promise-based
-    APIs. The behavior of async / await is similar to combining generators and promises. Async
-    functions always return a promise.
+->  Async Await is a concept in Javascript which is introduced to simplify the promise syntax to consume
+    promise-based APIs. Async functions always return a promise.
 
     What do you mean by Objects ?
 ->  A JavaScript object is an entity having state and behavior (properties and method)
     Datas in the object are stored in the key value pairs.
-  
-    What do you mean by Eventloop in JavaScript ?
-->  The event loop is a constantly running process that monitors both the callback queue and the 
-    call stack.
-
-    If the call stack is not empty, the event loop waits until it is empty and places the next 
-    function from the callback queue to the call stack. If the callback queue is empty, nothing
-    will happen.
-
-    The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all 
-    operations on a single thread, but using a few smart data structures, it gives us the illusion
-    of multi-threading.
-
-    What do you mean by Call Stack ?
-->  A call stack is a way for the Javascript engine to keep track of its place in code that calls
-    multiple functions. It has the information which function is currently runnimg and what 
-    functions are invoked from within that function.
-
-    The call stack is responsible for keeping track of all the operations in line to be executed.
-    Whenever a function is finished, it is popped from the stack.
-
-    What do you mean by Event Queue ?
-->  The event queue is responsible for sending new functions to the call stack for processing.
-    It follows the queue data structure to maintain the correct sequence in which all operations
-    should be sent for execution.   
-
-    What do you mean by callback Queue ?
-->  This is where your asynchronous code gets pushed to, and waits for the execution.
-    
-    callback queue start getting executed only after We have reached the end of the program or
-    There are no functions left to be executed in the call stack.
-
-    The Callback queue waits until the call stack is empty. Afterwards, the codes in it are 
-    executed in First In, First Out (FIFO) order. As more functions or codes are added to the
-    callback queue, they stay at the back and wait for the ones in the front to leave the queue first.
-
-    What do you mean by Microtask queue in JavaScript ?
-->  Asynchronous tasks need proper management. For that, the ECMA standard specifies an internal queue
-    PromiseJobs, more often referred to as the microtask queue.
-
-    Microtask queue is first-in-first-out: tasks enqueued first are run first.
-    Execution of a task is initiated only when nothing else is running.   
-
-    Microtask Queue get higher Priorty over Callback Queue, once Microtask Queue is empty then only 
-    Callback Queue is executed.  
 
     What are the different Web APIs we get along with the browser ?
 ->  1. setTimeout
@@ -87,29 +43,7 @@
     3. fetch
     4. LocalStorage
     5. console
-    6. Location   
-
-    How does JavaScipt Program executes ?
-->  When Javascript Program A Global Execution Context is created and moved 
-    to the Callstack and it will poped out until whole Synchronous JavsScript
-    Code will get executed.
-
-    Whenever It Encounter Asynchronus Code a callback with setTimeout
-    then that Callaback function goes to Web API of the browser and 
-    get the callback register there and wait for specified Millisecond 
-    time , when it completes, it goes to the Callback Queue and waits 
-    Until Whole Javascript code will get executed and Callstack will
-    have no more code to execute then it is moved to the Callstack
-    for the Execution.
-
-    Whenever It Encounters Asynchronous Code Promise based code then It
-    register that callback function in the Web API of the browser
-    and moved to the Microtask Queue , here it executes in the background 
-    and once Its execution is done It is moved to the Callstack for 
-    Execution.
-    Microtask Queue has higher Priorty than Callback Queue.
-
-
+    6. Location  
    
     What are the different ways in which JavsScript Object can be created ?
 ->  JavaScipt Objects can be Created by Following ways --
@@ -151,7 +85,7 @@
     </Script>
 
    What do you mean by JavsScript Arrays ?   
--> JavaScript Array - It is a collection of ELements of Different types.
+-> JavaScript Array - It is a collection of ELements of Different datatypes types.
 
    There are Following ways through which we can create Arrays --
 
@@ -198,7 +132,7 @@
                      [ 'Guava', 'Apple', 'Banana', 'Mango', 'Orange' ]
                      we can unshift more than one element at a time.
 
-   5. del arr[index] -- this method clear particular index element but memory exits there
+   5. delete arr[index] -- this method clear particular index element but memory exits there
                         fruits = ["Apple",Empty item,"Mango];
                         fruits[1] = "Orange"
 
@@ -237,7 +171,7 @@
    What do you mean by Babel?
 -> Babel is a javascript Compiler
    Babel is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of
-   JavaScript in  browsers environments.
+   JavaScript in browsers environments.
 
    What do you mean by Webpack?
 -> Webpack is a Static Module Bundler for modern JavaScript applications.
@@ -247,30 +181,11 @@
    Strict mode makes it easier to write "secure" JavaScript Code.
    Strict mode changes previously accepted "bad syntax" into real errors.
 
-   What do you mean by async and defer Attribute in Script Tag ?
--> When load a Webpage Two major things are Happening there 
-   1. HTML Parsing 
-   2. Loading of the Scripts
-   
-   Here Loading of the Scripts is also consisting of two Parts -
-   1. Loading of the Scripts from the Server
-   2. Execution of the Scripts Line by Line
-
-   async - With async The Script file gets downloaded asynchronously and then executed as
-   soon as it's downloaded.
-   The async attribute is a boolean attribute
-   
-   defer -  With defer , The Script file gets downloaded asynchronously, but executed only 
-   when the document parsing is completed. With defer , scripts will execute in the same 
-   order as they are called.
-   The defer attribute is a boolean attribute.
-
-
    What are the different types of scopes in JavsScript ?
 -> There are two types of scopes in JavsScript
     1.Based on Accessibility - 
       1.Global
-      2.local;
+      2.local
     2.Based on Methodology - 
       1.Lexical
       2.Dynamic
@@ -282,64 +197,11 @@
 -> Block Scope is the Temporary Scope for variables and functions.
 
    What do you mean by Shadowing in JavaScipt ?
--> Shaowding in Javascript happens when a variable declared in a certain scope (e.g. 
-   a local variable) has the same name as a variable in an outer scope (e.g. a
-   global variable).
-   
-   What do you mean by IndexedDB ?
--> IndexedDB is a transactional database System in our Web browsers.
-   It is a Builtin DB in our web browser
+-> Shadowing in Javascript happens when a variable declared in a certain scope (e.g. 
+   a local variable) has the same name as a variable in the outer scope (e.g. a
+   global variable).  
 
-    How does IndexDB works ?
-    IndexDB has something like Object Store (Like a Table and a Collection Storing data in the key
-    value pairs)    
-    It is a client side database and here the data is stored in the client browser.
- 
-    Advantages of Using IndexDB Database 
-    ------------------------------------
-
-    1. It can store a significat amount of data.
-    2. It is very fast because It performs reads using indexes.
-    3. It stores any kind of data by key and value pairs.
-    4. Here Every Operation is a Transaction so more reliability.
-    5. It also Works with offline apps.
-    6. It also works well with web workers.
-    7. Less UI blockage.
-
-    Difference between IndexDB and LocalStorage 
-                        IndexDB                     |                    LocalStorage 
-
-      1. Stores Any kind of Data in key value           1. Stores String data only.
-         pairs.                  
-
-      2. Full Web Workers support.                      2. No Web Workers support. 
-      3. Complex API                                    3. Simpler API 
-      4. Asynchronous API                               4. Synchronous API
-      5  It can store upto 2 GB data.                   5. It can store 2MB to 10MB data.
-      6  It uses indexing concept for                   6. It do not uses Indexing concept. 
-         accessing data.      
-
-      
-       Working with IndexDB
-       -----------------------
-       Uers Writes  ->  IndexDB   -> Server 
-
-       IndexedDB have some Limitations also It can cause UI Blockage becuase it uses Structured 
-       Clone Alogrithm.          
-        
-        Sends Objects to IndexDB   ---------->    Clone   ------------->  Data Stored
-                                   Main Thread
-
-        Larger the size of Object more will be chances of UI Blockage 
-
-
-        We can Prevent IndexDB causing UI Blockage using two ways 
-        1. Skiping Sending Larger size of data to IndexDB.
-        2. Skiping Structured Clone Alogrithm by sending data in buffer format.
-
-
-
-    What are the different functions in Javascript ?
+    What are the different Timer functions in Javascript ?
 ->  Different Timer functions in JavaScipt are - 
     1. SetTimeout 
     2. ClearTimeout 
@@ -347,5 +209,110 @@
     4. SetInterval
     5. ClearInterval
     6. RequestAnimationFrame     
+
+
+What do you mean by Function Statement ?
+->  Defining function with the specified parameters are known as function statement.
+
+    function show(){
+        console.log("Sujit Kumar Verma");
+    }                      
+
+    What do you mean by Function Expression ?
+->  Creating a function and assigning it to a variable are known as Function Expression.
+
+    var res = function (){
+        console.log("Result");
+    }
+
+    What do you mean by Anonymous Functions ?
+->  Functions Declared without names are known as Anonymous Functions.  
+
+    Anonymous function don't exist standalone It will give us error 
+    Anonymous Functions are passed as parameter to a function or they are returned from a function.
+
+    show(function(){
+        console.log("Hello");
+    })
+
+    What is the Difference between Function Statment and Function Expression ?
+->  In case of Hoisting Concept     
+
+    function show(){
+        console.log("Sujit Kumar Verma");
+    } 
+
+    var res = function (){
+        console.log("Rresult");
+    }
+
+    If we call function show before Defining it will execute successfully and will give the result.
+    but In case of function res it will give typerror (res is not a function) if we call res as a function
+    and it will give undefined when we access res variable only because During Hoisting memory is created for
+    res but function is not assigned to it.
+
+
+    What do you mean by Named Function Expression ?
+->  Function defined with name assigned to any variable is known as Named Function
+    Expression.     
+
+    var result = function show(){
+        console.log("Sujit Kumar Vemra");
+    }
+
+    show(); Error
+    result();
+
+    Here This is will give error because the reference of the function of the 
+    is asssigned to a variable result and show does not point to function in the global 
+    context anymore.
+
+    What do you mean by First Class Functions ?
+->  The ability of Functions to be used as values , can be passed as parameter to a function or to 
+    be returned as function from another function are called as First Class Functions.
+
+    What do you mnean by Arrow functions ?
+->  Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows you to 
+    create functions in a cleaner way compared to regular functions.       
+    It cannot exist standalone.
+
+    What is the Difference between Syntax Error, Reference Error and Type Error ?
+->  Syntax Error -
+    Syntax Errors are the Errors which will get Trigerd because of Syntax Errors
+    In case of Syntax Errors None of the code will get executed.
+
+    Reference Error -
+    Reference errors in Javascript are mainly thrown when an attempt is made to reference a variable that 
+    does not exist in memory or is out of scope.
+
+    Type Error -
+    When we do reassignment of const Declared variable then it will give us type
+    Error.  
+
+    What do you mean by SetTimeout ?
+->  setTimeout() Function executes a function or a code snippet after specified time Interval.
+    Here Callback functions are registered in the timer Queue. 
+
+    What do you mean by ClearTimeout ?
+->  The clearTimeout() method clears a timer set with the setTimeout() method. 
+
+    What do you mean by SetInterval ?
+->  SetInterval Functon repeatedly calls a function or executes a code snippet, with a fixed time 
+    delay between each call.
+
+    What do you mean by ClearInterval ?
+->  The clearInterval() method clears a timer set with the setInterval() method.
+
+    What do you mean by SetImmediate Function ?
+->  The setImmediate() method executes a callback function right after all the statements
+    in the scripts are executed.
+    Here Callback functions are registered in the check Handler Queue. 
+    Those functions who are registered in the timer queue has high Priorty
+    than those functions who are registered with the check Handler queue.
+
+    What do you mean by Process.nextTick Function ?
+->  process.nextTick() is used to schedule a callback function to be invoked at the begining 
+    of the next iteration of the eventLoop.    
+ 
 
 

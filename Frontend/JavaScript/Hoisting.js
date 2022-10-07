@@ -9,9 +9,8 @@
    of a variable and assignment of a variable(Memory usuage of the 
     Variable) or Initialization of the variable.
     
-   3. Using let const is better than var for programming for hoisting
-   concept it will trigger error and help us to skip getting
-   unusual results*/
+   3. Using let const is better than var for programming because
+      it will trigger error and help us to skip getting unusual results*/
 
 /* Important Point --
    What is the Difference between not defined and undefined ? 
@@ -22,10 +21,8 @@
    We get Variable not defined when memory is not allocated for a variable 
    
    Are the let and const are hoisted in Javascript ?
--> Variables declared with let and const are also hoisted but, unlike var , are not
-   initialized with a default value. An exception will be thrown if a variable 
-   declared with let or const is read before it is initialized.   
-   
+-> Variables declared with let and const are also hoisted but due to 
+   Temporal dead Zone Javascript does not allows to access it.   
    */
 
 

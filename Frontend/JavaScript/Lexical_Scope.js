@@ -1,5 +1,5 @@
 /* Lexical Scope-
-   Lexical scope is based on where variables and blocks of scope are authored */
+   Lexical scope is based on where variables and blocks of scope are declared */
 
 
 function foo(a) {

@@ -1,6 +1,5 @@
-/* Callback functions -- Callback functions are the functions which is to
-be executed after another function has finished.
-
+/* 
+Callback functions --
 Callback functions are the functions which are being passed as an argument to  
 another function.
 

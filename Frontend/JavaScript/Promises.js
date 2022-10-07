@@ -8,7 +8,8 @@ Promises basically returns Promise Objects*/
   when dealing with multiple asynchronous operations where callbacks can create callback 
   hell leading to unmanageable code. */
 
-/* var s1 = "EPAM";
+/* 
+var s1 = "EPAM";
 var s2 = "Systems";
 var promise = new Promise(function (resolve, reject){
     if ((s1 + s2) == "EPAMSystems"){
@@ -40,7 +41,8 @@ promise.then(
    Reject*/
 
 
-/* var s1 = "EPAM";
+/*
+var s1 = "EPAM";
 var s2 = "Systems";
 var promise = new Promise(function (resolve, reject) {
     if ((s1 + s2) == "EPAMSystems") {

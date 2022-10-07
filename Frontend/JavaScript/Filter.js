@@ -1,6 +1,6 @@
 /* Filter -
    The filter() method creates a new array with array elements that passes a test.
-   Fiter is also a Higher Order Function */
+   Filter is also a Higher Order Function */
 
 
 

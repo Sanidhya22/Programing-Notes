@@ -1,5 +1,6 @@
 /* Spread --
-   It takes in an iterable (e.g an array) and expands it into individual elements. */
+   It takes in an iterable (e.g an array) in function call and expands it into individual elements
+   in function defintaion. */
 
    function display(name,age,salary,designation)
    {

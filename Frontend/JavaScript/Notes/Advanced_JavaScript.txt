@@ -1,140 +1,119 @@
                                    Advanced Javascript Concepts 
                         ------------------------------------------------------
 
+    What do you mean by Execution Context in JavaScipt ?
+->  Execution Context is the Enviroment created by JS to execute Javascript Code.      
 
-    What do you mean by Function Statement ?
-->  Defining function with the specified parameters
+    How does JavaScipt Program executes ?
+->  When Javascript Program Starts A Global Execution Context is created and moved 
+    to the Callstack and it will poped out after whole Synchronous JavsScript
+    Code will get executed.
 
-    function show(){
-        console.log("Sujit Kumar Verma");
-    }                      
+    Whenever It Encounter Asynchronus Code a callback with setTimeout
+    then that Callaback function goes to Web API of the browser and 
+    get the callback register there and wait for specified Millisecond 
+    time , when it completes, it goes to the Callback Queue and waits 
+    Until Whole Javascript code will get executed and Callstack will
+    have no more code to execute then it is moved to the Callstack
+    for the Execution.
 
-    What do you mean by Function Expression ?
-->  Function expressions are when you create a function and assign it to a variable.
+    Whenever It Encounters Asynchronous Code Promise based code then It
+    register that callback function in the Web API of the browser
+    and moved to the Microtask Queue , here it executes in the background 
+    and once Its execution is done It is moved to the Callstack for 
+    Execution.
+    Microtask Queue has higher Priorty than Callback Queue.
+                    
+    What do you mean by Eventloop in JavaScript ?
+->  The event loop is a constantly running process that monitors both the callback queue and the 
+    call stack.
 
-    var res = function (){
-        console.log("Rresult");
-    }
+    If the call stack is not empty, the event loop waits until it is empty and places the next 
+    function from the callback queue to the call stack. If the callback queue is empty, nothing
+    will happen.
 
-    What do you mean by Anonymous Function ?
-->  Functions Declared without names are Anonymous Functions.  
+    The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all 
+    operations on a single thread, but using a few smart data structures, it gives us the illusion
+    of multi-threading.
 
-    Anonymous function don't exist standalone It will give us error 
-    They are passed as parameter to a function or return as a function.
+    What do you mean by Call Stack ?
+->  A call stack is a way for the Javascript engine to keep track of its place in code, When 
+    multiple functions are called. It has the information which function is currently runnimg 
+    and also what functions are invoked from that function.
 
-    show(function(){
-        console.log("Hello");
-    })
+    The call stack is responsible for keeping track of all the operations in the code.
+    Whenever a function is finished, it is popped from the stack.
 
-    What is the Difference between Function Statment and Function Expression ?
-->  In case of Hoisting Concept     
+    What do you mean by Event Queue ?
+->  The event queue is responsible for sending new functions to the call stack for processing.
+    It follows the queue data structure to maintain the correct sequence in which all operations
+    should be sent for execution.   
 
-    function show(){
-        console.log("Sujit Kumar Verma");
-    } 
+    What do you mean by callback Queue ?
+->  Callback Queue is a Queue where the asynchronous code gets pushed, and waits for the execution.
+    
+    callback queue start getting executed only after We have reached the end of the program or
+    There are no functions left to be executed in the call stack.
 
-    var res = function (){
-        console.log("Rresult");
-    }
+    The Callback queue waits until the call stack is empty. Afterwards, the codes in it are 
+    executed in First In, First Out (FIFO) order. As more functions or codes are added to the
+    callback queue, they stay at the back and wait for the ones in the front to leave the queue first.
 
-    If we call function show before Defining it will execute successfully and will give the result.
-    but In case of function res it will give undefined because During Hoisting memory is created for
-    res but function is not assigned to it.
+    What do you mean by Microtask queue in JavaScript ?
+->  Microtask Queue is a Queue which is mostly used for Promise Jobs.
 
+    Microtask queue follows first-in-first-out Approach.
+    Execution of a Microtask task is initiated only when nothing else is left in the call stack.   
 
-    What do you mean by Named Function Expression ?
-->  Function defined with name assigned to any variable is known as Named Function
-    Expression.     
+    Microtask Queue get higher Priorty over Callback Queue, once Microtask Queue is empty then only 
+    Callback Queue is executed.
 
-    var result = function show(){
-        console.log("Sujit Kumar Vemra");
-    }
+   What do you mean by async and defer Attribute in Script Tag ?
+-> When load a Webpage Two major things are Happening there 
+   1. HTML Parsing 
+   2. Loading of the Scripts
+   
+   Here Loading of the Scripts is also consisting of two Parts -
+   1. Loading of the Scripts from the Server
+   2. Execution of the Scripts Line by Line
 
-    show(); Error
-    result();
-
-    Here This is will give error because the reference of the function of the 
-    is asssigned variable  result and show does not point function in the global 
-    context anymore.
-
-    What do you mean by First Class Functions ?
-->  The ability of Functions to be used as values , can be passed as parameter to another function or to 
-    return function to another function are called as First Class Functions.
-
-    What do you mnean by Arrow functions ?
-->  Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows you to 
-    create functions in a cleaner way compared to regular functions.       
-    It cannot exist standalone.
-
-    What is the Difference between Syntax Error, Reference Error and Type Error ?
-->  Syntax Error -
-    Syntax Errors are the Errors which will get Trigerd because of Syntax Errors
-    In case of Syntax Errors None of the code will get executed.
-
-    Reference Error -
-    Reference Error we will get when the variable does not exist in the memory but 
-    we try to excess it and also because of Temporal Dead Zone in case of let 
-    and const.
-
-    Type Error -
-    When we do reassignment of const Declared variable then it will give us type
-    Error.   
-
-    What do you mean by SetTimeout ?
-->  setTimeout() The global setTimeout() method sets a timer which executes a function
-    or specified piece of code once the timer expires.
-    Here These functions are registered in the timer Queue. 
-
-    What do you mean by ClearTimeout ?
-->  The clearTimeout() method clears a timer set with the setTimeout() method. 
-
-    What do you mean by SetInterval ?
-->  SetInterval Functon repeatedly calls a function or executes a code snippet, with
-    a fixed time delay between each call.
-
-    What do you mean by ClearInterval ?
-->  The clearInterval() method clears a timer set with the setInterval() method.
-
-    What do you mean by SetImmediate Function ?
-->  The setImmediate() method is used to execute a function right after the current 
-    event loop finishes.
-    Here These functions are registered in the check Handler Queue. 
-    Those functions who are registered in the timer queue has high Priorty
-    than those functions who are registered with the check Handler queue.
-
-    What do you mean by Process.nextTick Function ?
-->  process. nextTick() is used to schedule a callback function to be invoked in the 
-    next iteration of the Event Loop.        
+   async - With async keyword while HTML document Parsing when Scripts are needed they get downloaded
+   an scripts Execution starts, during that time Interval HTML document Parsing is blocked and once scripts 
+   execution is completed then the HTML document parsing continues.
+   The async attribute is a boolean attribute
+   
+   defer -  With defer keyword while HTML document Parsing Scripts get downloaded in parallel
+   and when Scripts are needed there Execution starts, During that time Interval the HTML document
+   parsing is blocked, once Scripts Execution is completed then HTML document Parsing continues.
+   The defer attribute is a boolean attribute.
 
     What do you mean by Functional Programming ?
 ->  Functional Programming is the Programming language which Majorly deals
     with the functions.  
 
-    What do you mean by setPrototype method of JavaScript ?
-->  The Object.setPrototypeOf() method sets the prototype (i.e., the internal 
-    [[Prototype]] property) of a specified object to another object or null.    
+    What do you mean by setPrototypeOf method of JavaScript ?
+->  The Object.setPrototypeOf() method sets the prototype of one object to another object.    
 
-    e.g - Object.setPrototypeOf(obj, prototype)
+    e.g - Object.setPrototypeOf(obj1, obj2)
 
-    obj - 
-    The object which is to have its prototype set.
+    obj1 - 
+    The object whose prototype we have to use.
 
-    prototype - 
-    The object's new prototype (an object or null).  
+    obj2 - 
+    The object whose prototype we have to set.  
 
     What do you mean by Events in JavaScript ?
-->  JavaScript's interaction with HTML is handled through events that occur when the
-    user or the browser manipulates a page.
+->  Anything that happens to the HTML Page are events.
 
-    What are the Different Phase of Events in JavsScript ?
+    What are the Different Phases of Events in JavaScript ?
 ->  There are three phases of Events in JavaScript
-    1. Capturing Phase
+    1. Capturing Phase / Event Trickling
     2. Target Phase
     3. Bubbling Phase
 
-    Capturing Phase is the Phase when the event goes down to the element.
-    Target Phase is the Phase when the Event reaches the element.
-    Bubbling Phase is the Phase when the Event Bubbles up from the element.
+    Capturing Phase is the Phase when the event goes down to the target element.
+    Target Phase is the Phase when the Event reaches the target element.
+    Bubbling Phase is the Phase when the Event Bubbles up from the target element.
 
 
     <html>
@@ -153,21 +132,73 @@
     </body>
     </html>
 
+
+    OUTPUT - Alert with message Button Clicked
+
+         Event Capturing     Document                 
+            Phase 1          HTML   
+                             Body 
+                             div                  Event bubbling Phase 3 
+                             Button
+                         (Event Target ) Phase 2
+
+
     The addEventListener() method will be called during the Bubbling phase. The code
     shown above will use addEventListener() with two arguments. However, in the above
     code, .addEventListener() can be called with the third argument as “true” which 
     will invoke the listener earlier during the capturing phase.
 
-    What do you mean by Evenet Propagation ?
+
+    <DOCTYPE html>
+	<html>
+
+	<body id="bdy">
+		<div id="container">
+			<button id="btn">Click Me!</button>
+		</div>
+		<script type="text/javascript">
+			document.getElementById('bdy')
+				.addEventListener('click', function () {
+				alert('Body!');
+			})
+			document.getElementById('container')
+				.addEventListener('click', function () {
+				alert('Div!');
+			}, true)
+			document.getElementById('btn')
+				.addEventListener('click', function () {
+				alert('Button!');
+			})
+		</script>
+	</body>
+
+	</html>
+
+
+    OUTPUT - 1. Alert with message Div  2. Alert with message Button   3. Alert with message Body
+
+
+    In the above code, the body and button are in the bubbling phase (default) while div is set to 
+    capturing phase. When a button is clicked it starts at the top again. When it comes to the body 
+    element, it does not run function because we are still in the capturing phase. But when it reaches 
+    div it runs the function because the third parameter of addEventListener() is “true”. So it has to 
+    run in the capturing phase. When it reaches the button it switches from the capturing phase to the 
+    target phase and lastly to the bubbling phase. It fires the addEventListener which is in default mode.
+
+
+    What do you mean by Event Propagation ?
 ->  Event propagation is a mechanism that defines how events propagate or travel 
-    through the DOM tree to arrive at its target and what happens to it afterward.   
+    through the DOM tree to reach the target element.   
 
     What do you mean by Event Delegation ? 
-->  Event delegation refers to the process of using event propagation (bubbling) to
-    handle events at a higher level in the DOM than the element on which the event 
-    originated.
+->  Event delegation refers to the Process of handling events in our application 
+    in a more optimal way.
 
-    Intead of adding an event listener to each and every similar element, we can add 
+    Event Delegation is possible just because of Event bubbling.
+    So Whenever user click on child element button then events bubbles up from 
+    the child element to the parent element.
+
+    So Intead of adding an event listener to each and every similar element, we can add 
     an event listener to a parent element and call an event on a particular target 
     using the .target property of the event object. 
 
@@ -206,6 +237,57 @@
 
     customUI.addEventListener('click', responding);
 
+
+   What do you mean by IndexedDB ?
+-> IndexedDB is a transactional database System in our Web browsers.
+   It is a Builtin DB in our web browser
+
+    How does IndexDB works ?
+    IndexDB has something like Object Store (Like a Table and a Collection Storing data in the key
+    value pairs)    
+    It is a client side database and here the data is stored in the client browser.
+ 
+    Advantages of Using IndexDB Database 
+    ------------------------------------
+
+    1. It can store a significat amount of data.
+    2. It is very fast because It performs reads using indexes.
+    3. It stores any kind of data by key and value pairs.
+    4. Here Every Operation is a Transaction so more reliability.
+    5. It also Works with offline apps.
+    6. It also works well with web workers.
+    7. Less UI blockage.
+
+    Difference between IndexDB and LocalStorage 
+                        IndexDB                     |                    LocalStorage 
+
+      1. Stores Any kind of Data in key value           1. Stores String data only.
+         pairs.                  
+
+      2. Full Web Workers support.                      2. No Web Workers support. 
+      3. Complex API                                    3. Simpler API 
+      4. Asynchronous API                               4. Synchronous API
+      5  It can store upto 2 GB data.                   5. It can store 2MB to 10MB data.
+      6  It uses indexing concept for                   6. It do not uses Indexing concept. 
+         accessing data.      
+
+      
+       Working with IndexDB
+       -----------------------
+       Uers Writes  ->  IndexDB   -> Server 
+
+       IndexedDB have some Limitations also It can cause UI Blockage becuase it uses Structured 
+       Clone Alogrithm.          
+        
+        Sends Objects to IndexDB   ---------->    Clone   ------------->  Data Stored
+                                   Main Thread
+
+        Larger the size of Object more will be chances of UI Blockage 
+
+
+        We can Prevent IndexDB causing UI Blockage using two ways 
+        1. Skiping Sending Larger size of data to IndexDB.
+        2. Skiping Structured Clone Alogrithm by sending data in buffer format.
 
 
    
