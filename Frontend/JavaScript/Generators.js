@@ -3,12 +3,12 @@
     iterable Generator object.    
 
     When called, generator functions do not initially execute their code. Instead,
-    they return a special type of iterator, called a Generator. When a value is
-    consumed by calling the generator's next method, the Generator function executes
-    until it encounters the yield keyword.
+    they return a special type of iterator, called a Generator object. we can consume the 
+    value of geneartor function by calling next method on generators object, the Generator 
+    function executes until it encounters the yield keyword.
 
-    The function can be called as many times as desired, and returns a new Generator
-    each time. Each Generator may only be iterated once.
+    The function can be called as many times as desired, and returns a new Generator object
+    each time. Each Generator object may only be iterated once.
     generator functions are defined with the * symbol. 
     
     yeild is a special type of return keyword used for generators
@@ -16,12 +16,12 @@
     value and run some more code and return a value and run some code and 
     return a value.
 
-    Generator functions returns a generator object 
-    the next function helps us to excute the code inside the generator.
-    the object return by the next method consists of two properties value and done
-    done equal false specify there is still more code to run and 
-    true specify that there is no more code to run.
-    value property retuns whatever it executes at yield
+    1. Generator functions returns a generator object 
+    2. the next function helps us to excute the code inside the generator.
+    3. next method returns generator object consisting of two properties value and done
+    4. done property equals false specify there is still more code to run and true specify that there 
+       is no more code to run.
+    5. value property retuns whatever it executes at yield
 
     */
 

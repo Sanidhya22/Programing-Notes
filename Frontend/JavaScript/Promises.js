@@ -3,7 +3,7 @@ The Promise object represents the completion or failure of an asynchronous
 operation and its resulting value. 
 Promises basically returns Promise Objects*/
 
- /*Why we Promises in Javascript ?
+ /*Why do we need Promises in Javascript ?
 ->Promises are used to handle asynchronous operations in JavaScript. They are easy to manage 
   when dealing with multiple asynchronous operations where callbacks can create callback 
   hell leading to unmanageable code. */

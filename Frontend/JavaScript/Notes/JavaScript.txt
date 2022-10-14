@@ -313,6 +313,47 @@ What do you mean by Function Statement ?
     What do you mean by Process.nextTick Function ?
 ->  process.nextTick() is used to schedule a callback function to be invoked at the begining 
     of the next iteration of the eventLoop.    
+
+    What are the states of Promises in ES6?   
+->  Promises mainly possess three states as follows:
+
+    Pending: This refers to the initial state of every promise. It indicates that the result 
+    has not yet been computed.
+    Fulfilled: It refers to the completion of a task.
+    Rejected: It indicates the failure that arises during computation. 
+
+    What is the difference between for..of and for..in?
+->  for in -  It Loops through the Properties or indexes.
+    for of -  It Loops through the Values.
+
+    What is the result of the spread operator array shown below?
+->  [...'apple']
+    Output: ['a', 'p', 'p', 'l', 'e']   
+
+    What is the difference between const and Object Freeze ?
+->  Const property means that we cannot do the reassignment of the variable or object but
+    can modiffy the properties of the object.
+
+    Object.freeze methods means that we cannot modify the values of properties of the 
+    object.      
+
+    What do you mean Object.preventExtensions ?
+->  This methods prevents from adding new properties to an object.
+
+    What do you mean by Object.freeze ?
+->  The Object.freeze() method freezes an object that prevents new properties from being added to it. 
+    This method prevents the modification of existing property, attributes, and values.   
+
+    What do you mean by Object.Seal in JavsScript ?
+->  he Object.seal() method of JavaScript seals an object which prevents new properties from being 
+    added to it and marks all existing properties as non-configurable. The object to be sealed is 
+    passed as an argument, and the method returns the object which has been sealed.     
+
+
+
+
+
+
  
 
 

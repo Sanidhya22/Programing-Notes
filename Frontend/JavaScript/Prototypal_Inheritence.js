@@ -5,7 +5,7 @@
     properties and methods of another object. */
 
 
-/*  Whenever we create Object, function and Array then behind the scene Javascript
+/*  Whenever we create Object and Array then behind the scene Javascript
     creates an object and put all the properties and methods inside it.
     It attaches that object with our Original Object. 
     so in that way all the properties and methods are available to them.
@@ -38,12 +38,12 @@
  */    
 
 
-//Adding Propertie and Methods to Objects  
+//Adding Properties and Methods to Arrays
+
+const cities = ["Bangalore", "Bokaro", "Nodia"]; 
 Array.prototype.show = function () {
     return this;
 }
-
-const cities = ["Bangalore", "Bokaro", "Nodia"];
 console.log(cities.show());
 
 

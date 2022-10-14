@@ -1,7 +1,6 @@
 /*  
     What do you mean by Iterators in Javascript ?
-->  JavaScript an iterator is an object which defines a sequence and potentially a
-    return value upon its termination.    
+->  An iterator is an object which defines a sequence and returns a value upon its termination.    
 
     An iterator is any object which implements the Iterator protocol by having
     a next() method that returns an object with two properties:
@@ -10,8 +9,8 @@
     The next value in the iteration sequence.
 
     done
-    This is true if the last value in the sequence has already been consumed. If value
-    is present alongside done, it is the iterator's return value.
+    This is true if the last value in the sequence has already been consumed and false if not 
+    consumed.
 
     Once created, an iterator object can be iterated explicitly by repeatedly calling
     next(). Iterating over an iterator is said to consume the iterator, because it is
