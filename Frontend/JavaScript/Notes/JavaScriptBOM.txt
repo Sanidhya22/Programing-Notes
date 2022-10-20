@@ -47,5 +47,5 @@ history.forward() - same as clicking forward in the browser
 Javascript has three types of popup boxes - Alert Box, Confirm box, Prompt box
 
 Cookies--
-Cookies lets us store user information in the webpage
+Cookies lets us store user information in the webpage.
 

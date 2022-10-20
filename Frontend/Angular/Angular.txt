@@ -17,11 +17,6 @@
 
   4.HTML,CSS,Javascript is used.            4.Java,Python,Ruby,PHP are used.
 
-  5.It is a technique used in web           5.It is a technique that uses scripts on 
-    development in which scripts run          the webserver to produce a response that is 
-    on the client’s browser.                  customized for each client’s request.
-
-
 
    What is the difference between Reactjs and Angular ?
 ->            React.js                        |             Angular
@@ -44,7 +39,6 @@
    for one way data binding. Interpolation moves data in one direction from
    components typescript file to respective HTML templates.
    Note --
-   What are the things that we can do with Interpolation
    1. We can solve Expression value in the Interpolation
     e.g - 
     {{Data}}
@@ -95,7 +89,7 @@
    component class.
 
    What do you mean by Template reference Variable ?
--> Template variables help us to use data from a HTML template in a Typescript template.
+-> Template variables helps us to get the reference of HTML template element in the component file.
 
    What are the pipes in Angular?
 -> Pipes are simple functions used in HTML template expressions to accept an 
@@ -128,8 +122,6 @@
      1. Mostly Work done in the Component template.
         In a Template-Driven approach, most of the logic is driven from the template.
      2. Template-driven forms are asynchronous in nature.
-        Template-Driven forms use two-way data binding to update the data model in the component
-        as changes are made in the template and vice versa.
      3. It is Unstructured and Mutuable.
      
    2.Reactive Forms -
@@ -269,10 +261,9 @@
      2. Userdefined Services
 
      List of Predefined Services -- 
-     1. filter - Filters are used for formatting data displayed to the user.
-     2. http - This service facilitates communication with the remote HTTP servers via the
+     1. http - This service facilitates communication with the remote HTTP servers via the
                browser’s XMLHttpRequest object.
-     3  log - Console logger.
+     2  log - Console logger.
      
 
     What do you mean by Auth Guards ?
@@ -300,8 +291,8 @@
     Observable Emits stream of Data over a period of time.It is provided by JavaScript rxjs 
     libarary.
 
+    Note --
     we can perform asynchronous operation using promises and observable.
-
     we use Observables to perform asynchronous operations and handle asynchronous data.
 
     Javascript is a Single threaded programming language which means code is executed line by
@@ -314,7 +305,7 @@
     after the http request will executes in the main thread.
 
     An Observable is a function that converts ordinary stream of data into an observable stream 
-    of data. we can think of observable as a wrapper around the ordinary stream of data.
+    of data.
 
     What do you mean by Observer ?
 ->  An Observer is a consumer of values delivered by an Observable.   
@@ -327,13 +318,13 @@
     execution starts.
     2. error (Optional) - A handler for an error notification. An error halts execution of the
     observable instance.
-    3. complete (Optional) - A handler for the execution-complete notification. Delayed values
-    can continue to be delivered to the next handler after execution is complete.
+    3. complete (Optional) - A handler for the execution-complete notification.It executes 
+    when the observable execution is completed.    
 
     What do you mean by Multicasting ?
 ->  Multicasting is the practice of broadcasting to a list of multiple subscribers in a 
     single execution.    
-    With a multicasting observable, you don't register multiple listeners on the document, 
+    With a multicasting observable, we don't register multiple listeners on the document, 
     but instead re-use the first listener and send values out to each subscriber.
 
     What do you mean by Rxjs? 
@@ -343,10 +334,8 @@
      we can use some methods from the RxJS library that create simple observables of 
      frequently used types:
 
-     1. of(...items)	- Returns an Observable instance that synchronously delivers the values
-     provided as arguments.
-     2. from(iterable) - Converts its argument to an Observable instance. This method is 
-     commonly used to convert an array to an observable
+     1. of(...items)	- Converts the arguments to an observable sequence.
+     2. from(iterable) - This method is used to convert an array to an observable Sequence.
     
    What do you mean by Subscribe in Angular ?
 -> Subscribe() is a method in Angular that connects the observer to observable events. 
@@ -370,15 +359,11 @@
     observable and get value from it, which it will multicast to all of its subscribers. 
     Basically, a subject can act as both observable & an observer.
 
-    Observables are very useful to handle variety of common asynchronous operations.
-    but its defaullt behavior(unicast) can not be used in all scenarios.
-
     What do you mean by Unicast ?
 ->  Unicasting means that each subscribed observer own an independent execution of the observable. 
 
     What do you mean by Muticast ?
 ->  Multicasting basically means that one observable execution is shared among multiple subscriber.
-    Subjects are like Event Emitters, they maintain a registery of many listeners.
 
     Differnece between Subjects and Observables
 
@@ -391,12 +376,10 @@
                                                        created for that.
 
     What do you mean by Behavioural Subject?
-->  Behaviourable Subject  is a special type of observable Which multicast its values to 
-    all of the obsevers who has subscribe to it.It can also act as Observer it addition it
-    has a notation of a current value which returns current value.
+->  Behaviourable Subject is a special type of observable Which multicast its values to 
+    all of the obsevers who has subscribed to it.It can also act as an Observer.
+    BehaviorSubject holds one value. when it is subscribed it emits that value immediately.
 
-    In Subject, the subscribers will only receive the upcoming value. In BehaviorSubject, 
-    the subscribers will receive the previous value and also upcoming value.
 
     Differece between Subjects and BehaviorSubject
 
@@ -404,7 +387,24 @@
    1. BehaviorSubject holds one value.              1. A Subject doesn’t hold a value.         
       When it is subscribed it emits a value   
       immediately. 
+   2. No is way to provide default value            2. we can provide defaullt value in
+      in Subject.                                      BehaviorSubject.
 
+   What do you mean by RelaySubject ?
+-> RelaySubject is a variant of Subject which buffers old values and emit those values to 
+   new Subscribers.  
+   Relay Subject does not holds any initial value.  
+
+   What do you mean by AsyncSubject?
+-> AsyncSubject is a Subject variant where only the last value of the Observable execution is
+   sent to its Subscribers and only when the complete method is called.
+   
+   AsyncSubject is useful for fetching and catching resources, because In case of http 
+   get request we expect one response when the execution is complete. 
+
+   It is similar to Promises but the difference between them is that
+   Promies get executed immediately when it is declared.
+   AsyncSubject does not get executed immediately until we subscribes to it.
       
    What is Router Outlet ?
 -> Router-outlet in Angular works as a placeholder which is used to load the different
@@ -422,10 +422,13 @@
 
    What are Imports in NgModule in Angular ?
 -> Imports we use it to make the imported modules declarations in the current module.
+   It is Used to import supporting modules likes FormsModule, RouterModule, etc.
    
     What are Declarations in Angular ?
-->  Declarations we use it to make directives from the current module available to other 
-    directives in the same module.
+->  Declarations we use it to make components, directives, and pipes from the current module 
+    available to other components, directives, and pipes in the same module.
+    The Declarations array is used to declare components, directives, and pipes into the module 
+    in which they belong.
 
     What is Bootstrapping in Angular ?
 ->  The process of loading the index.html page, app-level module, and app-level component is 
@@ -445,27 +448,11 @@
     and project them into index.html.
 
    What are Providers in Angular ?
--> Providers is used to register the classes to an angular module as a service.
-   Providers are classes that create and manage service objects.
+-> Providers is Used to inject the services required by components, directives, pipes in our module.
 
     What are Query Parameters ?
 ->  Query Parameters in angular allow us passing optional parameters across any route in the 
     Application.
-
-   What are the Different LifeCycle Hooks Methods of Angular?
-   The Different LifeCycle Hook Methods of Angular
-   1. ngOnInit() - It is a LifeCycle hook which is used to initialize an Angular Application
-      component data When an Angular Application Component is Loaded.
-   2. ngOnChanges() - The ngOnChanges is a life cycle hook, which angular fires when it 
-      detects changes to data-bound input property.
-   3. ngOnDestroy() -- ngOnDestroy is a life cycle method whose purpose is to perform custom 
-     clean-up just before Angular destroys the Directive|Pipes|Services Instance.
-   4. ngDoCheck() -- ngDoCheck  is a life cycle hook which is used to detect and act upon  
-      changes that Angular can't or won't detect on its own.
-   5. ngAfterContentInit() -- A Life cycle hook that is invoked immediately after Angular 
-      has completed initialization of all of the directive's content.
-   6. ngAfterContentChecked() -- A life cycle method that is invoked immediately after the
-      Angular has completed checking all of the directive's content.
 
     What is Decorator and What are the different types of decorator ?
 ->  An Angular Decorator is a function, using which we attach metadata to a class, method,
@@ -475,9 +462,6 @@
     2. Property Decorators - @Input and @Output
     3. Method Decorators - @HostListener @HostBinding
     4. Parameter Decorators - @Inject
-
-    What is NativeElement in angular?
-->  Native Element holds the reference to the underlying DOM object.
 
     What do you mean by Style binding ?
 ->  Style binding is used to set a style of a view element. We can set inline styles with 
@@ -491,8 +475,7 @@
     1. Model - Model contains only the pure application data, it contains no logic describing
                how to present the data to a user.
     2. View - The View presents the model’s data to the user. The view knows how to access 
-              the model’s data, but it does not know what this data means or what the user
-              can do to manipulate it.
+              the model’s data.
     3. Controller - The Controller exists between the view and the model. It listens to 
                     events triggered by the view (or another external source) and executes 
                     the appropriate reaction to these events. 
@@ -501,11 +484,13 @@
 -> Routes Which are the childs of the Parent Route.                  
      
    What are ViewChild ?
--> ViewChild decorator provides us with an easy and simple way to access and manipulate the 
-   view template, methods and properties of child component from a parent component.
+-> ViewChild decorator allows us to access and manipulate the HTML template, properties and method of 
+   child component from a parent component and it also allows us to access the HTML template of 
+   the current component.
 
    What are ViewChildren ?
--> ViewChildren decorators are used to Query and get the reference of the DOM element in the Component. 
+-> ViewChildren is same like ViewChild but it returns all the matching elements as a QueryList of 
+   items. 
 
    Difference between ViewChildren and ViewChild 
 ->                    ViewChildren             |              ViewChild
@@ -513,61 +498,72 @@
      element.                                       as a QueryList of items.
 
    What does static do in ViewChild ?
--> The static option for @ViewChild() and @ContentChild() queries determines when the query results 
-   become available. With static queries (static: true), the query resolves once the view has been
-   created, but before change detection runs.
+-> The static option for @ViewChild() and @ContentChild() tells us whether we can access
+   Specified ViewChild Element in the Component ngOnInit LifeCycle method or not.
+   true denotes we can access the HTML element of the template file while false 
+   denotes we doesn't.
 
-   What do you mean by ContentChild and ContentChildren ?
--> The ContentChild & ContentChildren are decorators, which we use to Query and get the reference to the
-   Projected Content in the DOM.  
-   Projected content is the content that the component receives from a parent component.  
+   What do you mean by ContentChild ?
+-> ContentChild is used to get the reference of the Projected Content in the DOM.
+
+   What do you mean by ContentChildren ?
+-> ContentChildren is used to get the reference of all the matching Projected Content in the DOM.  
 
    What do you mean by ChangeDetection Strategy in Angular ?
--> Angular Change Detection Strategy are the methods by which the updates to the component is tracked 
-   and component is triggered to Re-render.   
+-> Angular Change Detection Strategy is a mechanism in angular by which the updates to the component 
+   is tracked and component is triggered to Re-render.   
+   we have a Property changeDetection in the Component decorator, which can have two values
+   changeDetection.onPush and changeDetection.defaullt.
 
    What are the different types of Change Detection Strategy in Angular ?
 -> There are 2 types of Change Detection Strategy in Angular
    1.Default Strategy  -
 
    Default change detection strategy is applied to the component while it is created. If a component 
-   strategy is not configured, it is marked as default. In this strategy, the change detection cycle
-   runs on each and every event that occur inside that Component and child Component.
+   strategy is not configured, it is marked as default. 
+   Note --
 
-   Click event of elements
-   Receiving data via asynchronous call
-   Triggering setTimeout and setInterval
+   In this strategy, the change detection cycle runs on each and every event that occur inside that 
+   Component and child Component.
+   if any any property chnages in the component and child component then rerendering of the component 
+   occurs.
 
-   Benefits of onPush Change Detection
-   ------------------------------------
-   Every Change is detected in the Child Component.
 
    2.OnPush Strategy - 
 
-   onPush Detection Strategy. During this Change Detection Strategy, the ChildComponent is not always
+   onPush Detection Strategy. During this Change Detection Strategy, the ChildComponent is not 
    dirty checked.
+   Note --
+
+   In this case if any Property changes in the component and its child Component then rerendering
+   of the component does not occurs we have to do it manually. 
+
+   For forcibly rerendering the component template we use detectChanges().method. 
+
 
    Benefits of onPush Change Detection
    -----------------------------------
    No Unnecessary Dirty Check in the Child Components.
-   Faster Component Re-rendering
+   
 
    What do you mean by TestBed ?
 -> TestBed is the primary api for writing unit tests for Angular applications and libraries. 
 
    What are the different LifeCycle Hooks in Angular ?
--> Constructor - Contructor is used for Dependency Injection.
-   ngOnInit - It is used for the initialization of the Data in the component.
-              It is called only once during component loading.
+-> 1.Constructor - Contructor is used for Dependency Injection.
+   2.ngOnInit -    It is used for the initialization of the Data in the component.
+                   It is called only once during component loading.
+
 
    Differece between ngOnInit and Constructor 
+   ----------------------------------------------------------------------------------------------------
                   Constructor                    |                 ngOnInit    
-      1. Should  used only for Dependency             1. Should used to handle any intial logic
-         Injection.                                     that need to execute only once.
+      1.Should be used only for Dependency            1.Should be used to handle any intial logic
+        Injection.                                      that need to execute only once.
       2.It's part of typescript so handled by         2.It is a part of Angular so handled by Angular
         Javascript.                                     framework.
-      3.Binding has not happened till this time       3.Binding with UI is done so can access all
-        so only class variables are accessible.         data bound input property.
+      3.Binding has not happened till that time       3.Binding with UI is done so can access all
+        so cannot access data bound input property.     data bound input property.
 
 
    ngOnDestroy - It is a LifeCycle hook that is called when a directive, pipe, or component is destroyed.
@@ -581,24 +577,65 @@
                  4.unregister all the callbacks that this directive is registered with global or 
                    application servers. 
                    
-   ngOnChanges() - The ngOnChanges is a life cycle hook, which angular fires when it detects changes to 
-   data-bound input property.
+   3. ngOnChanges() - The ngOnChanges is a life cycle hook, which angular fires when it detects changes to 
+                      data-bound input property.
 
-   During change detection, when angular checks components input properties for change, it uses 
-   essentially  === for dirty checking.
+                      if the Component has any data bound input property or one more more
+                      data bound input property changes then ngOnChanges is called before 
+                      ngOnInit.
+
+                      if the component has not any data bound input property then ngOnChanges
+                      is called after ngOnInit.
+
+                     During change detection, when angular checks components input properties for 
+                     change, it uses essentially  === for dirty checking.
       
-   For Array and objects, this means the references only are dirty checked.Since the product array 
-   references is not changing ,ngOnChanges will not be called.
+                     For Array and objects, this means the references only are dirty checked.Since the 
+                     product array references is not changing ,ngOnChanges will not be called.
 
-   ngDoCheck() -- ngDoCheck is a life cycle hook which is used to detect and act upon  
-                  changes that Angular can't or won't detect on its own.
+                     It also accepts one argument changes of SimpleChanges type. It is also 
+                     used to keeep track changes of previous value or current value.
+
+                     It is not able to detect changes for Arrays and Object.
+
+   4.ngDoCheck() -- ngDoCheck is a life cycle hook which is used to detect and act upon  
+                    changes that Angular won't be able to detect on its own.
+
+                    It is called during Every change detection cycle and runs immediately after 
+                    ngOnChanges and ngOnInit.   
+
+   5. ngAfterContentInit() --    A Life cycle hook that Angular calls after all of the Projected
+                                 content to a Component has been intialized has been in that component.
+
+                                 It called immediately after ngDoCheck.
+                                 It called only once during first change detection cycle after
+                                 all the projected content has been intialized.
+                        
+
+   6. ngAfterContentChecked() -- ngAfterContentChecked is the life cycle hook, that angular calls
+                                 during every change detection cycle when angular detects 
+                                 changes in the Projected Content.
+
+                                 This hook is called after ngDoCheck and ngAfterContentInit.
 
 
+   7. ngAfterViewInit()       -- ngAfterViewInit is a LifeCycle hook that angular calls when 
+                                 angular completes initialization of the component view 
+                                 and its child views.
 
+                                 It is called only once during the first change detection cycle, 
+                                 immediately after the creation of the component.
+
+   8. ngAfterViewChecked()    -- ngAfterViewChecked is a LifeCycle that angular calls after
+                                 when detects changes in the components view or child views.
+
+                                 ngAfterViewChecked is called after ngAfterContentChecked.
+
+                                 It is called after every subsequent ngAfterContentChecked.                              
 
    What is the Execution order of the Angular LifeCycle Hooks ?
 -> 1.Constructor
-   2.ngOnChanges
+   2.ngOnChanges 
    3.ngOnInit
    4.ngDoCheck
    5.ngAfterContentInit
@@ -607,26 +644,17 @@
    8.ngAfterViewChecked
    9.ngOnDestroy   
 
-   What do you mean by Hot and Cold Observable ?
--> When the data is produced by the Observable itself, we call it a cold Observable. When the data is 
-   produced outside the Observable, we call it a hot Observable.   
-
 
    What are diffrences between hot and cold Observables ?
 ->               Cold Observables                    |                Hot Observables 
    -------------------------------------------------------------------------------------------------
-   1. In cold observables the value which it            1. In Hot obervables the value producer 
-      produces is created inside the observable.           exist outside the observable. since 
-      if the observable produces series of Integers        the value is outside the observable
-      it means that integers are declared, created         it can execute if there are no Observers
-      and produced inside the code that defines an         also.
-      observable.
+   1. In cold observables the values are                1. In Hot obervables the value producer 
+      declared, created, produced inside the code          exist outside the observable. since 
+      that defines an observable.                          the value is outside the observable
+                                                           it can execute if there are no Observers
+                                                           also.                           
 
-   2. Each time the subscribe method called on          2. Shared value producer allows multiple
-      cold observable the integers code is executed        observers receive the same value at a time.
-      everytime.                                           
-
-   3. These are Unicast which means it pushes          3. These are Multicast.
+   2. These are Unicast which means it pushes          2. These are Multicast.
       values to single observer at a time.  
 
 
@@ -658,9 +686,8 @@
    It effects can be seen while using delay operators.
 
    What do you mean by SwitchAll in Angular ?
--> Converts a higher-order Observable into a first-order Observable which concurrently delivers all
-   values that are emitted on the inner Observables.
-   SwitchAll flatten all of the inner observables.
+-> Converts a higher-order Observable into a first-order Observable which delivers the last emitted value
+   and cancels the previously emitted value.
 
    What do you mean by ConcatMap ?
 -> Concat is also like a Mergemap but It emits the output in a serialized manner waiting for each
@@ -669,8 +696,7 @@
 
    What do you mean by ConactAll ?
 -> Converts a higher-order Observable into a first-order Observable which concurrently delivers all
-   values that are emitted on the inner Observables.
-   ConactAll flatten all of the inner observables.   
+   values in a serialized manner that are emitted on the inner Observables.
 
    What do you mean by Interceptors in Angular ?
 -> Interceptors are a unique type of Angular Services that we can implement to intercept incoming or 
@@ -702,6 +728,22 @@
 
    What do you mean by ViewcontainerRef ?
 -> ViewContainerRef(VCR) represents a container where one or more view can be attached.
+ 
+   What do you mean by ElementRef ?
+-> Angular ElementRef is a wrapper around a native DOM element inside of a View. 
+   It's simply a class that wraps native DOM elements in the browser and allows you to work with the 
+   DOM by providing the nativeElement object which exposes all the methods and properties of the 
+   native Element.
+
+   What do you mean by Renderer ?
+-> Renderer2 is a class that allows to manipulate elements of browsers DOM without touching the DOM 
+   directly.   
+
+   Why we use Renderer Over ElementRef ?
+-> Using Renderer for manipulating the DOM does not break server side rendering or web workers
+   because we are indirectly accessing the DOM elements.  
+   While Using ElementRef for accessing DOM elements break server side rendering or web workers
+   because we are directly accessing DOM elements.
 
    What do you mean by ComponentFactoryResolver ?
 -> A simple registry that maps Components to generated ComponentFactory classes that can be used to
@@ -717,8 +759,8 @@
    the Redux pattern.   
 
    What do you mean By Actions?
--> Actions are Plain JavaScript Objects that have a type field actions that only tell what to do
-   ,but they don't tell how to do it. 
+-> Actions are Plain JavaScript Objects that have a field type action that tells which action
+   is performed. 
 
    What do you mean by Reducers?
 -> Reducers are functions that take the current state and an action as arguments and return
@@ -733,23 +775,22 @@
 
    What do you mean Server side Rendering ?
 -> Server-side rendering (SSR) is an application's ability to convert static HTML, CSS, JavaScript
-   files on the server into a fully rendered HTML page for the client. The web browser submits a 
-   request for information from the server, which instantly responds by sending a fully rendered
-   page to the client.
+   files on the server into a fully rendered HTML page for the client. 
+   
+   In Case of Server Side rendering when The web browser submits a request for information from the 
+   server then server responds instantly by sending a fully rendered page to the client.
 
    Advantages of Server Side Rendering 
    ------------------------------------------
    1. A server-side rendered application enables pages to load faster, improving the user experience.
-   2. When rendering server-side , search engines can easily index and crawl content because the
-      content can be rendered before the page is loaded, which is ideal for SEO.
-   3. Rendering server-side helps efficiently load webpages for users with slow internet connection or
+   2. Server-Side rendering efficiently load webpages for users with slow internet connection or
       outdated devices.
 
    Disadvantages of Server Side Rendering 
    ------------------------------------------
-   1. While rendering static HTML server-side is efficient, rendering bigger, more complex applications
-      server-side can increase load time.
-   2. Rendering server-side can be costly and resource-intensive as the server takes on the full burden
+   1.Server Side rendering is good for smaller static application but is not good fot bigger 
+     complex applications because rendering on server will take more time for complex applications.
+   2.Server-Side rendering can be costly and resource-intensive as the server takes on the full burden
       of rendering content for users.  
 
    What do you mean by View Encapsulation in Angular ?
