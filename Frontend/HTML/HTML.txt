@@ -2,7 +2,7 @@
 -> These are the few tag which were added in HTML5--
    <audio>
    <video>
-   <aside> -- it represents a portion of document whose content is indirectly related to 
+   <aside> -- It represents a portion of document whose content is indirectly related to 
    main content
    <header>
    <footer>
@@ -58,3 +58,67 @@
    1. Appends the form data in the body of the HTTP request.
    2. Post method can send unlimited amount of data.
    3. Post method is secure.
+
+10. What is the difference between Canvas and SVG ?
+->                          Canvas                |                  SVG 
+    ---------------------------------------------------------------------------------------------------
+    1. Resolution dependent.                         1. Resolution Independent.
+    2. It is not based on XML Format.                2. It is based on XML format. 
+    3. No support for Event Handlers.                3. Support Event Handlers.
+    4. Canvas has poor scalability.                  4. SVG has Better scalability
+
+11. What are different priorty orders in CSS ?
+->  Note -
+    Inline CSS > Internal CSS > External CSS 
+
+    Id > Class > Tags Selector
+
+12. What is !important rule in CSS ?
+->  !important rule, it will override ALL previous styling rules for that specific property on that element.
+
+    e.g - 
+          p {
+              background-color: red !important;
+            }
+
+ 13. What do you preventsDefault ?
+ ->  The preventDefault() method cancels the event if it is cancelable, meaning that the default action that 
+     belongs to the event will not occur.
+
+ 14. What are the new Tags which were added in HTML5 ?     
+ ->  These are following Elements which are added in HTML5 
+     1. <aside>
+     2. <article>
+     3. <audio>
+     4. <video>
+     5. <canvas>
+     6. <header>
+     7. <footer>
+
+     These are the following input types which are addded in HTML5 
+     1. range 
+     2. search 
+     3. email
+     4. color 
+     5. tel
+
+ 15. What do you mean by Web Workers in HTML ?
+->   Web worker is a Javascript running in the background without affecting the performance of the page.  
+
+     When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
+     A web worker is a JavaScript that runs in the background, independently of other scripts, without 
+     affecting the performance of the page. You can continue to do whatever you want: clicking, selecting 
+     things, etc., while the web worker runs in the background.
+
+ 16. What do you mean by HTML Drag and Drop API in HTML ?
+ ->  Drag and Drop API is the most important User Interface concept which makes it easy to grab an object and 
+     Drag it at the place you want with the help of a mouse click.   
+
+ 17. What do you mean by tag in HTML5 ?
+ ->  A tag is a special content in HTML5, which is surrounded by an angle bracket (<,>). A slash (/) symbol 
+     is used to close the tag after completing the block.
+
+ 18.  What is the minimum number of HTML5 tags that are required to create a Web page?
+->    Minimum 3  HTML5 tags are required to create a Web page, such as (<HEAD>, <BODY>, <HTML>)    
+ 
+
