@@ -269,12 +269,40 @@ console.log(true+10); */
 /* OUTPUT - -1 11 */
 
 //Question 24 
-var x = 100;
+/* var x = 100;
 (()=>{
     var x = 20;
 })
-console.log(x);
+console.log(x); */
 
 /* OUTPUT - 100
 Here the value of x will be 100 because there will be seprate memory for 
 both inner and outer var x.  */
+
+//Question 25
+/* const length = 4;
+const numbers = [];
+for (var i = 0; i < length; i++);{
+numbers.push(i + 1);
+}
+console.log(numbers); */
+
+/* OUTPUT - [5]
+Here the value of i after for loop completion will be 4
+*/
+
+//Question 26
+
+let i;
+for (i = 0; i < 3; i++) {
+const log = () => {
+console.log(i);
+}
+setTimeout(log, 100);
+}
+
+/* OUTPUT - 3 3 3 
+Here for each iteration of the for loop the setTimeout will be registered in the web API
+and will execute log function after for loop will get finished and i is having global 
+scope so the value of i after for iteration will be 3.
+*/

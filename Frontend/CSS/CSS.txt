@@ -77,15 +77,17 @@
 ->  If there are two or more CSS rules that point to the same element, the selector with the
     highest specificity value will get Applied to the ELement.
     There is a Specificity value Calculator that Calculates the Specificity Value.
+    Think of specificity as a score/rank that determines which style declaration is ultimately applied 
+    to an element.
 
 10. What do you mean by Inheritence in CSS ?
 ->  CSS Inheritence is the Process Where Child HTML ELement Inherites CSS Properties value 
     from the Parent HTML ELements.  
 
-    There are Three Main Properties of Inheritence -
-    1.Inherit - In Case of Inherit the ELement will Inherit Properties from the Parent to
+    There are Three Main Properties of Inheritence in CSS -
+    1.Inherit - In Case of Inherit the Elements will Inherit Properties from the Parent to
     the Child ELement.
-    2.Intial - In Case of Intial ELement Will get Intialized with the default Value as Per 
+    2.Intial - In Case of Intial Elements Will get Intialized with the default Value as Per 
     Default Value Provided by the Browser.
     3.Unset - In This Case ELement Properties will Reset to its Natural Values as Per as 
     Provided by the CSS rules, It may be Inherit Parent Property Value or Intial Value.

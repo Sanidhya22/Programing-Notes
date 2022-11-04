@@ -7,7 +7,7 @@
     the source code, enabling multiple developers to work together on non-linear development.
     Git is a Distributed Version Control System.
 
-    What do you mean by Repository in Git ?
+    What do you mean by Git Repository ?
 ->  A Git repository tracks and saves the history of all changes made to the files in a Git project. It
     saves this data in a directory called . git , also known as the repository folder. Git uses a version
     control system to track all changes made to the project and save them in the repository.  
@@ -74,62 +74,97 @@
 
     What do you mean by Conflicts in Git ?
 ->  A Conflict arises when two separate branches have made edits to the same line in a file, or when a 
-    file has been deleted in one branch but edited in the other.    
+    file has been deleted in one branch but edited in the other.   
+
+    What do you mean by Revert in Git ?
+->  Revert is a technique of discarding changes of specific commit from our Repository but 
+    It is better than git reset commad because it maintains the history list of discarded commits
+    and adds a commit with each revert.
+
+    What do you mean by CherryPick in Git ?
+->  Cherry picking is a technique of picking a commit from a branch and applying it to another branch.
+
+    What do you mean by Forking and Pull Request in Git ?
+->  Forking is the technique of picking source code from an open source software program to your own 
+    repository and develop an entirely new program.
+
+    Pull Request is an event that takes place in software development when a contributor/developer is 
+    ready to begin the process of merging new code changes with the main project repository.
 
     What does soft and hard option does in git reset ?
-->    
-
+->  git reset --soft will keep our files, and stage all changes back automatically.  
+    git reset --hard will completely destroy any changes and remove them from the local directory.
 
     Important Git Commands
     --------------------------------------------------------------------------------------------------
-    git init                             -  For Intializing git 
-    git add .                            -  Will add all changed or updated files to the staging area.
-    git checkout branchname              -  Will move to specified branchname
-    git checkout -b branchname           -  Will create new branch with specified branchname and move 
-                                            to it.
-    git commit -m "Commit Messsage"      -  Will do commit for specified changes
-    git status                           -  The git status command displays the state of the working 
-                                            directory and the staging area. It lets you see which changes
-                                            have been staged, which haven't, and which files aren't being
-                                            tracked by Git.
-    git log                              -  The git log command displays all of the commits history of 
-                                            git repository. 
-    git stash                            -  Git stash saves the uncommitted changes locally, allowing you
-                                            to make changes, switch branches, and perform other Git 
-                                            operations.
-    git remote add origin "Url"          -  Git remote add origin basically adds remote Repository 
-                                            Url.
+    1. git init                             -  For Intializing git 
+    2. git add .                            -  Will add all changed or updated files to the staging area.
+    3. git checkout branchname              -  Will move to specified branchname
+    4. git checkout -b branchname           -  Will create new branch with specified branchname and move 
+                                               to it.
+    5. git branch branchname                -  It is used to create new branch. 
+    6. git branch -a                        -  List the the names of branches in the Git Repository.
+    7. git branch -d branchname             -  It is used to delete specified branchname.
+                                               but this will not delete branch from the remote specified
+                                               Repository.
+    8. git push -d origin branchname        -  It is used to delete specified branchname.
+                                               It will delete specified branch from the remote Repository.
 
-    git restore --staged <filename>      -  This Command will unstage specific file from Staging area.
-    git restore --staged .               -  This Command will unstage all the file from the Staging area.
-    git pull                             -  The git pull command is used to fetch and download content 
-                                            from a remote repository and immediately update the local 
-                                            repository to match that content.        
-    git log --oneline                    -  The Oneline option is used to display the output as 
-                                            one commit per line.
-    git branch -a                        -  List the the names of branches in the Git Repository.
-    git fetch origin branchname          -  The git fetch command downloads commits, files, and refs 
-                                            from a remote repository into your local repo. 
-    git stash                            -  It is used to Stash files.
-                                            It will only stash stagged area files.
-    git stash apply                      -  It is used to apply stash to Working Repository.
-    git reset HEAD~<no of commits>       -  It is used to undo commit.
+    9. git restore --staged <filename>      -  This Command will unstage specific file from Staging area.
+    10.git restore --staged .               -  This Command will unstage all the file from the Staging area.
 
-    git branch branchname                -  It is used to create new branch. 
-    git merge branchname                 -  It is used to merge current branch to specified branchname.
-    git branch -d branchname             -  It is used to delete specified branchname.
-                                            But this will not delete branch from the remote Repository.
-   git push -d origin branchname         -  It is used to delete specified branchname.
-                                            It will delete Branch from the remote Repository. 
+    11.git commit -m "Commit Messsage"      -  Will do commit for specified changes
+    12.git status                           -  The git status command displays the state of the working 
+                                               directory and the staging area. It lets you see which changes
+                                               have been staged, which haven't, and which files aren't being
+                                               tracked by Git.
+    13.git log                              -  The git log command displays all of the commits history of 
+                                               git repository.  
+    14.git log --oneline                    -  The Oneline option is used to display the output as 
+                                               one commit per line.   
+    15.git remote add origin "Url"          -  Git remote add origin basically adds remote Repository 
+                                               Url.                                                                                                                       
 
-   git stash list                        -  It will show us the list of stashes. 
-   git stash apply stash@{i}             -  It will allow us to apply specified stash.  
-   git stash save "Messsage"             -  It will stash the changes with the specified Messsage.  
-   git stash save -u/--all "Messsage"    -  It will stash the changes with the specified Messsage.
-                                            It will also stash Untracked files.
-   git stash clear                       -  It will clear the stash files.                                                               
+    16.git stash                            -  Git stash saves the uncommitted changes locally, allowing you
+                                               to make changes, switch branches, and perform other Git 
+                                               operations.
+                                               It will only stash stagged area files.
 
+    17.git stash apply                       -  It is used to apply stash to Working Repository.
+    18.git reset HEAD~<no of commits>        -  It is used to undo commit.
+    19.git stash list                        -  It will show us the list of stashes. 
+    20.git stash apply stash@{i}             -  It will allow us to apply specified stash.  
+    21.git stash save "Messsage"             -  It will stash the changes with the specified Messsage.  
+    22.git stash save -u/--all "Messsage"    -  It will stash the changes with the specified Messsage.
+                                                It will also stash Untracked files.
+    23.git stash clear                       -  It will clear the stash files.                                        
+    
+    24.git pull                              -  The git pull command is used to fetch and download content 
+                                                from a remote repository and immediately update the local 
+                                                repository to match that content.        
+    
+    15.git fetch origin branchname           -  Git Fetch basically download the changes from the remote 
+                                                Repository but It does not merge those changes to the 
+                                                Working Repository. 
+   
+   26.git merge branchname                  -  It is used to merge current branch to specified branchname.   
+   27.git merge --continue                  -  This command we use after resolving conflicts to merge 
+                                               pulled branch code to our working directory.
+   28.git merge --abort                     -  This commad we use to cancel a merge that have conflicts
+                                               In this case all the changes will be reset and this 
+                                               operation cannot be reverted.
+   29.git reset --soft HEAD~1               -  git reset --soft will keep our files, and stage all changes
+                                               back automatically.     
+   30.git reset --hard HEAD~1               -  git reset --hard will completely destroy any changes and 
+                                               remove them from the local directory.                                                                 
 
+   31.git clone HTTPS/SSH URL               -  This commad basically clones the remote Repository into 
+                                               our local.
+   32.git cherry-pick Hashvalue(Commit)     -  This command will merge specific commit changes to 
+                                               our branch.    
+
+   33.git revert Hashvalue(Commit)          -  This command will discard changes of specific commit from 
+                                               our Repository.                                  
 
 
 

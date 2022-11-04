@@ -122,3 +122,7 @@
 ->    Minimum 3  HTML5 tags are required to create a Web page, such as (<HEAD>, <BODY>, <HTML>)    
  
 
+10. What happens if we don't write HTML tag in HTML file ?
+->  Yes, it will create HTML template without errors and it will work in some browsers like Chrome and 
+    Firefox without problems but it will break in others. 
+    Also, according to the HTML5 specs the html, body and head tags are completely optional.   

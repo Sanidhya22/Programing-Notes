@@ -289,6 +289,14 @@
         1. Skiping Sending Larger size of data to IndexDB.
         2. Skiping Structured Clone Alogrithm by sending data in buffer format.
 
+   What do you shadow DOM in Javascript ?
+-> Shadow DOMs are the hidden DOMs that are attached to the elements of the regular 
+   DOM.
+
+   Why we need Shadow DOM in JavaScipt ?
+-> When we want to encapsulate some HTML element from getting affected with 
+   regular DOM elements behaviour then we need Shadow DOM element.          
+
 
    
 

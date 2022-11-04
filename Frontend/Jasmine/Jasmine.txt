@@ -14,12 +14,10 @@
 ->  A Test suite is simply a group of specs or a group of tests.    
 
     What do you mean by Spec in a Jasmine ?
-->  A Spec is a short form of Specification.
-    A Spec is a set or group of expectations that test the state of the code.    
+->  A Spec is a set or group of expectations that test the state of the code.    
 
     When we can call Spec is Passed ?
-->  Spec with all the true expectations is a Passing spec.
-    All the Expectations should be true.  
+->  Spec with all the true expectations is called a Passing spec.
     If we have one or more false expectations then it is a failing spec. 
 
     What do you mean by Disabled Spec ?
@@ -37,10 +35,13 @@
 
     What do you mean by toBe Matcher ?
 ->  Expect the Actual value to be === the expected value.   
+    It is used to compare primitive values or to check references of Object Instances.
 
     What do you mean by toEqual Matcher ?
 ->  Expect the Actual value to be equal to the Expected value using deep equality comparision.
     ToEqual during deep checking checks the key and the value pairs of both the objects.  
+    ToEqual compares all properties of object instances and For primitive types, it works much the same 
+    as. toBe and compares value.
 
     What do you mean by toBeTruthy ?
 ->  Expect the actual value to be true.
@@ -82,30 +83,21 @@
 
      What do you mean by toThrow Matcher ?
 ->   Expect a function to throw Something.
-     Value that should be thrown If not provided, simply the fact that Something thrown will be
-     checked.
+     If Value that should be thrown If not provided,Something thrown will be checked.
 
      What do you mean by toThrowError Matcher ?
-->   Expect a function to throw an Error.    
+->   Expect a function to throw an Error.
      Here it also checks whether thrown error is instance of Error class or not.
 
      What do you mean by toMatch Matcher ?
 ->   Expect the actual value to match a regular expression.      
 
-     What do you mean by AsymmetricEqualityTester ?
-->   AsymmetricEqualityTester  is an Object that can match multiple objects.
-     e.g - jasmine.any(), jasmine.anything() and jasmine.objectContaining();
-
-     Note - 
-     jasmine.anything() will expect all values expect null and undefined.   
-
      What do you mean by any Matcher ?
-->   This Matcher uses Jasmine equality(ToEqual, toContain or toHaveBeenCalledWith), that will 
-     succeed if the actual value being compared is an instance of the specified class/constructor.
+->   This Matcher is used to check wheather if the actual value being compared is an instance of the 
+     specified class/constructor.
 
      What do you mean by anything Matcher ?
-->   This Matcher uses Jasmine equality(ToEqual, toContain or toHaveBeenCalledWith), that will
-     succeed if the actual value being compared is not null and undefined.    
+->   This Matcher is used to check whether if the actual value being compared is not null and undefined.    
 
      What do you mean by Custom Matcher ?
 ->   Custom Matcher is a comparison function that takes an actual value and expected value. 
@@ -160,15 +152,13 @@
      The first methodology can be implemented by using spyOn() and the second methodology can be 
      implemented using createSpy().      
 
-     What do you mean by Test double ?
-->   Test double is an object that do replacement of real objects in a test. 
-     It's like a duplicate object of the original object.
-     Jasmine has test double functions called as spies.
-     A spy can stub any function and track calls to it and all arguments which means It does not
+     What do you mean by spices/test Doubles in jasmine ?
+->   A spy can stub any function and track calls to it and all arguments which means It does not
      call the original function, It will act as like it is called duplicate function and behaves 
      like it is called and count the number of time it is called. 
      A spy can only exist in the suite or in the spec block in which it is defined and will be 
      removed after each spec.
+     Test double is an object that do replacement of real objects in a test.
 
      There are different spy matchers we use with spies
      1. toHaveBeenCalled  
@@ -193,6 +183,14 @@
      a fake implementation when invoked.
 
      What do you mean by retunValue ?
-->   It is a shorthand Matcher for callFake Matcher which returns a specified value.             
+->   It is a shorthand Matcher for callFake Matcher which returns a specified value. 
+
+     What do you mean by objectContaining Matcher in Jasmine ?
+->   This Matcher is used to check whether particular key value is present in the specified 
+     object or not.
+
+     What do you mean by StringContaining Matcher in Jasmine ?
+->   This is Matcher used to check whether specified substring is present in the specified string 
+     or not.          
 
          

@@ -1,11 +1,6 @@
                                            Angular Testing 
                             -----------------------------------------------
 
-    Inportant Angular Testing methods
-    ----------------------------------
-    fail() - Using this method we can fail a Testcase.
-    pending() - Using this method we can make a Testcase in a Pending state.  
-
     What do you mean by createSpyObj in Angular ?
 ->  createSpyObj is used to create a mock that will spy on one or more methods.    
 
@@ -39,7 +34,8 @@
     * Using componentInstance we will get the Instance of the Component.
     * Using nativeElement and debugElement we will the reference of HTML elements.
 
-    NativeElement ---
+    What do you mean by nativeElement in Angular ?
+->  nativeElement) is the direct way of accessing the DOM Element as an "inspectable. 
 
     The Value of ComponentFixture.nativeElement has the any type. Angular can't know at compile 
     time what kind of HTML element the nativeElement is or if It is an HTML element.
@@ -50,6 +46,7 @@
     an HTMLElement or one of its derived class.we can use the querySelector to traverse
     the HTML element tree.  
 
+    e.g -
 
     it('should have <p> with Sujit Kumar Verma',()=>{
         const bannerElement:HTMLElement = fixture.nativeElement;
@@ -57,17 +54,11 @@
         expect(p.textContent).toEqual("Sujit Kumar Verma');
     })
 
-
-    Why we debugElement property on fixture instead of nativeElement for accessing template elements?
-->  The Properties of the nativeElement depend upon the runntime enviroment.It might be 
-    possible we could be runnig our application tests in a non browser platform that doesn't 
-    have a DOM or whose DOM emulation does not support the full HTMLElement API.
-    so In this It might create problem for us, so we can go for debugElement.       
-     
-    Angular relies on the debugElement abstraction to work safely across all supported platforms.
-    Instead of creating an HTMLElement tree, Angular creates a debugElement tree that wraps 
-    the native elements for the runntime platform.
-
+    What do you mean by debugElement in Angular ?
+    
+->  DebugElement is an Angular class that contains all kinds of references and methods relevant to 
+    investigate an element as well as component fixture.
+    e.g - 
 
     it('should have <p> with Sujit Kumar Verma',()=>{
         const bannerDe:debugElement = fixture.debugElement;
@@ -83,11 +74,26 @@
         expect(p.textContent).toEqual('Sujit Kumar Verma');
     })
 
+
+    Why we debugElement property on fixture instead of nativeElement for accessing template elements?
+->  The Properties of the nativeElement depend upon the runntime enviroment.It might be 
+    possible we could be runnig our application tests in a non browser platform that doesn't 
+    have a DOM or whose DOM emulation does not support the full HTMLElement API.
+    so In this It might create problem for us, so we can go for debugElement.       
+     
+    Angular relies on the debugElement abstraction to work safely across all supported platforms.
+    Instead of creating an HTMLElement tree, Angular creates a debugElement tree that wraps 
+    the native elements for the runntime platform.
+
+    
     Note - 
-    -> By.css() static method selects debugElement nodes with a standard css selector.
-    -> InOrder to remove console errors we can add schemas property in the TestBed.confugureTestingModule
+    1. By.css() static method selects debugElement nodes with a standard css selector.
+    2. InOrder to remove console errors we can add schemas property in the TestBed.confugureTestingModule
        passed argument object with value [NO_ERRORS_SCHEMA]
 
        e.g - TestBed.configureTestingModule({declarations:[ComponentName],schemas:[NO_ERRORS_SCHEMA]})
+    
+    3. fail() - Using this method we can fail a Testcase.
+    4. pending() - Using this method we can make a Testcase in a Pending state.  
 
        

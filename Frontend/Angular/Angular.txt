@@ -114,6 +114,9 @@
    Impure Pipe -  An impure pipe is called for every change detection cycle no matter whether the value 
    or parameter(s) changes.
 
+   Why we use impure pipe over pure pipes even if reubs a
+-> Impure pipes are required because angular ignores changes to composite objects. Impure pipes execute 
+   every time angular detects any changes regardless of the change in
    
    What are Forms in Angular ? 
 -> Angular forms are used to handle user's input.
@@ -400,7 +403,7 @@
    sent to its Subscribers and only when the complete method is called.
    
    AsyncSubject is useful for fetching and catching resources, because In case of http 
-   get request we expect one response when the execution is complete. 
+   get request where we expect one response when the execution is complete. 
 
    It is similar to Promises but the difference between them is that
    Promies get executed immediately when it is declared.
@@ -500,8 +503,8 @@
    What does static do in ViewChild ?
 -> The static option for @ViewChild() and @ContentChild() tells us whether we can access
    Specified ViewChild Element in the Component ngOnInit LifeCycle method or not.
-   true denotes we can access the HTML element of the template file while false 
-   denotes we doesn't.
+   true denotes we can access the HTML element of the template file in the ngOnInit Lifecycle
+   hook Method while false denotes we can't.
 
    What do you mean by ContentChild ?
 -> ContentChild is used to get the reference of the Projected Content in the DOM.
@@ -531,14 +534,20 @@
 
    2.OnPush Strategy - 
 
-   onPush Detection Strategy. During this Change Detection Strategy, the ChildComponent is not 
-   dirty checked.
+   The change detection doesn't run automatically for every component anymore. Angular instead listens 
+   for specific changes and only runs the change detection on a subtree for that component.
    Note --
 
    In this case if any Property changes in the component and its child Component then rerendering
    of the component does not occurs we have to do it manually. 
 
    For forcibly rerendering the component template we use detectChanges().method. 
+
+   Conditons where OnPush Strategy fails.
+   1. In Case of Event Handlers when some Event Occurs.
+   2. In Case of Input Decorators when new Object Reference is passed.
+   3. In Case of Output Deceorator when new Object Reference is passed.
+   4. In Case of Async Pipe.
 
 
    Benefits of onPush Change Detection
@@ -568,21 +577,18 @@
 
    ngOnDestroy - It is a LifeCycle hook that is called when a directive, pipe, or component is destroyed.
                  This LifeCycle hook is used for any custom cleanup that needs to occur when the instance 
-                 is destroyed, by doing so we can prevent memory leakage.      
+                 of directive, pipe, or component is destroyed, by doing so we can prevent memory leakage.      
 
                  Resources that needs to be free before going to other component
                  1.unsubscribe Observables
                  2.detach Event handlers
                  3.Stop Interval timers
-                 4.unregister all the callbacks that this directive is registered with global or 
-                   application servers. 
                    
    3. ngOnChanges() - The ngOnChanges is a life cycle hook, which angular fires when it detects changes to 
                       data-bound input property.
 
-                      if the Component has any data bound input property or one more more
-                      data bound input property changes then ngOnChanges is called before 
-                      ngOnInit.
+                      if the Component has any one more more data bound input property changes then 
+                      ngOnChanges is called before ngOnInit.
 
                       if the component has not any data bound input property then ngOnChanges
                       is called after ngOnInit.
@@ -672,8 +678,8 @@
    What do you mean by MergeMap in Angular ?
 -> The mergeMap() operator is also called flatMap. This operator is best to use when you want to flatten
    an inner observable and manually control the number of inner subscriptions. The RxJS mergeMap() 
-   operator maintains multiple active inner subscriptions at once.
-   It maps values to the newly created Observable.
+   operator maintains multiple active inner subscriptions at once and emits single newly created 
+   observable at the end.
 
    What do you mean by MergeAll ?
 -> Converts a higher-order Observable into a first-order Observable which concurrently delivers all
@@ -696,10 +702,10 @@
 
    What do you mean by ConactAll ?
 -> Converts a higher-order Observable into a first-order Observable which concurrently delivers all
-   values in a serialized manner that are emitted on the inner Observables.
+   values in a ordered manner that are emitted on the inner Observables.
 
    What do you mean by Interceptors in Angular ?
--> Interceptors are a unique type of Angular Services that we can implement to intercept incoming or 
+-> Interceptors are a unique type of Angular Services that we implement to intercept incoming or 
    outgoing Http Requests using the Httpclient.
  
                   Request                    Request
