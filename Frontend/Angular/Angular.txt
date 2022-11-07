@@ -781,16 +781,18 @@
 -> Using Renderer for manipulating the DOM does not break server side rendering or web workers
    because we are indirectly accessing the DOM elements.  
    While Using ElementRef for accessing DOM elements break server side rendering or web workers
-   because we are directly accessing DOM elements.
+   because we are directly accessing DOM elements. 
 
    What do you mean by ComponentFactoryResolver ?
 -> A simple registry that maps Components to generated ComponentFactory classes that can be used to
    create instances of components.   
 
    What do you mean by Dynamic Component in Angular ?
--> Angular Dynamic Components are the components which are created using ComponentFactoryResolver 
+-> The Dynamic Components are the components which are Instantiated and Placed in the Angular Application 
+   at the runtime.
+    Angular Dynamic Components are the components which are created using ComponentFactoryResolver 
    and ViewContainerRef.                            
-   The Dynamic Component is Instantiated and Placed in the Application at the runtime.
+   
 
    What do you mean by Ngrx in Angular ?
 -> Ngrx stands for Angular Reactive Extensions. NgRx is a state management system that is based on 
@@ -826,7 +828,7 @@
 
    Disadvantages of Server Side Rendering 
    ------------------------------------------
-   1.Server Side rendering is good for smaller static application but is not good fot bigger 
+   1.Server Side rendering is good for smaller static application but is not good for bigger 
      complex applications because rendering on server will take more time for complex applications.
    2.Server-Side rendering can be costly and resource-intensive as the server takes on the full burden
       of rendering content for users.  
