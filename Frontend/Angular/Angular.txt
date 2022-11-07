@@ -554,9 +554,41 @@
    -----------------------------------
    No Unnecessary Dirty Check in the Child Components.
    
+   What are the different methods of ChangeDetectorRef Class ?
+-> These are the Different methods of ChangeDetectorRef 
+   1. markForCheck - Marks the component as It was changed, so that it can be checked for 
+      an Update. 
+   2. deatch - excludes the view from the change detection tree, which means no check will be
+      triggered for that component until that view is reattached again. 
+   3. detectChanges - checks the View and its child components for changes.
+   4. checkNoChanges - check the view  and its child components for no changes and it will throw 
+      some error if some changes are detected.
+   5. reattach - reattach the view that was previously detached so that new changes can be 
+      detected.   
 
    What do you mean by TestBed ?
--> TestBed is the primary api for writing unit tests for Angular applications and libraries. 
+-> TestBed is the primary api for writing unit tests for Angular applications and libraries.
+
+   What do you mean by Zone.js and Why we use it ?
+-> Zone.js we use it for monitering all the Synchronus and Asynchronus tasks changes in our angular 
+   project for Angular Change detection Cycle.
+   Zone.js can observe all the states of synchronous and asynchronous operations. 
+
+   What do you mean by NgZone in angular ?
+-> NgZone is a service in angular that provides a run() method that allows you to run 
+   all asynchronous operations in that function, triggers change detection automatically.
+
+   NgZone basically Provides us Two Methods 
+   1. run() - Runs all the asynchronous code inside this function and triggers change detection
+      automatically. 
+   2. runOutsideOfAngular() - When we want to keep Something outside of the automatic trigger of 
+      angular change detection then we keep that thing inside this function.
+
+   How does Angular ChangeDetection Works ?
+-> In Angular Zone.js is responsible for automatic trigger of Angular Change detection Cycle.
+   Angular uses NgZone service to access run method for Asynchronus operations.
+   After then it uses Angular Change detection Strategy update the components based on 
+   changes.
 
    What are the different LifeCycle Hooks in Angular ?
 -> 1.Constructor - Contructor is used for Dependency Injection.
