@@ -850,7 +850,19 @@
              selector. 
 
    What do you mean by Internationalization in Angular ?
--> Internationalization is the process of supporting multiple languages in your Angular applications.      
+-> Internationalization is the process of supporting multiple languages in your Angular applications. 
+
+   What are the different compilation phases of Angular ?
+-> Angular Offers two compilers for Compilation JIT and AOT
+   Angular Compilation has three phases
+   1. Code Analysis - 
+      In this Phase Analysis of Code is done, It looks for relationship between files and their decorators.
+   2. Code Generation -
+      In this Phase It interprets the Metadata Decorator and Generates additional Code for the Metadata
+      Decorators.
+   3. Template type Checking - 
+      In this phase Angular template compiler uses the TypeScript compiler to validate the binding expressions 
+      in templates.  
             
           
    

@@ -346,6 +346,21 @@ What do you mean by Function Statement ?
 ->  [...'apple']
     Output: ['a', 'p', 'p', 'l', 'e']   
 
+    What is the difference between Callback and Promises ?
+->               Promises                          |                 Callback
+    ------------------------------------------------------------------------------------------------------
+    1. Promise is an Object.                             1. Callback is a function which is being passed 
+                                                            as an argument to another function.
+
+    2. Promise has higher Priorty than Callback          2. Callback has lower Priorty than Promises 
+       for Execution because they are stored in the         because they are Stored in the Callback
+       MacroTask Queue.                                     Queue.                                                       
+
+    What do you mean by Callback Hell ?
+->  Nested callbacks stacked below one another forming a pyramid structure. Every callback depends/waits for 
+    the previous callback, thereby making a pyramid structure that affects the readability and maintainability
+    of the code.
+
     What is the difference between const and Object Freeze ?
 ->  Const property means that we cannot do the reassignment of the variable or object but
     can modiffy the properties of the object.
@@ -364,6 +379,12 @@ What do you mean by Function Statement ?
 ->  he Object.seal() method of JavaScript seals an object which prevents new properties from being 
     added to it and marks all existing properties as non-configurable. The object to be sealed is 
     passed as an argument, and the method returns the object which has been sealed.     
+
+    Why It is suggested to Specify the JavaScript Script in the end of the body tag instead of 
+    head tag ?
+->  It is being suggested beacuse there might be some script that will take to load so it might
+    effect rendering of the page in case of specifing it in head tag whereas it case of end of the 
+    body tag the scripts have been loaded till that time so it will not effect the rendering of the page.
 
 
 
