@@ -9,20 +9,16 @@
     JavsScript is Synchronous Single threaded language
 
     What are the different datatypes we have in JavaScript ?
-->  There are mainly three types of datatypes in JavaScript
-    1.Primitive 
+->  There are mainly two types of datatypes in JavaScript
+    1.Primitive Type
       1. Number
       2. String
       3. Boolean
-    2. Composite
+      4. Undefined 
+      5. Null
+    2. Reference Type
       1. Object
-      2. Function
-      3. Array
-    3. Trival
-      1. Null
-      2. Undefined  
-
-
+      2. Array
 
     What is Call Function in JavaScript?
 ->  Call function is a JavaScript predefined method using which we can call method of an object on  
