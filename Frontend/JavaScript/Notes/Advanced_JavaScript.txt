@@ -37,34 +37,36 @@
     of multi-threading.
 
     What do you mean by Call Stack ?
-->  A call stack is a way for the Javascript engine to keep track of its place in code, When 
+->  Call Stack is a Stack which is responsible for keeping track of all the operations in the code
+    in Javascript. Whenever we want to execute a function or do some Operation we move it to Call Stack
+    Once it will get finished, it is popped from the Call Stack.
+    
+    A Call Stack is a way for the Javascript Engine to keep track of its place in the code,
+    It also stores additional information like Whenever we execute Nested functions 
     multiple functions are called. It has the information which function is currently runnimg 
     and also what functions are invoked from that function.
 
-    The call stack is responsible for keeping track of all the operations in the code.
-    Whenever a function is finished, it is popped from the stack.
-
     What do you mean by Event Queue ?
-->  The event queue is responsible for sending new functions to the call stack for processing.
-    It follows the queue data structure to maintain the correct sequence in which all operations
-    should be sent for execution.   
+->  Event Queue is a Queue which is responsible for keeping track of Synchronus Functions 
+    and Operations.It sends Synchronus Functions and Operations to the Call Stack 
+    for Execution.
+    It follows the Queue Data Structure to maintain the correct sequence in which all Operations
+    should be sent for execution as they are being Called.   
 
     What do you mean by callback Queue ?
 ->  Callback Queue is a Queue where the asynchronous code gets pushed, and waits for the execution.
-    
-    callback queue start getting executed only after We have reached the end of the program or
+    Callback Queue start getting executed only after We have reached the end of the program or
     There are no functions left to be executed in the call stack.
 
-    The Callback queue waits until the call stack is empty. Afterwards, the codes in it are 
+    The Callback Queue waits until the call stack is empty. Afterwards, the codes in it are 
     executed in First In, First Out (FIFO) order. As more functions or codes are added to the
     callback queue, they stay at the back and wait for the ones in the front to leave the queue first.
 
-    What do you mean by Microtask queue in JavaScript ?
+    What do you mean by Microtask Queue in JavaScript ?
 ->  Microtask Queue is a Queue which is mostly used for Promise Jobs.
-
-    Microtask queue follows first-in-first-out Approach.
-    Execution of a Microtask task is initiated only when nothing else is left in the call stack.   
-
+    Microtask Queue follows first-in-first-out Approach.
+    
+    Execution of a Microtask task is initiated only when nothing else is left in the Call Stack.   
     Microtask Queue get higher Priorty over Callback Queue, once Microtask Queue is empty then only 
     Callback Queue is executed.
 
@@ -135,17 +137,17 @@
 
     OUTPUT - Alert with message Button Clicked
 
-         Event Capturing     Document                 
+         (Event Capturing)   Document                 
             Phase 1          HTML   
                              Body 
-                             div                  Event bubbling Phase 3 
-                             Button
-                         (Event Target ) Phase 2
+                             div                  
+                             Button               (Event Target ) Phase 2 & (Event bubbling) Phase 3 
+                       
 
 
     The addEventListener() method will be called during the Bubbling phase. The code
     shown above will use addEventListener() with two arguments. However, in the above
-    code, .addEventListener() can be called with the third argument as “true” which 
+    code, .addEventListener() can be called with the third argument capture as “true” which 
     will invoke the listener earlier during the capturing phase.
 
 
