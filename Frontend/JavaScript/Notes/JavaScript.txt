@@ -19,10 +19,11 @@
     2. Reference Type
       1. Object
       2. Array
+      3. Function
 
     What is Call Function in JavaScript?
-->  Call function is a JavaScript predefined method using which we can call method of an object on  
-    on different objects by passing owner object as an argument in call function.
+->  The call() method is a predefined JavaScript method Using which an object can use a 
+    method belonging to another objec
     The call() method takes arguments separately.
 
     What is Apply Function in JavaScript?
@@ -43,7 +44,7 @@
 
     What do you mean by Async Await?
 ->  Async Await is a concept in Javascript which is introduced to simplify the promise syntax to consume
-    promise-based APIs. Async functions always return a promise.
+    promise-based APIs. Async functions always return a promise and await makes a function wait for a Promise.
 
     What do you mean by Objects ?
 ->  A JavaScript object is an entity having state and behavior (properties and method)
@@ -145,8 +146,9 @@
                      we can unshift more than one element at a time.
 
    5. delete arr[index] -- this method clear particular index element but memory exits there
-                        fruits = ["Apple",Empty item,"Mango];
-                        fruits[1] = "Orange"
+                        fruits = ["Apple","Banana","Mango];
+                        del fruits[1]
+                        OUTPUT - ["Apple",Empty item,"Mango];
 
    6. splice() -- this method does both insertion and removal operation.
                   It Returns the updated Array.
@@ -224,7 +226,7 @@
 
 
 What do you mean by Function Statement ?
-->  Defining function with the specified parameters are known as function statement.
+->  Functions defined with parameters or Without parameters are known as Function Statement.
 
     function show(){
         console.log("Sujit Kumar Verma");
@@ -265,7 +267,7 @@ What do you mean by Function Statement ?
 
 
     What do you mean by Named Function Expression ?
-->  Function defined with name assigned to any variable is known as Named Function
+->  Function defined with name assigned to any variable is known as Named Function.
     Expression.     
 
     var result = function show(){
@@ -353,9 +355,9 @@ What do you mean by Function Statement ?
        MacroTask Queue.                                     Queue.                                                       
 
     What do you mean by Callback Hell ?
-->  Nested callbacks stacked below one another forming a pyramid structure. Every callback depends/waits for 
-    the previous callback, thereby making a pyramid structure that affects the readability and maintainability
-    of the code.
+->  when Nested callback functions forms a pyramid structure where Each callback function depends/waits for 
+    the previous callback function, thereby making a pyramid structure that affects the readability and 
+    maintainability of the code.
 
     What is the difference between const and Object Freeze ?
 ->  Const property means that we cannot do the reassignment of the variable or object but
@@ -369,7 +371,7 @@ What do you mean by Function Statement ?
 
     What do you mean by Object.freeze ?
 ->  The Object.freeze() method freezes an object that prevents new properties from being added to it. 
-    This method prevents the modification of existing property, attributes, and values.   
+    This method prevents the modification of existing property and values.   
 
     What do you mean by Object.Seal in JavsScript ?
 ->  he Object.seal() method of JavaScript seals an object which prevents new properties from being 
