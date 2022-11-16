@@ -2,13 +2,15 @@
 
 The bind() method allows an object to borrow a method from another
 object without making a copy of that method. This is known as 
-function borrowing in JavaScript. */
+function borrowing in JavaScript.
+It accepts agruments seperately
+*/
 
 const person = {
     firstName: "John",
     lastName: "Doe",
-    fullName: function () {
-        return this.firstName + " " + this.lastName;
+    fullName: function (age) {
+        return this.firstName + " " + this.lastName + " " + age;
     }
 }
 
@@ -17,8 +19,8 @@ const member = {
     lastName: "Nilsen",
 }
 
-fullname = person.fullName.bind(member);
-console.log(fullname());
+fullname = person.fullName.bind(member);  //fullname = person.fullName.bind(member,21);
+console.log(fullname(21));
 
 
 /* Diffrence between Apply and Bind
