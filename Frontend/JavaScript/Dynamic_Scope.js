@@ -15,11 +15,11 @@ function b() {
     c();
     function c() {
         console.log(z);
-        console.log(x+y+z);
+        console.log(x + y + z);
     }
 }
 
-   function a() {
+function a() {
     var x = 12;
     var y = 24
     b()

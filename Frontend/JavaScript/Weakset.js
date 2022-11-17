@@ -32,3 +32,4 @@ var obj1 = { name: "Sujit Kumar Verma" };
 var obj2 = { name: "Chandani Kumari" };
 ws.add(obj1);
 ws.add(obj2);
+console.log(ws);

@@ -1,5 +1,6 @@
 /* Lexical Scope-
-   Lexical scope is based on where variables and blocks of scope are declared */
+   Lexical Scope is the Enviroment/Space around a Varible or a Function.
+*/
 
 
 function foo(a) {

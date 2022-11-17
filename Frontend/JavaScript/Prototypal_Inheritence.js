@@ -1,25 +1,24 @@
 
 /*  What do you mean by Protoypal Inheritance in Javascript ?
-->  The Prototypal Inheritance is a feature in javascript used to add methods and 
-    properties in objects. It is a method by which an object can inherit the 
-    properties and methods of another object. */
+->  The Prototypal Inheritance is a feature in javascript which is used to add methods
+    and properties in objects and It can also be used to inherit properties and
+    methods of another object. 
 
-
-/*  Whenever we create Object and Array then behind the scene Javascript
+    Whenever we create Object and Array then behind the scene Javascript
     creates an object and put all the properties and methods inside it.
     It attaches that object with our Original Object. 
     so in that way all the properties and methods are available to them.
-    */
+*/
 
 
 /*  What do you mean by Prototypes in JavaScript?
-    Prototypes are the mechanism by which javaScript objects inherit features from one another.
+    Prototypes is a feature in javascript using which javaScript objects inherit 
+    features from one another.
     The prototype property allows us to add properties and methods to any object (Number, 
     Boolean, String and Date, etc).
     
     e.g --
     
-    <Script>
     function Emp(name,age,sal,designation)
     {
        this.name = name;
@@ -34,19 +33,19 @@
     
     console.log(e1);
     console.log(e2);
-    </Script>
  */    
 
 
 //Adding Properties and Methods to Arrays
 
-const cities = ["Bangalore", "Bokaro", "Nodia"]; 
+/*  
 Array.prototype.show = function () {
     return this;
 }
-console.log(cities.show());
+console.log(cities.show()); */
 
 
+/* const cities = ["Bangalore", "Bokaro", "Nodia"];
 Array.prototype.convertIntoObject = function () {
     let newObj = {};
     this.forEach((element) => {
@@ -55,7 +54,7 @@ Array.prototype.convertIntoObject = function () {
     return newObj;
 }
 
-console.log(cities.convertIntoObject());
+console.log(cities.convertIntoObject()); */
 
 
 

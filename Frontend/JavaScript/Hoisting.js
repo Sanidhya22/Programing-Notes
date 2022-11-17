@@ -5,7 +5,8 @@
 
    Note - 
    1. Hoisting is the one who is taking care of memory allocation.
-   2. TDZ(Temporal Dead Zone) - The Time difference between allocation
+
+   2. TDZ(Temporal Dead Zone) - The Time difference between Memory allocation
    of a variable and assignment of a variable(Memory usuage of the 
     Variable) or Initialization of the variable.
     
@@ -14,10 +15,8 @@
 
 /* Important Point --
    What is the Difference between not defined and undefined ? 
--> While Accesing Variable value In Case of Hoisting 
-   We get variable undefined when memory is allocated for a variable and   
+-> We get variable undefined when memory is allocated for a variable and   
    but variable is not intialised.
-
    We get Variable not defined when memory is not allocated for a variable 
    
    Are the let and const are hoisted in Javascript ?

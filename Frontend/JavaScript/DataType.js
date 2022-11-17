@@ -2,14 +2,20 @@
 -> Datatypes specify what type of values a Variable will store.
 
    What are the Different types of datatypes in Javascript ?
--> There are 7 types of datatypes in Javascript -
-   1. String
-   2. Number
-   3. Boolean 
-   4. Object
-   5. Function
-   6. Undefined
-   7. Symbol
+-> There are 2 types of datatypes in Javascript -
+   1. Primitive Type -
+      1. String
+      2. Number
+      3. Boolean 
+      4. Symbol
+      5. Null
+      6. Undefined
+
+   2.Reference Type - 
+     1. Object
+     2. Array
+     3. Function
+   
    
    There are 6 Types of Objects -
    1. Date

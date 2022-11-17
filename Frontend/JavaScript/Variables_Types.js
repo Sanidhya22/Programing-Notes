@@ -9,6 +9,7 @@ Var -
 This is a Keyword we use to declare variable.
 These variables have global scope.
 These variables can be redeclared in the same scope.
+These varibles can be accessed before they are being declared.
 
 Const -
 This is a Keyword we use to declare variable.
@@ -28,6 +29,8 @@ global window object whether In case of let and const they are attached or
 stored in some another Context space.
 
 */
+
+
 
 /* 
 var a = 20

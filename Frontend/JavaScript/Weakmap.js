@@ -20,7 +20,7 @@ Diffrence between WeakMap and Map
 
 Different methods of WeakMap
 -----------------------------
-1.get(value) -     Gets the value of the specified key from the Weakmap.
+1.get(key) -       Gets the value of the specified key from the Weakmap.
 2.set(key,value) - Sets the Specified value with the specified key in
                    the set Method in Weakmap.                    
 3.delete(key) -    Deletes the value of the specified key from the Weakmap.

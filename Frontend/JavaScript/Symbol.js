@@ -32,7 +32,6 @@ Symbol Datatype -
       name:"Sujit",
       age:20,
       city:"Bokaro"
-
     }
     person.name = "Karan"
     console.log(person); */

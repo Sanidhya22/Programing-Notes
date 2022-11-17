@@ -1,7 +1,7 @@
 /* Template Literal --
 
-It is a new feature which was introduced in EcmaScript 6, it provides
-an easy way to create multiline strings and performs string interpolation. */
+It is a new Feature which is introduced in EcmaScript 6, it provides
+an easy way to create Multiline strings and performs string Interpolation. */
 
 
 var a = 10;

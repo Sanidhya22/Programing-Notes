@@ -52,20 +52,21 @@ Methods with same name in the same class then on calling Methods on object
 the last Method will be called everytime without caring about no of 
 arguments */
 
+//Constructor Overloading in Javascript 
 
-/* class Emp{
+class Emp{
     constructor(...a){
         if(a[0]== undefined && a[1]==undefined){
             this.name = "Raju";
-            this.age = 25
+            this.age = 25;
         }
         else if(a[1]==undefined){
             this.name = a[0];
-            this.age = 24
+            this.age = 24;
         }
         else{
             this.name = a[0];
-            this.age = a[1]
+            this.age = a[1];
         }
     }
     display(){
@@ -81,5 +82,5 @@ let e3 = new Emp("Anjali",22);
 e1.display();
 e2.display();
 e3.display();
- */
+
 
