@@ -6,7 +6,7 @@
 /* JavScript Support two types of Arguments */ 
 
 /* 1. Ordered Arguments -- 
-      These are the arguments passed to the function in defined order
+      These are the arguments passed to the function in a defined order
       According to function defination.
       */
 

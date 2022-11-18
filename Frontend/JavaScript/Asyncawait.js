@@ -17,7 +17,7 @@ async function asyncFunc() {
 
     try {
         // Wait Until the promise resolves 
-        let result = await promise;
+        let result = await promise();
 
         console.log(result);
     }

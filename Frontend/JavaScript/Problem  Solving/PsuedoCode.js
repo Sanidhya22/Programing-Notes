@@ -77,7 +77,7 @@ OUTPUT - small small small undefined
 let d;
 d = c;
 c.name = "Allu Arjun";
-console.log(c); */
+console.log(d); */
 
 /* 
 OUTPUT - { name: 'Allu Arjun' } 
@@ -98,9 +98,9 @@ console.log(x); */
 }
 
 fruit.name = "apple";
-console.log(fruit()); */
+fruit(); */
 
-/* OUTPUT - woof undefined */
+/* OUTPUT - woof */
 
 //Question 10
 /* function getAge(...args){
@@ -111,7 +111,7 @@ getAge(21); */
 
 /* 
 OUTPUT - [21] object 
-...args is a rest Operator which accepts infinite argument as an Array.
+...args is a rest Operator which accepts infinite no of arguments as an Array.
 */
 
 //Question 11
@@ -124,12 +124,13 @@ eval takes a String and performs the Operation of the Stringified values
 */
 
 //Question 12
+
 /* const obj = {1:"a",2:"b",3:"c"};
 console.log(obj.hasOwnProperty("1"));
 console.log(obj.hasOwnProperty(1)); */
 
 /* 
-OUTPUT - 
+OUTPUT - true true 
 In hasOwnProperty we can specify the key as both String or as Numberic Value. 
 */
 
@@ -191,10 +192,10 @@ true
 */
 
 //Question 17
-/* console.log(setInterval(()=>{console.log("Hi"),1000}));
-console.log(setInterval(()=>{console.log("Hi"),1000}));
-console.log(setInterval(()=>{console.log("Hi"),1000}));
- */
+/* console.log(setInterval(()=>{console.log("Hi")},1000));
+console.log(setInterval(()=>{console.log("Hi")},1000));
+console.log(setInterval(()=>{console.log("Hi")},1000)); */
+
 
 /* 
 OUTPUT - 
@@ -230,7 +231,7 @@ OUTPUT -
 25 */
 
 //Question 20
-/* console.log([]==[]); */
+/* console.log([]===[]); */
 
 /* OUTPUT- false 
 Here both the arrays are having different memory location*/
@@ -246,7 +247,7 @@ OUTPUT -
 undefined 
 Here the scope of x is local so that why we will get undefined for x in the global
 Scope.
-*/ 
+*/
 
 
 //Question 22 
@@ -263,18 +264,34 @@ Here y is not declared so by default it will get appended to the the global scop
 */
 
 //Question 23 
-/* console.log(!true - true);
-console.log(true+10); */
+console.log(!true - true);
+console.log(true+10);
 
 /* OUTPUT - -1 11 */
 
 //Question 24 
-var x = 100;
-(()=>{
-    var x = 20;
-})
-console.log(x);
+/* var x = 100;
+(() => {
+  var x = 20;
+})()
+console.log(x); */
 
 /* OUTPUT - 100
 Here the value of x will be 100 because there will be seprate memory for 
 both inner and outer var x.  */
+
+
+//Question 25
+/* var x = 100;
+(() => {
+  x = 20;
+})()
+console.log(x); */
+
+/* OUTPUT - 20 
+Here the value of x will be 20 because we are not redeclaring variable with 
+var keyword so the global declared var variable will be modified */
+
+
+
+
