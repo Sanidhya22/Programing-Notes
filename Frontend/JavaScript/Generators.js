@@ -1,15 +1,15 @@
 /*  What do you mean by Generators in JavaScript ?
-->  A Generators in JavaScript consists of a generator function, which returns an 
+->  A Generators in JavaScript consists of a Generator function, which returns an 
     iterable Generator object.    
 
-    When called, generator functions do not initially execute their code. Instead,
+    When called, Generator functions do not initially execute their code. Instead,
     they return a special type of iterator, called a Generator object. we can consume the 
-    value of geneartor function by calling next method on generators object, the Generator 
+    value of Generator function by calling next method on Generators object, the Generator 
     function executes until it encounters the yield keyword.
 
     The function can be called as many times as desired, and returns a new Generator object
     each time. Each Generator object may only be iterated once.
-    generator functions are defined with the * symbol. 
+    Generator functions are defined with the * symbol. 
     
     yeild is a special type of return keyword used for generators
     The purpose of generator is to esssentially run some code and return a 
@@ -42,10 +42,10 @@ function* simpleGenerator(){
 
 const generatorObject = simpleGenerator();
 const obj = generatorObject.next();
-console.log(obj);
-const generatorObject2 = simpleGenerator();
+console.log(obj); 
+/* const generatorObject2 = simpleGenerator();
 const obj_2 = generatorObject2.next();
-console.log(obj_2);
+console.log(obj_2);*/
 const obj1 = generatorObject.next();
 console.log(obj1);
 const obj2 = generatorObject.next();

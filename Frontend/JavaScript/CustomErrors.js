@@ -1,19 +1,11 @@
 /* 
 Custom Errors - 
-The Userdefined Errors which are created by the User. 
+The Userdefined Errors are the Errors which are defined by the User. 
 */
 
-class Error {
+class ValidationError{
     constructor(message) {
         this.message = message;
-        this.name = "Error"
-    }
-}
-
-
-class ValidationError extends Error {
-    constructor(message) {
-        super(message);
         this.name = "Error";
     }
 }
