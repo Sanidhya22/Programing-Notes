@@ -1,14 +1,14 @@
 /*  
     What do you mean by Iterators in Javascript ?
-->  An iterator is an object which defines a sequence and returns a value upon its termination.    
+->  An iterator is an object which returns a Sequnce of values.    
 
     An iterator is any object which implements the Iterator protocol by having
     a next() method that returns an object with two properties:
 
-    value
-    The next value in the iteration sequence.
+    value -
+    This will return values of the sequence each at a time during iteration.
 
-    done
+    done -
     This is true if the last value in the sequence has already been consumed and false if not 
     consumed.
 
@@ -38,7 +38,7 @@ function fruitsIterator(values) {
     }
 }
 
-const myArray = ['Apples','Oranges',"Grapes","PineApple"]
+const myArray = ['Apples','Oranges',"Grapes","PineApple"];
 //Using the Iterator 
 const fruits = fruitsIterator(myArray);
 console.log(fruits.next());

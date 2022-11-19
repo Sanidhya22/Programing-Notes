@@ -19,7 +19,7 @@ const calc = (n) => {
 }
 
 var cache = {};
-const memoize = (func) => {  
+const memoize = (func) => {
     return function (...args) {
         let n = args[0];
         if (n in cache) {
