@@ -1,7 +1,7 @@
 
 /* What do you mean by Memoization ?
 -> Memoization is a technique for speeding up applications by caching the results of
-   expensive function calls and returning them when the same inputs are used again. */
+   Expensive function calls and returning them when the same inputs are used again. */
 
 /* What do you mean by Memoization ?
 -> Memoization is an optimization technique that can be used to reduce time 

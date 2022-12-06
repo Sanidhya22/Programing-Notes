@@ -89,7 +89,8 @@
    component class.
 
    What do you mean by Template reference Variable ?
--> Template variables helps us to get the reference of HTML template element in the component file.
+-> Template reference variables helps us to get the reference of HTML template element in the component 
+   file.
 
    What are the pipes in Angular?
 -> Pipes are simple functions used in HTML template expressions to accept an 
@@ -110,13 +111,9 @@
 
    What do you mean by Pure and Impure Pipes in Angular ?
 -> Pure Pipe - A pure pipe is only called when Angular detects a change in the value or the parameters 
-   passed to a pipe. 
+   passed to a pipe.
    Impure Pipe -  An impure pipe is called for every change detection cycle no matter whether the value 
    or parameter(s) changes.
-
-   Why we use impure pipe over pure pipes even if reubs a
--> Impure pipes are required because angular ignores changes to composite objects. Impure pipes execute 
-   every time angular detects any changes regardless of the change in
    
    What are Forms in Angular ? 
 -> Angular forms are used to handle user's input.
@@ -257,8 +254,8 @@
      
      Different Features of Services --
      1. Using Services we can create Global data and We can share data between components
-     2. Implement Resuable Application Logic.
-     3. Using Services we can External Interaction like Database Connection.
+     2. Implement Reusable Application Logic.
+     3. Using Services we can do External Interaction like Database Connection.
      There are two type of Services -
      1. Builtin Services
      2. Userdefined Services
@@ -496,13 +493,13 @@
    items. 
 
    Difference between ViewChildren and ViewChild 
-->                    ViewChildren             |              ViewChild
+->                    ViewChild            |                 ViewChildren
    1.ViewChild returns the first matching         1.ViewChildren returns all the matching elements 
      element.                                       as a QueryList of items.
 
    What does static do in ViewChild ?
--> The static option for @ViewChild() and @ContentChild() tells us whether we can access
-   Specified ViewChild Element in the Component ngOnInit LifeCycle method or not.
+-> The static option for @ViewChild() tells us whether we can access Specified ViewChild Element in 
+   the Component ngOnInit LifeCycle method or not.
    true denotes we can access the HTML element of the template file in the ngOnInit Lifecycle
    hook Method while false denotes we can't.
 

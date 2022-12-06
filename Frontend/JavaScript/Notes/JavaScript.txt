@@ -383,7 +383,14 @@ What do you mean by Function Statement ?
 ->  It is being suggested beacuse there might be some script that will take to load so it might
     effect rendering of the page in case of specifing it in head tag whereas it case of end of the 
     body tag the scripts have been loaded till that time so it will not effect the rendering of the page.
+    
+    What is the difference between collection Object and Node List Object ?
+->  Collection Object - It includes the matching elments(e.g Class name or tag name)
+    and does not include text nodes.
 
+    Node List Object - NodeList is a Collection of document nodes (Element nodes, attribute nodes and 
+    text nodes).
+    
 
 
 
