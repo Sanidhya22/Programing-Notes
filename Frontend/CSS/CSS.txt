@@ -96,11 +96,102 @@
 ->  Semantics Tags describes its Meaning to the Developer So that He Can Know Meaning of the Tag 
     and Where it Should go and what Should be placed In.
 
+12. What are the different CSS units we have in CSS ?
+->  The Different CSS units we have in CSS -
+    There are are two different types of CSS units we have -
+    1. Absoulte Length Units  
+      1. px (Pixel)
+      2. cm (Centimeter)
+      3. mm (Millimeter)
+      4. in (Inches)
+      5. pt (Points)
+
+    2.Reactive Unit lengths 
+      1. 1vh (view height) 1 % of the height of the viewport.
+      2. 1vw (view width)  1 % of the width of the viewport.
+      3. % (present) percent relative to the viewport.
+
+
+13. What do you mean by LESS and why we use it ?
+->  LESS stands for Leaner Style Sheets.
+    LESS is a CSS pre-processor.
+    LESS reduces repeation of CSS and therefore saves time.  
+    It allows us to use features like variables, nesting, mixins, etc, all in a CSS-compatible syntax.                                                  
+
+14. What do you mean by SASS and why we use it ?
+->  SASS stands for Syntactically Awesome StyleSheet.
+    SASS is a CSS pre-processor.
+    SASS reduces repeation of CSS and therefore saves time.   
+
+    Note --
+
+    1. SASS is Platform independent.
+    2. In SASS Variables are a way to store information that you can re-use later.  
+    3. Sass uses the $ symbol to declare a variable.
+    e.g - 
+       we use @import "filename" to import a Sass file without specifying .sass.
     
+    4. @extends directive lets us share a set of CSS properties from one selector to another.
+       e.g - 
+       .button-basic  {
+        border: none;
+        padding: 15px 30px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        }
 
+       .button-report  {
+       @extend .button-basic;
+       background-color: red;
+       }
 
-    
+    5. The @mixin directive lets you create CSS code that is to be reused throughout the website.
+       e.g - 
+           @mixin important-text {
+           color: red;
+           font-size: 25px;
+           font-weight: bold;
+           border: 1px solid blue;
+           }
 
+     6. The @include directive is used to use the mixin.
+        e.g - 
+           @mixin important-text {
+            color: red;
+            font-size: 25px;
+            font-weight: bold;
+            border: 1px solid blue;
+          }
+         .danger {
+            @include important-text;
+            background-color: green;
+          }
+15. What is better among SASS and LESS ?
+->  Less is better than Sass because LESS has an advantage in functions where users can activate mixins when 
+    certain conditions occur which Sass does not.     
 
-       
+16. What do you mean by System font ?
+->  A system font or web-safe font is one that's already assumed to be present on the vast majority of users' 
+    devices, with no need for a web font to be downloaded.    
+
+    What do you mean by @font-face ?
+->  font-face is a CSS rule which allows you to show a font on a Web page even if that font is not installed 
+    on the users' computer.
+
+17. What do you mean by PostCSS ?
+->  PostCSS is a JavaScript tool that transforms your CSS code into an abstract syntax tree (AST) and then 
+    provides an API (application programming interface) for analyzing and modifying it using JavaScript 
+    plugins.
+    PostCSS we can use as in  Conjuction with existing presprocessors like SASS, LESS or we can use 
+    it as an alternative to all of them. 
+
+18. Why we need before and after as pseudo elements instead of adding elements normally before 
+    and after the elements.
+->  CSS ::before and ::after pseudo-elements allow you to insert “content” before and after any non-replaced 
+    element (e.g. they work on a <div> but not an <input>). This effectively allows you to show something on 
+    a web page that might not be present in the HTML content. You shouldn’t use it for actual content 
+    because it’s not very accessible in that you can’t even select and copy text inserted on the page.
+    it’s just decorative content which might not be the case with the normal way of inserting elements
+    elements into the HTML Content.
 

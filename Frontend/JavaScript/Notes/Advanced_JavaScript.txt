@@ -297,7 +297,16 @@
 
    Why we need Shadow DOM in JavaScipt ?
 -> When we want to encapsulate some HTML element from getting affected with 
-   regular DOM elements behaviour then we need Shadow DOM element.          
+   regular DOM elements behaviour then we need Shadow DOM element.
+
+   What do you mean by WebSockets in JavaScript ?
+-> The WebSocket API is an advanced technology that makes it possible to open a two-way interactive 
+   communication session between the user's browser and a server.
+
+   Why we need WebSockets ?
+-> WebSockets were invented by developers to effectively facilitate real-time results. WebSockets work by 
+   initiating continuous, full-duplex communication between a client and server. This reduces unnecessary 
+   network traffic, as data can immediately travel both ways through a single open connection.              
 
 
    

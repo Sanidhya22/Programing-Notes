@@ -76,3 +76,14 @@ const obj1 = {
 
 console.log(obj1);
 console.log(obj1.getName());
+
+//Adding a New Property to String as a Prototype for Reversing String 
+
+String.prototype.reverseString = function(){
+    let reverse = this.split("").reverse().join("");
+    return reverse;
+}
+
+let sample = "Sujit";
+let result = sample.reverseString();
+console.log(result);

@@ -118,11 +118,18 @@
  ->  A tag is a special content in HTML5, which is surrounded by an angle bracket (<,>). A slash (/) symbol 
      is used to close the tag after completing the block.
 
- 18.  What is the minimum number of HTML5 tags that are required to create a Web page?
-->    Minimum 3  HTML5 tags are required to create a Web page, such as (<HEAD>, <BODY>, <HTML>)    
- 
+ 18. What is the minimum number of HTML5 tags that are required to create a Web page?
+->   Minimum 3  HTML5 tags are required to create a Web page, such as (<HEAD>, <BODY>, <HTML>)    
 
-10. What happens if we don't write HTML tag in HTML file ?
-->  Yes, it will create HTML template without errors and it will work in some browsers like Chrome and 
-    Firefox without problems but it will break in others. 
-    Also, according to the HTML5 specs the html, body and head tags are completely optional.   
+ 19. What happens if we don't write HTML tag in HTML file ?
+->   Yes, it will create HTML template without errors and it will work in some browsers like Chrome and 
+     Firefox without problems but it will break in others. 
+     Also, according to the HTML5 specs the html, body and head tags are completely optional.   
+
+20.  What is the difference between HTML and XHTML ?
+->                         HTML                     |                      XHTML      
+     1. HTML stands for Hypertext Markup                1. XHTML stands for Extensible Hypertext 
+       language.                                          Markup language.
+     2. It is less stricter.                            2. XHTML is more stricter and more XML 
+                                                          based version of HTML.
+

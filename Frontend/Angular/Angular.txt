@@ -114,6 +114,11 @@
    passed to a pipe.
    Impure Pipe -  An impure pipe is called for every change detection cycle no matter whether the value 
    or parameter(s) changes.
+
+   Why we need Pipes for transforming HTML Template Expression value to other value why don't go with 
+   normal funtion instead ?
+-> Pipes we use for transforming HTML Template Expression value to other value because pipes because
+   Pipes have the concept of the pure and impure pipe which normal function does not.
    
    What are Forms in Angular ? 
 -> Angular forms are used to handle user's input.
@@ -121,15 +126,60 @@
    1.Template Driven Forms -
      1. Mostly Work done in the Component template.
         In a Template-Driven approach, most of the logic is driven from the template.
+        Template driven uses two way binding directive (ngModel) to create and manage the form instance.
+        Validation is done in the HTML Template.
      2. Template-driven forms are asynchronous in nature.
      3. It is Unstructured and Mutuable.
+
+     Advantages of Template Driven forms
+     ----------------------------------------------
+     1. Since Entire form gets managed in the view template, It increase the intial simplicity of the 
+        form ,as we do not need to manage multiple files for one form.
+    
+     2. It is more HTML based form. we can add validators to your input fields using HTML only.
+   
+     Disadvantages of using Template Driven forms
+     ---------------------------------------------
+     1. As the form keeps growing, the view templates get cluttered, making the code difficult to read. 
+     2. It isn’t easy to write complex validation code directly in the template. This makes it challenging 
+        to use custom validators for input fields as it requires you to create custom directives for a custom 
+        validator. 
+     3. Template-driven forms are asynchronous.
      
    2.Reactive Forms -
      1. Mostly Work done in the Component class.
         In Reactive-Driven approach, the logic resides mainly in the Component or Typescript code. 
+        Validation is done in the Class Component.
      2. Reactive forms are mostly synchronous in nature.
      3. It is Structured and Immutable.
-     
+
+     Advantages of Reactive forms 
+     ---------------------------------------------
+     1. The business logic (validations) and control declaration are isolated from the view template. 
+        The view template is solely responsible for the look and feel of the form. This increases scalability, 
+        readability, and maintainability.  
+     2. As the validation logic gets declared in the component class, unit tests are easily written for the 
+        logic to ensure the code is bug-free.
+
+     Disadvantages of Reactive Forms 
+     ---------------------------------------------
+     1. They are little complex than Template driven form for Developer to understand.
+     2. There is no way to disable inputs using the disabled attribute on an HTML control unless we manually 
+        disable it using the FormControl programmatically.
+
+   What are the different Scenarios where we use Reactive forms ?
+-> we should use Reactive forms when 
+   1. When we want to include unit tests for your validation code. As the validators are decoupled from 
+      the template, it increases its testability.    
+   2. When we have complex validation then we should use Reactive forms.    
+
+   What are the diiferent Scenarios where we use Template Driven forms ?
+-> we should use Tempalte Driven form when 
+   1. Our form utilizes the validation attributes integrated with HTML without complex validation.  
+   2. Our form has basic requirements that can be managed within the template with minimal lines of code. 
+
+   Which is better template driven form or reactive form ?
+-> Reactive form is better Template driven form because they are more powerful and easy to use.    
 
    What do you mean by Directives in Angular ? 
 -> Directives are classes that add additional behavior to HTML elements in our Angular applications. 
@@ -264,10 +314,16 @@
      1. http - This service facilitates communication with the remote HTTP servers via the
                browser’s XMLHttpRequest object.
      2  log - Console logger.
-     
 
+    Why we need Services for providing Global data sharing to all the components not a normal Class ?
+->  Services gives us the features of Dependency Injection which normal Class does not.
+    All we have to do is create a intance the of the Service in our component constructor  
+    and rest of the work is done by the angular.
+    Using Services we can limit the scope of providing Services, we can inject the service 
+    at the component level, module level and Application also.
+     
     What do you mean by Auth Guards ?
--> The auth guard is an angular route guard that's used to prevent unauthenticated or 
+->  The auth guard is an angular route guard that's used to prevent unauthenticated or 
     unauthorized users from accessing restricted routes, it does this by using the
     CanActivate method.
 
@@ -860,6 +916,12 @@
    3. Template type Checking - 
       In this phase Angular template compiler uses the TypeScript compiler to validate the binding expressions 
       in templates.  
+
+   Why we need unit Testing and why it is being required ?
+-> The main objective of unit testing is to test our code and check if it works as intended. 
+   It is used to detect early flaws in code which may be more difficult to find in later testing stages. 
+   It makes development Process faster.
+   Unit tests is used to validate all of the details, the corner cases and boundary conditions of ever.
             
           
    
