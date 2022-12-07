@@ -20,22 +20,43 @@ Flags -
 
 
 Qauntifiers -
-1. + - Plus
-2. * - Asterisk
-3. {1,2} -  Qauntifier
-4. ? - Optional
-5. | - Alternation
+1. + - Plus -          We put an asterisk * after a character to indicate that the character may either not match at
+                       all or can match many times.
+2. * - Asterisk -      To indicate that a character can occur one or more times, we put a plus sign + after 
+                       a character. 
+3. {n} -  Qauntifier - To express a certain number of occurrences of a character, at the end we write curly 
+                       braces {n} along with how many times we want it to occur.
+                       Note - 
+                       be{1,3}r - Here e can occur between 1 to 3 times.
+                       be{1,}r - Here e can occur atleast one time or more than one time. 
+4. ? - Optional -      To indicate that a character is optional, we put a ? question mark after a character.
+5. | - Alternation -   It allows to specify that an expression can be in different expressions. Thus, all 
+                       possible statements are written separated by the pipe sign |. 
 
 
 Groups and References
-1. () - Group
-2. (?:) - Not Capturing Group
+1. () - Group - Using Group we can group an expression and use these groups to reference a string.
+2. (?:) - Not Capturing Group - we ignore the specified group
+
+
+Metacharacters 
+------------------
+These are the Characters with the special meaning
+
+\d - Find a digit	
+\s - Find a whitespace character
+\w - The expression \w is used to find letters, numbers and underscore characters.  
+\W - The expression \W is used to find characters other than letters, numbers, and underscores.
+\D - \D is used to find non-numeric characters.
+\S - \S is used to find non-space characters.
 
 
 Character Classes 
-1.[abc]  - Character Set 
-2.[^abc] - Negated Charater Set
-3.[a-z]  - Range 
+1.[abc]  - Character Set  -       Select all the characters specified in the range.
+2.[^abc] - Negated Charater Set - Select all the characters expect those which are specified in the 
+                                  Character Range.
+3.[a-z]  - Range  -               Select all the characters between specified range including both starting 
+                                  and Ending value.
 
 */
 
@@ -90,60 +111,3 @@ console.log(result3);
     input: 'The best things in life are free!',
     groups: undefined
 ] */
-
-
-
-/* Metacharacters 
-------------------
-These are the Characters with the special meaning
-
-\d - Find a digit	
-\s - Find a whitespace character
-\w - The expression \w is used to find letters, numbers and underscore characters.  
-\W - The expression \W is used to find characters other than letters, numbers, and underscores.
-\D - \D is used to find non-numeric characters.
-\S - \S is used to find non-space characters.
- */
-
-
-/* 
-Quantifier
-------------
-Quantifiers define quantities.
-
-n+ - Matches any string that contains at least one n.
-n* - Matches any string that contains zero or more occurrences of n
-n? - Matches any string that contains zero or one occurrence of n 
-     n is Optional
-*/
-
-
-
-/* 
-Modifiers / Flags
------------------
-Modifiers can be used to perform case-insensitive more global searches.
-
-i - Performs case-insensitive matching.
-m - Performs a MutiliMatching 
-g - Performs a Global Match. (rather than stopping at first) 
-*/
-
-
-/* 
-Regular Expressions Patterns
-----------------------------
-Barckets are used to find range of Characters
-
-[abc] - Find any of the characters between the brackets
-[0-9] - Find any of the digits between the brackets
-(x|y) - Find any of the alternatives separated with | 
-{}    - To express a certain number of occurrences of a character
-*/
-
-
-/* 
-Grouping 
----------
-() -  To group an expression, we enclose () in parentheses. 
-*/
