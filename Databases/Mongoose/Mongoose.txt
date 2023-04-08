@@ -1,0 +1,66 @@
+Mongoose Commands for MongoDB database
+-------------------------------------------------
+
+1. Model.deleteOne() - This query takes the parameters of any field that matches and then deletes any one of 
+   the entries in the database that matches.
+   e.g -
+   await Character.deleteOne({ name: 'Eddard Stark' }); // returns {deletedCount: 1}
+
+2. Model.deleteMany() -  This query takes the parameters of any field that matches and then deletes all the 
+   entries in the database that matches.   
+   e.g -
+   await Character.deleteMany({ name: Stark, age: { $gte: 18 } }); // returns {deletedCount: x} where x is 
+   the number of documents deleted.
+
+3. Model.find() - This query takes the parameters of one or more fields that match and then returns all the 
+   entries in the database that matches. 
+   e.g -
+   await MyModel.find();
+   await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec();
+
+4. Model.findById() - This query takes the id as the parameter and then returns the entry in the database if 
+   it exists matches.  
+   findById(id) is almost equivalent to findOne({ _id: id })
+   e.g -
+   await Adventure.findById(id).exec();
+   await Adventure.findById(id, 'name length').exec();
+
+5. Model.findByIdAndDelete() - This query takes the id as the parameter and then deletes the entry in the 
+   database if it exists matches.
+   findByIdAndDelete(id) is a shorthand for findOneAndDelete({ _id: id }).
+
+6. Model.findByIdAndRemove() - This query takes the id as the parameter and then removes the entry in the 
+   database if it exists and then returns it to the callback function. 
+   e.g -
+   findByIdAndRemove(id, ...) is equivalent to findOneAndRemove({ _id: id }, ...) 
+   A.findByIdAndRemove(id) // returns Query
+
+7. Model.findByIdAndUpdate() -  This query takes the id and the update parameters and values as the parameter 
+   and then updates the entry in the database if it exists.
+   e.g -
+   findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...)
+   Model.findByIdAndUpdate(id, { $set: { name: 'jason bourne' }})
+
+8. Model.findOne() - This query takes the parameters of any field that matches and then returns any one of the 
+   entries in the database that matches.
+   e.g - 
+   await Adventure.findOne({ country: 'Croatia' }).exec();
+
+9. Model.findOneAndDelete() - This query takes the parameters of any field that matches and then returns and 
+   deletes any one of the entries in the database that matches.
+   e.g - 
+   const query = { name: 'borne' };
+   Model.findOneAndUpdate(query, { name: 'jason bourne' })
+
+10. Model.findOneAndRemove() -  This query takes the parameters of any field that matches and then returns and 
+    removes any one of the entries in the database that matches.   
+    e.g -
+    Model.findOneAndRemove(conditions)
+
+11. Model.findOneAndReplace() - This query takes the parameters of any field and the replace document and then 
+    replaces any one of the entries in the database that matches and also returns the document.  
+    e.g -
+    Finds a matching document, replaces it with the provided doc, and returns the document.
+    A.findOneAndReplace(filter, replacement)  
+
+

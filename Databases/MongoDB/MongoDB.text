@@ -1,0 +1,155 @@
+MongoDB Commands for MongoDB Powershell
+----------------------------------------
+
+1. db.help() - This will give us a list of mongoDB Powershell commands.
+
+2. show dbs - This command will give us the list of all databases.
+   e.g - 
+   mongo> show dbs
+   admin        0.000GB
+   config       0.002GB
+   geekFlareDB  0.000GB
+   test         0.000GB
+
+3. use DATABASE_NAME - This command will create specified database or allow us to use specific database.
+   e.g - 
+   mongos> use geekFlareDB
+   switched to db geekFlareDB
+
+4. db - This command will let us know the current working/selected database for exceution.
+   e.g -
+   > db
+   GeekFlare
+
+5. db.dropDatabase() - This command will drop the selected database.
+   e.g -
+   > db.dropDatabase()
+   { "dropped" : "training", "ok" : 1 }
+
+6. db.createCollection(name,options) - This command will create a collection with the specified name.
+   e.g - > 
+   db.createCollection("geekFlareCollection")
+   { "ok" : 1 }
+
+   Note - 
+   name - Here we specify the name of the collection.
+   options -  optional parameter might include the name of documents, its size, and index.
+
+7. show collections - This command will show us the list of all collections of selected database.
+
+8. db.COLLECTION_NAME.drop() - This command will drop selected collection.
+   e.g -
+   db.geekFlareCollection.drop()
+   true
+
+9. db.COLLECTION_NAME.insert(document) - This command will insert the specified document into the specifb.cied 
+   collection of currently selected database.
+
+   To insert one record insert() or insertOne() method can be used.
+   e.g - 
+   > db.geekFlareCollection.insertOne( {
+   code: "P123", Qty: 200, status: "Active"
+   });
+   {
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5ed309725429283aee2e134d")
+   }
+
+   To insert many records, a list of records will be passed to insert() or insertMany() method.
+   collectionName.insertMany([{document1},{document2},{ document3}….{ documentn}])
+   e.g -
+   db.geekFlareCollection.insertMany([
+   ... { code: "P1", Qty: 100, status: "Active"},
+   ... { code: "P2", Qty: 200, status: "Active"},
+   ... { code: "P3", Qty: 0, status: "Dective"}
+   ... ]);
+   {
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5edf7b4e18b2c26b9dfe8cac"),
+                ObjectId("5edf7b4e18b2c26b9dfe8cad"),
+                ObjectId("5edf7b4e18b2c26b9dfe8cae")
+        ]
+   }
+
+10. db.COLLECTION_NAME.find() - This command will retrun the list of documents of the specified collection.
+    e.g -
+    > db.geekFlareCollection.find()
+    { "_id" : ObjectId("5ed31186b6f2c2bb1edb86ce"), "code" : "P1", "Qty" : 200, "status" : "Active" }
+    { "_id" : ObjectId("5ed31186b6f2c2bb1edb86cf"), "code" : "P2", "Qty" : 200, "status" : "Active" }
+
+    Note - 
+    find({condition})- This method is used to retrieve documents of the collection based on specified
+    condition.
+    e.g -
+    > db.geekFlareCollection.find({ Qty: { $eq: 100 }});
+    { "_id" : ObjectId("5ed3159eb6f2c2bb1edb86d1"), "code" : "P4", "Qty" : 100, "status" : "Inactive" }
+
+11. db.COLLECTION_NAME.update(SELECTION CRITERIA,UPDATED DATA) - This command will update record 
+    of specified collection of currently selected database based on specified condition.
+    collectionName.update({KeyToUpdate},{Set Command})
+    e.g - 
+    > db.geekFlareCollection.update({"product" : "bottles"},{$set : {"Qty": 10}}  )
+    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+    Note -
+    updateOne() : To update a single document there is updateOne() method. updateOne() give the count of matched 
+    and modified documents.
+    e.g - 
+    > db.geekFlareCollection.updateOne({"product" : "bottles"},{$set : {"Qty": 40}}  )
+    { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }  
+
+12. db.COLLECTION_NAME.find().pretty() - This command will retrun the list of documents of the specified 
+    collection in the pretty format.    
+
+13. db.COLLECTION_NAME.remove(DELETION CRITERIA) - This command will delete record based on specified 
+    condition.
+
+14. db.COLLECTION_NAME.deleteOne({DeletionCondition}) / db.COLLECTION_NAME.deleteMany({DeletionCondition}) - 
+    This command is used to delete record from the database.
+    Note - This command will also return the number of deleted records
+    e.g - 
+    > db.geekFlareCollection.deleteOne({"product" : "bread"})
+    { "acknowledged" : true, "deletedCount" : 1 }
+
+    > db.geekFlareCollection.deleteMany({"product" : "bottles"})
+    { "acknowledged" : true, "deletedCount" : 2 }
+
+15. db.COLLECTION_NAME.distict(field) - This command is used to get unique records from one field of 
+    specified collection name.
+    db.collectionName.distinct(field)
+    e.g - 
+    > db.geekFlareCollection.distinct("product")
+    [ "Cheese", "Snacks2", "Snacks3", "bread", "ketchup" ]    
+
+    db.collectionName.distinct(field,query)
+    e.g -
+    > db.geekFlareCollection.distinct('product',{"Qty":20})
+    [ "Snacks3", "bread" ]
+          
+16. db.COLLECTION_NAME.renameCollection(new collectionName) - This command is used to rename collection name.
+    e.g - 
+    >db.geekFlareCollection.renameCollection('geekFlareCol')
+    { "ok" : 1 }
+    > show collections
+    geekFlareCol
+
+17. db.COLLECTION_NAME.find().limit(number) - This command is used to limit the number of documents retured.
+    e.g -
+    > db.geekFlareCollection.find().limit(2)
+    { "_id" : ObjectId("5ed3c9e7b6f2c2bb1edb8702"), "product" : "bottles", "Qty" : 100 }
+    { "_id" : ObjectId("5ed3c9e7b6f2c2bb1edb8703"), "product" : "bread", "Qty" : 20 }    
+
+18. db.COLLECTION_NAME.find().skip(number) - This command is used to skip the specified number of documents
+    e.g - 
+    > db.geekFlareCollection.find().skip(2)
+    { "_id" : 3, "product" : "yogurt", "Qty" : 30 }
+
+19. db.COLLECTION_NAME.find().sort({specified column}) - This command is used to sort the fetched records
+    on the basis of specified column.    
+    e.g - 
+    > db.geekFlareCollection.find().sort({"Qty":1})
+    { "_id" : 2, "product" : "bread", "Qty" : 20 }
+    { "_id" : 3, "product" : "yogurt", "Qty" : 30 }
+    { "_id" : 1, "product" : "bottles", "Qty" : 100 }
+
