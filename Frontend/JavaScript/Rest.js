@@ -14,5 +14,5 @@
    add(10,20);
    add(10,20,30);
 
-/* Here value will concat and form array which will be passed as an arugument.
+/* Here value will concat and form array which will be passed as an ardgument.
    and Variable length parameter must be specified at the End. */

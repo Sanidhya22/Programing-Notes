@@ -5,7 +5,7 @@
 -> Angular is a framework that is used to build client side applications.
    It is used in the development of Single Page Applications (SPAs).
 
-    Differnece between ClientSide Scripting and ServerSide Scripting  
+    Differnce between ClientSide Scripting and ServerSide Scripting  
 ->  Client Side Scripting              |     Server Side Scripting 
   1.Source Code is Visible to the           1.Source code is not visible to the user.
     User.                                 
@@ -55,7 +55,7 @@
    directives, pipes, and services, which are related to the application. 
 
    What are Components ?
--> Components are the main building block for Angular applications. 
+-> Components are the main building block for Angular applications and they are resuable. 
    Each Component is Consisting of --
    A Typescript file
    A Component Testing file	
@@ -72,14 +72,14 @@
    we can do one binding by using interpolation.
    <h1>{{Data}}</h1>
    Property binding also comes under one way binding.
-   <input type="text" placeholder="Enter Your Name" [value]=name >
+   <input type="text" placeholder="Enter Your Name" [value]="name" >
 
 
    What is Property binding ?
 -> Property binding in Angular is technique which is used to set values for properties of HTML
    elements or directives.
    e.g - 
-   <input type="text" placeholder="Enter Your Name" [value]=name >
+   <input type="text" placeholder="Enter Your Name" [value]="name" >
 
    What is two way Data Binding ?
 -> Two-way data binding refers to sharing data between a component class file 
@@ -110,10 +110,10 @@
 
 
    What do you mean by Pure and Impure Pipes in Angular ?
--> Pure Pipe - A pure pipe is only called when Angular detects a change in the value or the parameters 
+-> Pure Pipe - A pure pipe is only called when Angular detects a change in the value of the parameters 
    passed to a pipe.
    Impure Pipe -  An impure pipe is called for every change detection cycle no matter whether the value 
-   or parameter(s) changes.
+   of the parameters passed to a pipe changes.
 
    Why we need Pipes for transforming HTML Template Expression value to other value why don't go with 
    normal funtion instead ?
@@ -144,7 +144,6 @@
      2. It isn’t easy to write complex validation code directly in the template. This makes it challenging 
         to use custom validators for input fields as it requires you to create custom directives for a custom 
         validator. 
-     3. Template-driven forms are asynchronous.
      
    2.Reactive Forms -
      1. Mostly Work done in the Component class.
@@ -609,7 +608,7 @@
    
    What are the different methods of ChangeDetectorRef Class ?
 -> These are the Different methods of ChangeDetectorRef 
-   1. markForCheck - Marks the component as It was changed, so that it can be checked for 
+   1. markForCheck - Marks the component as It was changed, so that it can be check for 
       an Update. 
    2. deatch - excludes the view from the change detection tree, which means no check will be
       triggered for that component until that view is reattached again. 
@@ -672,7 +671,7 @@
    3. ngOnChanges() - The ngOnChanges is a life cycle hook, which angular fires when it detects changes to 
                       data-bound input property.
 
-                      if the Component has any one more more data bound input property changes then 
+                      if the Component has any one more data bound input property changes then 
                       ngOnChanges is called before ngOnInit.
 
                       if the component has not any data bound input property then ngOnChanges
@@ -761,7 +760,7 @@
    3. ConcatMap
 
    What do you mean by MergeMap in Angular ?
--> The mergeMap() operator is also called flatMap. This operator is best to use when you want to flatten
+-> The mergeMap operator is also called flatMap. This operator is best to use when you want to flatten
    an inner observable and manually control the number of inner subscriptions. The RxJS mergeMap() 
    operator maintains multiple active inner subscriptions at once and emits single newly created 
    observable at the end.
@@ -821,7 +820,7 @@
 -> ViewContainerRef(VCR) represents a container where one or more view can be attached.
  
    What do you mean by ElementRef ?
--> Angular ElementRef is a wrapper around a native DOM element inside of a View. 
+-> Angular ElementRef is a wrapper around a native HTML DOM element inside of a View. 
    It's simply a class that wraps native DOM elements in the browser and allows you to work with the 
    DOM by providing the nativeElement object which exposes all the methods and properties of the 
    native Element.
@@ -846,7 +845,6 @@
     Angular Dynamic Components are the components which are created using ComponentFactoryResolver 
    and ViewContainerRef.                            
    
-
    What do you mean by Ngrx in Angular ?
 -> Ngrx stands for Angular Reactive Extensions. NgRx is a state management system that is based on 
    the Redux pattern.   
@@ -861,7 +859,6 @@
 
    What do you mean by Store?
 -> A store is a state container which holds the application's state.
-   Every Redux store has a single root reducer function.
 
    Notes- The only way to change the state is to dispatch an action.
           The global state of our application is stored as an object inside a single store.
@@ -906,8 +903,7 @@
 -> Internationalization is the process of supporting multiple languages in your Angular applications. 
 
    What are the different compilation phases of Angular ?
--> Angular Offers two compilers for Compilation JIT and AOT
-   Angular Compilation has three phases
+-> Angular Compilation has three phases
    1. Code Analysis - 
       In this Phase Analysis of Code is done, It looks for relationship between files and their decorators.
    2. Code Generation -
@@ -917,11 +913,52 @@
       In this phase Angular template compiler uses the TypeScript compiler to validate the binding expressions 
       in templates.  
 
+   What are the different compiler we have in Angular ?
+-> Angular Offers two compilers for Compilation 
+   1. JIT Just-In-Time compilation (JIT)
+   2. AOT Ahead-of-Time compilation (AOT)
+
+   What do you mean by ahead of Time compiler ?
+-> Ahead of Time compilation is a process of compiling higher-level language or intermediate 
+   language into a native machine code, which is system dependent.   
+   It compiles the code at the build time.
+
+   Why should we use the Ahead of Time Compiler ?
+-> There are following reasons for using Ahead of Time Compiler  --
+   1. When you are using Ahead of Time Compiler, compilation only happens once, while you build your
+      project.
+   2. It minimizes the size of the Application.
+   3. The Ahead of time compiler detects template error earlier. It detects and reports template binding 
+      errors during the build steps before users can see them.
+   4. Ahead of Time compiler provides better securiity.    
+
+   What do you mean Just in Time Compiler ?
+-> Just in Compilation is the process where codes gets compiles when it is needed, not at the 
+   build time.
+
+   Why we should use Just in Time Compiler ?
+-> There are following reasons for using Just in Time Compiler  
+   1. Most compiling is done on the browser side, so it will take less compiling time.
+   2. Just in time compiler compiles each file separately and it’s mostly compiled in the browser. 
+      You don’t have to build your project again after changing your code.
+   3. Just in Time compiler is best when your application is in local development.   
+
    Why we need unit Testing and why it is being required ?
 -> The main objective of unit testing is to test our code and check if it works as intended. 
    It is used to detect early flaws in code which may be more difficult to find in later testing stages. 
    It makes development Process faster.
    Unit tests is used to validate all of the details, the corner cases and boundary conditions of ever.
+
+   Can we use ngIf and ngFor for the same element ?
+-> Yes, It’s very common scenario where we want to repeat a block of HTML using ngFor only when a 
+   particular condition is true.    
+
+   What is the difference between ngIf , ngShow and ngHide ?
+-> ngshow - ngshow is a directive that will show html element if expression results true.
+   ngHide - nghide is a directive that will hide html element if expression results false.
+   ngIf - ngIf is a directive that recreates or removes a portion of the DOM tree based on 
+   expression. 
+
             
           
    

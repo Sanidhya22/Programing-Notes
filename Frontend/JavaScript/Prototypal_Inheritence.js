@@ -5,7 +5,8 @@
     methods of another object. 
 
     Whenever we create Object and Array then behind the scene Javascript
-    creates an object and put all the properties and methods inside it.
+    creates an object and put all the properties and methods inside it related to
+    that instance.
     It attaches that object with our Original Object. 
     so in that way all the properties and methods are available to them.
 */
@@ -27,7 +28,7 @@
        this.designation = designation;
     }
     
-    var e1 = new Emp("Suman",33,4500,"Progammer");
+    var e1 = new Emp("Suman",33,4500,"Programmer");
     var e2 = new Emp("Sujit",25,2500,"Manager");
     Emp.prototype.company = "EPAM";
     

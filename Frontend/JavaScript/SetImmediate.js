@@ -10,7 +10,7 @@ setTimeout(()=>{
 setImmediate(()=>{
     add(2,3);
     console.log("Set Immediate Executed");
-},2000)
+})
 
 
 process.nextTick(()=>{

@@ -7,7 +7,7 @@ There are Three Keywords we use for Declaring variables
 
 Var - 
 This is a Keyword we use to declare variable.
-These variables have global scope.
+These variables have global and loca; scope.
 These variables can be redeclared in the same scope.
 These varibles can be accessed before they are being declared.
 
@@ -27,6 +27,7 @@ These Variables must be decalred before they are used.
 If we observe the variables defined with var keyword are stored or attached with
 global window object whether In case of let and const they are attached or 
 stored in some another Context space.
+the variable which are declared without keywords have global scope.
 
 */
 

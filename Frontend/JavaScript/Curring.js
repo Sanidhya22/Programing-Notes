@@ -25,7 +25,7 @@ console.log(addition(12, 34, 67));
 
 
 
-//Another way of Caling Function
+//Another way of Calling Function
 function Sum(a) {
     return function (b) {
         return function (c) {

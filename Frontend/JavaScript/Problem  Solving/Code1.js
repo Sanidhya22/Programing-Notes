@@ -30,7 +30,7 @@ console.log(reverseString); */
 
 /* const string4 = "Sujit got Job in United States of America";
 words = string4.split(" ");
-reverseString = " ";
+reverseString = "";
 for (let word of words) {
   reverseString = reverseString + " " + word.split("").reverse().join("");
 }

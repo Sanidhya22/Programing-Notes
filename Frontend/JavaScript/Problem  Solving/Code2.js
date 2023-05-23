@@ -33,7 +33,7 @@ for (let i = 0; i < arr.length - 1; i++) {
 }
 const k = 3;
 console.log("kth Maximum Element of the Array " + arr[(arr.length-1) - (k - 1) ]);
-console.log("kth Minimum Element of the Array is " + arr[0 + k]); */
+console.log("kth Minimum Element of the Array is " + arr[0 + k -1]); */
 /* OUTPUT -  
 kth Maximum Element of the Array 7
 kth Minimum Element of the Array is 7 */
