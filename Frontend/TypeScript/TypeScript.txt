@@ -15,8 +15,8 @@
    value = 120
 
 5. What do you mean by interface in Typescript?
--> -It is a component whose object cannot be created. It implements highest level of 
-    abstraction. 
+-> It is a component whose object cannot be created. It implements highest level of 
+   abstraction. 
    Interface contains Method Declarations Without Implementation and Variable Declarations
 
 6. What do you mean by enums?
@@ -28,6 +28,12 @@
     Right,  
    }  
    console.log(Direction);
+
+ 7. How we can declare custom types in typescript ?
+-> type car = {
+   name: string,
+   carModel: string,
+   }   
 
    Note - 
    TypeScript Notes - https://www.typescripttutorial.net/

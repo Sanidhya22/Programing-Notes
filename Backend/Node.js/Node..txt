@@ -273,6 +273,148 @@
 -> CORS Stands for Cross Origin Resource Sharing.
    It allows us to relax the security applied to an API.
 
+   What is the difference between req.params and req.query ?
+-> req.query is used for getting the query string values and req.params is used for getting the route
+   parameters.   
+
+   What do you mean by REST APIs ?
+-> REST stands for Representational State Transfer.
+   It is an architectural style that defines a set of constraints to be used for creating web services.
+   All communication done via REST API uses only HTTP request.  
+
+   Working - 
+   A request is sent from client to server in the form of a web URL as HTTP GET or POST or PUT or 
+   request. After that, a response comes back from the server in the form of a resource which can 
+   be anything like HTML, XML, Image, or JSON. But now JSON is the most popular format 
+   being used in Web Services.
+
+   HTTP methods 
+   1. GET - The HTTP GET method is used to read (or retrieve) a representation of a resource.
+            In case of Successful HTTP responses, it returns status code 200 (OK). In an error case, 
+            it most often returns a 404 (NOT FOUND) or 400 (BAD REQUEST).
+
+   2. POST - The HTTP POST method is used to create new resources.   
+             It returns status code 201 in case of Successful creation. 
+
+   3. PUT  - The HTTP PUT method is used to update entire resource data. 
+             It return status code 200 in case of Successful update.
+
+   4. PATCH - The HTTP PATCH method is used to partially update the resource data.
+              it returns the status code 200 on Successful update.
+
+   4. DELETE - The HTTP DELETE method is used to delete the predetermined resource.
+               It returns status code 200 in case of Successful delete.
+   
+   What do you mean by URI ?
+-> A URI or a uniform resource identifier is a string of characters that generally identifies any web 
+   resource by using a name, a location, or both.      
+
+   There are two types of URI 
+   1. URL  -  It stands for Uniform Resource Locator.
+              It a unique identifier used to locate any resource on a web.
+   2. URN  -  It stands for Uniform Resource Name.
+              It is way of reffering resource by its name on a web.
+
+
+   What is the concept of statelessness in REST APIs ?
+-> REST apis are stateless because HTTP calls can be made independently of one another and 
+   each call contains all of the data necessary necessary for the server to understand it.
+
+   What do you mean by REST resource ?
+-> A Rest resource is like a entity in a database.   
+
+   What are the featurers of REST APIs ?
+-> These are the Following features of REST APIs 
+   1. Scalibility
+   2. Flexible and Portable 
+   3. Independence   
+
+   Define Messaging in terms of RESTful web services.
+-> The technique of sending a message from the REST client to the REST server in the form of an HTTP 
+   request and the server responding back with the response as HTTP Response is called Messaging. 
+   The messages contained constitute the data and the metadata about the message.
+
+   What are the disadvantages of RESTful apis ?
+-> The disadvantages are - 
+   1. REST does not impose security restrictions inherently. It inherits the security measures of the 
+      protocols implementing it. Hence, care must be chosen to implement security measures like 
+      integrating SSL/TLS based authentications, etc  
+   2. As the services follow the idea of statelessness, it is not possible to maintain sessions.
+      Session simulation responsibility lies on the client-side to pass the session id.   
+
+   What do you mean by Soap ?
+-> Soap stands for Simple Object Access Protocol.It is an XML based protocol for accessing web services
+   over http.    
+
+   What are the differences between SOAP and REST ?
+->                           SOAP             |                  REST
+
+   1. SOAP stands for Simple Object Access       1. REST stands for Representational State 
+      Protocol.                                     Transfer.
+   2. SOAP is slower.                            2. REST is faster.   
+   3. SOAP reads are not cacheable.              3. REST read requests can be cached.
+   4. SOAP cannot use REST as it is a protocol.  4. REST architecture can have SOAP protocol as 
+                                                    part of the implementation.
+
+   What are the differences between AJAX and REST ?
+->                        AJAX                 |                REST 
+
+   1. AJAX is a set of technologies.            1. REST is a Software Architecture.
+
+   2. It is a method to dynamically update      2. REST  is a method for users to request information 
+      parts of the UI without having to reload     from servers, update , create and delete it.
+      the page.    
+
+   What are the core Components of HTTP response ?
+-> Core Components of HTTP response are -
+   1. Status line 
+   2. Headers 
+   3. Body (Optional)   
+
+
+   1. Status-Line - The Status Line contains three important components – 
+                    HTTP Version - It shows the Http version number.
+                    HTTP Response Code  - It contains status code for the response.
+                    Reason-Phrase -  It contains Status Text that summerizes the result. 
+
+
+   2. Headers -  The Response Header contains the information about the content that is being returned 
+                in response together with data about the Server that has sent it.
+
+                Popular response headers are Content-Length, Content-Type, Date, Server, Set-Cookie, etc.
+
+
+   3. Body -  In case of a successful response, the body of the Response Message is used to serve the 
+              Client/User with the resource asked for in the request. Although the body is optional.
+
+              In case of some errors, the body might provide the reason for the errors or the actions 
+              needed to complete the request successfully. Sometimes, it may have a link to guide the 
+              user to some other page.
+
+   What are the core components of the HTTP request ?
+-> The core Components of the HTTP request 
+   1. Request Line 
+   2. headers 
+   3. Message body
+
+
+   1. Request Line - HTTP Request  has three components - 
+                     1. HTTP Method - It contains HTTP method we are using while making request.
+                     2. URL - It conatins target HTTP URL.
+                     3. HTTp Version - It contains required HTTP Version.                     
+
+   2. Headers - The HTTP header allows for additional information to be passed between server and client 
+                such as cookies, information about the authorization token.
+   3. Message Body - Not all the request has message body, Only Post request uses message body to 
+                     deliver payload to the server.                  
+
+   What do you mean by Payload in Node.js ?
+-> Payload is packets or chunks of data that is sent to the server and connot be accessed 
+   ordinary.
+
+   What is the maximum payload size that can be send to server in POST request ?
+-> 100 KB    
+
    What is RXJS ?
 -> RxJS (Reactive Extensions for JavaScript) is a library for dealing with asynchronous operations. 
    observables that makes it easier to compose asynchronous or callback-based code.
@@ -317,12 +459,11 @@
 -> Mongoose is a Node. js-based Object Data Modeling (ODM) library for MongoDB.
 
    What do you mean by Schema in Node.js ?
--> A schema is a JSON object that defines the structure and contents of your data. 
+-> A Mongoose Schema defines the Structure of the document, default values and Validator Etc.
 
    What do you mean by Model in Node.js ?
--> Models are fancy constructors compiled from Schema definitions. An instance of a model is called a 
-   document. Models are responsible for creating and reading documents from the underlying 
-   MongoDB database.
+->  A Mongoose Model is a Warapper on the Mongoose Schema which is used for Querying ,Creating, Updating
+    and Deletion operations with the database.
 
    Which database is more popularly used with Node.js ?
 -> Mongodb is the most popular used database with node.js. It is NOSQL cross platform document oriented 

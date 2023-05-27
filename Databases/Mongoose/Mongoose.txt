@@ -1,66 +1,102 @@
 Mongoose Commands for MongoDB database
 -------------------------------------------------
 
-1. Model.deleteOne() - This query takes the parameters of any field that matches and then deletes any one of 
-   the entries in the database that matches.
-   e.g -
-   await Character.deleteOne({ name: 'Eddard Stark' }); // returns {deletedCount: 1}
+ Terminologies  - 
 
-2. Model.deleteMany() -  This query takes the parameters of any field that matches and then deletes all the 
-   entries in the database that matches.   
-   e.g -
-   await Character.deleteMany({ name: Stark, age: { $gte: 18 } }); // returns {deletedCount: x} where x is 
-   the number of documents deleted.
+ # Projection - In MongoDB, Projection means selecting only the required data fields of the document 
+   rather than selecting whole of the data of a document.
 
-3. Model.find() - This query takes the parameters of one or more fields that match and then returns all the 
+ # Aggregation - In MongoDB , Aggregation refers to the process by which entities are combined to 
+                 to form a single meaningful entity.
+                 Aggregation is the process of combining things.
+
+                 Types of Aggregation in MongoDB
+                 1. Aggregation Pipeline.
+                 2. Map-Reduce Function.
+                 3. Single Purpose Aggregation Method
+
+
+ # ObjectId - ObjectId is the datatype of the _id attribute of the MongoDB documents. 
+   An ObjectId is a 12-byte BSON type.
+
+ # Sharding - Sharding is the process of storing data records across multiple machines and it is 
+              MongoDB's approach to meeting the demands of data growth. As the size of the data 
+              increases, a single machine may not be sufficient to store the data nor provide an 
+              acceptable read and write throughput. Sharding solves the problem with horizontal scaling. 
+              With sharding, you add more machines to support data growth and the demands of read and 
+              write operations.  
+            
+
+  # Replication - Replication  is the process of synchronizing data across multiple servers. Replication 
+                  provides redundancy and increases data availability with multiple copies of data on 
+                  different database servers.             
+
+
+1. Model.find() - This query takes the parameters of one or more fields that match and then returns all the 
    entries in the database that matches. 
    e.g -
    await MyModel.find();
    await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec();
 
-4. Model.findById() - This query takes the id as the parameter and then returns the entry in the database if 
-   it exists matches.  
+2. Model.findById() - This query takes the id as the parameter and then returns the entry in the database 
+   if it exists matches.  
    findById(id) is almost equivalent to findOne({ _id: id })
    e.g -
    await Adventure.findById(id).exec();
    await Adventure.findById(id, 'name length').exec();
 
-5. Model.findByIdAndDelete() - This query takes the id as the parameter and then deletes the entry in the 
+3. Model.findByIdAndDelete() - This query takes the id as the parameter and then deletes the entry in the 
    database if it exists matches.
    findByIdAndDelete(id) is a shorthand for findOneAndDelete({ _id: id }).
 
-6. Model.findByIdAndRemove() - This query takes the id as the parameter and then removes the entry in the 
-   database if it exists and then returns it to the callback function. 
+4. Model.findByIdAndRemove() - This query takes the id as the parameter and then removes the entry in the 
+   database. 
    e.g -
-   findByIdAndRemove(id, ...) is equivalent to findOneAndRemove({ _id: id }, ...) 
+   findByIdAndRemove(id) is equivalent to findOneAndRemove({ _id: id }) 
    A.findByIdAndRemove(id) // returns Query
 
-7. Model.findByIdAndUpdate() -  This query takes the id and the update parameters and values as the parameter 
+5. Model.findByIdAndUpdate() -  This query takes the id and the update parameters and values as the parameter 
    and then updates the entry in the database if it exists.
    e.g -
-   findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...)
+   findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, value)
    Model.findByIdAndUpdate(id, { $set: { name: 'jason bourne' }})
 
-8. Model.findOne() - This query takes the parameters of any field that matches and then returns any one of the 
+6. Model.findByIdAndReplace() - This query takes the id and replace parameters the replaces the specified 
+   document with the provided value if it exits in the database.
+
+7. Model.findOne() - This query takes the parameters of any field that matches and then returns any one of the 
    entries in the database that matches.
    e.g - 
    await Adventure.findOne({ country: 'Croatia' }).exec();
 
-9. Model.findOneAndDelete() - This query takes the parameters of any field that matches and then returns and 
+8. Model.findOneAndDelete() - This query takes the parameters of any field that matches and then returns and 
    deletes any one of the entries in the database that matches.
    e.g - 
    const query = { name: 'borne' };
    Model.findOneAndUpdate(query, { name: 'jason bourne' })
 
-10. Model.findOneAndRemove() -  This query takes the parameters of any field that matches and then returns and 
+9. Model.findOneAndRemove() -  This query takes the parameters of any field that matches and then returns and 
     removes any one of the entries in the database that matches.   
     e.g -
     Model.findOneAndRemove(conditions)
 
-11. Model.findOneAndReplace() - This query takes the parameters of any field and the replace document and then 
+10. Model.findOneAndReplace() - This query takes the parameters of any field and the replace document and then 
     replaces any one of the entries in the database that matches and also returns the document.  
     e.g -
     Finds a matching document, replaces it with the provided doc, and returns the document.
     A.findOneAndReplace(filter, replacement)  
+
+11. Model.findOneAndUpdate() - This query takes the parameters of any field that matches and update parameters
+    and updates any one of the entries that matches and also returns the document.
+
+12. Model.insertOne() - This query is used to insert single document into the database.
+    e.g - 
+    Model.insertOne({field:value,...})
+
+13. Model.insertMany() - This query is used to insert many documents into the database. 
+    e.g -
+    Model.insertMany([{field:value...},....])
+   
+
 
 

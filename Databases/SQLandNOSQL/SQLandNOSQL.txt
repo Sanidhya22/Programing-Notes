@@ -1,0 +1,60 @@
+    What do you mean by SQL ?
+->  Structured query language (SQL) is a programming language for storing and processing information 
+    in a relational database. 
+    A relational database stores information in tabular form, with rows and columns representing 
+    different data attributes and the various relationships between the data values.
+
+    What do you mean by NoSQL ?
+->  NOSQL databases are databases that stores data in documents rather than relational databases.
+    It stores data in the form of object (key value)
+
+    What is the difference between SQL and NOSQL databases ?  
+->                           SQL                |                       NOSQL
+     1. SQL is used in Relational database         1. NOSQL is used in Non relational or distributed 
+        management  System.                           database System.
+     2. These databases have a fixed and static    2. These database have a dynamic schema.
+        or predefined schema.   
+     3. Data is stored in the tabular format in    3. Data is stored in the documents format  
+        database.                                     in database. 
+
+     4. Vertically Scalable.                       4. Horizontal Scalable.
+
+    
+    What are the different types in which SQL command are categories ?
+->   DDL – Data Definition Language   - Create , Drop, Alter, Truncate
+     DQL – Data Query Language        - Select
+     DML – Data Manipulation Language - Insert, Update, Delete
+     DCL – Data Control Language      - Grant, Revoke
+     TCL – Transaction Control Language - Commit, Rollback, Savepoint
+
+
+     What are the advantage of NOSQL database over SQL database ?
+->   These are the advantage of the NOSQL database over SQL databases 
+     1. Flexible 
+     2. Scalable
+     3. High Performance
+     4. Availability
+
+     What is the difference Drop and Delete command in MYSQL ?
+ ->                          DELETE                |               Drop
+     1. Delete command deletes all the records       1. Drop command deletes all the records from 
+        from the database.                              the database along with the table schema.
+
+     2. WHERE clause is used to add filtering.       2. No WHERE clause is available.
+
+     3. Delete command can be rollbacked.            3. Drop command can not be rollbacked.
+
+
+     What is the difference between Drop and Truncate in MYSQL ?
+                            TRUNCATE                |               Drop
+ ->   1. Truncate command deletes all the records       1. Drop command deletes all the records from 
+         from the database.                                the database along with the table schema. 
+
+      2. It is fast as compared to the DROP command.    2. It is slow as compared to the TRUNCATE command.
+
+
+     What do you mean by Views and why we use it ?
+->   Views is a virtual table based on the resultset of the SQL statement. 
+     View we need to simplify SQL queries and allow secure access to underlying tables. 
+
+     
