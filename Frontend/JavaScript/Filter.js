@@ -1,6 +1,5 @@
 /* Filter -
-   Filter is a builtin Method in Javascript which is being used for filtering array
-   Elements.
+   Filter is a builtin Method in Javascript which is being used for filtering array.
    The filter() method creates a new array with array elements that passes a test.
    Filter is also a Higher Order Function */
 

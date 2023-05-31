@@ -81,15 +81,6 @@ OUTPUT -
    its outer function, even after the outer function has returned inner function.
    */
 
-/* function x() {
-    var a = 7;
-    function y() {
-        console.log(a);
-    }
-    y();
-}
-x(); */
-
 
 function x() {
     var a = 7;

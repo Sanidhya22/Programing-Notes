@@ -2,7 +2,7 @@
 Async makes a function return a Promise
 Await makes a function wait for a Promise 
 
-The Purpose of async / await is to simplify the syntax necessary to consume promise-based
+The Purpose of async / await is to simplify the Promise syntax  to consume promise-based
 APIs.*/
 
 // A Promise
@@ -17,7 +17,7 @@ async function asyncFunc() {
 
     try {
         // Wait Until the promise resolves 
-        let result = await promise();
+        let result = await promise;
 
         console.log(result);
     }

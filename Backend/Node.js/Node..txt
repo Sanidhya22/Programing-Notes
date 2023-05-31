@@ -273,6 +273,24 @@
 -> CORS Stands for Cross Origin Resource Sharing.
    It allows us to relax the security applied to an API.
 
+   What do you mean by Cookie ?
+-> Cookies are the data stored in the user's browser for quick access. 
+   For example, whenever we log in to any website, the server returns the access token, which can be stored 
+   in the browser's cookie with the expiry time.   
+   Cookies are sent to client with a server request and stored on the client side. Every time the user loads
+   the website back, this cookie is sent with the request. This helps us keep track of the user's actions.
+
+   What do you mean by Partials in Node.js ?
+-> Partials are basically just views that are designed to be used from other views. They are 
+   particularly useful for reusing the same markup between different views.
+
+   What do you mean by routes in node.js ?
+-> Rooutes are the different urls of the application.
+
+   What do you mean by Routing in Node.js ?
+-> Routing refers to how an application's endpoints (URIs) respond to client requests.   
+   Routing allows targeting different routes or different URLs on our page.
+
    What is RXJS ?
 -> RxJS (Reactive Extensions for JavaScript) is a library for dealing with asynchronous operations. 
    observables that makes it easier to compose asynchronous or callback-based code.
@@ -320,13 +338,13 @@
 -> A schema is a JSON object that defines the structure and contents of your data. 
 
    What do you mean by Model in Node.js ?
--> Models are fancy constructors compiled from Schema definitions. An instance of a model is called a 
-   document. Models are responsible for creating and reading documents from the underlying 
-   MongoDB database.
+-> Models are constructors compiled from Schema definitions. An instance of a model is called a 
+   document. Models are responsible for creating and reading documents from the underlying MongoDB database.
 
    Which database is more popularly used with Node.js ?
 -> Mongodb is the most popular used database with node.js. It is NOSQL cross platform document oriented 
    database that provides high performance, high availability and easy scalibility.
+
 
    
 

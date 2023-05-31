@@ -42,7 +42,7 @@ MongoDB Commands for MongoDB Powershell
    db.geekFlareCollection.drop()
    true
 
-9. db.COLLECTION_NAME.insert(document) - This command will insert the specified document into the specifb.cied 
+9. db.COLLECTION_NAME.insert(document) - This command will insert the specified document into the specified 
    collection of currently selected database.
 
    To insert one record insert() or insertOne() method can be used.
@@ -98,6 +98,9 @@ MongoDB Commands for MongoDB Powershell
     e.g - 
     > db.geekFlareCollection.updateOne({"product" : "bottles"},{$set : {"Qty": 40}}  )
     { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }  
+    updateMany() : To update mutiple documents in the collection we have updateMany.
+     > db.geekFlareCollection.updateOne({"product" : "bottles"},{$set : {"Qty": 40}}  )
+    { "acknowledged" : true, "matchedCount" : 4, "modifiedCount" : 4 }  
 
 12. db.COLLECTION_NAME.find().pretty() - This command will retrun the list of documents of the specified 
     collection in the pretty format.    
@@ -139,6 +142,7 @@ MongoDB Commands for MongoDB Powershell
     > db.geekFlareCollection.find().limit(2)
     { "_id" : ObjectId("5ed3c9e7b6f2c2bb1edb8702"), "product" : "bottles", "Qty" : 100 }
     { "_id" : ObjectId("5ed3c9e7b6f2c2bb1edb8703"), "product" : "bread", "Qty" : 20 }    
+    Here it is returing the first two records from the table
 
 18. db.COLLECTION_NAME.find().skip(number) - This command is used to skip the specified number of documents
     e.g - 

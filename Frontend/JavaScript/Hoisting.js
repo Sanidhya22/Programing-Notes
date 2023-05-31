@@ -13,8 +13,8 @@
    3. Using let const is better than var for programming because
       it will trigger error and help us to skip getting unusual results*/
 
-/* Important Point --
-   What is the Difference between not defined and undefined ? 
+/* Important Point -- What is the Difference between not defined and undefined ? 
+  
 -> We get variable undefined when memory is allocated for a variable and   
    but variable is not intialised.
    We get Variable not defined when memory is not allocated for a variable 

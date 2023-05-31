@@ -125,8 +125,7 @@
    Types of Angular forms --
    1.Template Driven Forms -
      1. Mostly Work done in the Component template.
-        In a Template-Driven approach, most of the logic is driven from the template.
-        Template driven uses two way binding directive (ngModel) to create and manage the form instance.
+        Template driven form uses two way binding directive (ngModel) to create and manage the form instance.
         Validation is done in the HTML Template.
      2. Template-driven forms are asynchronous in nature.
      3. It is Unstructured and Mutuable.
@@ -312,8 +311,8 @@
      List of Predefined Services -- 
      1. http - This service facilitates communication with the remote HTTP servers via the
                browser’s XMLHttpRequest object.
-     2  log - Console logger.
-
+     2  logger - Console logger.
+0
     Why we need Services for providing Global data sharing to all the components not a normal Class ?
 ->  Services gives us the features of Dependency Injection which normal Class does not.
     All we have to do is create a intance the of the Service in our component constructor  
@@ -393,10 +392,10 @@
      2. from(iterable) - This method is used to convert an array to an observable Sequence.
     
    What do you mean by Subscribe in Angular ?
--> Subscribe() is a method in Angular that connects the observer to observable events. 
+-> Subscribe is a method in Angular that connects the observer to observable events. 
    Subscribe Method detects for any change is made in the observable. 
    observer observes the results using the Subscribe Method. 
-   Subscribe() is a method from the rxjs library, used internally by Angular.
+   Subscribe is a method from the rxjs library, used internally by Angular.
 
    What is the differnece between observables and promises?
 ->         Observables                           |   Promises

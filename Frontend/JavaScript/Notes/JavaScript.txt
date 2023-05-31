@@ -23,7 +23,7 @@
 
     What is Call Function in JavaScript?
 ->  The call() method is a predefined JavaScript method Using which an object can use a 
-    method belonging to another objec
+    method belonging to another object.
     The call() method takes arguments separately.
 
     What is Apply Function in JavaScript?
@@ -164,7 +164,7 @@
                   [ 'Banana', 'Orange', 'Kiwi' ]
 
    7. slice() -- this method slice out elements from the given array but does not affect
-                 Original array(Here we provide starting and ending Position not including current last index).
+                 Original array. (Here we provide starting and ending Position not including current last index).
                  e.g - arr4 = ["Mango","Apple","Potato","Tomato","Chilli"];
                      const arr5  = arr4.slice(3);
                      console.log(arr5)
