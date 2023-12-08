@@ -75,7 +75,7 @@ Sequelize Documenation - https://sequelize.org/docs/v6/core-concepts/model-basic
     limit: 2
     });
     console.log(count); // returns the count of all records
-    console.log(rows); // return array of objects
+    console.log(rows); //  return array of objects
 
 11. getters - A getter is a get() function defined for one column in the model defination.
 

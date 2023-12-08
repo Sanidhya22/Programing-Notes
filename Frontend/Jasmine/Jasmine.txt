@@ -11,10 +11,12 @@
     2. .test.js 
 
     What do you mean by Test Suite ?
-->  A Test suite is simply a group of specs or a group of tests.    
+->  A Test suite is simply a group of specs or a group of tests.
+    A Test suite is declared using describe block.
 
     What do you mean by Spec in a Jasmine ?
-->  A Spec is a set or group of expectations that test the state of the code.    
+->  A Spec is a set or group of expectations that test the state of the code.   
+    Specs are defined by calling global jasmine function it. 
 
     When we can call Spec is Passed ?
 ->  Spec with all the true expectations is called a Passing spec.
@@ -22,11 +24,12 @@
 
     What do you mean by Disabled Spec ?
 ->  Disabled Spec is a Spec that will report as pending and will not be executed.
-    Even the expectations are false in that Disabled spec it will show as pending not as failed spec.     
+    Even the expectations are false in that Disabled spec it will show as pending not as failed spec.
+    we can disable the spec by putting x before global jasmine it function.    
 
     How to Make a test suite Disabled ?
-->  Simply put letter x before it for Disabling specific Spec and put x before describe for Disabling 
-    Suite.   
+->  Simply put letter x before global jasmine describe function for Disabling specific Spec and put x 
+    before describe for Disabling Suite.   
 
     What are Matchers ?
 ->  A Matcher is just a function and it implements a boolean comparision between the actual
@@ -41,7 +44,7 @@
 ->  Expect the Actual value to be equal to the Expected value using deep equality comparision.
     ToEqual during deep checking checks the key and the value pairs of both the objects.  
     ToEqual compares all properties of object instances and For primitive types, it works much the same 
-    as. toBe and compares value.
+    as toBe and compares value.
 
     What do you mean by toBeTruthy ?
 ->  Expect the actual value to be true.
@@ -63,8 +66,8 @@
     0 - false
     NaN - false
     null - false
-    "" - false
     undefined - false
+    "" - false
 
     What do you mean by not Matcher ?
 ->  not Matcher Invert the Matcher.
@@ -142,7 +145,7 @@
      What do you mean by Teardown in Jasmine ?
 ->   Teardown is used to perform clean up. these are executed after specs are run.  
      Jasmine offers two methods for Teardown
-     1. afterEach - afterEach is executed after all the specs in the suite in which it is called.
+     1. afterEach - afterEach is executed after each spec in the suite in which it is called.
      2. afterAll  - afterAll is executed only once after all the specs in the suite is executed.   
 
      What do you mean by Jasmine spies and why we need it ?
@@ -193,4 +196,26 @@
 ->   This is Matcher used to check whether specified substring is present in the specified string 
      or not.          
 
-         
+     What do you mean by Flush ?
+->   Flushes any pending microtasks and simulates the asynchronous passage of time for the timers in the 
+     fakeAsync zone by draining the macrotask queue until it is empty.  
+
+     What do you mean by fakeAsync and tick ?
+->   fakeAsync -  fakeAsync function executes the code inside its body in a special fake async test zone.
+     tick - tick() function blocks execution and simulates the passage of time until all pending 
+     asynchronous activities complete.
+
+     What do you mean by done function ?
+->   done is a function which used for writing asynchronous test , it is passed to the spec as a parameter
+     and it is called when we are done with all asynchronous tasks.      
+
+     What do you mean by async and whenStable ?
+->   aysnc - async function executes the code inside its body in a special async test zone.
+     whenstable - Only when all of those pending promises have been resolved then resolves the 
+     promise returned from whenStable.
+
+     How you can run specific tests ?
+->   we can do this by appending f before describe and it.     
+
+
+     Jasmine Documentation - https://jasmine.github.io/pages/docs_home.html

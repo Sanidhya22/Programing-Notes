@@ -8,7 +8,7 @@
 ->  TestBed is the primary api for writing unit tests for Angular applications and libraries.    
     TestBed we can use to test both the template and class file of a Component.
 
-    TestBed.confugureTestingModule({declarations:[ComponentName]});
+    TestBed.configureTestingModule({declarations:[ComponentName]});
 
     There is no need to declare or import anything else. the default test module is pre-configured 
     with something like the BrowserModule from @angular/platform-browser.
@@ -35,7 +35,7 @@
     * Using nativeElement and debugElement we will the reference of HTML elements.
 
     What do you mean by nativeElement in Angular ?
-->  nativeElement) is the direct way of accessing the DOM Element as an "inspectable. 
+->  nativeElement is the direct way of accessing the DOM Element as an "inspectable. 
 
     The Value of ComponentFixture.nativeElement has the any type. Angular can't know at compile 
     time what kind of HTML element the nativeElement is or if It is an HTML element.

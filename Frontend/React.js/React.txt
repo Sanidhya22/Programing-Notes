@@ -21,15 +21,23 @@
    a React element.
   
    What are the differences between react Class Components and function Components?
-->       Class Components               |             Function Components
-   1.These Components are made up of      1. These are Component are like simple JavaScript 
-    simple classes.                         function that accepts props and return React elements.
+->       Class Components                        |             Function Components
+   1.These Components are made up of                1. These are Component are like simple JavaScript 
+    simple classes.                                  function that accepts props and return React elements.
 
-   2.There is a render method in class    2.There is no any render method in function component.
-     component which returns react
-     element.  
+   2.There is a render method in class component    2.There is no any render method in function component.
+     which returns react element.  
 
-   3.Constructors are used.               3.Constructors are not used.
+   3.Constructors are used.                         3.Constructors are not used.
+
+   4.Class components can use React lifecycle       4.Functional components cannot use React lifecycle 
+     methods (for example, componentDidMount,         methods, such as componentDidMount.
+     componentWillUnmount etc).
+
+   5.Class components are a little inefficient.     5.Functional components are more efficient.
+
+   6.Class components are complex and require more  6.Functional components require fewer lines of code 
+     lines of code.                                   and are easy to understand.
 
    What is State in React?
 -> The state is an object where we store property values that belongs to the component. 
@@ -54,7 +62,10 @@
 -> PropTypes are a way to validate the values types that are passed to the component as props.
 
    Why we specify Key during passing Attributes for Props?
--> Keys are used in React to identify which items in the list are changed, updated, or deleted.
+-> Keys is a special string attribute which we need to include when creating lists of elements in React.
+   Keys are used in React to identify which items in the list are changed, updated, or deleted.
+   Keys are used to give an identity to the elements in the lists.
+   It helps in efficient UI update.
 
    What are the different LifeCycles Methods of React Class components?
 -> These following are the different Life Cycle Methods of class Component --
@@ -150,7 +161,7 @@
     State and Props.    
 
     What do you mean by useMemo ?
-->  React useMemo Hook returns a  memoized Value. 
+->  React useMemo Hook returns a memoized Value. 
     The useMemo Hook only runs when one of its Dependencies Update.  
     The useMemo Hook can be used to avoid expensive resource, intensive functions from 
     needlessly running.
@@ -231,7 +242,7 @@ Notes- The only way to change the state is to dispatch an action.
 
     What do you mean Higher Order Component in React ?
 ->  A higher-order component is a function that takes another component as a argument and returns a new 
-    component.      
+    component that wraps the original component.
 
     What do you mean by createRef, useRef and forwardRef ?
 ->  useRef can be used to access a HTML DOM elements directly.
@@ -274,6 +285,49 @@ Notes- The only way to change the state is to dispatch an action.
     change the layout of the document. Manipulating DOM is slow, but manipulating Virtual DOM is fast as 
     nothing gets drawn on the screen. So each time there is a change in the state of our application, 
     the virtual DOM gets updated first instead of the real DOM. 
+
+    What do you mean by Conditional Rendering ?
+->  Conditional rendering is the process of displaying different content based on certain conditions or 
+    states.    
+
+    Conditional Rendering we can do by six ways 
+
+    1. if/else
+    2. Ternary operation
+    3. Inline If with Logical && operator
+    4. Switch case operator
+    5. Conditional Rendering with enums 
+    6. Higher Order Componenets
+
+    What do you mean by Lifting State up ?
+->  Lifting state up is a technique where the state is moved to a common ancestor component, enabling 
+    sibling components to share and synchronize data.
+
+    What do you mean by One Way Data Binding in React ?
+->  One-way Binding means that the binding happens in one direction. In this case, changes in the data 
+    automatically update the UI, but changes in the UI do not automatically update the data. 
+    React achieves one-way data binding by using state and props.
+
+    What do you mean by Two Way Binding in React ?
+->  Two-way data binding allows bidirectional data flow, meaning that changes in the UI automatically 
+    update the component’s state, and changes in the state automatically update the UI. In React, two-way
+    data binding is achieved using controlled components.     
+
+    Difference between One-way Binding and Two-way Binding in React ?
+->           One-way Binding                        |           Two-way Binding 
+    ------------------------------------------------|-------------------------------------------
+    1. Unidirectional data flow.                      1. Bidirectional data flow.
+    2. UI updates automatically when data changes,    2. UI and data are automatically in sync.
+       but not vice versa.
+    3. It is achieved using state and props.          3. It is achieved using controlled components.
+
+    What do you mean by Derived State ?
+->  Derived state refers to the computation of a value based on existing state or props in a component.   
+    
+
+
+
+
     
 
 

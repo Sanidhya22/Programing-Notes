@@ -18,11 +18,10 @@ Flags -
 2. g  - global.
 3. m  - Multiline.
 
-
 Qauntifiers -
-1. + - Plus -          We put an asterisk * after a character to indicate that the character may either not match at
+1. * - Asterisk -      We put an asterisk * after a character to indicate that the character may either not match at
                        all or can match many times.
-2. * - Asterisk -      To indicate that a character can occur one or more times, we put a plus sign + after 
+2. + - Plus  -         To indicate that a character can occur one or more times, we put a plus sign + after 
                        a character. 
 3. {n} -  Qauntifier - To express a certain number of occurrences of a character, at the end we write curly 
                        braces {n} along with how many times we want it to occur.
