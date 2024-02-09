@@ -119,6 +119,9 @@
    normal funtion instead ?
 -> Pipes we use for transforming HTML Template Expression value to other value because pipes because
    Pipes have the concept of the pure and impure pipe which normal function does not.
+
+   What do you mean async pipe in Angular ?
+-> The async pipe subscribes to an Observable or Promise and returns the latest value it has emitted.    
    
    What are Forms in Angular ? 
 -> Angular forms are used to handle user's input.
@@ -957,6 +960,11 @@
    ngHide - nghide is a directive that will hide html element if expression results false.
    ngIf - ngIf is a directive that recreates or removes a portion of the DOM tree based on 
    expression. 
+
+   What do you mean by angular.json file ?
+-> It defines the structure of your app and includes any settings (configuration) associated with your 
+   application.
+
 
             
           
