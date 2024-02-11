@@ -1,0 +1,233 @@
+                                           Basic of Java
+
+Class - 
+• A class is a blueprint used to create objects, it defines the variables and the methods common to all 
+objects of a certain kind.          
+
+Syntax:--
+[access specifier][access modifier] class classname {
+ Data member
+ Constructor
+ Method
+ Blocks( static & nonstatic)
+ Inner class/interface.
+};
+Note - semicolon at the end of the class is optional
+
+class Student{
+    private String name;
+    private int roll;
+
+    Student(){
+        name = "Sujit";
+        roll = 12;
+    }
+
+    Student(String name, int roll){
+        this.name = name;
+        this.roll = roll;
+    }
+
+    public void show(){
+        System.out.println("Welcome to Java");
+    }
+}
+
+
+• Generally a class contains some members known as data member/properties/instance variables  (instance 
+  variables), constructer and method/member function /behavior.
+• The instance variable behaves like a global member for the other members (constructer and method) 
+  of the class because the instance variables will accept the value from constructors & can be 
+  manipulated within the method.
+• Java does not support destructor and delete operator. Although we cannot use address of operator still 
+  we can create copy constructer.
+• Java does not support nested constructor or nested method. Similarly we cannot define a method 
+  within a constructor and vice versa. A member of a class can be accessed by other member 
+  directly/indirectly.
+• We cannot write any independent statements outside of a constructor or method in java.
+• We can initialize data members of the class directly in java.
+• The position of members of the class in java is not fixed.
+• The access specifier of members and the class is implicitly default in java. It can be accessed by any 
+  other class that stored within the same folder.
+
+• Each object will get separate copy of instance variables of the class. Since, the variables of the class 
+  belong to instances (objects) of the class, hence they are known as instance variable of the class.
+
+
+
+  Situations                      Public              Protected         Default            Private
+
+  Accessible to class              Yes                  Yes               Yes                No
+  from same packages
+
+  Accessible to class              Yes                  No                No                 No
+  from different packages                      Unitil it is a subclass
+
+Objects - 
+Objects are the instance of the classes.  
+
+There are different ways to create an object in java. They are:
+• By new keyword (including copy constructor) - 
+
+ Syntax - ClassName ObjectName = new ClassName(); 
+
+ class Student{
+    private String name;
+    private int roll;
+
+    Student(){
+        name = "Sujit";
+        roll = 4;
+    }
+
+    Student(String name,int roll){
+        this.name =  name;
+        this.roll = roll;
+    }
+
+    public void show(){
+        System.out.println("Student is object is created");
+    }
+ }
+
+ class Test{
+    public static void main(String args[]){
+         Student s1 = new Student("Sujit", 1);
+         s1.show();
+    }
+ }
+
+
+• By newInstance() method  - 
+
+class Simple{
+    void message(){
+        System.out.println("Hello Java");
+    }  
+}  
+  
+class Test{  
+    public static void main(String args[]){  
+    try{  
+    Class c = Class.forName("Simple");  
+    Simple s = (Simple)c.newInstance();  
+    s.message();  
+    }catch(Exception e){
+        System.out.println(e);
+    }  
+  }  
+}  
+
+
+• By clone() method - 
+
+class Student implements Cloneable{  
+    int rollno;  
+    String name;  
+  
+    Student(int rollno, String name){  
+       this.rollno = rollno;  
+       this.name = name;  
+    }  
+  
+   public Object clone() throws CloneNotSupportedException{
+       return super.clone();  
+   }  
+  
+   public static void main(String args[]){  
+      try{  
+            Student s1 = new Student(101,"amit");  
+            Student s2 = (Student)s1.clone();  
+            System.out.println(s1.rollno+" "+s1.name);  
+            System.out.println(s2.rollno+" "+s2.name);  
+        }catch(CloneNotSupportedException c){}  
+  
+    }  
+} 
+
+• By factory method  - 
+• By deserialization -
+• By lookup() - 
+
+Differnce between Object and Class
+                  Class                                           Object
+
+1.  It is a blueprint used to create objects.        1. It is a instance of a class.
+2.  Whenever we define a class no memory             2. Whenever we create an object we get the 
+    space is allocated for the data members             memory space for data members and methods of a class.
+    and the methods.
+3.  In one java program the definition of one        3. With respect to one class we can create 
+    particular class will exists only once.             multiple objects.
+4.  Whenever we execute the java program             4. After loading the class whose corresponding class
+    the class will be loaded first in the main          object can be created.
+    memory.
+
+
+Constructor - 
+• It is a block of code which is used to initialize the data members of a class during object creation. 
+• Constructor in java is a special type of method that is used to initialize the object.
+• The name of the constructor must remain the same as that of the class name in proper case. 
+• It is always invoked/called implicitly with new operator when the object is created.. 
+• A constructer has no access modifier but it can have access specifier. 
+• The access specifier of the constructor may or may not be private.
+    1. If the access specifier of the constructor is private then an object of corresponding class can 
+       be created in the context of the same class but not in the context of some other classes.
+    2. If the access specifier of the constructor is not private then an object of corresponding class 
+       can be created both in the same class context and in other class context.
+• A constructer can be overloaded but it cannot be overridden. 
+• Constructor should not return any value not even void. Because basic aim is to place the value in the 
+object. (if we write the return type for the constructor then that constructor will be treated as ordinary 
+method in java).
+• A constructer has an implicit return type called class that return an object.
+• Constructor definitions should not be static. Because constructors will be called each and every time, 
+whenever an object is creating.
+• Constructors will not be inherited from one class to another class (Because every class constructor is 
+created for initializing its own data members).
+
+Types of Constructors  ---
+
+1. Default Constructor - 
+• The default constructor generally does not accept any parameter and we can define only one default 
+  constructor in a class, 
+• The default constructor is generally used to provide the default value to the data member during object
+  creation.
+
+2. Parameterized Constructer - 
+• Parameterized constructor accept some parameter, hence we can define many parameterized constructor in a class.
+• Parameterized constructor is used to initialized the data member with dynamic value during object creation.
+
+Copy Constructer - 
+The copy constructor is a constructor which creates an object by initializing it with an object of the same 
+class, which has been created previously.
+
+class A{
+    int x,y;
+    A( ){ x=5; y=9;}
+    A(A ob){ //copy constructer
+    x = ob.x;  
+    y = ob.y; 
+   }
+}
+
+class B{
+   public static void main(String args[] ){
+   A a1 = new A();
+   A a2 = new A(a1);
+   System.out.println(a2.x+” : ”+a2.y);
+}}
+
+Notes -
+• If we do not provide any constructer in a class then compiler automatically creates a default 
+  constructor. The default constructor will initialize the instance variable with default only if the instance 
+  variable has no values.
+
+• If we do not provide any constructer in a class then we will never get the parameterized constructor 
+• If we define parameterized constructor in a class then we can create object by using parameterised 
+  constructor, but we will never use default constructor, because java will not provide default constructor if we 
+  provide parameterized constructor.
+  Therefore in order to use both constructors we have to define both constructors.
+
+
+This keyword ---
+• It is used to refer the object for which the current execution is going on. ”this” is used to refer the 
+  object during the current context.
