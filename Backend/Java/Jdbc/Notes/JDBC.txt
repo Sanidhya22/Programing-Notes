@@ -1,0 +1,24 @@
+                                            JDBC
+                    -------------------------------------------------------------
+
+  What do you mean by JDBC ?
+  • JDBC is an Application Programming Interface(API) for Java, which is helpful for interaction with the 
+    database and for executing the SQL query.
+  • JDBC stands for Java Database Connectivity. 
+
+  What do you mean by ODBC ?
+  • ODBC is an open specification containing rules and guidelines to develop odbc drivers for different 
+    DB software.
+
+  What are the Components of JDBC ?
+  There are four major components of JDBC using which it can interact with a database. They are:
+  1. JDBC API: it provides different methods and interfaces for easier communication with the database. 
+     By using this applications are able to execute SQL statements, retrieve results and make updation 
+     to the database.
+  2. JDBC DriverManager: it is the class in JDBC API. It loads the JDBC driver in a Java application for 
+     establishing a connection with the database. It is useful in making a database-specific call for 
+     processing the user request.
+  3. JDBC Test suite: It is used to test the operations like insertion, deletion, updation etc., being 
+     performed by JDBC Drivers.
+  4. JDBC-ODBC bridge drivers -  It will connect database drivers to the database. JDBC-ODBC bridge 
+     interprets JDBC method call to the ODBC function call. 
