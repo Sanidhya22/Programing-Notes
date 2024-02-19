@@ -1,0 +1,235 @@
+                                              Hibernate 
+                     -----------------------------------------------------------
+
+• What do you mean ORM in Hibernate ?
+  Hibernate ORM stands for Object Relational Mapping. Object Relational Mapping (ORM) is a functionality 
+  which is used to develop and maintain a relationship between an object and relational database by 
+  mapping an object state to database column.
+
+• Differnce between Hibernate and JDBC ?
+                         JDBC                       |                  Hibernate
+  -------------------------------------------------------------------------------------------------------
+  1.  It is a database connectivity tool.                  1. It is a Java framework.   
+  2.  It has low performance than Hibernate.               2. It has high performance. 
+  3.  Lazy Loading is not supported.                       3. Lazy Loading is supported.
+  4.  JDBC is database dependent i.e. one needs            4. Hibernate is database-independent and the 
+      to write different codes for different                  same code can work for many databases with     
+      database.                                               minor changes.     
+  5. JDBC code needs to be written in a try-catch          5. Hibernate manages the exceptions itself by 
+     databases block as it throws checked exceptions          marking them as unchecked.
+     (SQLexception).
+  6. In JDBC, one needs to write code to map the object    6. Hibernate maps the object model’s data to 
+     model’s data representation to the schema of the         the schema of the database itself with the 
+     relational model.                                        help of annotations.
+                                                              
+• What are the advantages of Hibernate over JDBC ?
+  The advantages of Hibernate over JDBC :-
+  1. It has high performance. 
+  2. Lazy Loading is supported.
+  3. Hibernate maps the object model’s data to the schema of the database itself with the help of annotations.
+  4. Hibernate manages the exceptions itself by marking them as unchecked.
+  5. Hibernate is database-independent and the same code can work for many databases with minor changes.
+
+• What are some of the important interfaces of Hibernate framework ?
+  Hibernate core interfaces are : -
+  1. Configuration
+  2. SessionFactory
+  3. Session
+  4. Criteria
+  5. Query
+  6. Transaction
+
+• What is Session in Hibernate ?
+  A session is an object that maintains the connection between Java object application and database.
+  Session also has methods for storing, retrieving, modifying or deleting data from database using 
+  methods like persist(), load(), get(), update(), delete(), etc. 
+  Additionally, It has factory methods to return Query, Criteria, and Transaction objects.
+
+• Is Session a thread-safe object ?
+  No, Session is not a thread-safe object, many threads can access it simultaneously. In other words, 
+  you can share it between threads.
+
+• What is a SessionFactory in Hibernate ?
+  SessionFactory provides an instance of Session. It is a factory class that gives the Session objects 
+  based on the configuration parameters in order to establish the connection to the database.
+  It holds second level caching.
+
+• Is SessionFactory a thread-safe object ?
+  Yes, SessionFactory is a thread-safe object, many threads cannot access it simultaneously.
+  But each Session created from SessionFactory is not thread safe.
+
+• Can you explain what is lazy loading in hibernate ?
+  Lazy loading is mainly used for improving the application performance by helping to load the child 
+  objects on demand.
+
+• What is the difference between first level cache and second level cache ?
+  Hibernate has 2 cache types. First level and second level cache for which the difference is given below:
+
+                      First Level Cache	         |          Second Level Cache
+   ------------------------------------------------------------------------------------------------------                     
+   1. Caching is local to the Session object and       1. This cache is maintained at the SessionFactory 
+      cannot be shared between multiple                   level and shared among all sessions in Hibernate.
+      sessions.
+
+   2. This cache is enabled by default and there       2. This is disabled by default, but we can enable 
+      is no way to disable it.                            it through configuration.
+
+   3. The first level cache is available only until    3. The second-level cache is available through the 
+      the session is open, once the session is            application’s life cycle, it is only destroyed 
+      closed, the first level cache is destroyed.         and recreated when an application is restarted.
+
+
+   Note --
+   If an entity or object is loaded by calling the get() method then Hibernate first checked the first 
+   level cache, if it doesn’t find the object then it goes to the second level cache if configured. If 
+   the object is not found then it finally goes to the database and returns the object, if there is no 
+   corresponding row in the table then it returns null. 
+   
+•  What are the most commonly used annotations available to support hibernate mapping ?
+   The annotations we use in hibernate mapping are as follows : -
+
+   1. javax.persistence.Entity: This annotation is used on the model classes by using “@Entity” and tells 
+      that the classes are entity beans.
+   2. javax.persistence.Table: This annotation is used on the model classes by using “@Table” and tells 
+      that the class maps to the table name in the database.
+   3. javax.persistence.Id: This is used as “@Id” and is used on the attribute in a class to indicate 
+      that attribute is the primary key in the bean entity. 
+   4. javax.persistence.EmbeddedId: This is used as "@EmbeddedId” on the attribute in a class to indicate
+      that attribute is a composite primary key of the bean entity.   
+   5. javax.persistence.Column: This is used as “@Column” and is used on the attribute in a class,
+      it is used for defining the column name in the database table. 
+   6. javax.persistence.GeneratedValue: This is used as “@GeneratedValue” and is used on the attribute 
+      in a class, it is used for defining the strategy used for primary key generation. This annotation is 
+      used along with javax.persistence.GenerationType enum. 
+   7. org.hibernate.annotations.Cascade: This is used as “@Cascade” and is used on the attribute in a 
+      class, “@Cascade” annotation is used for defining the cascading action between two bean entities.
+      It is used with org.hibernate.annotations.CascadeType enum to define the type of cascading. 
+   8. javax.persistence.OneToOne: This is used as “@OneToOne” and is used on the attribute in a 
+      class, it is used for defining the one-to-one mapping between two bean entities. Similarly, 
+      hibernate provides OneToMany, ManyToOne and ManyToMany annotations for defining different mapping 
+      types.   
+   9. javax.persistence.Access: This is used as “@Access” and is used on the attribute in a 
+      class, it is used for defining the access type of either field or property. When nothing is 
+      specified, the default value taken is “field”.      
+
+•  Differentiate between get() and load() in Hibernate session ?
+                              get()                  |                   load()
+   -------------------------------------------------------------------------------------------------------
+
+   1. This method gets the data from the database        1. This method returns a proxy object and loads 
+      as soon as it is called.                              the data only when it is required.
+
+   2. The database is hit every time the method is       2. The database is hit only when it is really 
+      called.                                               needed and this is called Lazy Loading.
+
+   3. The method returns null if the object is           3. The method throws ObjectNotFoundException if 
+      not found.                                            the object is not found.
+
+   4. This method should be used if we are unsure        4. This method is to be used when we know for 
+      about the existence of data in the database.          sure that the data is present in the database.
+
+
+•  What is HQL?   
+   HQL is an object-oriented query language, similar to SQL, but instead of operating on tables and 
+   columns we make use of the class name which makes this language independent of any database.
+
+•  Does Hibernate support Native SQL Queries ?
+   Yes, it does. Hibernate provides the createSQLQuery() method to let a developer call the native SQL 
+   statement directly and returns a Query object.
+
+   Query query = session.createSQLQuery( "select * from interviewbit_employee ibe where ibe.fullName = :fullName")
+                   .addEntity(InterviewBitEmployee.class)
+                   .setParameter("fullName", "Hibernate"); //named parameters
+   List result = query.list();
+
+•  What are the states of object in Hibernate ?
+   1. Transient - 
+      When an object is created using the “new” keyword, it is in the transient state. The object is not 
+      associated with any Hibernate session, and no database operations are performed on it. 
+      The object is simply a plain Java object (POJO) that is not yet persisted in the database.
+
+   2. Persistent -
+      When an object is associated with a Hibernate session, it enters the persistent state. In this 
+      state, the object is associated with a specific Hibernate session and is actively managed by 
+      Hibernate. Any changes made to the object will be tracked by Hibernate.
+      
+   3. Detached -
+      When a persistent object is no longer associated with a Hibernate session, it enters the detached 
+      state. This means that the object is no longer actively managed by Hibernate, and any changes made 
+      to it will not be persisted to the database. 
+
+   4. Removed -
+      When an object is deleted from the database, it enters the removed state. This means that the 
+      object is no longer associated with the database, and any attempts to modify it with a
+      Hibernate session will result in an exception.
+
+
+   Hibernate Life Cycle Transitions 
+   -----------------------------------
+   1. Transient -> Persistent -
+   The transient object becomes persistent when it is associated with a Hibernate session using the 
+   “save()” or “persist()” methods.
+
+   Creating a new object in the transient state
+   -------------------------------------------
+   Employee employee = new Employee();
+   employee.setName("John");
+   employee.setAge(30);
+
+  Associating the object with a Hibernate session and entering the Persistent state
+  --------------------------------------------------------------------------------
+  Session session = HibernateUtil.getSessionFactory().openSession();
+  session.beginTransaction();
+  session.save(employee);
+
+  2.. Persistent -> Detached -
+  A persistent object becomes detached when the Hibernate session is closed, or the object is explicitly 
+  evicted from the session.
+
+  Loading an existing object into a Hibernate session and entering the Persistent state
+  -------------------------------------------------------------------------------------
+  Session session = HibernateUtil.getSessionFactory().openSession();
+  Employee employee = session.get(Employee.class, 1L);
+
+  Evicting the object from the session and entering the Detached state
+  --------------------------------------------------------------------
+  session.evict(employee); OR
+  session.close();
+
+  3. Detached -> Persistent
+  A detached object becomes persistent when it is re-associated with a Hibernate session using the 
+  “update()” or “merge()” methods.
+
+  Loading an existing object into a Hibernate session and entering the Persistent state
+  -------------------------------------------------------------------------------------
+  Session session = HibernateUtil.getSessionFactory().openSession();
+  Employee employee = session.get(Employee.class, 1L);
+
+  Evicting the object from the session and entering the Detached state
+  ---------------------------------------------------------------------
+  session.evict(employee);
+
+  Modifying the object in the Detached state
+  ------------------------------------------
+  employee.setAge(35);
+
+  Re-associating the object with a Hibernate session and entering the Persistent state
+  ------------------------------------------------------------------------------------
+  session.beginTransaction();
+  session.update(employee);
+
+  4. Persistent -> Removed
+  A persistent object becomes removed when it is deleted from the database using the “delete()” method.
+
+  Loading an existing object into a Hibernate session and entering the Persistent state
+  --------------------------------------------------------------------------------------
+  Session session = HibernateUtil.getSessionFactory().openSession();
+  Employee employee = session.get(Employee.class, 1L);
+
+  Deleting the object from the database and entering the Removed state
+  ---------------------------------------------------------------------
+  session.beginTransaction();
+  session.delete(employee);
+
+
+

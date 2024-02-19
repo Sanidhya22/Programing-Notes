@@ -1,12 +1,37 @@
+                                             Spring 
+                           -----------------------------------------------
+
+• What is the Spring Framewok ?
+
+• How Spring simplifies application development in Java ?
+  It simplifies development by handling common infrastructure tasks like:
+
+  1. Dependency injection: Managing dependencies between objects, reducing boilerplate code and promoting 
+     loose coupling.
+  2. Data access: Simplifying interaction with various databases and technologies like JDBC, JPA, and 
+     NoSQL databases.
+  3. Web development: Providing frameworks like Spring MVC and Spring WebFlux for building web 
+     applications and REST APIs.
+  4. Security: Offering Spring Security to implement authentication, authorization, and other security 
+     features.
+  5. Transaction management: Handling database transactions automatically to ensure data consistency.
+  6. Messaging and integration: Enabling communication with other systems and message brokers.
+  7. Testing: Facilitating unit, integration, and end-to-end testing with tools like Spring Test and 
+     WebTestClient.
+
+
+
+
+
    What do you mean by Spring FrameWork ?
 -> Spring is a powerful lightweight application development framework used for Java Enterprise
    Edition (JEE). 
    It is a Dependency Injection FrameWork to make Java Application loosely Coupled.
    It makes the development of JEE Application easy.
 
-   What do you mean Design Pattern ?
--> Dependency Injection is a design pattern in which an object receives other objects that it
-   depends on.
+   What do you mean Dependency Injection ?
+-> Dependency Injection is a design pattern in which an object receives other objects on which
+   it depends on.
 
    What are the Different Layers During Application Dependent ?
 -> There are Three main layers during Application Development -- 
@@ -268,3 +293,4 @@
 
 
        
+

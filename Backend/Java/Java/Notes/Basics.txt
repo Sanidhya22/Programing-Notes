@@ -1,0 +1,798 @@
+                                           Basic of Java
+
+Class - 
+• A class is a blueprint used to create objects, it defines the variables and the methods common to all 
+objects of a certain kind.          
+
+Syntax:--
+[access specifier][access modifier] class classname {
+ Data member
+ Constructor
+ Method
+ Blocks( static & nonstatic)
+ Inner class/interface.
+};
+Note - semicolon at the end of the class is optional
+
+class Student{
+    private String name;
+    private int roll;
+
+    Student(){
+        name = "Sujit";
+        roll = 12;
+    }
+
+    Student(String name, int roll){
+        this.name = name;
+        this.roll = roll;
+    }
+
+    public void show(){
+        System.out.println("Welcome to Java");
+    }
+}
+
+
+• Generally a class contains some members known as data member/properties/instance variables  (instance 
+  variables), constructer and method/member function /behavior.
+• The instance variable behaves like a global member for the other members (constructer and method) 
+  of the class because the instance variables will accept the value from constructors & can be 
+  manipulated within the method.
+• Java does not support destructor and delete operator. Although we cannot use address of operator still 
+  we can create copy constructer.
+• Java does not support nested constructor or nested method. Similarly we cannot define a method 
+  within a constructor and vice versa. A member of a class can be accessed by other member 
+  directly/indirectly.
+• We cannot write any independent statements outside of a constructor or method in java.
+• We can initialize data members of the class directly in java.
+• The position of members of the class in java is not fixed.
+• The access specifier of members and the class is implicitly default in java. It can be accessed by any 
+  other class that stored within the same folder.
+
+• Each object will get separate copy of instance variables of the class. Since, the variables of the class 
+  belong to instances (objects) of the class, hence they are known as instance variable of the class.
+
+
+
+  Situations                      Public              Protected         Default            Private
+
+  Accessible to class              Yes                  Yes               Yes                No
+  from same packages
+
+  Accessible to class              Yes                  No                No                 No
+  from different packages                      Unitil it is a subclass
+
+Objects - 
+Objects are the instance of the classes.  
+
+There are different ways to create an object in java. They are:
+• By new keyword (including copy constructor) - 
+
+ Syntax - ClassName ObjectName = new ClassName(); 
+
+ class Student{
+    private String name;
+    private int roll;
+
+    Student(){
+        name = "Sujit";
+        roll = 4;
+    }
+
+    Student(String name,int roll){
+        this.name =  name;
+        this.roll = roll;
+    }
+
+    public void show(){
+        System.out.println("Student is object is created");
+    }
+ }
+
+ class Test{
+    public static void main(String args[]){
+         Student s1 = new Student("Sujit", 1);
+         s1.show();
+    }
+ }
+
+
+• By newInstance() method  - 
+
+class Simple{
+    void message(){
+        System.out.println("Hello Java");
+    }  
+}  
+  
+class Test{  
+    public static void main(String args[]){  
+    try{  
+    Class c = Class.forName("Simple");  
+    Simple s = (Simple)c.newInstance();  
+    s.message();  
+    }catch(Exception e){
+        System.out.println(e);
+    }  
+  }  
+}  
+
+
+• By clone() method - 
+
+class Student implements Cloneable{  
+    int rollno;  
+    String name;  
+  
+    Student(int rollno, String name){  
+       this.rollno = rollno;  
+       this.name = name;  
+    }  
+  
+   public Object clone() throws CloneNotSupportedException{
+       return super.clone();  
+   }  
+  
+   public static void main(String args[]){  
+      try{  
+            Student s1 = new Student(101,"amit");  
+            Student s2 = (Student)s1.clone();  
+            System.out.println(s1.rollno+" "+s1.name);  
+            System.out.println(s2.rollno+" "+s2.name);  
+        }catch(CloneNotSupportedException c){}  
+  
+    }  
+} 
+
+• By factory method  - 
+• By deserialization -
+• By lookup() - 
+
+Differnce between Object and Class
+                  Class                                           Object
+
+1.  It is a blueprint used to create objects.        1. It is a instance of a class.
+2.  Whenever we define a class no memory             2. Whenever we create an object we get the 
+    space is allocated for the data members             memory space for data members and methods of a class.
+    and the methods.
+3.  In one java program the definition of one        3. With respect to one class we can create 
+    particular class will exists only once.             multiple objects.
+4.  Whenever we execute the java program             4. After loading the class whose corresponding class
+    the class will be loaded first in the main          object can be created.
+    memory.
+
+
+Constructor - 
+• It is a block of code which is used to initialize the data members of a class during object creation. 
+• Constructor in java is a special type of method that is used to initialize the object.
+• The name of the constructor must remain the same as that of the class name in proper case. 
+• It is always invoked/called implicitly with new operator when the object is created.. 
+• A constructer has no access modifier but it can have access specifier. 
+• The access specifier of the constructor may or may not be private.
+    1. If the access specifier of the constructor is private then an object of corresponding class can 
+       be created in the context of the same class but not in the context of some other classes.
+    2. If the access specifier of the constructor is not private then an object of corresponding class 
+       can be created both in the same class context and in other class context.
+• A constructer can be overloaded but it cannot be overridden. 
+• Constructor should not return any value not even void. Because basic aim is to place the value in the 
+object. (if we write the return type for the constructor then that constructor will be treated as ordinary 
+method in java).
+• A constructer has an implicit return type called class that return an object.
+• Constructor definitions should not be static. Because constructors will be called each and every time, 
+whenever an object is creating.
+• Constructors will not be inherited from one class to another class (Because every class constructor is 
+created for initializing its own data members).
+
+Types of Constructors  ---
+
+1. Default Constructor - 
+• The default constructor generally does not accept any parameter and we can define only one default 
+  constructor in a class, 
+• The default constructor is generally used to provide the default value to the data member during object
+  creation.
+
+2. Parameterized Constructer - 
+• Parameterized constructor accept some parameter, hence we can define many parameterized constructor in a class.
+• Parameterized constructor is used to initialized the data member with dynamic value during object creation.
+
+Copy Constructer - 
+The copy constructor is a constructor which creates an object by initializing it with an object of the same 
+class, which has been created previously.
+
+class A{
+    int x,y;
+    A( ){ x=5; y=9;}
+    A(A ob){ //copy constructer
+    x = ob.x;  
+    y = ob.y; 
+   }
+}
+
+class B{
+   public static void main(String args[] ){
+   A a1 = new A();
+   A a2 = new A(a1);
+   System.out.println(a2.x+” : ”+a2.y);
+}}
+
+Notes -
+• If we do not provide any constructer in a class then compiler automatically creates a default 
+  constructor. The default constructor will initialize the instance variable with default only if the instance 
+  variable has no values.
+
+• If we do not provide any constructer in a class then we will never get the parameterized constructor 
+• If we define parameterized constructor in a class then we can create object by using parameterised 
+  constructor, but we will never use default constructor, because java will not provide default constructor if we 
+  provide parameterized constructor.
+  Therefore in order to use both constructors we have to define both constructors.
+
+
+This keyword ---
+• It is used to refer the object for which the current execution is going on. ”this” is used to refer the 
+  object during the current context.
+• When we evaluate instance variables of the class within the constructer or member method then 
+  interpreter uses “this” implicitly to evaluate the instance variables as this.instance variables.
+• It is also called a non static variable in java.
+• when a local variable/parameter of a method/constructor has same name as that of the name of 
+  the instance variables, then within the local scope the local variable/parameter will get more priority 
+  or precedence and no value will given to the instance variables.
+
+
+The usuages of this keyword -
+1. this keyword can be used to refer current class instance.
+2. this() can be used to invoke current class constructor.
+3. this keyword can be used to invoke current class method (implicitly).
+4. this can be passed as an argument in the method call.
+5. this can be passed as argument in the constructor call.
+6. this keyword can also be used to return the current class instance.
+
+class A { 
+void m(){ 
+System.out.println(this);
+//prints same reference ID 
+} 
+
+public static void main(String args[]){ 
+A obj=new A(); 
+System.out.println(obj);
+//prints the reference ID 
+ obj.m(); 
+}}
+
+1. The this keyword can be used to refer current class instance variable: -
+
+If there is ambiguity between the instance variable and parameter, this keyword resolves the problem of 
+ambiguity.
+
+class Stud{ 
+  int id; 
+  String name; 
+ 
+ Stud(int id, String name){ 
+  id = id; 
+  name = name; 
+ }
+
+ void display(){ 
+  System.out.println( id+" "+name); 
+ }
+
+ public static void main(String args[]){ 
+  Stud s1 = new Stud(111,"Karan"); 
+  Stud s2 = new Stud(321,"Aryan"); 
+  s1.display(); 
+  s2.display(); 
+  } 
+}; 
+
+Output: 0 null
+        0 null
+
+
+Parameter (formal arguments) and instance variables are same that is why we are using this keyword to 
+distinguish between local variable and instance variable Solution of the above problem by this keyword.
+
+class Stud1{ 
+  int id; 
+  String name; 
+
+ Stud1(int id,String name){ 
+  this.id = id; 
+  this.name = name; 
+ } 
+ void display(){
+  System.out.println(id+" "+name);
+ } 
+ public static void main(String args[]){ 
+  Stud1 s1 = new Stud1(111,"Karan"); 
+  Stud1 s2 = new Stud1(222,"Aryan"); 
+  s1.display(); 
+  s2.display(); 
+ } 
+} 
+
+ Output : 111 Karan
+          222 Aryan
+
+2. this() can be used to invoked current class constructor -
+
+The this() constructor call can be used to invoke the current class constructor (constructor chaining). 
+This approach is better if you have many constructors in the class and you want to reuse that 
+constructor. 
+
+  class Stud{ 
+   int id; 
+   String name; 
+
+   Stud(){
+    System.out.println("default constructor is invoked");
+   }
+  Stud(int id,String name){ 
+     this ();
+     this.id = id; 
+     this.name = name; 
+  }
+  void display(){ 
+     System.out.println(id+" "+name);
+  } 
+
+ public static void main(String args[]){ 
+   Stud e1 = new Stud(111,"karan");
+   Stud e2 = new Stud(222,"Aryan");
+   e1.display(); 
+   e2.display(); 
+  } 
+ }        
+
+default constructor is invoked
+default constructor is invoked
+111 karan
+222 Aryan
+
+ Where to use this() constructor call ?
+ The this() constructor call should be used to call the constructor in the constructor. It maintains the 
+ chain between the constructors i.e. it is used for constructor chaining. Let's see the example given 
+ below that displays the actual use of this keyword.
+
+ class H { 
+
+  H(){ 
+    this(44.66f);
+    System.out.println("def. cons. of H");
+  }
+  H(int p){ 
+    this();
+    System.out.println("int para cons. of H");
+  }
+  H(float p){ 
+    this("hi");
+    System.out.println("float para cons. of H");
+  }
+  H(String p){ 
+    System.out.println("String para cons. of H");
+  }};
+  class G {
+    public static void main(String args[]) {
+    H h1 = new H(12);
+  }};
+
+this() - It invokes default constructor of same class.
+this(parameter) - It invokes parmeterized constructor of same class.
+When we use this() / this(para) to invoke other constructor of same class, then it must be first executable 
+statement in a constructor, hence more than one this()/ this(para) cannot be used in a constructor.
+
+3. The this keyword can be used to invoke current class method (implicitly) -
+
+You may invoke the method of the current class by using the this keyword. If you don't use the this keyword, 
+compiler automatically adds this keyword while invoking the method.
+
+class S{ 
+  void m(){ 
+    System.out.println("method is invoked"); 
+  }
+  void n(){ 
+    this.m();
+   //no need because compiler does it for you. 
+  } 
+  void p(){ 
+    n();
+   //complier will add this to invoke n() method as this.n() 
+  } 
+  public static void main(String args[]){ 
+   S s1 = new S(); 
+   s1.p(); 
+  }}
+
+ Output: method is invoked
+
+ 4. this keyword can be passed as an argument in the method - 
+
+ The this keyword can also be passed as an argument in the method. It is mainly used in the event handling.
+
+ class S2{ 
+
+  void m(S2 obj){ 
+   System.out.println("method is invoked"); 
+  } 
+  void p(){ 
+   m(this); 
+  }
+  public static void main(String args[]){ 
+   S2 s1 = new S2(); 
+   s1.p(); 
+  }} 
+
+  Output: method is invoke
+
+5. The this keyword can be passed as argument in the constructor call - 
+
+We can pass the this keyword in the constructor also. It is useful if we have to use one object in 
+multiple classes.
+
+   class B{ 
+    A4 obj; 
+    B(A4 obj){ 
+     this.obj=obj; 
+    } 
+    void display(){ 
+     System.out.println(obj.data);//using data member of A4 class 
+   }}
+
+   class A4{ 
+     int data=10; 
+     A4(){ 
+       B b = new B(this); 
+       b.display(); 
+     } 
+     public static void main(String args[]){ 
+       A4 a = new A4(); 
+     }}
+
+6. The this keyword can be used to return current class instance -
+We can return the this keyword as an statement from the method. In such case, return type of the method 
+must be the class type (non -primitive).
+
+   class A{ 
+     A getA(){ 
+      return this; 
+     } 
+    void msg(){
+      System.out.println ("Hello java");
+   }} 
+
+   class Test1{ 
+      public static void main(String args[]){ 
+      new A().getA().msg(); 
+   } }
+
+Methods - 
+• A method is a block of code which only runs when it is called.
+
+Differnce between Constructer and Method 
+
+                 Constructer                                        Method
+1. Create an instance of a class i.e.           1. Group Java statements. i.e., Method is used to 
+   Constructor is used to initialize the           expose behavior of an object.
+   state of an object.
+
+2. Cannot be abstract, final, native, static,   2. Can have any access modifiers.
+   or synchronized.
+
+3. No return type, not even void.                3. void or a valid return type.
+4. Same name as the class (first letter is       4. Any name except the class. Method names begin 
+   capitalized by convention) -- usually a          with a lowercase letter by convention -- usually 
+   noun.                                            the name of an action.
+
+5. this()/this(values) refers to another         5. Refers to an instance of the owning class. Cannot
+   constructor in the same class. If used,          be used by static methods.
+   it must be the first line of the 
+   constructor.   
+
+6. super()/super(values) calls the constructor   6. Calls an overridden method in the parent class.
+   of the parent class. If used, must be the 
+   first line of the constructor. 
+
+Access Specifier - 
+Access Specifier a term used to describe the access level of a class member (field, method, constructor) 
+in object-oriented programming languages.  
+
+Access Modifier - 
+Access Modifier keyword is used to modify the functionality to a component.
+
+final:-- It makes read only attribute.
+static:-- it can be accessed class name as well as by the object.
+abstract:- only method declaration is available without the definition.
+synchronized:-- multiple thread cannot access a synchronized method simultaneously.
+transient:-- The value of a variable will not persist even if the object is serialized.
+
+Final Variable - 
+• Declaring the final keyword before the variable makes it a constant in java( i.e. the 
+value of the variable will not be changed) and it is called final variable.
+
+e.g final int x=54;
+-----------------------
+x=34; //error, because final variable x is already initialized.
+Declaring the final variable without any value makes it a blank final variable. The value of the variable 
+can be assigned only once.
+e.g. final int y; // y is a blank final variable , because it has no value 
+-----------------
+y=56; // ok, because blank final variable y has no value and we can initialize the value only once
+-----------------------
+y=42; // error; because y has already initialized. 
+
+Note : The position of access specifier & access modifier can always interchanged in java.
+
+Java static keyword - 
+• The static keyword in java is used for memory management mainly. We can apply java static keyword 
+with variables, methods, blocks and nested class.
+
+The static can be:
+1. variable (also known as class variable)
+2. method (also known as class method)
+3. block
+4. nested class
+
+Static Variable/ Class Level Variable:-- 
+• Declaring the static keyword before instance variables makes it a static variable or class level variable 
+in java.
+• The static variable can be accessed by the object and by the class name in other classes.
+• Each object will get separate copy of the data member of the class where as each object will never get 
+separate copy of static variables because instance variables belongs to object where as static variable 
+belongs to class( i.e. static variable are available per class basis, where as the instance variables are 
+available per object basis).
+• Each object can access or share or manipulate the value of static variable.
+• The static variable gets memory only once in class area at the time of class loading.
+• The static variable can be used to refer the common property of all objects like company details etc.
+
+Advantage of static variable : It makes your program memory efficient (i.e it saves memory).
+
+Static Method - 
+• Declaring the static keyword before the return type of the method makes the method as static method.
+• It can be invoked by the class name as well as by the class object in other class.
+• A static method can’t access non static member of the same class, hence it cannot access this/super, 
+but it can access the static members of the same class.
+
+class A{
+  int x;
+  static int cnt;
+  A() { x = 4; cnt++; }
+  A(int p) { x = p; cnt++; }
+  void show(){
+    System.out.println( x + " : " + cnt);
+  }
+  static void objCount(){
+  System.out.println ("the no. of object :"+ cnt );
+}};
+
+class B{
+  public static viod main(String args[]){
+  System.out.println(A.cnt);
+  A a1 = new A();
+  A.objCount();
+  A a2 = new A(13);
+  a1.show();
+  a2.show();
+  new A().objCount();
+  a2.show();
+  System.out.println(a1.cnt);
+}};
+
+Output - 
+0
+the no. of object : 1
+4 : 2
+13 : 2
+the no. of object : 3
+13 : 3
+3
+
+
+Note : A local variable/parameter of a method/constructor can’t be preceded by any access specifiers or by 
+static modifier, otherwise it will generate compilation error.
+
+Note -
+public static void main(String args[]) :--
+• Even if main is the method from which the program execution will start, still it is a member of any 
+  user defined class. Hence the main method can be accessed by anybody/interpreter only if it is public. 
+
+• Since main is a member, anybody or interpreter can access it by the object, but main method is static 
+  Hence we/other programmer/interpreter can invoke the main method by the class name.
+
+• The args is the array of String objects which is a parameter of the main method & it is used to receive 
+  the command line argument.
+
+
+Differnce between Static and Non Static Variable 
+             Non-Static/Instance Variable                           Static Variable
+
+1. Memory is allocated for these variable              1. Memory is allocated for these variable at the 
+   whenever an object is created.                         time of loading of the class.
+
+2. Memory is allocated multiple time whenever a        2. Memory is allocated for these variable only once in 
+   new object is created.                                the program.
+
+3. These variable should not be preceded by any        3. These variable should be preceded by any 
+   static keyword.                                        static keyword.
+
+4. Non-static variable also known as instance          4. Static variable are also known as class
+   variable while because memory is allocated             variable because memory is allocated at the 
+   whenever instance is created.                          time of class loading.
+
+5. Non-static variable can access with object in       5. Static variable can access with class reference
+   other class.                                           or by object in other class.
+
+
+Static block - 
+• It is a block preceded by static keyword. It is used to initialize the static variable of the class.
+• The program execution always starts from the static block then the main() will execute.
+• It is executed before main method at the time of classloading.
+• If we provide more than one static block in a class then they will execute sequentially.
+
+
+class Nomain1 {
+  static int z;
+
+  public static void main(String args[]){
+    System.out.println("main method");
+  }
+  static {
+   z=123;
+   System.out.println(“val:”+z);
+  }
+  static {
+   System.out.println(“2nd static block”);
+  }};
+
+If we do not provide the main() in a class then the program generate runtime exception. To avoid it we can 
+write exit() of System class to terminate the execution .
+
+class Nomain2 {
+ static int r; 
+ static {
+   r = 444; 
+   System.out.println("The value is : "+r);
+   System.exit(0);
+}}
+
+Non Static Block - 
+• Declaring a block without any keyword in a class makes it a non-static block, it'll always execute before 
+the constructor.
+
+class A {
+
+  A(){ 
+  System.out.println("constructor of A");
+  }
+
+  {
+  System.out.println("non-static block of A");
+  }
+  void test(){
+  System.out.println("test in A");
+}};
+
+class B {
+ public static void main(String args[]) {
+ A a1 = new A();
+ A a2 = new A(); 
+ a1.test();
+ a2.test();
+}};
+
+What is the difference between pass by value and pass by reference ?
+• Pass by value: The method parameter values are copied to another variable and then the copied object is 
+  passed to the method. 
+• Pass by reference: An alias or reference to the actual parameter is passed to the method. The method 
+  accesses the actual parameter.
+
+Type of class:-- In java we have 3 types of classes known as 
+1. Concrete class (CC)
+2. Abstract class (Ac)
+3. Inner class (IC)
+
+Concrete class -
+• It is a class whose object can be created independently is known as CC. it implements lower level of 
+  abstraction.
+
+Abstract class -   
+• It is a class whose object cannot be created. It implements higher level of abstraction.
+• A class which is preceded by abstract keyword is known as abstract class.
+• It may or may not contain any abstract method. Even if abstract class does not contain any abstract 
+  method still we cannot create its object.
+• In case of abstract class along with instance variables’s some methods are abstract hence abstract 
+  class implements higher level of abstraction than concrete class.
+• Both abstract class & concrete class help to achieve the code reuse and polymorphism during 
+  inheritance but abstract class forces the child class to define abstract method by overriding but CC 
+  can’t force the child class to override a method.
+
+  Syntax:--
+  [ access specifier ] abstract class classname {
+    Data members.
+    Constructors
+    Concrete methods
+    Abstract methods
+  };
+
+  abstract Class A{
+   int x,y:
+   A() { x = 5; y = 7; }
+   A( int p, int q ) { x = p; y = q; }
+   abstract void diff();
+   abstract int square(int z);
+   void add() {
+   System.out.println("sum : " + ( x + y ) ); 
+  }};
+
+Abstract Method - 
+• It is a method preceded by abstract keyword and that does not contain the method 
+  definition but contains method declaration.
+
+Interface - 
+• An Interface in Java programming language is defined as an abstract type used to specify the behavior 
+  of a class.
+• It implements highest level of abstraction. 
+• An interface, generally consisting of final variables & abstract methods.
+• By default the variables declared in an interface are public, static & final. Similarly the method in an interface 
+  are by default public & abstract. Hence no need to provide these keywords before the variables or methods 
+  defined in an interface.
+
+SYNTAX:--
+  [access specifier] interface interfacename {
+    [public] [static] [final] variables
+    [public] [abstract] method
+  };
+
+e.g. interface A{
+       int x = 23;
+       void add();
+       int diff();
+     };
+
+Difference between Abstract/Concrete class and Interface  
+            Concrete Class/abstract class                        Interface       
+
+ 1. We can define constant as well as variable.        1. We can declare only constant.
+ 2. We can define constructer and concrete             2. We can declare only abstract method.
+    method in Concrete Class & abstract class, 
+    as well as can declare abstract method in 
+    abstract class.   
+ 3. Java does not allow multiple inheritances          3. Java allows multiple inheritances from 
+    from Concrete Class & abstract class.                 interfaces.
+
+
+    
+Interface VS Abstract class VS Concrete class
+1. If we don’t know anything about implementation just we have requirement specification (100% 
+   Abstraction) then we should go for interface.
+2. If we are talking about implementation but not completely ( partial implementation) then we should go 
+   for Abstract class.
+3. If we are talking about implementation completely and ready to provide service then we should go for 
+   concrete class.
+
+When should I use abstract classes and when should I use interfaces?
+
+Use Interfaces under following condition -
+1. You see that something in your design will change frequently.
+2. If various implementations only share method signatures then it is better to use Interfaces.
+3. You need some classes to use some methods which you don't want to be included in the class, then 
+   you go for the interface, which makes it easy to just implement and make use of the methods defined 
+   in the interface.
+
+Use Abstract Class under following condition - 
+1. If various implementations are of the same kind and use common behavior or status then abstract 
+   class is better to use. 
+2. When you want to provide a generalized form of abstraction and leave the implementation task with 
+   the inheriting subclass.
+3. Abstract classes are an excellent way to create planned inheritance hierarchies.
+
+
+
+
+
+                
+
+
+
+
+
