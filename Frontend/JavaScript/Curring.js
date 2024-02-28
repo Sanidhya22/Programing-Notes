@@ -1,31 +1,25 @@
 
-/* What do you mean by Curring in JavaScript ?
--> Currying is a technique of evaluating function with multiple arguments by decomposing
-   it into a sequence of functions with a single argument. 
+//    What do you mean by Curring in JavaScript ?
+// -> Currying is a functional programming technique in JavaScript where a function with 
+//    multiple parameters is transformed into a sequence of functions, each taking a single 
+//    parameter.
 
-   Currying is an advanced technique of working with functions. It’s used not only in
-   JavaScript, but in other languages as well.
-
-   Currying is a transformation of function that translates a function from callable 
-   as f(a, b, c) into callable as f(a)(b)(c).*/
-
-  /*  Advantages of Curring in Javasript
-   ----------------------------------
-   1. It helps to create a higher-order function.
-   2. It’s easier to read the code and understand what it’s doing using Curring.
-   3. Currying will make our code easier to refactor.
- */
+//   Advantages of Curring in Javasript
+//    ----------------------------------
+//    1. It facilitates the use of higher-order functions.
+//    2. It is easier to read the code and understand what it’s doing using Curring.
+//    3. It can simplify unit testing Since curried functions accept their arguments one at a time, 
+//       it's easier to provide inputs and test the behavior of the function for various scenarios.
 
 
-//Normal way of calling function
+
+//Normal Function
 function addition(a, b, c) {
     return a + b + c;
 }
 console.log(addition(12, 34, 67));
 
-
-
-//Another way of Calling Function
+//Curring Function
 function Sum(a) {
     return function (b) {
         return function (c) {
@@ -33,14 +27,12 @@ function Sum(a) {
         }
     }
 }
-let res = Sum(13);
-let data = res(14);
-let ans = data(15);
-console.log(ans);
+const res1 = Sum(13);
+const res2 = res1(14);
+const res3 = res2(15);
+console.log(res3);
 
 
-
-//Curring in Function
 function add(a) {
     return function (b) {
         return function (c) {
@@ -48,7 +40,7 @@ function add(a) {
         }
     }
 }
-let result = add(45)(75)(100);
+const result = add(45)(75)(100);
 console.log(result);
 
 

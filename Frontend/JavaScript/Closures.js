@@ -1,105 +1,35 @@
-/* Closures - 
-It is a Mechanism  to retain a value of a function scope variable
-for a long time */
+// Closures -
+// Closures is a concept in JavaScript that allow inner function to retains access to parameters of
+// its outer function, even if outer function has finished executing or returned inner function.
 
-/* function increment(){
-    var a = 0;
-    a = a+1;
-    console.log(a);
+//Example 1
+function createCounter() {
+  let count = 0;
+
+  return function () {
+    return ++count;
+  };
 }
 
-increment();
-increment();
-increment();
-increment(); */
+const counter = createCounter();
 
-/* Here we can see the value of a is not changing because the scope of the 
-a variable is local so they are getting intialized every time when 
-we are calling the function. */
+console.log(counter()); // Output: 1
+console.log(counter()); // Output: 2
+console.log(counter()); // Output: 3
 
-
-
-// Normal way of Declaring Closures
-
-function increment() {
-    var a = 0;
-    var plus = function () {
-        a = a + 1;
-        console.log(a)
-    }
-    return plus;
-}
-
-incr = increment();
-incr();
-incr();
-incr();
-incr();
-
-/*
-OUTPUT - 
-1
-2
-3
-4 */
-
-
-/* Here we have declared Inner function inside the function so the memory 
-will remain occupied in the stack till we comeout of the outer function
-and by using return plus statement we are passing the reference of function
-plus.
- */
-
-/* 
-By Using Self invoking Functions
-
-var incr = function increment(){
-    var a = 0;
-    var plus = function(){
-        a = a+1;
-        console.log(a)
-    }
-    return plus;
-}();
-
-incr();
-incr();
-incr();
-incr(); 
-
-OUTPUT -
-1
-2
-3
-4
-*/
-
-
-/* A Closure is the combination of a function bundled together with Reference to its 
-   Surrounding state(Lexical Enviroment).
-   Closure means that an inner function always has access to the vars and parameters of 
-   its outer function, even after the outer function has returned inner function.
-   */
-
-/* function x() {
-    var a = 7;
-    function y() {
-        console.log(a);
-    }
-    y();
-}
-x(); */
-
-
+//Example 2
 function x() {
-    var a = 7;
-    function y() {
-        console.log(a);
-    }
-    return y;
+  var a = 7;
+  function y() {
+    console.log(a);
+  }
+  return y;
 }
 
 var z = x();
 console.log(z);
 z();
+
+// Here the memory will remain occupied in the stack till we comeout of the outer function and by using 
+// return function statement we are passing the reference of function.
 

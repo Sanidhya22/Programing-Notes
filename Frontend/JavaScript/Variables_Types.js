@@ -7,7 +7,7 @@ There are Three Keywords we use for Declaring variables
 
 Var - 
 This is a Keyword we use to declare variable.
-These variables have global and loca; scope.
+These variables have global and local scope.
 These variables can be redeclared in the same scope.
 These varibles can be accessed before they are being declared.
 

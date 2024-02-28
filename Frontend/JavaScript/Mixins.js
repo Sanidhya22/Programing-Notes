@@ -1,28 +1,30 @@
-/* 
-    Mixins -
-    Mixins can be stated as mixins is a class that contains methods that can be 
-    used by other classes without inheriting from that class.
+// Mixins -
+// Mixins in JavaScript refer to a pattern where objects can borrow (or mixin) methods and properties
+// from other objects, allowing for code reuse and composition without inheritance.
 
+// Define a mixin object with reusable methods
+const myMixin = {
+  sayHello() {
+    console.log(`Hello, ${this.name}!`);
+  },
+  sayGoodbye() {
+    console.log(`Goodbye, ${this.name}!`);
+  },
+};
 
-*/
-
-//Simple Mixin in Javascript
-
-const petMixins = {
-    printInfo() {
-        console.log(`${this.name} is ${this.age} years old`);
-    }
+// Define a class
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
 }
 
-class Cat {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-}
+// Assining the methods from myMixin into the Person class prototype
+Object.assign(Person.prototype, myMixin);
 
+// Create an instance of Person
+const person = new Person("Alice");
 
-let mycat = new Cat("Sujit", 15);
-Object.assign(mycat, petMixins);
-
-mycat.printInfo();
+// Call methods from the mixin
+person.sayHello(); // Output: Hello, Alice!
+person.sayGoodbye(); // Output: Goodbye, Alice!

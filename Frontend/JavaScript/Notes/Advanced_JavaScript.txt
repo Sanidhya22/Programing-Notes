@@ -5,41 +5,33 @@
 ->  Execution Context is the Enviroment created by JS to execute Javascript Code.      
 
     How does JavaScipt Program executes ?
-->  When Javascript Program Starts A Global Execution Context is created and moved 
-    to the Callstack and it will poped out after whole Synchronous JavsScript
-    Code will get executed.
+->  When Javascript Program starts a global execution Context is created and moved to the Callstack and 
+    it will poped out after whole synchronous javsScript code will get executed.
 
-    Whenever It Encounter Asynchronus Code a callback with setTimeout
-    then that Callaback function goes to Web API of the browser and 
-    get the callback register there and wait for specified Millisecond 
-    time , when it completes, it goes to the Callback Queue and waits 
-    Until Whole Javascript code will get executed and Callstack will
-    have no more code to execute then it is moved to the Callstack
-    for the Execution.
+    while execution whenever It encounter asynchronus code (e.g  a callback with setTimeout) then that 
+    Callback function goes to Web API of the browser and get the callback register there and wait for 
+    specified Millisecond time , when it completes, it goes to the Callback Queue and waits 
+    Until Whole Javascript code will get executed and Callstack to be empty then it is moved to the 
+    Callstack for the Execution.
 
-    Whenever It Encounters Asynchronous Code Promise based code then It
-    register that callback function in the Web API of the browser
-    and moved to the Microtask Queue , here it executes in the background 
-    and once Its execution is done It is moved to the Callstack for 
-    Execution.
+    while execution whenever It encounters asynchronous code (e.g Promise based code ) then It register 
+    that callback function in the Web API of the browser and wait for specified Millisecond time ,
+    when it completes, moved to the Microtask Queue and waits Until Whole Javascript code will get 
+    executed and Callstack to be empty then it is moved to the Callstack for the Execution.
     Microtask Queue has higher Priorty than Callback Queue.
                     
     What do you mean by Eventloop in JavaScript ?
-->  The event loop is a constantly running process that monitors both the callback queue and the 
-    call stack.
-
-    If the call stack is not empty, the event loop waits until it is empty and places the next 
-    function from the callback queue to the call stack. If the callback queue is empty, nothing
-    will happen.
+->  Event loop is a mechanism which continuously monitors the call stack and the callback queue. When the 
+    call stack is empty (meaning there's no more synchronous code to execute), the event loop checks if 
+    there are any callbacks waiting in the callback queue for execution.
 
     The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all 
     operations on a single thread, but using a few smart data structures, it gives us the illusion
     of multi-threading.
 
     What do you mean by Call Stack ?
-->  Call Stack is a Stack which is responsible for keeping track of all the operations in the code
-    in Javascript. Whenever we want to execute a function or do some Operation we move it to Call Stack
-    Once it will get finished, it is popped from the Call Stack.
+->  Call stack is a mechanism used to keep track of function calls during the execution of a script. It's 
+    a data structure that operates on a last-in, first-out (LIFO) basis.
     
     A Call Stack is a way for the Javascript Engine to keep track of its place in the code,
     It also stores additional information like Whenever we execute Nested functions 
@@ -54,9 +46,11 @@
     should be sent for execution as they are being Called.   
 
     What do you mean by callback Queue ?
-->  Callback Queue is a Queue where the asynchronous code gets pushed, and waits for the execution.
+->  The callback queue (also known as the task queue or message queue) is a data structure that holds 
+    callback functions waiting to be executed. It's closely related to the event loop mechanism and is 
+    used to manage asynchronous operations.
     Callback Queue start getting executed only after We have reached the end of the program or
-    There are no functions left to be executed in the call stack.
+    There are no statements left to be executed in the call stack.
 
     The Callback Queue waits until the call stack is empty. Afterwards, the codes in it are 
     executed in First In, First Out (FIFO) order. As more functions or codes are added to the
@@ -90,8 +84,7 @@
    The defer attribute is a boolean attribute.
 
     What do you mean by Functional Programming ?
-->  Functional Programming is the Programming language which Majorly deals
-    with the functions.  
+->  Functional Programming is the Programming language which Majorly deals with the functions.  
 
     What do you mean by setPrototypeOf method of JavaScript ?
 ->  The Object.setPrototypeOf() method sets the prototype of one object to another object.    
@@ -187,14 +180,12 @@
     run in the capturing phase. When it reaches the button it switches from the capturing phase to the 
     target phase and lastly to the bubbling phase. It fires the addEventListener which is in default mode.
 
-
     What do you mean by Event Propagation ?
-->  Event propagation is a mechanism that defines how events propagate or travel 
-    through the DOM tree to reach the target element.   
+->  Event propagation is a mechanism that defines how events propagate or travel through the DOM tree to 
+    reach the target element.   
 
     What do you mean by Event Delegation ? 
-->  Event delegation refers to the Process of handling events in our application 
-    in a more optimal way.
+->  Event delegation refers to the Process of handling events in our application in a more optimal way.
 
     Event Delegation is possible just because of Event bubbling.
     So Whenever user click on child element button then events bubbles up from 
@@ -292,12 +283,11 @@
         2. Skiping Structured Clone Alogrithm by sending data in buffer format.
 
    What do you shadow DOM in Javascript ?
--> Shadow DOMs are the hidden DOMs that are attached to the elements of the regular 
-   DOM.
+-> Shadow DOMs are the hidden DOMs that are attached to the elements of the regular DOM.
 
    Why we need Shadow DOM in JavaScipt ?
--> When we want to encapsulate some HTML element from getting affected with 
-   regular DOM elements behaviour then we need Shadow DOM element.
+-> When we want to encapsulate some HTML element from not getting affected with regular DOM elements 
+   behaviour then we need Shadow DOM element.
 
    What do you mean by WebSockets in JavaScript ?
 -> The WebSocket API is an advanced technology that makes it possible to open a two-way interactive 
@@ -306,7 +296,12 @@
    Why we need WebSockets ?
 -> WebSockets were invented by developers to effectively facilitate real-time results. WebSockets work by 
    initiating continuous, full-duplex communication between a client and server. This reduces unnecessary 
-   network traffic, as data can immediately travel both ways through a single open connection.              
+   network traffic, as data can immediately travel both ways through a single open connection.    
+
+   What do you mean by webWorkers ?
+-> Web Workers is a feature in JavaScript that allows developers to run scripts in background threads 
+   apart from the main thread of the web page. This enables concurrent execution of scripts, improving 
+   performance and responsiveness. 
 
 
    
