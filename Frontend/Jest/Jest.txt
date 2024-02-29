@@ -1,0 +1,89 @@
+                                                     Jest
+                                       ------------------------------------      
+
+   What are the tools we use in react for testing ?
+   the tool we use react testing are 
+   1. Jest -    Jest is a free open source test framework created by facebook that has a great integration
+                with React.js.
+   2. Enzyme -  Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and 
+                traverse your React Components' output.      
+   3. React testing Library - React Testing Library is a popular testing utility for React applications 
+   that focuses on testing components in a way that closely resembles how users interact with the 
+   application. It provides a simple and intuitive API for querying and interacting with React components 
+   in tests.
+
+
+   What is assertions ?
+   An assertion refers to a statement or function that checks whether a certain condition is true or 
+   false.
+
+   RTL Queries -
+   1. getByRole - Queries for element with the given role.
+      e.g - screen.getByRole('textBox');
+            screen.getByRole('textBox',{ name: "Name"});
+
+   2. getByLabelText - It will search for the label that matches the given text.
+      e.g - screen.getByLabelText('name');  
+
+   3. getByPlaceholderText - It will search for all the elements with placeholder attribute and find
+      one that matches the given text.
+      e.g - screen.getByPlaceholderText('enter your name');
+
+   4. getByText - It will search for all the elements that have a text node with textContent matching
+      the given text.
+      e.g - screen.getByText('Hello world');  
+
+   5. getByDisplayValue - It returns textArea, Input and select element that has the matching value.
+      e.g - screen.getByDisplayValue('Vishwas');   
+
+   6. getByAltText - It will return the element that has the given alttext value.
+      e.g - screen.getByText('Image not found');     
+
+   7. getByTitle - It will return the element that has the matching title attribute.
+      e.g - screen.getByText('heading');      
+
+   8. getByTestId - getByTestId returns the element that has the matching data-testid attribute.   
+
+
+   RTL Multiple Queries  - For RTL multiple Queries replace RTL single element Queries getBy by getAllBy.
+
+   Note -
+
+   queryBy - Returns the matching node for a Query and return null if such no element found.
+             Useful for asserting the element that is not present in the DOM.    
+             Here HTML element is not in the DOM.
+
+   findBy  - Returns a Promise which resolves when an element is found which matches the given query.
+             Promise is rejected if no element is found or more than one element is found after a 
+             default timeout of 1000ms.
+             Here HTML element appears in the UI after sometime.
+
+   User-event - It is a companion library for testing, It is a library that simulates user interactions
+                by dispatching events.        
+
+   Given a component which fetches data and populate it in the UI. Now what are cases to cover while 
+   writing its unit test.    
+   The cases are as follows -   
+            
+   1. Data Fetching Success: Test that the component successfully fetches data from the server and 
+      renders it in the UI. This involves mocking the API call and asserting that the component renders 
+      the expected data.
+
+   2. Data Fetching Failure: Test how the component handles failure scenarios, such as network errors or 
+      invalid responses from the server. Ensure that appropriate error handling mechanisms are in place, 
+      such as displaying error messages or fallback UI elements.
+
+   3. Loading State: Test that the component displays a loading indicator or placeholder UI while data is 
+      being fetched from the server. This ensures that users are informed about the ongoing operation and 
+      prevents confusion.
+
+   4. Empty Data Handling: Test how the component handles cases where the fetched data is empty or null. 
+      Ensure that the component renders appropriate fallback UI elements or handles such cases gracefully.
+
+   5. Data Refresh: Test that the component properly refreshes the data when triggered, such as by user 
+      interaction or automatic refresh intervals. Ensure that the component updates the UI with the 
+      latest data after a refresh operation.
+
+
+
+

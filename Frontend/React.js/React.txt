@@ -587,6 +587,38 @@ Notes- The only way to change the state is to dispatch an action.
     2. componetDidCatch(error, info) -
        It is used to log the error information.
 
+    What do you mean by GraphQL ?
+    GraphQL is a query language for APIs.
+    It provides a more efficient, powerful, and flexible alternative to traditional REST APIs for 
+    fetching and updating data.
+    the problem with traditional apis is sometimes data is overfetching and sometimes it is underfetching.
+    In GraphQL we can do two things Mutations and Queries
+
+    Basic Query in GraphQL
+
+    {
+        user(id){
+            name,
+            website
+        }
+    }
+
+    How to use GraphQL in React ?
+    We can use GraphQL in react using Apollo client.
+    Steps - 
+    1. we need to have GraphQL and Apollo client dependencies in our project.
+    2. we need to create client using new ApollClient() by passing cache , link arguments.
+    3. we have to wrap our GraphQL comsume data component between Apollo Provider component passing 
+       client as a prop. 
+    4. In our component we need to import useQuery from apollo client then we can use that for quering 
+       gql quries by passing queries into it.
+    5. useQuery return three fields data, error, loading   
+
+
+
+    
+
+
 
 
     
