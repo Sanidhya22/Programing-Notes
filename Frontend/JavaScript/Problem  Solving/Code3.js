@@ -130,3 +130,45 @@ for (let i = 0; i < str.length; i++) {
 }
 result = [...new Set(characters)];
 console.log(result);
+
+// Write a program to longest Subarray Whose Sum is equal to target sum
+
+function longestSubarrayWithTargetSum(arr, target) {
+  let maxLength = 0;
+  let startIdx = -1;
+  let endIdx = -1;
+
+  // Iterate through all possible subarrays
+  for (let i = 0; i < arr.length; i++) {
+    let currentSum = 0;
+    for (let j = i; j < arr.length; j++) {
+      currentSum += arr[j];
+      // Check if the current subarray has the target sum
+      if (currentSum === target) {
+        let currentLength = j - i + 1;
+        // Update maxLength and indices if this subarray is longer
+        if (currentLength > maxLength) {
+          maxLength = currentLength;
+          startIdx = i;
+          endIdx = j;
+        }
+      }
+    }
+  }
+
+  // Return the longest subarray indices
+  return [startIdx, endIdx];
+}
+
+const arr = [1, 2, 3, 4, 5, 2];
+const targetSum = 9;
+const longgestSubarray = [];
+const [startingIndex, endingIndex] = MaxSumArray(arr, targetSum);
+if (startingIndex == -1 && endingIndex == -1) {
+  console.log("No subarray found with the target sum.");
+} else {
+  for (let k = startingIndex; k <= endingIndex; k++) {
+    longgestSubarray.push(arr[k]);
+  }
+  console.log(longgestSubarray);
+}

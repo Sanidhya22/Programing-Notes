@@ -313,9 +313,9 @@ console.log(result1);
 const result2 = arr.filter((item) => item);
 console.log(result2);
 // OUTPUT - [ 100, true, 'Hello', {}, [] ]
-const result3 = arr.reduce((item) => item);
+const result3 = arr.reduce((accm, item) => item);
 console.log(result1);
-
+//OUTPUT - []
 const result4 = arr.forEach((item) => {
   return item;
 });

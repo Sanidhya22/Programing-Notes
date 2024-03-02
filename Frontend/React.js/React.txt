@@ -204,6 +204,13 @@
    5.ComponentDidUpdate   -- This function is called after the Component is Updated.
    6.ComponentWillUnMount -- This function is called before the component is removed or 
      Destroyed Permanently.
+   7.getDerivedStateFromProps - It is called just right before the render method.
+     is a static method, meaning it does not have access to the this keyword and cannot interact with 
+     instance methods or properties. Instead, it receives nextProps and prevState as arguments and 
+     returns either an object to update the state or null.
+   8.getSnapshotBeforeUpdate -  It is primarily used when you need to capture some information from the 
+     DOM before it potentially changes due to an update.
+     It accepts previous state and previous props as an argument.
 
    What do you mean by hooks in react?
 -> Hooks are the concepts were added in the react 16.8 version.
@@ -251,7 +258,7 @@
     components tree. The useContext is used to manage global data.   
 
     what do you mean by ContextAPI ?
-->  The Context API is a React structure that enables us to exchange data to several 
+->  The Context API is a React structure that enables us to exchange data to several nested children
     component without passing the props down manually to each level.
     It is Consisting of Providers and Consumers.    
 
@@ -342,7 +349,7 @@
     What do you mean by Redux in react?
 ->  Redux is a Pattern or libaray for managing and updating the application state using events
     called actions.It serves as a centeralized store for state that needs to be used across
-    our entire application.
+    our entire application. 
 
     What do you mean By Actions?
 ->  Actions are Plain JavaScript Objects that have a type field which tells what action to be 
