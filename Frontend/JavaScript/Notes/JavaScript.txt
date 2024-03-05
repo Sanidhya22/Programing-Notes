@@ -1,12 +1,12 @@
                                        JavaScipt
           ---------------------------------------------------------------------------------                             
  
-    What is JavsScript ?
+    What is JavaScript ?
 ->  JavaScript is a programming language used both on the client-side and server-side
     that allows us to make our web pages interactive.
      
     Note  - 
-    JavsScript is Synchronous Single threaded language
+    JavaScript is Synchronous Single threaded language
 
     What are the different datatypes we have in JavaScript ?
 ->  There are mainly two types of datatypes in JavaScript
@@ -16,19 +16,20 @@
       3. Boolean
       4. Undefined 
       5. Null
+      6. Symbol
     2. Reference Type
       1. Object
       2. Array
       3. Function
+      4. Date
 
     What is Call Function in JavaScript?
-->  The call() method is a predefined JavaScript method Using which an object can use a 
-    method belonging to another object.
-    The call() method takes arguments separately.
+->  The call() method is a predefined JavaScript method Using which an object can use a method belonging 
+    to another object. The call() method takes arguments separately.
 
     What is Apply Function in JavaScript?
-->  Apply function is similar like Call function but only difference it has is it take
-    arguments as an array whereas Call function take arguments seprately.
+->  Apply function is similar like Call function but only difference it has is it take arguments as an 
+    array whereas Call function take arguments seprately.
 
     What is Bind Function in JavaScript?
 ->  Bind method is a builtin function in Javascript using which we can borrow a method from an object
@@ -47,18 +48,17 @@
     promise-based APIs. Async functions always return a promise and await makes a function wait for a Promise.
 
     What do you mean by Objects ?
-->  A JavaScript object is an entity having state and behavior (properties and method)
+->  A JavaScript object is an entity having state and behavior (properties and method).
     Datas in the object are stored in the key value pairs.
 
     What are the different Web APIs we get along with the browser ?
-->  1. setTimeout
-    2. DOM APIs 
-    3. fetch
-    4. LocalStorage
-    5. console
-    6. Location  
+->  1. fetch API
+    2. DOM API
+    3. Web Workers API
+    4. Web Storage API
+    5. Geolocation API 
    
-    What are the different ways in which JavsScript Object can be created ?
+    What are the different ways in which JavaScript Object can be created ?
 ->  JavaScipt Objects can be Created by Following ways --
 
     Case 1. Using Object Constructor --  
@@ -75,12 +75,12 @@
 
     Case 2. Using Functional Constructor --
     <Script>//Script tag in the head Section
-      function Emp(name,age,sal,desig)
+      function Emp(name,age,salary,designation)
      {
          this.name = name;
          this.age =  age;
-         this.salary = sal;
-         this.designation = desig
+         this.salary = salary;
+         this.designation = designation
      }
      var e1 = new Emp("Suman",33,4500,"Progammer");
      console.log(e1.name);
@@ -97,7 +97,7 @@
      display(e2);
     </Script>
 
-   What do you mean by JavsScript Arrays ?   
+   What do you mean by JavaScript Arrays ?   
 -> JavaScript Array - It is a collection of ELements of Different datatypes types.
 
    There are Following ways through which we can create Arrays --
@@ -134,21 +134,21 @@
    2. shift() --  this method pops first element from the array  and shifts all the elments to 
                   lower index and returns poped element from the array.
 
-   3. push() --   this method appends element at the end of the array.It retuns the length of 
+   3. push() --   this method appends element at the end of the array.It returns the length of 
                   the new Array.
 
-   4. unshift() --this method appends element at the begining of the array.It returns the new 
-                  Array Length.
-                  e.g - 
-                     const fruits = ["Banana","Mango","Orange"];
-                     fruits.unshift("Guava","Apple")
-                     [ 'Guava', 'Apple', 'Banana', 'Mango', 'Orange' ]
-                     we can unshift more than one element at a time.
+   4. unshift() -- this method appends element at the begining of the array.It returns the new 
+                   Array Length.
+                   e.g - 
+                   const fruits = ["Banana","Mango","Orange"];
+                   fruits.unshift("Guava","Apple")
+                   [ 'Guava', 'Apple', 'Banana', 'Mango', 'Orange' ]
+                   we can unshift more than one element at a time.
 
    5. delete arr[index] -- this method clear particular index element but memory exits there
-                        fruits = ["Apple","Banana","Mango];
-                        del fruits[1]
-                        OUTPUT - ["Apple",Empty item,"Mango];
+                           fruits = ["Apple","Banana","Mango];
+                           del fruits[1]
+                           OUTPUT - ["Apple",Empty item,"Mango];
 
    6. splice() -- this method does both insertion and removal operation.
                   It Returns the updated Array.
@@ -164,11 +164,11 @@
                   [ 'Banana', 'Orange', 'Kiwi' ]
 
    7. slice() -- this method slice out elements from the given array but does not affect
-                 Original array. (Here we provide starting and ending Position not including current last index).
+                 Original array.
                  e.g - arr4 = ["Mango","Apple","Potato","Tomato","Chilli"];
-                     const arr5  = arr4.slice(3);
-                     console.log(arr5)
-                     OUTPUT - ["Tomato","Chilli"]
+                 const arr5  = arr4.slice(3);
+                 console.log(arr5)
+                 OUTPUT - ["Tomato","Chilli"]
 
   8. concat() -- this method concates two arrays but this method does not affect original
                  arrays ,it will return concatenated array as a output
@@ -195,8 +195,8 @@
    Strict mode makes it easier to write "secure" JavaScript Code.
    Strict mode changes previously accepted "bad syntax" into real errors.
 
-   What are the different types of scopes in JavsScript ?
--> There are two types of scopes in JavsScript
+   What are the different types of scopes in JavaScript ?
+-> There are two types of scopes in JavaScript
     1.Based on Accessibility - 
       1.Global
       2.local
@@ -204,11 +204,11 @@
       1.Lexical
       2.Dynamic
 
-   What do you mean by Global Scope in JavsScript ?
--> Global Scope is the Global Execution Context in the Javascript.    
+   What do you mean by Global Scope in JavaScript ?
+-> Global scope refers to the outermost scope that encompasses all other scopes. 
 
    What do you mean by Block Scope ?
--> Block Scope is the Temporary Scope for variables and functions.
+-> Block scope refers to the visibility and lifetime of variables declared within {} braces.
 
    What do you mean by Shadowing in JavaScipt ?
 -> Shadowing in Javascript happens when a variable declared in a certain scope (e.g. 
@@ -225,15 +225,15 @@
     6. RequestAnimationFrame     
 
 
-What do you mean by Function Statement ?
-->  Functions defined with parameters or Without parameters are known as Function Statement.
+    What do you mean by Function Statement ?
+->  Function defined with parameters or Without parameters is known as Function Statement.
 
     function show(){
         console.log("Sujit Kumar Verma");
     }                      
 
     What do you mean by Function Expression ?
-->  Creating a function and assigning it to a variable are known as Function Expression.
+->  Creating a function and assigning it to a variable is known as Function Expression.
 
     var res = function (){
         console.log("Result");
@@ -256,14 +256,12 @@ What do you mean by Function Statement ?
         console.log("Sujit Kumar Verma");
     } 
 
-    var res = function (){
+    const res = function (){
         console.log("Rresult");
     }
 
     If we call function show before Defining it will execute successfully and will give the result.
-    but In case of function res it will give typerror (res is not a function) if we call res as a function
-    and it will give undefined when we access res variable only because During Hoisting memory is created for
-    res but function is not assigned to it.
+    but In case of function res it will give reference error Cannot access 'res' before initialization.
 
 
     What do you mean by Named Function Expression ?
@@ -277,18 +275,16 @@ What do you mean by Function Statement ?
     show(); Error
     result();
 
-    Here This is will give error because the reference of the function of the 
-    is asssigned to a variable result and show does not point to function in the global 
-    context anymore.
+    Here This is will give error because the reference of the function of the is asssigned to a variable 
+    result and show does not point to that function in the global context anymore.
 
     What do you mean by First Class Functions ?
-->  The ability of Functions to be used as values , can be passed as parameter to a function or to 
-    be returned as function from another function are called as First Class Functions.
+->  Those functions which has the ability to be used as values , they can be passed as parameter to a function
+    or can be returned from another function are called as First Class Functions.
 
     What do you mnean by Arrow functions ?
-->  Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows you to 
-    create functions in a cleaner way compared to regular functions.       
-    It cannot exist standalone.
+->  Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows us to 
+    create functions in a cleaner way compared to regular functions. It cannot exist standalone.
 
     What is the Difference between Syntax Error, Reference Error and Type Error ?
 ->  Syntax Error -
@@ -296,19 +292,20 @@ What do you mean by Function Statement ?
     In case of Syntax Errors None of the code will get executed.
 
     Reference Error -
-    Reference errors in Javascript are mainly thrown when an attempt is made to reference a variable that 
+    Reference errors in Javascript are mainly thrown when an attempt is made to access a variable that 
     does not exist in memory or is out of scope.
+    In case of Reference Error the code will get executed.
 
     Type Error -
-    When we do reassignment of const Declared variable then it will give us type
-    Error.  
+    When we do reassignment of const Declared variable then it will give us type Error.  
 
     What do you mean by SetTimeout ?
 ->  setTimeout() Function executes a function or a code snippet after specified time Interval.
     Here Callback functions are registered in the timer Queue. 
 
     What do you mean by ClearTimeout ?
-->  The clearTimeout() method clears a timer set with the setTimeout() method. 
+->  The clearTimeout() method clears a timer set with the setTimeout() method.
+    Here function executions will not happen. 
 
     What do you mean by SetInterval ?
 ->  SetInterval Functon repeatedly calls a function or executes a code snippet, with a fixed time 
@@ -316,13 +313,14 @@ What do you mean by Function Statement ?
 
     What do you mean by ClearInterval ?
 ->  The clearInterval() method clears a timer set with the setInterval() method.
+    Here function executions will not happen. 
 
     What do you mean by SetImmediate Function ?
-->  The setImmediate() method executes a callback function right after all the statements
-    in the scripts are executed.
+->  The setImmediate() method executes a callback function right after all the statements in the scripts 
+    are executed.
     Here Callback functions are registered in the check Handler Queue. 
-    Those functions who are registered in the timer queue has high Priorty
-    than those functions who are registered with the check Handler queue.
+    Those functions who are registered in the timer queue has high Priorty than those functions who are 
+    registered with the check Handler queue.
 
     What do you mean by Process.nextTick Function ?
 ->  process.nextTick() is used to schedule a callback function to be invoked at the begining 
@@ -355,16 +353,27 @@ What do you mean by Function Statement ?
        MacroTask Queue.                                     Queue.                                                       
 
     What do you mean by Callback Hell ?
-->  when Nested callback functions forms a pyramid structure where Each callback function depends/waits for 
-    the previous callback function, thereby making a pyramid structure that affects the readability and 
-    maintainability of the code.
+->  Callback hell refers to the situation that arises when working with asynchronous code in JavaScript, 
+    it is a nesting multiple levels of callbacks inside one another. This nesting can quickly lead to 
+    code that is difficult to read, understand, and maintain due to its deeply nested structure. 
+
+    getDataFromAPI1(function(data1) {
+      // Handle data from API 1
+      getDataFromAPI2(function(data2) {
+         // Handle data from API 2
+         getDataFromAPI3(function(data3) {
+            // Handle data from API 3
+            // More nested callbacks...
+         });
+      });
+    });
+
 
     What is the difference between const and Object Freeze ?
-->  Const property means that we cannot do the reassignment of the variable or object but
-    can modiffy the properties of the object.
+->  Const property means that we cannot do the reassignment of the variable or object but can modify the 
+    properties of the object.
 
-    Object.freeze methods means that we cannot modify the values of properties of the 
-    object.      
+    Object.freeze methods means that we cannot modify the values of properties of the object.      
 
     What do you mean Object.preventExtensions ?
 ->  This methods prevents from adding new properties to an object.
@@ -373,16 +382,16 @@ What do you mean by Function Statement ?
 ->  The Object.freeze() method freezes an object that prevents new properties from being added to it. 
     This method prevents the modification of existing property and values.   
 
-    What do you mean by Object.Seal in JavsScript ?
-->  he Object.seal() method of JavaScript seals an object which prevents new properties from being 
+    What do you mean by Object.Seal in JavaScript ?
+->  The Object.seal() method of JavaScript seals an object which prevents new properties from being 
     added to it and marks all existing properties as non-configurable. The object to be sealed is 
     passed as an argument, and the method returns the object which has been sealed.     
 
     Why It is suggested to Specify the JavaScript Script in the end of the body tag instead of 
     head tag ?
 ->  It is being suggested beacuse there might be some script that will take to load so it might
-    effect rendering of the page in case of specifing it in head tag whereas it case of end of the 
-    body tag the scripts have been loaded till that time so it will not effect the rendering of the page.
+    effect rendering of the page in case of specifing it in head tag whereas in case of end of the 
+    body tag the scripts will loaded at the end so it will not effect the rendering of the page.
     
     What is the difference between collection Object and Node List Object ?
 ->  Collection Object - It includes the matching elments(e.g Class name or tag name)

@@ -1,7 +1,7 @@
-/* Call Function --
+// Call Function --
 
-The call() method is a predefined JavaScript method Using which an object can use a 
-method belonging to another object */
+// The call() method is a predefined JavaScript method Using which an object can use a 
+// method belonging to another object
 
 const person = {
     fullName: function () {
