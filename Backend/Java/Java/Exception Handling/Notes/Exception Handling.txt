@@ -1,0 +1,191 @@
+                                       Exception Handling 
+                                 ------------------------------          
+
+Exception - 
+A program get abnormal condition during the time of execution is known as exception. When exception occurs
+in a program then the control jumps out of the java program back to the jvm without executing rest of the 
+statements.                                 
+
+Exception Handling - 
+It is a mechanism that allows us to keep the control within the java program during the exception. Java 
+provides 3 blocks called try block, catch block, & finally block along with 2 keywords (throw, throws) to 
+deal with exception.    
+
+Try Block - 
+It is a block of code that generate an exception i.e. the statements which are most error prone to the 
+program execution are generally kept in a try block.
+
+Catch Block - 
+It is a block of code that executes during the exception occurrences. When exception occurs in the try 
+block then the control jumps to catch block & it remains in the program. When exception will 
+not in try block then the control will never execute the catch block.
+
+Finally Block - 
+It is a block of code that executes independent of the exception occurrences. When exception occurs in 
+try block then the control execute the catch and then the control execute finally block. If exception 
+will not occurs in try block then the control execute the finally block directly.
+
+Try-Catch-Finally - 
+These three blocks generally forms a unit known as exception handler code or exception handling mechanism.
+The sequence of these blocks must be try, catch, finally. A try block may have multiple catch, but it 
+must have a finally block.
+
+Exception Object - 
+It is an object of a predefined or user defined class in java, which is created when interpreter is 
+unable to execute a statement due to incorrect data given by the programmer or user. 
+
+Exception hierarchy  - 
+Throwable is the root or based class of all exception in java, from it, all other classes are derived. It 
+is divided into 2 types known as Error class and Exception classes.
+
+Error - 
+These are the problems for which a java program can not provide any solution because these problems are 
+related to the computer, OS or to the environment of the language.
+
+Exception - 
+These are the problem for which the java program can provide the solution of the exception because these 
+problems are related to the java programming language.
+
+There are two types of Exception
+----------------------------------
+1. Checked Exception - 
+   It is the type of exception which are checked by the compiler during the time of compilation. Hence, if
+   we do not provide the exception handler code then the compiler will not compile the source code.
+   Throwable class, Exception class & its derived class falls under checked exception only expect
+   runntime exception and it's derived class.
+
+2. UnChecked Exception -
+   It is the type of exception which are not checked by the compiler during the time of compilation. Hence
+   , if we do not provide the exception handler code then the compiler will compile the source code.
+   The RuntimeException class & its derived class are known as unchecked exception.
+
+
+Differences between fully checked and partially checked exceptions ?
+
+A Checked Exception is said to be fully checked exception if and only if all its child classes also checked.
+IOException, InteruptedException
+
+A Checked Exception is said to be partially Checked exception if and only if some of its child classes are 
+Unchecked.
+Exception
+
+
+Various possible combinations of try- catch- finally
+--------------------------------------------------------
+1. Whenever we are writing try block, it is compulsory we should write catch or finally that is ‘try’ without 
+   catch or finally is invalid syntax.
+2. Whenever we are writing catch block, it is compulsory we should write try block that is catch without try is 
+   invalid.
+3. Whenever we are writing finally block compulsory we should write try block. that is finally without try is 
+   invalid.
+4. In try catch finally, order is important.
+5. ‘try’ with multiple catch blocks Is valid but the order is important, i.e.we should take from child to 
+   parent, if we are try to take from parent to child then we will get compile time error.
+6. if we are defining two catch blocks for the same exception we will get compile time error.
+7. we can define try-catch-finally within the try, with in the catch and within finally blocks. Hence 
+   nesting of try-catch-finally is valid.
+8. For try-catch-finally curly braces are mandatory.
+
+In which situation finally block will not executed ?
+There is one situation where the finally block won’t be executed if we are using System.exit(0) explicitly then 
+JVM itself will be shutdown and there is no chance of executing finally block.
+
+
+throw keyword -
+It is used to propagates the exception object. We can use throw keyword at the following situation. We may
+think of the throw keyword as a special form of the return statement that returns only exceptions. Once a 
+throw statement executes in a method then the method stops executing, and the exception object is passed 
+back to the previous method in the call stack i.e. the method calling.
+
+1. When we try to propagates the exception from try block to catch block , then we can use it.
+2. After handling the exception in a catch block of a method, if we try to propagate the exception object 
+   from the catch block of a method to the caller of a method then we can use it. Since it allows us to 
+   propagate the exception after handling it, hence it is said that the throw keyword used to rethrow the 
+   exception object. 
+3. It provides information about the exception to the caller during the execution; hence the caller will not 
+   generate the incorrect result. 
+
+
+throws keyword - 
+It is used to propagates the exception. Generally the throws keyword is used after the parameter list of a
+method along with the Exception class name separated by comma for multiple exception, as given below.
+
+public void test(int a, int b, String oper) throws ArithmeticException, InterruptedException { }
+
+When we do not handle the exception by try - catch block in a method (test method), then we can use 
+throws keyword. So that another method calls this method(test method) will handle the exception, hence it 
+propagates the exception from one method to another.
+
+
+                         Throw                     |                   Throws
+----------------------------------------------------------------------------------------------------
+
+1. It propagates exception object from try to          1. It propagates exception object from one 
+   catch block or from one method to its                  method to its caller method. 
+   caller method.
+
+2. we can mention only one exception object            2. We can mention several exception class 
+   in throw statement.                                    name in throws keyword.
+
+3. It provides an information about the                3. It provides an information about the 
+   exception during run time.                             exception before compilation or run time.
+
+
+User defined exception or Custom exception -    
+When the predefined exception class is not enough to hold information according to our requirement, then 
+we may create UDE. The UDE must inherit from predefined exception class, so that its object can be thrown 
+by the throw keyword.
+
+
+Chained Exception - 
+This mechanism allows us to keep one exception object as a data member of another exception object, so 
+that we can propagate multiple exception object to the caller.
+
+The Throwable class has defined following two methods :
+1. public Throwable initCause(Throwable ob) :- This method will accept an object of any exception class 
+   and keeps within the exception object that invokes it.
+
+2. public Throwable getCause() :- This method will return an object that available within the exception 
+   object that invokes it.
+
+
+The Methods to display Exception Information 
+----------------------------------------------
+
+     Method Name                         Displays error information in following format
+
+1. printStackTrace()         -                 Name of Exception : Description
+                                               StackTace.
+
+2. toString()                -                 Name of Exception : Description  
+
+3. getMessage()              -                 Description
+
+
+
+What is final, finally & finalize() ?
+final: -
+1. Final is a modifier applicable for classes methods and variables. If a class declared as final then we 
+   can't extend that class. i.e we can't create child class for that class.
+2. If a method declared as final then we can't override that method in the child class.
+3. If a varaiable declared as final then it will become constant and we can't perform re-assignment for 
+   that variable.
+
+finally: finally is a block always associated with try catch to maintain cleanup code.
+try
+{
+ // risky code…
+}catch( X e){
+ Handling code
+}finally{
+//cleanup code
+}
+
+finalize(): finalize() is a method which is always invoked by garbage collector just before destroying an 
+object to perform cleanup activities.
+
+
+
+
+
+

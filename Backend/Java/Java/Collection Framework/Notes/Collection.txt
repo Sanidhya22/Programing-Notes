@@ -1,0 +1,466 @@
+   What do you mean by Collection FrameWork?
+-> Java collections framework is a FrameWork gives us access to prepackaged data structures and algorithms.
+
+   What do you mean by Linear and Non Linear data structure ? 
+-> Linear data structure - Data structure where data elements are arranged sequentially or linearly where each 
+   and every element is attached to its previous and next adjacent is called a Linear data structure.
+   1. Array
+   2. Stack
+   3. Queue
+   4. LinkedList
+
+   Non Linear data structure - Data structures where data elements are not arranged sequentially or linearly 
+   are called non-linear data structures. In a non-linear data structure, single level is not involved. 
+   Therefore, we can’t traverse all the elements in single run only. 
+   1. Trees 
+   2. Graphs 
+
+   The Collection interface and Iterable interface are the main root interfaces of Java Collection FrameWork.  
+
+   Collection Interface:
+   Implementing classes: ArrayList, LinkedList, HashSet, TreeSet, LinkedHashSet, PriorityQueue, 
+   ArrayDeque, etc.
+
+   List Interface (Subinterface of Collection):
+   Implementing classes: ArrayList, LinkedList, Vector, Stack, CopyOnWriteArrayList, etc.
+
+   Set Interface (Subinterface of Collection):
+   Implementing classes: HashSet, TreeSet, LinkedHashSet, EnumSet, etc.
+
+   Queue Interface (Subinterface of Collection):
+   Implementing classes: LinkedList, PriorityQueue, ArrayDeque, etc.
+
+   Map Interface:
+   Implementing classes: HashMap, TreeMap, LinkedHashMap, EnumMap, WeakHashMap, ConcurrentHashMap, etc. 
+
+   There are two types of Collection 
+
+   1. Generic Collection - A Generic collection is strongly typed where we can hold elements of specific 
+      datatype so that we can eliminate runtime type mismatches.
+
+   2. Non Generic Collection - Non-generic collections hold elements of different datatypes.
+
+   Hierarchy of Collection FrameWork
+   -----------------------------------
+   
+   Interfaces are Denoted as i
+   Classes are Denoted as c
+
+   Iterable(i) --> Collection(i) --> (List(i), Queue(i), Set(i))
+   List(i)     --> (ArrayList(c), LinkedList(c), Vector(c) --> Stack(c))
+   Queue(i)    --> (Deque(i) --> ArrayDeque(c), PriortyQueue(c))
+   Set(i)      --> (HashSet(c), LinkedHashSet(c), SortedSet(i) --> TreeSet(c))
+   Map(i)      --> (HashMap(c), LinkedHashMap(c), HashTable(c) , SortedMap(i) --> TreeMap(c))
+
+   Note--
+   There are some interfaces which we use for Iterating over elements
+   Iterator interface, ListIterator interface, Enumeration interface
+
+   There are some interfaces which we use for Sorting elements
+   Comparable Interface, Comperator Interface
+
+    Methods of Collection Interfaces
+   -------------------------------------------------------------------------------------------------
+
+   1. add(Object)  -- This method is used to add an object to the Collection.
+
+   2. addAll(Collection c) -- This method adds all the elements in the given collection to 
+      this Collection.
+
+   3. clear -- This method removes all the elements from this collection.
+
+   4. contains(Object o) -- This method returns true if the collection contains the specified
+      element.
+
+   5. containsAll(Collection c) -- This method returns true if the collection contains all of 
+      the element in the given collection.
+
+   6. equals(Object o) -- This method compares the specified object with this collection
+      for eqaulity. 
+
+   7. max() -- This method is used to return the maximum value present in the collection.
+   
+   8. isEmpty() -- This method returns true if the collection contains no element.
+   
+   9. size() -- This method is used to return the number of elements in the collection.
+   
+   10.remove(Object o) -- This method is used to remove the given object from this collection.
+      if there are duplicate values, then it will remove the first occurence of the object.
+   
+   11.removeAll(Collection c) -- This method is used to remove all the objects in the given 
+      Collection from this Collection.
+   
+   12.iterator() -- This method returns an iterator over the elements in the Collection.
+   
+   13.toArray() -- This method is used to return an array containing all of the elements in 
+      this collection.
+   
+   14.retainAll(Collection c) -- This method is used to retain only those elements in this 
+      collection that are contained in the specified collection.
+
+   List Interface 
+   --------------------------------------------------------------------------------------------------
+   List Interface is the child interface of collection.
+   interface.List type data structure stores ordered collection of elements. It can have duplicate values.
+   List interface is implemented by the ArrayList, LinkedList, Vector Classes.
+
+   List <T> al = new ArrayList<> (); 
+   List <T> ll = new LinkedList<> (); 
+   List <T> v = new Vector<> (); 
+   Where T is the type of the object 
+
+   1. ArrayList --
+      ArrayList is the Implementing class of List Interface. It has the capability to store similar or 
+      disimilar kind of data. ArrayList can increase its size dynamically, we can intialise ArrayList 
+      using new keyword.
+
+
+                      Array                         |            ArrayList
+      -----------------------------------------------------------------------------------------------           
+      1. It has the capability to store only             1. It has the capability to store similar or 
+        similar type of data.                               kind of data.
+                                                     
+      2. Array cannot increase its size dynamically.     2. ArrayList can increase its size dynamically. 
+                                                 
+      3.It can be intialised without new keyword also.   3. It can only get intialised using new keyword.
+                               
+
+   Different Constructors of ArrayList
+   -----------------------------------
+   ArrayList() - Constructs an empty list with initial capacity of ten.
+   ArrayList(int initialCapacity) - Constructs an empty list with the specified intial capacity.
+   ArrayList(Collection c ) - Creates a list containing specified elements of the collection.
+
+   Note --
+   What do you mean by Reference Id ?
+   Reference id of an object is the address of location where object is stored. It is stored in HashCode 
+   Form.It is generated by new keyword.
+
+   Why we do not get Reference Id when we print references of ArrayList?
+   we do not get Reference Id when we print ArrayList references because ArrayList has overrddien toString
+   method of Object class in its own way. In Order to overcome this we can override toString method in 
+   our class in our own way.
+
+   What do you mean by Lamda Expression ?
+   A Lambda expression is a short block of code which takes in parameters and returns a value. Lambda 
+   expressions are similar to methods, but they do not need a name. Lambda expressions are usually passed 
+   as parameters to a function.
+
+
+   2. Stack --
+      Stack is a class which indirectly implements List interface.
+      Stack data structure follows LIFO principle i.e Last in First out.
+      Stack data Structure Extends Vector Class.
+      It has more methods such as empty, peek, search other than collection framework methods. 
+
+   Different constructors of Stack 
+   -----------------------------------
+   1. Stack() -  Creates an Empty Stack.
+   2. Stack(int initialCapacity): Constructs an empty stack with the specified initial capacity.
+
+   Different methods of Stack 
+   -----------------------------------
+   1. peek() - It returns top element of the Stack.
+
+   2. empty() - It is used check whether Stack is empty or not based on that it returns true or false.
+
+   3. search() - It is used to search for an element in the Stack and get its distance from the top.
+
+   4. push() - It is used an element to the top of the Stack.
+
+   5. pop() - It is used delete an element from the top of the Stack.
+
+
+   3. LinkedList -- 
+      LinkedList is a class which implements List interface.
+      LinkedList is a Linear data structure where elements are not stored in a contiguous memory location.
+      LinkedList is consisting of various nodes and each node is consisting of data and the 
+      address part and the address part stores the address of next node and forms a link with it.
+      LinkedList can store elements of different datatypes until unless it is strictly typed with the 
+      datatype.
+
+   Different Constructors of LinkedList
+   ----------------------------------------------
+   1. LinkedList() - Constructs an empty LinkedList.
+   2. LinkedList(Collection c) - Constructs a LinkedList containing elements of the specified Collection.
+
+
+                  ArrayList                      |                  LinkedList
+   -----------------------------------------------------------------------------------------------------                
+    1. ArrayList internally uses a dynamic                1. LinkedList internally uses a doubly 
+       array to store the elements.                          linked list to store the elements.
+
+    2. ArrayList is better for storing and                2. LinkedList is better for manipulating data.
+       accessing data.                              
+
+    3. Memory location for ArrayList  elements            3. Memory location for LinkedList elements
+       is Contigious.                                        is not Contigious.
+
+    4. Manipulation with ArrayList is slow                4. Manipulation with LinkedList is faster  
+       because it internally uses an array.                  than ArrayList because it uses a doubly 
+       If any element is removed from the                    linked list, so no bit shifting is required
+       array, all the other elements are                     in memory.
+       shifted in memory.    
+
+    5. when an ArrayList is initialized , a               5. There is no case of default capacity in a 
+       default capacity of 10 is assigned                    LinkedList. In LinkedList, an empty list
+       to the ArrayList.                                     is created when a LinkedList is initialized.
+
+    6. An ArrayList class can act as a list               6. LinkedList class can act as a list
+       only because it implements List only.                 and queue both because it implements List 
+                                                             and Deque interfaces.
+
+
+   4. Vector --
+      Vector is a class implementing List interface. Vector Provides us dynamic array in Java.
+      The primary difference between ArrayList and Vector is Vector is synchronised whereas ArrayList is 
+      Non synchronised.
+      Vector is helpful in program where lot of manipulation in the array is needed. It is thread safe 
+      because Vector is synchronised.
+
+   Different Constructors of Vector 
+   ------------------------------------
+   1. Vector() - Constructs an empty Vector with intial capacity of 10.
+   2. Vector(Collection c) - Constructs a vector containing elements of the specified Collection.
+   3. Vector(int initialCapacity) - Constructs an empty vector with the specified intial capacity.
+   4. Vector(int initialCapacity, int capacityincrement) - Constructs an empty Vector with the specified 
+      intial capability and capacity increment.
+
+                  ArrayList                        |                   Vector
+    ----------------------------------------------------------------------------------------------------              
+      1. ArrayList is Non Synchronised.                  1. Vector is Synchronised.  
+
+      2. ArrayList is fast because it is Non             2. Vector is slow because it is Synchronised.
+         Synchronised.                                
+
+      3. ArrayList Uses Iterator interface to            3. Vector usses Iterator and Enumeration 
+         Traverse the elements.                             Interface to Traverse elements.
+
+      4. ArrayList increments 50% of current             4. Vector increments 100% of current Vector size
+         array size if capacity exceeds.                    if capacity exceeds.
+           
+           
+   Queue Interface 
+   -----------------------------------------------------------------------------------------------------
+   Queue Interface is the child interface of collection.
+   interface.Queue type data structure stores ordered collection of elements.
+   It follows first-in-first-out order.
+
+   Queue <T> pq = new PriorityQueue<> (); 
+   Queue <T> ad = new ArrayDeque<> (); 
+   Where T is the type of the object. 
+
+   1. Deque Interface --
+      It is the child interface of Queue interface.
+      It provides us the implementation of DeQueue data structure. It is also known double ended Queue.
+      In this data structure we can add and remove elements from both the sides of the Queue.
+
+
+   2. ArrayDeque --
+      ArrayDeque is a class which implements DeQueue interface ( which is the child interface of Queue 
+      interface).
+      It provides us a way to apply resizable array.
+      It is a special type of array that grows and allows users to add or remove elements from both the sides.
+      ArrayDeque has no capacity restrictions.
+
+   Different Constructors of Array Deque 
+   --------------------------------------
+   1. ArrayDeque() -  Constructs an empty arrayDeque and holds an intial capacity of 16 elements.
+   2. ArrayDeque(Collection c ) - Constructs a new ArrayDeque with the specified collection elements.
+   3. ArrayDeque(int initialCapacity) - Constructs a new ArrayDeque with the specified intial capacity.   
+
+
+   3. PriortyQueue  --
+      PriortyQueue is a class which implements Queue interface.
+      In PriortyQueue objects are supposed to be processed based on Priorty.
+      It is known that a queue follows the First-In-First-Out algorithm, but sometimes the elements of 
+      the queue are needed to be processed according to the priority.
+
+   Different Constructors of Priorty Queue 
+   ----------------------------------------
+
+   1. PriortyQueue() - Constructs an empty PriortyQueue with default initial capacity of 11 elements and 
+      orders elements According to their natural ordering.
+   2. PriortyQueue(Collection c) - Constructs a PriortyQueue with the specified collection elements.
+   3. PriortyQueue(int initialCapacity) - Constructs a new empty PriortyQueue with the specified initial 
+      capacity and orders elements According to their natural ordering.
+   4. PriortyQueue(int initialCapacity, Comparator comparator) - Constructs a new PriortyQueue with the 
+      specified intial capacity and orders its elements according to the specified Comparator.   
+
+
+   Set Interface --
+   -----------------------------------------------------------------------------------------------------
+   Set Interface is the child interface of collection.
+   A set is an unordered collection of objects in which duplicate values cannot be stored.
+   This collection is used when we wish to avoid the duplication of the objects and wish to store only 
+   the unique objects.
+
+   Set<T> hs = new HashSet<> (); 
+   Set<T> lhs = new LinkedHashSet<> (); 
+   Set<T> ts = new TreeSet<> (); 
+   Where T is the type of the object.  
+
+   1. HashSet --
+      HashSet is a class which provides the implementation of the Set interface.
+      The HashSet class is an inherent implementation of the hash table data structure. The objects that 
+      we insert into the HashSet do not guarantee to be inserted in the same order. The objects are 
+      inserted based on their hashcode. This class also allows the insertion of NULL elements.
+   
+   Different Constructors of HashSet 
+   ----------------------------------
+   1. HashSet() - Constructs a new empty Set, the Backing HashMap Instance has Default 
+      intial capacity (16) and load factor (0.75).
+   2. HashSet(Collection c ) - Constructs a new Set containing the elements in the specified collections.
+   3. HashSet(int initialCapacity) - Constructs an new empty set. the backing HashMap has the specified 
+      intial capacity and default load factor (0.75).  
+   4. HashSet(int initialCapacity, float loadFactor) - Constructs a new empty set. the backing HashMap 
+      instance has the intial capacity and the specified load factor.   
+
+      
+   2. LinkedHashSet --
+      LinkedHashSet is a class implementing Set interface.
+      A LinkedHashSet is very similar to a HashSet. The difference is that this uses a doubly linked list 
+      to store the data and retains the ordering of the elements.  
+
+   Different Constructors of LinkedHashSet 
+   -----------------------------------------
+   1. LinkedHashSet() - Creates an empty LinkedHashSet intial capacity 16 and load factor 0.75.
+   2. LinkedHashSet(Collection c) - Constructs a new LinkedHashSet containing the elements of the specified 
+      collections. 
+   3. LinkedHashSet(int initialCapacity) - Constructs a new LinkedHashSet with the specified initial 
+      capacity and load factor 0.75.
+   4. LinkedHashSet(int initialCapacity, int loadFactor) - Constructs a LinkedHashSet with the specified 
+      initial capacity and specified load factor.  
+
+
+   3. SortedSet Interface --
+      SortedSet Interface is the child interface of Set interface. It is similar to Set interface. The 
+      only difference is that this interface has extra methods that maintains the ordering of elements.
+      This interface is used to handle data which needs to be Sorted.
+
+      SortedSet<T> ts = new TreeSet<> (); 
+      Where T is the type of the object. 
+
+
+   4. TreeSet --
+      TreeSet is a class which provides the implementation of SortedSet interface.
+      It provides the elements in the sorted order, The TreeSet class uses a Tree for storage.
+
+   Different Constructors of TreetSet 
+   ---------------------------------------
+   1. TreeSet() - Constructs a new empty TreeSet, sort elements according to natural ordering.
+   2. TreeSet(Collection c ) - Constructs a new TreeSet containing specified elements of the collections, 
+      sort elements according to natural order.
+   3. TreeSet(Comparator comparator) - Constructs a new empty TreeSet , sorted According to the specified
+      comparator.
+   4. TreeSet(SortedSet s) - Constructs a new TreeSet containing the same elements and using the same 
+      ordering as the specified SortedSet.   
+
+   Note --
+   Any userdefined object we create it can't be inserted into TreeSet until unless it implements Comperable
+   interface because TreeSet uses Comparable interface to compare values which every wrapper class implements. 
+
+
+   Map Interface 
+   -------------------------------------------------------------------------------------------------------
+   A Map is a Data Structure that supports key-value pairs mapping for the data.
+   This interface does not supports duplicate keys because the same key cannot have multiple mappings. A 
+   Map is useful if we want to perform operations on the data on the basis of Key.
+
+   Map<T> hm = new HashMap<> (); 
+   Map<T> tm = new TreeMap<> ();
+   Where T is the type of the object. 
+
+   Methods of Map
+   ---------------------------------
+   1. clear() - remove all elements from HashMap.
+   2. clone() - Makes the copy of the Hashmap.
+   3. isEmpty() - Checks if the HashMap is empty. 
+   4. size() - returns the number of items in HashMap.
+   5. get(Object key) - returns the value using the Specified key.
+   6. entrySet() - It is used to return a Collection view of the mappings contained in this Map. 
+   7. put(Object key, Object value) - It is used to insert an entry in the Map.
+   8. remove(Object key) - It is used to delete an entry for the specified key in the Map.
+   9. containsValue(Object value) - This method returns true if specified value equal to the value
+      exists within the map, else return false.
+   10. containsKey(Object key) - This method returns true if specified key equal to the key exists within 
+       the map, else return false.
+   11. equals(Object o) - It is used to compare the specified object with the Map.
+   12. values() - It returns a collection view of the values contained in the Map.
+   13. putAll(Map map) - It is used to insert the specified Map in the Map.
+   14. putIfAbsent(K key, V value) - It inserts the specified value with the specified key in the map only
+       if it is not already specified.
+
+
+   1. HashMap --
+      HashMap is a class which provides the implementation of Map interface.
+      It stores the data in the key value pairs. To access value in a HashMap we should know its key. 
+      HashMap uses a technique called Hashing, Hashing is a technique of converting larger string into 
+      smaller string that represents the same string so that indexing and search operations are faster.
+      it doesn't maintain any kind of order.
+
+
+   Different Constructors of HashMap 
+   ---------------------------------------
+   1. HashMap(): Constructs a new, empty HashMap with the default initial capacity (16) and load factor 
+      (0.75).
+
+   2. HashMap(int initialCapacity): Constructs a new, empty HashMap with the specified initial capacity and 
+      the default load factor (0.75).
+
+   3. HashMap(int initialCapacity, float loadFactor): Constructs a new, empty HashMap with the specified 
+      initial capacity and load factor.
+
+   4. HashMap(Map m): Constructs a new HashMap with the same mappings as the specified map. The HashMap 
+      is initialized with the default load factor (0.75) and an initial capacity sufficient to hold the 
+      mappings in the specified map.
+
+   
+   2. LinkedHashMap --
+      LinkedHashMap is a class which provides the implementation of Map interface.
+      LinkedHashMap is similar to the HashMap class, only with an added functionality of maintaining order.
+
+
+   Different Constructors of LinkedHashMap 
+   ---------------------------------------
+   1. LinkedHashMap(): Constructs a new, empty LinkedHashMap with the default initial capacity (16) and 
+      load factor (0.75).
+
+   2. LinkedHashMap(int initialCapacity): Constructs a new, empty LinkedHashMap with the specified initial
+      capacity and the default load factor (0.75).
+
+   3. LinkedHashMap(int initialCapacity, float loadFactor): Constructs a new, empty LinkedHashMap with the
+      specified initial capacity and load factor.
+
+   4. LinkedHashMap(Map m): Constructs a new LinkedHashMap with the same mappings as the specified map. The 
+      LinkedHashMap is initialized with the default load factor (0.75) and an initial capacity sufficient 
+      to hold the mappings in the specified map.
+
+
+   3. SortedMap --
+      SortedMap is a child interface of which Map interface.
+      The SortedMap interface provides methods for navigating and accessing elements based on their keys' 
+      order.
+
+
+   4. TreeMap --
+      TreeMap is a class which provides the implementation of SortedMap and Map interface.
+      The SortedMap interface provides methods for navigating and accessing elements based on their keys' 
+      order. 
+      It differs from HashMap and LinkedHashMap because it provides an efficient way for sorting the map.
+
+
+   Different Constructors of TreeMap 
+   ---------------------------------------
+
+   1. TreeMap(): Constructs a new, empty TreeMap that will be sorted using the natural order of its keys.
+      Constructor with Comparator Parameter:
+
+   2. TreeMap(Comparator comparator): Constructs a new, empty TreeMap that will be sorted using 
+      the specified comparator.
+
+   3. TreeMap(Map m): Constructs a new TreeMap containing the same mappings as the specified map, sorted 
+      according to the keys' natural order.
+
+   4. TreeMap(SortedMap m): Constructs a new TreeMap containing the same mappings as the specified sorted 
+      map, sorted according to the same ordering.     
