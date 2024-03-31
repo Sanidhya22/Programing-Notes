@@ -1,6 +1,7 @@
 // Mixins -
-// Mixins in JavaScript refer to a pattern where objects can borrow (or mixin) methods and properties
-// from other objects, allowing for code reuse and composition without inheritance.
+// Mixins in JavaScript are a way to extend the functionality of objects or classes by combining multiple sets 
+// of properties or methods from different sources. They allow you to "mix in" additional behavior to objects 
+// or classes without inheritance.
 
 // Define a mixin object with reusable methods
 const myMixin = {

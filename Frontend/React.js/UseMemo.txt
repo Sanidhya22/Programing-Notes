@@ -1,0 +1,86 @@
+    What is the purpose of the useMemo hook in React ?
+->  The useMemo hook in React is used for memoizing expensive computations so that they are only re-executed 
+    when one of the dependencies provided to useMemo changes. I   
+
+    How does useMemo contribute to performance optimization in React ? 
+->  useMemo contributes to performance optimization in React by preventing unnecessary re-computations of 
+    expensive values. 
+
+    When should you consider using the useMemo hook ?
+->  We should consider using the useMemo hook in React when -   
+    1. Expensive Computations: You have computations or calculations within your component that are 
+       computationally expensive or time-consuming. By memoizing the result of these computations with useMemo, 
+       you can avoid re-computing them on every render, improving performance.
+    2. Deriving Values: You need to derive a value from props, state, or other data, and this derivation involves
+       heavy computations. useMemo allows you to memoize the derived value and recalculate it only when its 
+       dependencies change.
+    3. Preventing Unnecessary Renders: You have a component that re-renders frequently due to changes in props or
+       state, but most of the time, the output remains the same. By memoizing the values using useMemo, you can 
+       prevent unnecessary renders and optimize the rendering process.
+
+    What are the potential downsides of using useMemo ?   
+->  The downwsides of using useMemo Hook -
+    1. Overhead: Memoization itself adds some overhead to your application. While useMemo can optimize 
+       performance by avoiding unnecessary computations, it also introduces additional complexity to your 
+       codebase.
+
+    2. Debugging Complexity: Debugging code that heavily relies on memoization can be more challenging,
+       especially when dealing with complex dependency chains or debugging stale data issues. Understanding when
+       and where memoization is applied and ensuring correct dependency management is crucial for debugging 
+       effectively.
+
+    Can we use useMemo to memoize the result of an API request?     
+->  Yes, we can use useMemo to memoize the result of an API request in React. 
+    
+    How does useMemo differ from traditional memoization techniques ?
+->  useMemo in React and traditional memoization techniques differ in several aspects:
+
+    Usage and Integration: useMemo is a hook provided by React specifically for memoizing values within 
+    functional components. It's integrated into the React component lifecycle and works seamlessly with other 
+    React features such as state, props, and hooks. Traditional memoization techniques, on the other hand, are 
+    typically implemented using functions or custom utility libraries and are not specific to React.
+
+    Dependency Management: useMemo allows you to specify dependencies, and the memoized value is re-computed only
+    when those dependencies change. This ensures that the memoized value remains up-to-date and reflects the 
+    latest changes in the component's state or props. Traditional memoization techniques often rely on caching 
+    mechanisms, such as storing the arguments and results of function calls, without explicit dependency 
+    tracking.
+
+    Scope: useMemo is scoped to a particular React component and is used to memoize values within that 
+    component. It's primarily used to optimize the performance of individual components by memoizing expensive 
+    computations or values derived from props or state. Traditional memoization techniques can be applied more 
+    broadly across an application and are not tied to the React component lifecycle.
+
+    Can you explain the difference between useMemo and useCallback ?
+->                       useMemo                   |                   useCallback  
+    1. Returns the memoized value derived from the    1. Returns the memoized callback function.
+       function. 
+
+    2. Useful when you have expensive computations    2. Useful when you have callback functions that are passed 
+       or values derived from props or state that        down to child components as props and you want to 
+       you want to memoize to avoid unnecessary          prevent unnecessary re-renders of those child components 
+       recalculations.                                   when the parent component re-renders due to changes in 
+                                                         props or state.
+
+    How do you define dependencies for the useMemo hook ?   
+->  const memoizedValue = useMemo(() => {
+      // Memoized computation or value derivation
+     }, [dependency1, dependency2, ...]);
+
+    Under what circumstances should you avoid using useMemo ?  
+->  These are the following circumstances where we should avoid using useMemo -
+
+    1. Simple Computations: If the computation you want to memoize is very simple and lightweight, using 
+       useMemo might introduce unnecessary complexity to your codebase. In such cases, the performance benefits 
+       gained from memoization might be negligible compared to the overhead introduced by useMemo.
+
+    2. Frequent Changes to Dependencies: If the dependencies of your memoized value change very frequently, using
+       useMemo might not provide significant performance benefits. useMemo recalculates the memoized value 
+       whenever any dependency changes, so if the dependencies are updated frequently, the memoized value might 
+       be recalculated frequently as well, negating the optimization.  
+
+    3. Heavy Dependencies: If the dependencies array passed to useMemo contains complex objects or arrays, 
+       comparing them for changes can be computationally expensive. In such cases, you may want to reconsider 
+       memoizing the value or optimize the dependencies array.     
+
+                                                      

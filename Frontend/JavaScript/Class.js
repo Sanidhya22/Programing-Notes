@@ -3,7 +3,7 @@
 // 2. Functional Oriented Programming Language - JavaScript, Scala
 // 3. Procedural Oriented Programming Language - C
 
-// Class - It is a Blueprint for Creating Objects consisting of data members , methods and
+// Class - It is a blueprint for creating objects consisting of data members , methods and
 // objects.
 
 //Class in JavaScript

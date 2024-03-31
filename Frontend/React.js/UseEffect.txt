@@ -1,0 +1,48 @@
+    What is the purpose of the useEffect hook in React ?
+->  The useEffect hook in React is used to perform side effects in functional components. Side effects are 
+    operations that occur outside of the regular component rendering process, such as data fetching, 
+    subscriptions, or DOM manipulation.   
+
+    The primary purpose of useEffect is to manage side effects that need to occur in response to changes in the 
+    component's state, props, or other external factors. It replaces lifecycle methods like componentDidMount, 
+    componentDidUpdate, and componentWillUnmount in class components.
+
+    How do you handle cleanup in useEffect ? Why is cleanup important ?
+->  We can handle cleanup in the useEffect hook by returning a cleanup function from the effect.
+    Cleanup is important in useEffect because of following reasons -    
+
+    1. Preventing Memory Leaks: Cleanup allows you to release resources or perform necessary cleanup tasks to 
+       prevent memory leaks in your application. For example, you can unsubscribe from event listeners, cancel 
+       network requests, or clear intervals or timeouts to ensure that no resources remain in memory after the 
+       component is unmounted.
+
+    2. Optimizing Performance: Cleanup helps optimize performance by freeing up resources and reducing 
+       unnecessary overhead. For example, unsubscribing from event listeners or canceling network requests 
+       prevents unnecessary work from being performed after the component is no longer in use, improving the 
+       efficiency of your application.
+
+    What happens if you forget to include dependencies in the dependency array of useEffect ? 
+->  if you forget to include dependencies in the dependency array of useEffect then our useEffect won't run 
+    on those value changes and if we don't provide dependency array itself then in those cases our component
+    useffect will run after every render, including the initial one.   
+
+    Explain the difference between having an empty dependency array and not having a dependency array at all in 
+    useEffect ?
+->  When you have an empty dependency array (useEffect(callback, [])), it means that the effect will only run 
+    once, after the initial render, and it won't re-run again for subsequent renders. This is useful for 
+    effects that should only be executed once, such as setting up event listeners, fetching data, etc.
+
+    If you omit the dependency array altogether (useEffect(callback)), it implies that the effect will run after 
+    every render, including the initial one. This might lead to performance issues or unintended behavior if the 
+    effect performs operations that don't need to be repeated on every render.
+
+
+    // Mimic componentDidMount and componentDidUpdate
+    useEffect(() => {
+      // This code will run whenever props.someProp or state.someState changes or on initia
+      // You can perform any side-effects or calculations based on the change in props or state here
+    fetchData();
+    }, [props.someProp, state.someState]); // Dependency array contains props or state values to watch for changes
+
+
+        

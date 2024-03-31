@@ -1,7 +1,0 @@
-                                   Creational Design Patterns
-                                   --------------------------
-
-
-1. Singleton Design Pattern - 
-   Singleton is a Creational Design Pattern that lets you ensure that a class has only one 
-   Instance, while Providing a Global Access Point to this Instance.

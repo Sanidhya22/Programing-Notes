@@ -1,5 +1,5 @@
 // Apply--
-// The Apply() method is a predefined JavaScript method Using which an object can use a 
+// The Apply() method is a predefined JavaScript method using which an object can use a 
 // method belonging to another object.
 
 // Note --

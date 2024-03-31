@@ -2,7 +2,7 @@
 -> TypeScript is a JavaScript with Strongly Typed. 
 
 2. What do you mean by Tuples in Typescript ?
--> Tuple is a Heterogenous collection of elements of different data types.
+-> Tuple is a heterogenous collection of elements of different data types.
    let arr = ["Sujit",1,true,"Verma"]
 
 3. What do you mean by Array in Typescript?
@@ -17,40 +17,15 @@
 5. What do you mean by interface in Typescript?
 -> Interface is used to define the structure of an object, specifying what properties it should have and 
    their types. 
-
-   interface Person {
-     name: string;
-     age: number;
-     email?: string; // Optional property
-   }
-
-   // Example usage:
-    const person: Person = {
-    name: 'John',
-    age: 30,
-    email: 'john@example.com'
-    };
-
-
+  
 6. What do you mean by enums?
 -> Enums we use it to declare named constants in Typescript.
-   enum Direction {
-     Up = 'UP',
-     Down = 'DOWN',
-     Left = 'LEFT',
-     Right = 'RIGHT',
-   }
-   console.log(Direction);
 
  7. What do you mean by types in typescript ?
 ->  Type is used to define the structure of any type.
-    Types in TypeScript are not limited to objects; they can represent any kind of data, including 
+    Types in TypeScript are not limited to objects. they can represent any kind of data, including 
     primitive types, tuples, arrays, functions, and more. Additionally, types can be combined using 
-    union types (|), intersection types (&).
-    type car = {
-     name: string,
-     carModel: string,
-    }   
+    union types (|), intersection types (&). 
 
  8. Difference between interface and type in Typescript ?
 ->                   Type                     |                    Interface
@@ -74,62 +49,18 @@
 -> Partial<T> is a utility type that allows you to create a new type by making all properties of an 
    existing type T optional.  
 
-   interface User {
-     name: string;
-     age: number;
-     email: string;
-   }
-
-   // Create a partial type based on the User interface
-   type PartialUser = Partial<User>;
-
-   // Example usage:
-   const partialUser: PartialUser = {
-   name: 'John',
-   age: 30
-   };
-
    What do you mean by Omit in Typescript ?
 -> Omit<T, K> is a utility type that creates a new type by omitting specific properties K from an 
    existing type T. It allows you to create a new type that includes all properties from the original 
    type except for the ones specified to be omitted.
-
-   interface User {
-     id: number;
-     name: string;
-     age: number;
-     email: string;
-   }
-
-   // Create a new type by omitting specific properties from User interface
-   type UserWithoutIdAndEmail = Omit<User, 'id' | 'email'>;
-
-   // Example usage:
-   const user: UserWithoutIdAndEmail = {
-   name: 'John',
-   age: 30,
-   };
-
+  
    What do you mean by Generics in Typescript ?
 -> Generics in TypeScript provide a way to create reusable components and functions that can work with 
    a variety of data types while maintaining type safety.  
 
-   // Define a generic function that takes an argument of type T and returns an array of T
-   function toArray<T>(arg: T): T[] {
-     return [arg];
-   }
-
-   // Usage of the generic function
-   const array1 = toArray<number>(10); // array1 is of type number[]
-   const array2 = toArray<string>('hello'); // array2 is of type string[]
-
-   console.log(array1); // Output: [10]
-   console.log(array2); // Output: ['hello']
-
    What do you mean by decorator in Typescript ?
 -> decorators provide a way to add metadata and modify the behavior of classes, methods, accessors, 
    properties, or parameters at design time.   
-
 
    // Decorator factory function
    function log(target: any, key: string, descriptor: PropertyDescriptor) {

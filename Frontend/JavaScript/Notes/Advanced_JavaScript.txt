@@ -11,19 +11,19 @@
     while execution whenever It encounter asynchronus code (e.g  a callback with setTimeout) then that 
     Callback function goes to Web API of the browser and get the callback register there and wait for 
     specified Millisecond time , when it completes, it goes to the Callback Queue and waits 
-    Until Whole Javascript code will get executed and Callstack to be empty then it is moved to the 
-    Callstack for the Execution.
+    Until Whole Javascript code will get executed and Callstack to be empty or for callstack to be empty then 
+    it is moved to the Callstack for the Execution.
 
     while execution whenever It encounters asynchronous code (e.g Promise based code ) then It register 
-    that callback function in the Web API of the browser and wait for specified Millisecond time ,
-    when it completes, moved to the Microtask Queue and waits Until Whole Javascript code will get 
-    executed and Callstack to be empty then it is moved to the Callstack for the Execution.
+    that callback function in the Web API of the browser and move it to the Microtask Queue and waits Until 
+    Whole Javascript code will get executed or callstack to be empty then it is moved to the callstack for the 
+    Execution.
     Microtask Queue has higher Priorty than Callback Queue.
                     
     What do you mean by Eventloop in JavaScript ?
-->  Event loop is a mechanism which continuously monitors the call stack and the callback queue. When the 
-    call stack is empty (meaning there's no more synchronous code to execute), the event loop checks if 
-    there are any callbacks waiting in the callback queue for execution.
+->  Event loop is a mechanism which continuously monitors the call stack, callback queue and microtask queue. 
+    When the call stack is empty (meaning there's no more synchronous code to execute), the event loop checks if 
+    there are any callbacks waiting in the callback queue or microtask queue for execution.
 
     The event loop is the secret behind JavaScript’s asynchronous programming. JS executes all 
     operations on a single thread, but using a few smart data structures, it gives us the illusion
@@ -32,29 +32,20 @@
     What do you mean by Call Stack ?
 ->  Call stack is a mechanism used to keep track of function calls during the execution of a script. It's 
     a data structure that operates on a last-in, first-out (LIFO) basis.
-    
     A Call Stack is a way for the Javascript Engine to keep track of its place in the code,
-    It also stores additional information like Whenever we execute Nested functions 
-    multiple functions are called. It has the information which function is currently runnimg 
-    and also what functions are invoked from that function.
 
     What do you mean by Event Queue ?
 ->  Event Queue is a Queue which is responsible for keeping track of Synchronus Functions 
-    and Operations.It sends Synchronus Functions and Operations to the Call Stack 
-    for Execution.
-    It follows the Queue Data Structure to maintain the correct sequence in which all Operations
-    should be sent for execution as they are being Called.   
+    and Operations. It sends Synchronus Functions and Operations to the Call Stack for execution based on call order.
 
     What do you mean by callback Queue ?
 ->  The callback queue (also known as the task queue or message queue) is a data structure that holds 
-    callback functions waiting to be executed. It's closely related to the event loop mechanism and is 
-    used to manage asynchronous operations.
+    callback functions waiting to be executed. It follows first in and first out order.
+
     Callback Queue start getting executed only after We have reached the end of the program or
     There are no statements left to be executed in the call stack.
-
     The Callback Queue waits until the call stack is empty. Afterwards, the codes in it are 
-    executed in First In, First Out (FIFO) order. As more functions or codes are added to the
-    callback queue, they stay at the back and wait for the ones in the front to leave the queue first.
+    executed in First In, First Out (FIFO) order. 
 
     What do you mean by Microtask Queue in JavaScript ?
 ->  Microtask Queue is a Queue which is mostly used for Promise Jobs.

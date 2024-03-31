@@ -62,68 +62,42 @@
 ->  JavaScipt Objects can be Created by Following ways --
 
     Case 1. Using Object Constructor --  
-    <Script> //Script tag in the body tag
-     var e1 = new Object();
+     const e1 = new Object();
      e1.name = "Sujit";
      e1.age =  23;
-     e1.salary = 4000;
-     e1.designation = "Junior Software Engineer";
-     e1.salary += 5000;
-     display(e1);
-    </Script>
-
 
     Case 2. Using Functional Constructor --
-    <Script>//Script tag in the head Section
-      function Emp(name,age,salary,designation)
+      function Emp(name, age)
      {
          this.name = name;
          this.age =  age;
-         this.salary = salary;
-         this.designation = designation
      }
-     var e1 = new Emp("Suman",33,4500,"Progammer");
+     const e1 = new Emp("Suman",33,4500,"Progammer");
      console.log(e1.name);
-    </Script>
 
-    Case 3. Using JSON --
-    <Script>//Script tag in the body Section
-     var e1 = {"name":"Sujit","age":25,"salary":2500,"designation":"Junior Software Engineer"};
-     var e1 = {"name":"Anjali","age":22,"salary":2000,"designation":"Application Development Associate"};
-
-     e1 = e2 ;{Here we are asigning the ref of object e2 to object e1}
-     e2.name = "Manoj";
-     display(e1);
-     display(e2);
-    </Script>
+    Case 3. Using Object Literal Syntax: --
+     const e1 = {};
+     e1.name = "Sujit";
+     e1.age =  23;
 
    What do you mean by JavaScript Arrays ?   
 -> JavaScript Array - It is a collection of ELements of Different datatypes types.
 
    There are Following ways through which we can create Arrays --
 
-   Case 1. Creating Empty Array
+   Case 1. Array Literal Syntax 
            var arr = [];
            arr[0] = "Rajesh";
            arr[1] = 32;
-           arr[2] = true;
-           arr[3] = 32.234
-           cosole.log(arr);
+           console.log(arr);
 
    Case 2. By Using Array Constructor
            var arr2 = new Array("Suman",32,2500,"SOftware Engineer");
-           cosole.log(arr2);
+           console.log(arr2);
 
-   Case 3. By Directly Intializing
-           var arr3 = ["Hi",23,2500];
+   Case 3. Using the Array.from() 
+           const arr3 = Array.from([1, 2, 3, 4, 5]);
            console.log(arr3);`
-
-   Case 4. Creating Empty Array and Pushing Elements into it
-           var arr4 = [];
-           arr4.push(33);
-           arr4.push("Suraj");
-           arr4.push(32223);
-           cosole.log(arr4);
 
    What are the Different Methods of Array ?
 -> These are Differnt Array Methods --
@@ -131,7 +105,7 @@
    1. pop() --    this method pops last element from the array and returns poped element from 
                   the array.
 
-   2. shift() --  this method pops first element from the array  and shifts all the elments to 
+   2. shift() --  this method pops first element from the array and shifts all the elments to 
                   lower index and returns poped element from the array.
 
    3. push() --   this method appends element at the end of the array.It returns the length of 
@@ -177,10 +151,9 @@
                  It can be done in other way also  
                  arr3 = [...arr1,...arr2]; the result will be concatenated array
 
-  9. sort() --    this method will sort the array.
+  9. sort() --    this method will sort the array in the ascending order.
 
-  10.reverse() -- this method Sorts the array Elements in the Descending Order.
-
+  10.reverse() -- this method sorts the array in the descending order.
    
    What do you mean by Babel?
 -> Babel is a javascript Compiler
@@ -188,7 +161,7 @@
    JavaScript in browsers environments.
 
    What do you mean by Webpack?
--> Webpack is a Static Module Bundler for modern JavaScript applications.
+-> Webpack is a static module bundler for modern JavaScript applications.
 
    What do you mean by Use Strict ?
 -> "use strict" Defines that JavaScript code should be executed in "strict mode".
@@ -211,9 +184,8 @@
 -> Block scope refers to the visibility and lifetime of variables declared within {} braces.
 
    What do you mean by Shadowing in JavaScipt ?
--> Shadowing in Javascript happens when a variable declared in a certain scope (e.g. 
-   a local variable) has the same name as a variable in the outer scope (e.g. a
-   global variable).  
+-> Shadowing in javascript happens when a variable declared in a certain scope (e.g. 
+   a local variable) has the same name as a variable in the outer scope (e.g. a global variable).  
 
     What are the different Timer functions in Javascript ?
 ->  Different Timer functions in JavaScipt are - 
@@ -226,7 +198,7 @@
 
 
     What do you mean by Function Statement ?
-->  Function defined with parameters or Without parameters is known as Function Statement.
+->  Function defined with parameters or without parameters is known as Function Statement.
 
     function show(){
         console.log("Sujit Kumar Verma");
@@ -256,7 +228,7 @@
         console.log("Sujit Kumar Verma");
     } 
 
-    const res = function (){
+    var res = function (){
         console.log("Rresult");
     }
 
@@ -271,7 +243,6 @@
     var result = function show(){
         console.log("Sujit Kumar Vemra");
     }
-
     show(); Error
     result();
 
@@ -280,7 +251,7 @@
 
     What do you mean by First Class Functions ?
 ->  Those functions which has the ability to be used as values , they can be passed as parameter to a function
-    or can be returned from another function are called as First Class Functions.
+    or can be returned from another function, these functions are called as First Class Functions.
 
     What do you mnean by Arrow functions ?
 ->  Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows us to 
@@ -297,7 +268,7 @@
     In case of Reference Error the code will get executed.
 
     Type Error -
-    When we do reassignment of const Declared variable then it will give us type Error.  
+    Type errors we get because of type issues.  
 
     What do you mean by SetTimeout ?
 ->  setTimeout() Function executes a function or a code snippet after specified time Interval.
@@ -319,6 +290,7 @@
 ->  The setImmediate() method executes a callback function right after all the statements in the scripts 
     are executed.
     Here Callback functions are registered in the check Handler Queue. 
+    
     Those functions who are registered in the timer queue has high Priorty than those functions who are 
     registered with the check Handler queue.
 
@@ -337,10 +309,6 @@
     What is the difference between for..of and for..in?
 ->  for in -  It Loops through the Properties or indexes.
     for of -  It Loops through the Values.
-
-    What is the result of the spread operator array shown below?
-->  [...'apple']
-    Output: ['a', 'p', 'p', 'l', 'e']   
 
     What is the difference between Callback and Promises ?
 ->               Promises                          |                 Callback
@@ -372,7 +340,6 @@
     What is the difference between const and Object Freeze ?
 ->  Const property means that we cannot do the reassignment of the variable or object but can modify the 
     properties of the object.
-
     Object.freeze methods means that we cannot modify the values of properties of the object.      
 
     What do you mean Object.preventExtensions ?
@@ -393,12 +360,6 @@
     effect rendering of the page in case of specifing it in head tag whereas in case of end of the 
     body tag the scripts will loaded at the end so it will not effect the rendering of the page.
     
-    What is the difference between collection Object and Node List Object ?
-->  Collection Object - It includes the matching elments(e.g Class name or tag name)
-    and does not include text nodes.
-
-    Node List Object - NodeList is a Collection of document nodes (Element nodes, attribute nodes and 
-    text nodes).
     
 
 
