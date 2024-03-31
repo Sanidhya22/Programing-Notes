@@ -1,0 +1,175 @@
+                                         MicroServices 
+                            ---------------------------------------------------     
+
+
+   What do you mean by MicroServices ?                                   
+-> Microservices in Java refer to a software development approach where a large application is built as a 
+   collection of small, independent services. Each service is responsible for a specific function or 
+   feature of the application and communicates with other services through well-defined interfaces, 
+   typically using lightweight protocols like HTTP.  
+
+   What are the advantages of implementing MicroServices Architecture ?
+-> The advantages of microservices Architecture are as follows - 
+   1. Independent Development - This allows independently development of services can be based on their 
+      individual functionality.
+
+   2. Independent Deployment - Based on services need, they can be individually deployed in any 
+      application.
+
+   3. Fault Isolation - Even if one service of the application does not work, the system still continues 
+      to function.
+
+   4. Mixed Technology Stack - Different languages and technologies can be used to build different 
+      services of the same application.
+
+   5. Granular Scaling - Individual components can scale as per need, there is no need to scale all 
+      components together.    
+
+   What are the best practices to design Microservices ?
+-> The following are the best practices to design microservices - 
+    1. Separate data store for each microservices
+    3. Separate build for each microservices
+    4. Deploy microservices into containers.
+    5. Use API Gateway
+    6. Resilience and Fault Tolerance should be implemented.
+
+
+   How does Microservice Architecture work ?  
+->    
+
+   What are the disadvantages of Microservice Architecture ?
+-> The disadvantages of microservices Architecture are as follows - 
+   1. Increased Complexity - Managing many small services can be more complicated than dealing with one 
+      large application.
+
+   2. Operational Overhead - Each service requires its own infrastructure and management, increasing 
+      operational complexity and cost.
+
+   3. Testing Complexity - Testing microservices involves not only testing each service individually but 
+      also how they interact, which can be more challenging.
+
+   4. Communication Overhead - Microservices often need to talk to each other over the network, which can 
+      slow down performance and add complexity.   
+
+   5. Data Management Challenges - Handling data across multiple services can be tricky, leading to 
+      issues with consistency and coordination.
+
+   6. Service Discovery and Configuration Management - Finding and managing services in a dynamic 
+      environment can be difficult.   
+
+   What is the difference between Monolithic, SOA and Microservices Architecture ?   
+-> Monolithic Architecture - 
+   Monolithic architecture refers to a traditional approach where an entire application is built as a 
+   single, tightly integrated unit. In this setup, all components of the application, such as user 
+   interface, database access, and business logic, are tightly coupled together and run as a single 
+   program on a single platform.
+
+   Service-Oriented Architecture (SOA) is an approach to building software where different parts of an 
+   application are designed as individual, independent services. Each service performs a specific 
+   function or task and communicates with other services through well-defined interfaces, such as APIs 
+   (Application Programming Interfaces).
+
+   Microservices in Java refer to a software development approach where a large application is built as a 
+   collection of small, independent services. Each service is responsible for a specific function or 
+   feature of the application and communicates with other services through well-defined interfaces, 
+   typically using lightweight protocols like HTTP.  
+
+   What is Domain Driven Design ?
+-> 
+
+   
+   What are the key differences between SOA and Microservices Architecture ?
+-> The key differences between SOA and microservices are as follow  -
+
+   What is Domain-Driven Design (DDD) and how is it related to microservices ?
+
+   How would you decompose a monolithic application into microservices ?
+-> Decomposing a monolithic application into microservices involves breaking down a larger piece of 
+   software into smaller, interconnected services. 
+
+   Steps to Decompose
+   --------------------------------
+
+   1. Identify Domains: Break down the application into major business areas or domains.
+   2. Data Segregation: Determine the entities and relationships within each microservice and also decide
+      wheather to use like database-per-service or shared-database.
+   3. Service Boundary: Define the boundaries of each microservice - what data and functionality does it 
+      control?
+   4. Define Contracts: Design the APIs used for communication between microservices.
+   5. Decouple Services: The services should be loosely coupled, to the maximum extent possible. This is 
+      especially important in scenarios where you have independent development teams working on the 
+      various microservices.
+
+   How do you handle failure in a microservice ? 
+-> Handling failure in a microservice architecture is crucial for ensuring the overall reliability and 
+   resilience of the system. Here are some common strategies for handling failures in microservices:     
+   
+   1. Retry Mechanisms: Implement retry logic within the microservice to automatically retry failed 
+      operations. 
+
+   2. Circuit Breaker Pattern: Implement circuit breakers to detect when a service or resource is 
+      unavailable and temporarily stop sending requests to it. This allows the failing service time to 
+      recover. Once the service is back online, the circuit breaker can gradually allow traffic to flow 
+      again.   
+
+   3. Fallback Mechanisms: Implement fallback mechanisms to provide a default response or alternative 
+      behavior when a service is unavailable or returns an error. This ensures that the user experience 
+      remains acceptable even in the event of failures.    
+
+   4. Monitoring and Alerting: Implement comprehensive monitoring of microservices to detect failures and 
+      performance issues in real-time. Set up alerts to notify administrators or operations teams when 
+      failures occur so they can take appropriate action.   
+
+   5. Automatic Healing: Implement self-healing mechanisms that can automatically recover from failures 
+      without manual intervention. This may involve restarting failed instances, reallocating resources, 
+      or triggering failover to standby systems.  
+
+   6. Error Handling and Logging: Implement robust error handling and logging mechanisms to capture 
+      details about failures for troubleshooting and analysis. This information can help diagnose issues 
+      and improve the reliability of the system over time.      
+
+   Explain the 'Circuit Breaker' pattern. Why is it important in a microservices ecosystem ?   
+-> The Circuit Breaker pattern is a key mechanism in microservices architecture that aims to enhance 
+   fault tolerance and resilience in services.  
+
+   Here's how the Circuit Breaker pattern typically works:
+
+   1. Closed State: Initially, the Circuit Breaker is in a closed state, allowing requests to pass 
+      through to the target service or resource.
+
+   2. Failure Detection: The Circuit Breaker monitors the responses from the target service. If it detects
+      a predefined number of consecutive failures or a significant increase in error rates, it 
+      transitions to an open state.
+
+   3. Open State: In the open state, the Circuit Breaker prevents any requests from reaching the failing 
+      service. Instead, it immediately returns an error response or a predefined fallback response to 
+      the client. This prevents further load on the failing service and gives it time to recover.
+
+   4. Timeouts and Retries: While the Circuit Breaker is in the open state, it may periodically allow a 
+      limited number of requests to pass through to the target service to check if it has recovered. If 
+      these requests succeed, the Circuit Breaker transitions back to the closed state. However, if they 
+      fail, the Circuit Breaker remains in the open state for a predetermined timeout period.
+
+   5. Half-Open State: After the timeout period elapses, the Circuit Breaker transitions to a half-open 
+      state, allowing a small number of requests to pass through to the target service. If these requests 
+      succeed, the Circuit Breaker transitions back to the closed state, assuming that the service has 
+      recovered. If any of these requests fail, the Circuit Breaker returns to the open state, 
+      indicating that the service is still experiencing issues.
+
+
+   The Circuit Breaker pattern is important in a microservices ecosystem for several reasons: - 
+
+   1. Fault Isolation: It isolates failures in one microservice from affecting other services in the 
+      system, preventing cascading failures that could lead to a system-wide outage.
+
+   2. Resilience: By temporarily halting requests to a failing service, the Circuit Breaker allows the 
+      system to recover and stabilize, improving overall resilience.
+
+   3. Load Shedding: It helps prevent overwhelming a failing service with a flood of requests, which 
+      could exacerbate the issue and prolong recovery time.
+
+   4. Fallback Mechanism: It provides a fallback mechanism to handle failures gracefully, ensuring that 
+      users still receive a response, even if it's not the desired one.
+
+   5. Monitoring and Visibility: The Circuit Breaker pattern often includes monitoring and alerting 
+      capabilities, providing visibility into the health and performance of services in the system.   

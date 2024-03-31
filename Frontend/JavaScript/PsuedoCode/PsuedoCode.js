@@ -13,20 +13,15 @@ fruit();
 // It is giving ReferenceError because of Temporal Dead Zone
 
 //Question 2
-for (var i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i), 1);
-}
+  for (var i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 1);
+  }
 
 // OUTPUT - 3 3 3
-// The reason for this output is because of JavaScript's event loop and the concept of closures. When the
-// loop runs, it schedules three setTimeout tasks. These tasks will run asynchronously after at least 1
-// millisecond. By the time they run, the loop has already completed, and the value of i is 3 because the
-// loop terminates when i becomes equal to 3.
+// All three setTimeout callbacks are executed after the loop completes, and by that time, the value of i 
+// is 3. So, each callback logs the value 3. This behavior is because JavaScript shares the same variable 
+// i across all iterations of the loop due to closure.
 
-// Since setTimeout is executed after the loop has finished, the callback function inside setTimeout retains
-// a reference to the variable i. When the callbacks execute, they use the current value of i, which is 3,
-// because it's the value that i had when the loop ended. This is an example of closure capturing the
-// variable i from its surrounding scope.
 
 //Question 3
 for (let i = 0; i < 3; i++) {
@@ -34,16 +29,13 @@ for (let i = 0; i < 3; i++) {
 }
 
 // OUTPUT - 0 1 2
-// This output differs from the previous example because let declares a block-scoped variable. In each
-// iteration of the loop, a new lexical environment is created, and i is bound to that environment. This
-// means that each iteration of the loop will have its own separate i variable.
+// This happens because let keyword creates a new binding for i in each iteration of the loop, which means
+// each iteration has its own i variable. This is unlike var, which creates a single variable for the 
+// entire loop.
 
-// When setTimeout executes, it creates a closure over the current value of i for each iteration of the
-// loop. Therefore, when the callback functions execute after the timeout, they use the correct value of
-// i that was captured during their respective iterations.
-
-// In summary, using let in the loop declaration prevents the common closure problem that occurs when using
-// var.
+// let, each iteration of the loop has its own i, and the setTimeout callbacks capture the value of i 
+// specific to each iteration at the time they are created. Hence, you get the expected sequence of 
+// numbers logged to the console.
 
 //Question 4
 console.log(+true);
@@ -130,10 +122,11 @@ console.log(obj.hasOwnProperty(1));
 
 //Question 13
 const foo = () => console.log("First");
-const bar = () =>
+const bar = () => {
   setTimeout(() => {
     console.log("Second");
   });
+};
 const baz = () => console.log("Third");
 
 bar();
@@ -235,8 +228,8 @@ console.log(typeof x);
 
 // OUTPUT -
 // undefined
-// Here the scope of x is local so that why we will get undefined for x in the global
-// Scope.
+// Here the scope of x is local so that why we will get undefined for x in the global Scope because
+// in the global scope value of x is undefined.
 
 //Question 22
 (() => {
