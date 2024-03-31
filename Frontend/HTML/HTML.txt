@@ -1,23 +1,21 @@
 1.  What are the new Tags which were added in HTML5 ?     
  -> These are following Elements which are added in HTML5 
     1. <aside>
-    2. <article>
+    2. <section>
     3. <audio>
     4. <video>
-    5. <canvas>
-    6. <header>
-    7. <footer>
+    5. <header>
+    6. <footer>
 
     These are the following input types which are addded in HTML5 
     1. range 
     2. search 
-    3. email
-    4. color 
+    3. color 
+    4. email
     5. tel
 
 2. What do you mean By Box Model?
--> Box Model Basically Wraps HTML elements Into Box. It Consists of Margin,Padding, Border
-   and Actual Content.
+-> Box Model Basically Wraps HTML elements Into Box. It Consists of Margin, Padding, Border and Actual Content.
 
 3. What do you mean by Flex Display?
 -> Display flex is the property of flex container to use flexbox.
@@ -83,13 +81,11 @@
               background-color: red !important;
             }
 
-13. What do you preventsDefault ?
- -> The preventDefault() method cancels the event if it is cancelable, meaning that the default action that 
-    belongs to the event will not occur.
+13. What do you mean by preventsDefault ?
+ -> preventDefault is a method in JavaScript that is used to prevent the default action associated with an event.
 
 14. What do you mean by Web Workers in HTML ?
 ->  Web worker is a Javascript running in the background without affecting the performance of the page.  
-
     When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
     A web worker is a JavaScript that runs in the background, independently of other scripts, without 
     affecting the performance of the page. You can continue to do whatever you want: clicking, selecting 
@@ -100,16 +96,16 @@
     Drag it at the place you want with the help of a mouse click.   
 
 16. What do you mean by tag in HTML5 ?
- -> A tag is a special content in HTML5, which is surrounded by an angle bracket (<,>). A slash (/) symbol 
-    is used to close the tag after completing the block.
+ -> tag refers to the syntax used to define elements within an HTML document. 
 
-17. What is the minimum number of HTML5 tags that are required to create a Web page?
-->  Minimum 3  HTML5 tags are required to create a Web page, such as (<HEAD>, <BODY>, <HTML>)    
+17. What is the minimum number of HTML5 tags that are required to create a Web page ?
+->  The absolute minimum number of HTML5 tags required to create a valid HTML document is two: <!DOCTYPE html> 
+    and <html>   
 
 18. What happens if we don't write HTML tag in HTML file ?
-->  Yes, it will create HTML template without errors and it will work in some browsers like Chrome and 
-    Firefox without problems but it will break in others. 
-    Also, according to the HTML5 specs the html, body and head tags are completely optional.   
+->  If you omit the <html> tag from an HTML file, most modern web browsers will still render the webpage 
+    correctly. Browsers are designed to be forgiving of minor errors and will attempt to interpret and render 
+    the content even if it's not strictly compliant with the HTML specification. 
 
 19. What is the difference between HTML and XHTML ?
 ->                   HTML                     |                      XHTML      

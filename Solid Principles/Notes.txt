@@ -1,9 +1,9 @@
-                                 Solid Principles
-                                 -----------------
+                                     Solid Principles
+                                    -----------------
 
    What do you mean by Solid Principles ?
--> Solid Principles is a coding standard that all developers should have a clear concept for
-   developing software properly to avoid a bad design.
+-> Solid Principles are the principles in object-oriented programming intended to make software designs more 
+   understandable, flexible, and maintainable. 
 
    There are Main 5 Solid Principles
 
@@ -15,22 +15,45 @@
 
 
    1. Single Responsibility Principle - 
+      Java
+      ---------------------
       Each class should have one responsibility, one single purpose.
+      JavaScript
+      ----------------------
+      A class or module should have only one reason to change. In JavaScript, this principle is typically applied
+      to functions, classes, or modules.
+
    2. Open and Closed Principle - 
+      Java
+      ----------------------
       Every class is open for extension but closed for modification.
+      JavaScript
+      ----------------------
+      Classes or Modules should be open for extension but closed for modification. This means that you should be 
+      able to extend the behavior of a class without modifying its source code.
+
    3. Liskov Substitution Principle - 
-      Any subclass object should be substitutable for the superclass object from which it 
-      is derived.
+      Java / JavaScript
+      ----------------------
+      Any subclass object should be substitutable for the superclass object from which it is derived without 
+      affecting the correctness of the program. In simpler terms, it means that a subclass should behave in such 
+      a way that it does not break the functionality that the superclass promises.
+      
    4. Interface Segregation Principle - 
+      Java / JavaScript
+      -----------------------
       We should break larger interfaces into smaller ones.  
+      It states that clients should not be forced to depend on interfaces they don't use. It suggests that 
+      interfaces should be specific to the needs of the clients to prevent them from being burdened with
+      unnecessary methods.
+
    5. Dependency Interversion Principle - 
-      High level modules should not depend on low level modules; both should depend on 
-      Abstractions.   
+      Java / JavaScript
+      -----------------------
+      High level modules should not depend on low level modules, both should depend on Abstractions.   
 
-      In Other Words we can Say 
-      While An Application The Interaction between High Level Modules and Low Level Modules
-      Should be Thought of an Abstract Interaction between Them.
+      High-level modules (such as business logic or application components) should not directly depend on 
+      low-level modules (such as specific implementations of data access or external services).
 
-      While Designing an Application Sometimes High Level Modules Depends Directly on Low Level
-      Modules to Acheieve Some Task and there that Limits the Reuse of High Level Modules
-      and Ends Up as a Bad Design.  
+      Both high-level and low-level modules should depend on abstractions (interfaces or abstract classes) 
+      instead of concrete implementations.

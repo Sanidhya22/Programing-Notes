@@ -51,8 +51,8 @@
    1. Two Dimentional                        1. One Dimentional
 
 7  Which is better CSS Grid or CSS Flexbox ?
--> CSS Flexbox is better than CSS Grid for Normal Design Layout and CSS Grid is Better 
-   than CSS FlexBox for Complex Design Layouts.
+-> Both are better and each one has it's own usecase. flexbox is used for one dimentional layout and 
+   grid is used for 2 dimentional layout.
     
 
 8. What do you mean by Cascading in CSS ?
@@ -92,11 +92,7 @@
     3.Unset - In This Case ELement Properties will Reset to its Natural Values as Per as 
     Provided by the CSS rules, It may be Inherit Parent Property Value or Intial Value.
 
-11. How does Semantics Tags help both Developer and the Browser ?     
-->  Semantics Tags describes its Meaning to the Developer So that He Can Know Meaning of the Tag 
-    and Where it Should go and what Should be placed In.
-
-12. What are the different CSS units we have in CSS ?
+11. What are the different CSS units we have in CSS ?
 ->  The Different CSS units we have in CSS -
     There are are two different types of CSS units we have -
     1. Absoulte Length Units  
@@ -111,14 +107,13 @@
       2. 1vw (view width)  1 % of the width of the viewport.
       3. % (present) percent relative to the viewport.
 
-
-13. What do you mean by LESS and why we use it ?
+12. What do you mean by LESS and why we use it ?
 ->  LESS stands for Leaner Style Sheets.
     LESS is a CSS pre-processor.
     LESS reduces repeation of CSS and therefore saves time.  
     It allows us to use features like variables, nesting, mixins, etc, all in a CSS-compatible syntax.                                                  
 
-14. What do you mean by SASS and why we use it ?
+13. What do you mean by SASS and why we use it ?
 ->  SASS stands for Syntactically Awesome StyleSheet.
     SASS is a CSS pre-processor.
     SASS reduces repeation of CSS and therefore saves time.   
@@ -167,11 +162,11 @@
             @include important-text;
             background-color: green;
           }
-15. What is better among SASS and LESS ?
+14. What is better among SASS and LESS ?
 ->  Less is better than Sass because LESS has an advantage in functions where users can activate mixins when 
     certain conditions occur which Sass does not.     
 
-16. What do you mean by System font ?
+15. What do you mean by System font ?
 ->  A system font or web-safe font is one that's already assumed to be present on the vast majority of users' 
     devices, with no need for a web font to be downloaded.    
 
@@ -179,14 +174,14 @@
 ->  font-face is a CSS rule which allows you to show a font on a Web page even if that font is not installed 
     on the users' computer.
 
-17. What do you mean by PostCSS ?
+16. What do you mean by PostCSS ?
 ->  PostCSS is a JavaScript tool that transforms your CSS code into an abstract syntax tree (AST) and then 
     provides an API (application programming interface) for analyzing and modifying it using JavaScript 
     plugins.
     PostCSS we can use as in  Conjuction with existing presprocessors like SASS, LESS or we can use 
     it as an alternative to all of them. 
 
-18. Why we need before and after as pseudo elements instead of adding elements normally before 
+17. Why we need before and after as pseudo elements instead of adding elements normally before 
     and after the elements.
 ->  CSS ::before and ::after pseudo-elements allow you to insert “content” before and after any non-replaced 
     element (e.g. they work on a <div> but not an <input>). This effectively allows you to show something on 

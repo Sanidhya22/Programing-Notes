@@ -14,7 +14,7 @@
 //     if (s1 + s2 == "EPAMSystems") {
 //       resolve();
 //     } else {
-//       reject();
+//       reject();  
 //     }
 //   });
 // };

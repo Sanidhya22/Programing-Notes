@@ -1,0 +1,13 @@
+   What is React Router ?
+-> React Router is a popular library for handling routing in React applications. It enables you to manage the 
+   navigation and URL changes within your single-page application (SPA). React Router provides a declarative way
+   to define routes and their corresponding components, allowing you to render different components based on the
+   URL.   
+
+   What is the purpose of push() and replace() methods of history ?
+-> The push() and replace() methods are used to manipulate the browser's history stack. They allow you to change
+   the URL programmatically without causing a full page reload.
+   1. push - It adds a new entry to the browser's history, which allows the user to navigate back to the 
+      previous URL using the browser's back button.
+   2. replace - The replace() method is similar to push() but it replaces the current entry in the history stack 
+      instead of adding a new one.

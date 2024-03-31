@@ -1,91 +1,107 @@
-  What do you mean by Design Pattern ?
-->Design Pattern Provides a general solution to a design problem that occurs repeatedly 
-  in many projects. 
+   What do you mean by Design Pattern ?
+-> Design Pattern Provides a general solution to a design problem that occurs repeatedly in many projects. 
 
-Creational Design Pattern --
-Creational design patterns are concerned with the way of creating objects
-1. Singleton Design Pattern -
-In Singleton Only single instance of a class will be created in the memory.
+   Creational Design Pattern 
+   --------------------------------
+   Creational design patterns are concerned with the process of object creation, providing mechanisms for 
+   creating objects in a manner suitable for the situation.
 
-2. Prototype Design Pattern - 
-In Prototype DesignPattern we Make Copy of object.
+   1. Singleton Design Pattern -  The Singleton design pattern ensures that a class has only one instance and 
+      provides a global point of access to that instance. This pattern is commonly used in JavaScript for 
+      managing global state or resources.
 
-3. Builder Design Pattern- 
-In Builder Deisgn Pattern  Builds the Complex Objects Step by Step by indivisual Classes are 
-brought Together for Building user Requirement Complex Objects. 
+   2. Prototype Design Pattern - The Prototype design pattern in JavaScript involves creating objects based on a 
+      template of an existing object through cloning.  pattern allows us to create new instances by copying an 
+      existing instance, thus avoiding the need for costly creation operations.
 
-4. Factory Design Pattern - 
-Abstract Factory Pattern says that just define an interface or abstract class for creating
-families of related (or dependent) objects but without specifying their concrete sub-classes.
+   3. Builder Design Pattern - The Builder design pattern in JavaScript helps in constructing complex objects 
+      step by step. Instead of creating the object directly with all its parameters, the Builder pattern breaks 
+      down the construction process into smaller, more manageable steps. Each step adds a specific part or 
+      configuration to the object.
 
-5. Abstract Factory Design Pattern -
-Group of Factory Objects
+   4. Factory Design Pattern - The Factory design pattern in JavaScript provides a way to create objects without 
+      having to specify their exact class. Instead of directly calling a constructor, you call a factory function
+      or method, which internally decides which class to instantiate based on certain parameters or conditions.
 
-6. Object Pool Design Pattern  - 
-In Pool Design Patten Pools of Objects which will be created and kept ready .whenever a program 
-ask for it. it will be released from the pool and once it is used by it will back to the pool
-again.
-e.g db Connection
+   5. Abstract Factory Design Pattern - The Abstract Factory design pattern in JavaScript provides an interface 
+      for creating families of related or dependent objects without specifying their concrete classes. It's an 
+      extension of the Factory pattern, where a single factory can produce multiple types of objects, often 
+      organized into families.
 
-
-Structural Design Pattern -
-Structural design patterns are concerned with how classes and objects can be composed, to
-form larger structures.
-
-1.Adapter Design Pattern -
-Adapter Design Pattern converts the one interface into another interface that client wants.
-
-2. Bridge Design Pattern - 
-Bridge is a structural design pattern that lets you split a large class or a set of
-closely related classes into two separate hierarchies abstraction and implementation
-which can be developed independently of each other.
-Abstraction is the Bridge Design Pattern.
-
-3.Composite Design Pattern - 
-Composite is a structural design pattern that lets you compose objects into tree structures
-and then work with these structures as if they were individual objects.
-It Treats all the Objects Equally iresspective of the Positions of the Object. 
-
-4.Decorator Design Pattern -  
-Adding the new functionality to the existing functionality.
-The decorator design pattern allows us to dynamically add functionality and behavior to
-an object without affecting the behavior of other existing objects within the same class.
-
-5.Facade Design Pattern -
-Facade is a structural design pattern that provides a simplified (but limited) interface
-to a complex system of classes, library or framework.
-
-6.Flywieght Design Pattern - 
-A Flyweight Pattern says that just to reuse already existing similar kind of objects by
-storing them and create new object when no matching object is found.
-
-7.Porxy Design Pattern  -
-Proxy Design Pattern means an object representing another object (provides the control for
-accessing the original object)
-Note - Controls and manage access to the object we are protecting
+   6. Object Pool Design Pattern - The Object Pool design pattern is used to manage a pool of reusable objects. 
+      Instead of creating and destroying objects each time they are needed, the Object Pool maintains a 
+      collection of initialized objects that can be reused. This can improve performance by reducing the overhead 
+      of object creation and destruction, especially in scenarios where creating new objects is expensive.
 
 
+   Structural Design Pattern 
+   ------------------------------------
+   Structural design patterns in JavaScript provide ways to compose objects and classes to form larger structures
+   while keeping the relationships between them flexible and efficient. These patterns focus on how classes and 
+   objects can be combined to form larger structures and promote code reusability and maintainability.
 
-Behavioural Design Pattern -
-Behavioral design patterns are concerned with the interaction and responsibility of objects.
+   1. Adapter Design Pattern - The Adapter Design Pattern in JavaScript allows incompatible interfaces to work 
+      together. It acts as a bridge between two interfaces, converting the interface of a class into another 
+      interface that a client expects. This pattern is particularly useful when you want to use an existing 
+      class with a different interface without modifying its source code.
 
-1.Chain of Responsibility - Responsibilty is given to indivisual modules based on that 
- request crossponding functionality is executed. 
-2.Interpreter - we are Interpreting the given format and converting into required stuff. 
-3.Commad - Instructions are there in the object based on which Execution takes place.
-4.Iterator - Iterating over the Objects.
-5.Mediator-  Connects between two similar Objects.
-6.Observer - In the Observer Design Pattern Objects called observer observes to obseravables.
-7.State -    If we have to change behavior of an object based on its state, we can have a 
+   2. Bridge Design Pattern - The Bridge Design Pattern in JavaScript is a structural pattern that decouples 
+      abstraction from implementation, allowing them to vary independently. It involves creating separate 
+      hierarchies for abstraction and implementation and then connecting them through composition. This pattern 
+      is useful when you want to avoid a permanent binding between an abstraction and its implementation, 
+      allowing them to evolve independently.
+
+   3. Composite Design Pattern - The Composite Design Pattern in JavaScript is like organizing things into a 
+      tree structure, where both individual items and groups of items are treated the same way.
+      the Composite pattern lets you treat objects and groups of objects in a uniform way, making it easier to 
+      work with complex hierarchical structures.
+
+   4. Decorator Design Pattern - The Decorator Design Pattern in JavaScript is a structural design pattern that 
+      allows behavior to be added to individual objects dynamically, without affecting the behavior of other 
+      objects from the same class. It is useful for extending the functionality of objects at runtime.
+
+   5. Facade Design Pattern - The Facade Design Pattern is used to provide a simplified interface to a complex 
+      system of classes, functions, or APIs. It allows clients to interact with a high-level interface without 
+      needing to understand the underlying subsystems.
+
+   6. Flyweight Design Pattern - The Flyweight Design Pattern is a structural design pattern that aims to 
+      minimize memory usage or computational expenses by sharing as much as possible with similar objects. It's 
+      particularly useful when you need to create a large number of similar objects, which would otherwise 
+      consume a lot of memory if each object stored all its data independently.
+
+   7. Proxy Design Pattern  - The Proxy Design Pattern in JavaScript provides a surrogate or placeholder for 
+      another object to control access to it. Using this pattern we controls and manage access to the object we 
+      are protecting.
+      Note - Proxy objects are the objects representing another objects
+
+
+   Behavioural Design Pattern 
+   -------------------------------------
+   Behavioral Design Patterns in JavaScript focus on how objects communicate and interact with each other.
+
+   1. Chain of Responsibility - Responsibilty is given to indivisual modules based on that 
+   request crossponding functionality is executed. 
+
+   2. Interpreter - The Interpreter Design Pattern in JavaScript is a behavioral pattern that defines a way to 
+      interpret or evaluate sentences in a language. It provides a way to evaluate language grammar or 
+      expressions. This pattern involves defining an expression interface which tells to interpret a particular 
+      context. It's often used when you have a language to interpret, like a query language, mathematical 
+      expressions, or regular expressions.
+   
+   3.Commad - Instructions are there in the object based on which Execution takes place.
+   4.Iterator - Iterating over the Objects.
+   5.Mediator-  Connects between two similar Objects.
+   6.Observer - In the Observer Design Pattern Objects called observer observes to obseravables.
+   7.State -    If we have to change behavior of an object based on its state, we can have a 
              state variable in the Object and use if-else condition block to perform different
              actions based on the state. 
-8.Strategy  - It enables selecting algorithm at runntime.
-9.Template -  Template design pattern that allows you to defines a skeleton of an algorithm
+   8.Strategy  - It enables selecting algorithm at runntime.
+   9.Template -  Template design pattern that allows you to defines a skeleton of an algorithm
               in a base class and let subclasses override the steps without changing the 
               overall algorithm's structure.
-10.Visitor -  Visitor Design pattern that allows adding new behaviors to existing class 
+   10.Visitor -  Visitor Design pattern that allows adding new behaviors to existing class 
               hierarchy without altering any existing code.
-11.Memento - it provides the ability to restore an object to its previous state 
+   11.Memento - it provides the ability to restore an object to its previous state 
 	
 
 

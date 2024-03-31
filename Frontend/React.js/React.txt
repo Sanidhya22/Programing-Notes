@@ -8,16 +8,14 @@
    1. Uses JSX syntax, a syntax extension of JS that allows developers to write HTML in their JS code.
    2. It uses Virtual DOM instead of Real DOM considering that Real DOM manipulations are expensive.
    3. Supports server-side rendering which is useful for Search Engine Optimizations(SEO).
-   4. Follows Unidirectional or one-way data flow or data binding.
-   5. Uses reusable/composable UI components to develop the view.
+   4. Uses reusable/composable UI components to develop the view.
 
    What do you mean by JSX ?
 -> JSX Stands for JavaSrcipt XML. JSX Allows us to write HTML in React.
    JSX makes it easier to write and add HTML in React.
 
    What are Components in React ?
--> Components are Independent and resuable bit of codes.They serve the same work
-   Like JavaScript function does.
+-> Components are Independent and resuable bit of codes.They serve the same work like JavaScript function does.
    They return JSX elements.
 
    What do you mean by Class Component in React?
@@ -25,13 +23,12 @@
    create a render function which returns a React element(JSX).
 
    What do you mean by Functional Component in React?
--> A React functional component is a simple JavaScript function that accepts props and returns
-   a React element(JSX).
+-> A React functional component is a simple JavaScript function that accepts props and returns a React element(JSX).
   
    What are the differences between react Class Components and function Components?
 ->       Class Components                        |             Function Components
    1.These Components are made up of                1. These Components are made up of simple JavaScript 
-    simple classes.                                  function that accepts props and return React elements.
+    simple classes.                                    function that accepts props and return React elements.
 
    2.There is a render method in class component    2.There is no any render method in function component.
      which returns react element.  
@@ -40,8 +37,7 @@
 
    4.Class components can use React lifecycle       4.Functional components cannot use class component 
      methods (for example, componentDidMount,         React lifecycle methods.
-     componentWillUnmount etc).                       They have hooks for it to memic the same 
-                                                      behaviour.
+     componentWillUnmount etc).                       They have hooks for it to memic the same behaviour.
 
    5.Class components are a little inefficient.     5.Functional components are more efficient.
 
@@ -50,13 +46,7 @@
 
 
    When to use a Class Component over a Function Component ?  
--> After the addition of Hooks(i.e. React 16.8 onwards) it is always recommended to use Function 
-   components over Class components in React. Because you could use state, lifecycle methods and other 
-   features that were only available in class component present in function component too.
-
-   But even there is one reason to use Class components over Function components.
-   If you need a React functionality whose Function component equivalent is not present yet, like Error 
-   Boundaries.
+-> In case of Error boundaries which are present in class component but not in functional component.
 
    What is State in React?
 -> The state is an object where we store property values that belongs to the component. 
@@ -108,7 +98,7 @@
     }
    }
 
-   Why should we not update the state directly ? 
+   Why we should not update the state directly ? 
 -> If you try to update the state directly then it won't re-render the component.
    Wrong
    -------------------------
@@ -160,8 +150,13 @@
    3. Declaring callback function as Arrow function : Declare callback function as arrow functions
 
    handleClick = () => {
-    console.log("SingOut triggered", this);
+    console.log("SingOut triggered");
    };
+
+   render() {
+      return <button onClick={this.handleClick}>SignOut</button>;
+   }
+
 
    How to pass a parameter to an event handler or callback?
 -> You can use an arrow function to wrap around an event handler and pass parameters:
@@ -171,7 +166,7 @@
    Apart from these two approaches, you can also pass arguments to a function which is defined as 
    arrow function
    <button onClick={this.handleClick(id)} />;
-   handleClick = (id) => () => {
+   handleClick = (id) => {
    console.log("Hello, your ticket number is", id);
    };
    
@@ -188,31 +183,74 @@
    Keys are used to give an identity to the elements in the lists.
    It helps in efficient UI update.
 
-   What are the different phases of component lifecycle?   
--> The component lifecycle has three distinct lifecycle phases: 
-
-   What are the different LifeCycles Methods of React Class components?
+   What are the different LifeCycles Methods of React Class components ?
 -> These following are the different Life Cycle Methods of class Component --
 
    1.ComponentWillMount   -- This Function is called before the Component is rendered into DOM.
+
    2.ComponentDidMount    -- This function is called after the Component is renderd into DOM.
+
    3.ShouldComponentUpdate -- It allows us to check if the rendering of the component is 
-    needed or not. It always return the boolean value and rerendering of the component is decieded on the 
+    needed or not. It always return the boolean value and rerendering of the component is decided on the 
     returned value.
     if it return true we will rerender the component else component is not rerendered.
+
    4.ComponentWillUpdate  -- This function is invoked before the Component Updation occurs.
+
    5.ComponentDidUpdate   -- This function is called after the Component is Updated.
-   6.ComponentWillUnMount -- This function is called before the component is removed or 
-     Destroyed Permanently.
-   7.getDerivedStateFromProps - It is called just right before the render method.
-     is a static method, meaning it does not have access to the this keyword and cannot interact with 
-     instance methods or properties. Instead, it receives nextProps and prevState as arguments and 
-     returns either an object to update the state or null.
+
+   6.ComponentWillUnMount -- This function is called before the component is removed or Destroyed Permanently.
+
+   7.getDerivedStateFromProps - It is called just right before the render method. it is a static method, 
+     Imagine you have a React component that receives some data through its props. Now, sometimes you might want
+     to update the component's internal state based on changes in those props. That's where 
+     getDerivedStateFromProps comes in.
+
+     When React detects that the props of a component have changed, it calls getDerivedStateFromProps. Inside 
+     this method, you can compare the new props with the previous props, and then return an object representing 
+     the updated state based on these props.
+
+     import React, { Component } from 'react';
+
+     class UserCard extends Component {
+     constructor(props) {
+     super(props);
+     this.state = {
+       // Initially, setting the name from props
+       name: props.name
+      };
+     }
+
+     static getDerivedStateFromProps(nextProps, prevState) {
+     // Check if the name in props is different from the name in state
+     if (nextProps.name !== prevState.name) {
+       // If so, update the state with the new name from props
+       return {
+         name: nextProps.name
+       };
+     }
+     // If not, return null to indicate no state update is necessary
+     return null;
+    }
+
+    render() {
+      return (
+       <div>
+         <h2>User Card</h2>
+         <p>Name: {this.state.name}</p>
+       </div>
+      );
+     }
+    }
+
+    export default UserCard;
+
+
    8.getSnapshotBeforeUpdate -  It is primarily used when you need to capture some information from the 
      DOM before it potentially changes due to an update.
      It accepts previous state and previous props as an argument.
 
-   What do you mean by hooks in react?
+   What do you mean by hooks in react ?
 -> Hooks are the concepts were added in the react 16.8 version.
    React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a 
    functional component. 
@@ -241,25 +279,25 @@
     the root component of our app.
 
     What do you mean by UseEffect in React?
-->  UseEffect is a React Hook that tells our component What needs to be done after Component 
-    rendering and Component Upation.
+->  The useEffect hook runs after every render of your component, including the initial render. This means that 
+    it executes after the component has been rendered to the DOM.
     useEffect(<function>, <dependency>)
 
     What do you mean by createContext in React?     
-->  createContext is used to create common data that have access throughout the component 
-    hierarchy without passing the props down manually to each level.
+->  createContext is used to create common data that have access throughout the component hierarchy without 
+    passing the data as props down manually to each level.
 
     What do you mean by Prop Drilling ?
-->  Prop Drilling means Passing data through several nested children components in order 
-    to deliver the data to the deeply nested Component.    
+->  Prop Drilling means Passing data through several nested children components as props in order to deliver the 
+    data to the deeply nested Component.    
 
     What do you mean useContext ?
-->  The React useContext provides data to components no matter how deep they are in the 
-    components tree. The useContext is used to manage global data.   
+->  The React useContext provides data to components no matter how deep they are in the components tree. The 
+    useContext is used to access global data that we created using createContext.   
 
     what do you mean by ContextAPI ?
 ->  The Context API is a React structure that enables us to exchange data to several nested children
-    component without passing the props down manually to each level.
+    component without passing the data as props down manually to each level.
     It is Consisting of Providers and Consumers.    
 
     What do you mean by useParams ?
@@ -269,10 +307,10 @@
 ->  useLocation hook returns the location object used by the react-router-dom.
 
     What do you mean by UseHistory?
-->  useHistory hook allows us to access React Router's DOM history object.
+->  useHistory hook allows us to access react-router-dom history object.
 
     What do you mean Controlled Components ?
-->  Controlled Components are those in which form’s data is handled by the component’s state.
+->  Controlled Components are those components that are handled by the component’s state.
 
     What do you mean by Controlled Componenets ?
 ->  Uncontrolled Components are the components that are not controlled by the React state and are 
@@ -296,14 +334,15 @@
     any external factors or side effects. Pure components are deterministic, meaning that for a given set 
     of props and state, the output will always be the same.
 
-    React provides a React.PureComponent class that you can extend to create pure components. 
-    Alternatively, you can use the React.memo() higher-order component to wrap a functional component 
-    and memoize its props to prevent unnecessary re-renders.
-
     What do you mean by InPure Component in React ?
 ->  An Impure component is a component that does not strictly rely on its props and state to render. It 
     may depend on external factors such as global variables, random numbers, or other side effects. 
     Impure components can lead to unpredictable behavior and make testing and debugging more difficult.
+
+    Why we use React.PureComponent in class Component ?
+->  it implements a shouldComponentUpdate() method with a shallow comparison on the component's props and state. 
+    This means that the component will not re-render if the props and state remain the same, improving 
+    performance by preventing unnecessary re-renders.   
 
     What do you mean by useMemo ?
 ->  React useMemo Hook returns a memoized Value. 
@@ -348,23 +387,21 @@
 
     What do you mean by Redux in react?
 ->  Redux is a Pattern or libaray for managing and updating the application state using events
-    called actions.It serves as a centeralized store for state that needs to be used across
+    called actions. It serves as a centeralized store for state that needs to be used across
     our entire application. 
 
     What do you mean By Actions?
-->  Actions are Plain JavaScript Objects that have a type field which tells what action to be 
-    performed.
+->  Actions are Plain JavaScript Objects that have a type field which tells what action to be performed.
 
     What do you mean by Reducers?
-->  Reducers are functions that take the current state and an action as arguments and return
-    a new state result.
+->  Reducers are functions that take the current state and an action as arguments and return a new state result.
 
     What do you mean by Store?
 ->  A store is a state container which holds the application's state.
     Every Redux store has a single root reducer function.
 
-Notes- The only way to change the state is to dispatch an action.
-       The global states of our application is stored as an object inside a single store.
+    Notes- The only way to change the state is to dispatch an action.
+           The global states of our application is stored as an object inside a single store.
 
     What do you mean by Jest?
 ->  Jest is a free open source test framework created by facebook that has a great integration
@@ -418,7 +455,7 @@ Notes- The only way to change the state is to dispatch an action.
 
     forwardRef allows us to forward a component's ref to another one. 
     forwardRef is a function used to pass the ref to a child component.
-    forwardRef is a technique for automatically passing a ref through a component to one of its children.
+    This way, the parent component can access the child's DOM node or React element directly via the ref.
 
     What do you mean by Redux toolkit in React ?
 ->  Redux Toolkit is a set of tools that helps simplify Redux development. It includes utilities for 
@@ -447,9 +484,7 @@ Notes- The only way to change the state is to dispatch an action.
 
     What do you mean by Virtual DOM ?
 ->  Virtual Dom is the copy of the entire DOM in the memory.
-    The Virtual DOM (VDOM) is an in-memory representation of Real DOM. The representation of a UI is kept 
-    in memory and synced with the "real" DOM. It's a step that happens between the render function 
-    being called and the displaying of elements on the screen. This entire process is called reconciliation.
+    The Virtual DOM (VDOM) is an in-memory representation of Real DOM. 
 
     How Virtual DOM works ?
 ->  The Virtual DOM works in three simple steps 
@@ -479,12 +514,7 @@ Notes- The only way to change the state is to dispatch an action.
     updated based on the differences between the old and new virtual DOM.
 
     5. Efficient DOM Updates: Finally, React applies these changes to the actual DOM in an efficient 
-    manner, minimizing the number of DOM manipulations required.
-
-    What is the difference between Shadow DOM and Virtual DOM?
-->  The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web 
-    components. 
-    The Virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs.    
+    manner, minimizing the number of DOM manipulations required.    
 
     What do you mean by Conditional Rendering ?
 ->  Conditional rendering is the process of displaying different content based on certain conditions or 
@@ -519,7 +549,7 @@ Notes- The only way to change the state is to dispatch an action.
 ->  One-way Binding means that the binding happens in one direction.
     It is a Unidirectional data flow. 
     One-way data binding in React refers to the flow of data from the parent component to the child 
-    component. It means that the data can only flow in one direction: from the parent to the child. 
+    component. It means that the data can only flow in one direction from the parent to the child. 
     Changes in the parent component will be reflected in the child component, but changes in the child 
     component will not affect the parent component directly.
     React achieves one-way data binding by using state and props.
@@ -555,7 +585,7 @@ Notes- The only way to change the state is to dispatch an action.
     }
 
     What is React Fiber?
-->  Fiber is the new reconciliation engine or reimplementation of core algorithm in React v16.
+->  Fiber is the new reconciliation engine or reimplementation of react core algorithm in React v16.
     The goal of React Fiber is to increase React suitability for areas like animation, layout, gestures.
 
     What is the main goal of React Fiber?
@@ -563,20 +593,16 @@ Notes- The only way to change the state is to dispatch an action.
     1. spliting rendering work into chunks 
     2. Better support for error boundaries.
     3. Assigning priority to different types of updates
-    
 
     What do you mean by Portals in React ?
 ->  Portals in React provide a way to render children components into a DOM node that is outside of the 
     parent component's DOM hierarchy. This allows you to render components into a different part of the 
-    DOM tree, such as a modal, tooltip, or dialog, without affecting the styling or behavior of the 
-    parent component.
+    DOM tree without affecting the styling or behavior of the parent component.
     ReactDOM.createPortal(child, container);
 
     What do you mean by customHook in react.js ?
-->  custom hooks are JavaScript functions whose names start with "use" and typically utilize built-in 
-    hooks or other custom hooks within them.   
-    They allow us to extract component logic into reusable functions. Custom hooks are a way to 
-    reuse stateful logic between components without changing their hierarchy.
+->  A custom hook in React.js is a JavaScript function that allows you to reuse stateful logic across different 
+    components.
 
     What do you mean by Error Boundaries in react.js ?
 ->  Error boundaries are React components that catch JavaScript errors anywhere in their child component
@@ -591,42 +617,62 @@ Notes- The only way to change the state is to dispatch an action.
 ->  The error Handling phase Methods are as follows - 
     1. static getDerivedStateFromError(error) -
        It is used to render a fallback UI after error is thrown.
-    2. componetDidCatch(error, info) -
+    2. componentDidCatch(error, info) -
        It is used to log the error information.
 
-    What do you mean by GraphQL ?
-    GraphQL is a query language for APIs.
-    It provides a more efficient, powerful, and flexible alternative to traditional REST APIs for 
-    fetching and updating data.
-    the problem with traditional apis is sometimes data is overfetching and sometimes it is underfetching.
-    In GraphQL we can do two things Mutations and Queries
+    What are fragments ?   
+->  fragments are a way in React for a component to return multiple elements.    
 
-    Basic Query in GraphQL
+    Why fragments are better than container divs ?
+->  The below are the following reasons -
+    1. Fragments are a bit faster and use less memory by not creating an extra DOM node.
+    2. Some CSS mechanisms like Flexbox and CSS Grid have a special parent-child relationships, and adding divs 
+       in the middle makes it hard to keep the desired layout.   
 
-    {
-        user(id){
-            name,
-            website
-        }
+    How to update a component every second ?
+->  import React, { useState, useEffect } from 'react';
+
+    function Timer() {
+    const [count, setCount] = useState(0);
+ 
+    useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Update count every second
+      setCount(prevCount => prevCount + 1);
+    }, 1000);
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => {
+      clearInterval(intervalId);
+     };
+    }, []); // Empty dependency array ensures the effect runs only once after initial render
+
+    return (
+     <div>
+       <h1>Timer: {count}</h1>
+     </div>
+     );
     }
 
-    How to use GraphQL in React ?
-    We can use GraphQL in react using Apollo client.
-    Steps - 
-    1. we need to have GraphQL and Apollo client dependencies in our project.
-    2. we need to create client using new ApollClient() by passing cache , link arguments.
-    3. we have to wrap our GraphQL comsume data component between Apollo Provider component passing 
-       client as a prop. 
-    4. In our component we need to import useQuery from apollo client then we can use that for quering 
-       gql quries by passing queries into it.
-    5. useQuery return three fields data, error, loading   
+    export default Timer;
 
+    Why you can't update props in React ?
+->  In React props are immutible, This means that a parent can send any prop values to a child, but the child 
+    can't modify received props.  
 
-
+    Is it possible to use React without rendering HTML ?
+->  Yes it is possible 
     
- '
-
- 
+    render() {
+       1. return false
+       2. return true
+       3. return null
+       4. return []
+       5. return ""
+       6. return <React.Fragment></React.Fragment
+       7. return <></>
+       8. return undefined
+    }
 
 
 
