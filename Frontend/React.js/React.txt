@@ -458,29 +458,40 @@
     This way, the parent component can access the child's DOM node or React element directly via the ref.
 
     What do you mean by Redux toolkit in React ?
-->  Redux Toolkit is a set of tools that helps simplify Redux development. It includes utilities for 
-    creating and managing Redux stores, as well as for writing Redux actions and reducers.   
+->  Redux Toolkit is a set of tools and utilities that helps simplify and streamline Redux usage in React 
+    applications. It provides pre-configured setups and APIs that make common Redux tasks easier to accomplish 
+    with less boilerplate code.  
 
     What do you mean by extraReducers ?
-->  The extraReducers allows you to respond to an action in our slice reducer but does 
-    not create an action creator function.  
-
-    What do you mean by Redux Thunk ?
-->  Redux Thunk middleware allows you to write action creators that return a function instead 
-    of an action. 
+->  extraReducers is a way that allows createSlice to respond and update its own state in response to other 
+    action types besides the types it has generated. 
 
     What is the difference between reducers and extraReducers ?
-->  The reducers property both creates an action creator function and responds to that action in the 
-    slice reducer. The extraReducers allows you to respond to an action in your slice reducer but does 
-    not create an action creator function.    
+->  Reducers respond to action types defined by its slice, ExtraReducers respond to action types defined 
+    outside its slice.
+
+    What are the core features of Redux Toolkit ? 
+->  The following are the core features of Redux Toolkit -  
+    1. configureStore() - It is a function allows to create a Redux store. 
+    2. createSlice() -   It is a function allows you to define a Redux slice, which is a collection of Redux 
+       reducer logic and action creators for a specific slice of the Redux state.
+    3. createReducer() -  It is a function that helps us to create Redux reducers. 
+    4. createAction() - It is a function that helps us to define action creators. 
+    5. Redux DevTools Extension Integration - It is a DevTools extension that enabling us to inspect and debug 
+       Redux state and actions in development.
+    6. Thunks Middleware - Redux Toolkit includes the createAsyncThunk function, which simplifies the process of
+       handling asynchronous logic in Redux using thunks. 
     
     What do you mean by createAsyncthunk ?
-->  createAsyncThunk will generate three Redux action creators using createAction : pending , fulfilled ,
-    and rejected . Each lifecycle action creator will be attached to the returned thunk action creator 
-    so that your reducer logic can reference the action types and respond to the actions when dispatched.
+->  createAsyncThunk in Redux Toolkit is like a shortcut for creating actions that deal with asynchronous 
+    operations, such as fetching data from an API.
 
-    What do you mean by Async thunk in React.js ?
-->  Async thunk means a piece of code that does some delayed work.       
+    Instead of manually writing action creators for each step of the asynchronous process (like starting the 
+    request, handling success, and handling errors), createAsyncThunk does all of that for us.
+
+    What do you mean by Asyncthunk in React.js ?
+->  an async thunk in React.js refers to asynchronous action creator function.
+    It is commonly used in Redux for managing asynchronous logic. 
 
     What do you mean by Virtual DOM ?
 ->  Virtual Dom is the copy of the entire DOM in the memory.
