@@ -1,4 +1,4 @@
-1.  What are the new Tags which were added in HTML5 ?     
+    What are the new Tags which were added in HTML5 ?     
  -> These are following Elements which are added in HTML5 
     1. <aside>
     2. <section>
@@ -14,32 +14,32 @@
     4. email
     5. tel
 
-2. What do you mean By Box Model?
+   What do you mean By Box Model?
 -> Box Model Basically Wraps HTML elements Into Box. It Consists of Margin, Padding, Border and Actual Content.
 
-3. What do you mean by Flex Display?
+   What do you mean by Flex Display?
 -> Display flex is the property of flex container to use flexbox.
 
-4. What do you mean by Semantic tags and Non Semantic Tags?
+   What do you mean by Semantic tags and Non Semantic Tags?
 -> Semantic element clearly describes its meaning to both the browser and the developer.
    Semantic elements: <form>, <table>,<article>,<footer>,<header>and <section>   
    Non-Semantic elements: <div> and <span> - Tells nothing about its content.
 
-5. What do you mean by HTML Quatations ?
+   What do you mean by HTML Quatations ?
 -> The HTML Quotations is used to create quotation in HTML. The HTML <q> tag is used to 
    define a short quotation. Browsers normally insert quotation marks around the quotation.
    and HTML <blockquote> tag is used to define a section that is quoted from another source.
    Browsers usually indent <blockquote> elements.
 
-6. What do you mean by Citation Elements ?
+   What do you mean by Citation Elements ?
 -> The <cite> HTML element is used to describe a reference to a cited creative work, and 
    must include the title of that work. 
 
-7. What do you mean by <aside> Element ?
-->  The aside content should be indirectly related to the surrounding content. Tip: The
-    <aside> content is often placed as a sidebar in a document.
+   What do you mean by <aside> Element ?
+-> The aside content should be indirectly related to the surrounding content. Tip: The
+   <aside> content is often placed as a sidebar in a document.
 
-8. How we can Display Emoji in HTML Pages ?
+   How we can Display Emoji in HTML Pages ?
 -> Emojis look like images, or icons, but they are not.
    They are letters (characters) from the UTF-8 (Unicode) character set. 
    <meta charset="UTF-8">     
@@ -48,7 +48,7 @@
    <p>I will display &#65; &#66; &#67;</p>
 
 
-9. What is the difference between get and post ?
+   What is the difference between get and post ?
 -> Get -
    1. Appends the form data in the url in the key-value pairs.
    2. Get Method can send limited amount of data(2048 Characters).
@@ -59,21 +59,25 @@
    2. Post method can send unlimited amount of data.
    3. Post method is secure.
 
-10. What is the difference between Canvas and SVG ?
-->                          Canvas                |                  SVG 
-    ---------------------------------------------------------------------------------------------------
-    1. Resolution dependent.                         1. Resolution Independent.
+   What do you mean by Canvas and SVG ?
+-> Canvas API we use to draw graphics on a web page.
+   SVG stands for scalable vector based graphics that we use to draw vector based graphics in xml which 
+   can be directly embedded in html pages.  
+
+   What is the difference between Canvas and SVG ?
+->  ->                          Canvas                |                  SVG 
+    --------------------------------------------------------------------------------------------------
     2. It is not based on XML Format.                2. It is based on XML format. 
     3. No support for Event Handlers.                3. Support Event Handlers.
     4. Canvas has poor scalability.                  4. SVG has Better scalability
 
-11. What are different priorty orders in CSS ?
+    What are different priorty orders in CSS ?
 ->  Note -
     Inline CSS > Internal CSS > External CSS 
 
     Id > Class > Tags Selector
 
-12. What is !important rule in CSS ?
+    What is !important rule in CSS ?
 ->  !important rule, it will override ALL previous styling rules for that specific property on that element.
 
     e.g - 
@@ -81,36 +85,65 @@
               background-color: red !important;
             }
 
-13. What do you mean by preventsDefault ?
+    What do you mean by preventsDefault ?
  -> preventDefault is a method in JavaScript that is used to prevent the default action associated with an event.
 
-14. What do you mean by Web Workers in HTML ?
+    What do you mean by Web Workers in HTML ?
 ->  Web worker is a Javascript running in the background without affecting the performance of the page.  
     When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
     A web worker is a JavaScript that runs in the background, independently of other scripts, without 
     affecting the performance of the page. You can continue to do whatever you want: clicking, selecting 
     things, etc., while the web worker runs in the background.
 
-15. What do you mean by HTML Drag and Drop API in HTML ?
+    What do you mean by HTML Drag and Drop API in HTML ?
  -> Drag and Drop API is the most important User Interface concept which makes it easy to grab an object and 
     Drag it at the place you want with the help of a mouse click.   
 
-16. What do you mean by tag in HTML5 ?
+    What do you mean by tag in HTML5 ?
  -> tag refers to the syntax used to define elements within an HTML document. 
 
-17. What is the minimum number of HTML5 tags that are required to create a Web page ?
+    What is the minimum number of HTML5 tags that are required to create a Web page ?
 ->  The absolute minimum number of HTML5 tags required to create a valid HTML document is two: <!DOCTYPE html> 
     and <html>   
 
-18. What happens if we don't write HTML tag in HTML file ?
+    What happens if we don't write HTML tag in HTML file ?
 ->  If you omit the <html> tag from an HTML file, most modern web browsers will still render the webpage 
     correctly. Browsers are designed to be forgiving of minor errors and will attempt to interpret and render 
     the content even if it's not strictly compliant with the HTML specification. 
 
-19. What is the difference between HTML and XHTML ?
-->                   HTML                     |                      XHTML      
-    1. HTML stands for Hypertext Markup                1. XHTML stands for Extensible Hypertext 
-       language.                                          Markup language.
-    2. It is less stricter.                            2. XHTML is more stricter and more XML 
-                                                          based version of HTML.
+   What is the difference between HTML and XHTML ?
+->                             HTML                  |                        XHTML   
+  -------------------------------------------------------------------------------------------------------------
+    1. In HTML, tags don't necessarily have to be       1. XHTML requires all tags to be properly closed, and 
+       closed, and certain elements like <img> and         empty elements must use self-closing syntax.
+       <br> do not require closing tags.
 
+    2. HTML is not XML-compatible.                      2. XHTML is designed to be compatible with XML standards.   
+
+    3. HTML has a more losser syntax.                   3. It has a less stricter syntax.
+ 
+    4. HTML is widely supported by web browsers         4. XHTML adoption has been slower due to its stricter 
+       and other web-related technologies.                syntax requirements, especially in older web browsers.
+
+   What do you mean by Web Accessibility ?
+-> Web accessibility is about creating web content, design, and tools that can be used by everyone regardless of
+   ability.   
+
+   What are the different ways we can achieve web Accessibility ?
+-> The following are the techniques using which we can achieve web accessibility- 
+
+   1. Keyboard Navigation: Ensure all functionality on the website is accessible via keyboard alone. 
+   2. Color Contrast: Ensure sufficient color contrast between text and background elements to make content 
+      readable for users with low vision or color blindness.
+   3. Semantic HTML: Use HTML elements appropriately to convey the structure and meaning of content.    
+   4. Alternative Text for Images: Use descriptive alt text (alt attribute) for images to provide context and 
+      describe their purpose for users who cannot see them.
+   5. Focus Management: Ensure that focus indicators are clearly visible and distinguishable.    
+     
+   What do you mean by W3C ?
+-> The World Wide Web Consortium (W3C) is an international community that works together for the long-term 
+   growth of the Web.       
+
+   What do you mean by Markup language ?
+-> A markup language is a system of annotating a document to describe its structure and presentation.
+   It usea tags for annotating a document.   

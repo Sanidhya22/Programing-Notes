@@ -1,0 +1,216 @@
+                                     Common Web Security Knowledge 
+                                    ---------------------------------
+
+   XSS (Cross Site Scripting)
+   -----------------------------
+
+   What do you mean by XSS ?
+-> Cross-Site Scripting (XSS) is a type of security vulnerability commonly found in web applications. 
+   XSS occurs when an attacker injects malicious scripts (usually written in JavaScript) into web pages 
+   viewed by other users. These scripts can then execute within the context of the victim's browser, allowing 
+   the attacker to steal sensitive information, manipulate page content, or perform other malicious actions.  
+
+   There are three main types of XSS attacks -
+   ---------------------------------------------
+   Reflected XSS - an attacker might craft a URL containing the malicious script, which, when clicked by a victim,
+   sends the script to the server. The server then reflects the script back in the response, executing it within
+   the victim's browser.
+
+   e.g - 
+   Imagine you have a website with a search feature that displays search results on the same page without 
+   refreshing.When a user performs a search with this query, the website dynamically inserts the search query into the DOM
+   (Document Object Model). The user clicks on the link or is redirected to the legitimate website (example.com) containing the search 
+   feature.The website's JavaScript code extracts the search query from the URL and inserts it into the DOM to display 
+   the search results. Since the website fails to properly sanitize or encode the search query, the malicious script 
+   <script>alert('XSS');</script> is executed within the context of the victim's browser, causing an alert 
+   dialog to pop up with the message "XSS".
+
+   Stored XSS - the malicious script is stored on the server and served to multiple users over time. This often 
+   occurs when user input is not properly validated or sanitized before being stored in a database. 
+   
+   e.g - an attacker might submit a malicious script through a comment form, which is then stored on the 
+   server and displayed to all users who view the comment.
+
+   DOM-based XSS: DOM-based XSS occurs when the client-side JavaScript code manipulates the Document Object Model
+   (DOM) in an unsafe way, allowing an attacker to inject and execute malicious scripts. . 
+
+   e.g - 
+   Imagine you have a website with a search feature that displays search results on the same page without 
+   refreshing.When a user performs a search with this query, the website dynamically inserts the search query into the DOM
+   (Document Object Model). The user clicks on the link or is redirected to the legitimate website (example.com) containing the search 
+   feature. The website's JavaScript code extracts the search query from the URL and inserts it into the DOM to display 
+   the search results. Since the website fails to properly sanitize or encode the search query, the malicious script 
+   <script>alert('XSS');</script> is executed within the context of the victim's browser, causing an alert 
+   dialog to pop up with the message "XSS".
+
+   How we can prevent XSS attacks ?
+-> Preventing XSS (Cross-Site Scripting) attacks involves implementing a combination of strategies at different 
+   levels of the web application -
+
+1. Input Validation - Validate and sanitize all user input on both the client-side and server-side to ensure 
+   that it confirms to expected formats and does not contain any malicious scripts. 
+
+2. Use Frameworks and Libraries - Use secure frameworks and libraries that provide built-in protections against 
+   XSS vulnerabilities. Many modern web frameworks offer features such as automatic output encoding, template 
+   engines that enforce safe rendering.
+
+3. Regular Security Audits - Regularly audit your web application's codebase for potential XSS vulnerabilities. 
+   Automated tools and manual code reviews can help identify and address security flaws before they can be 
+   exploited by attackers.
+
+4. Output encoding - Output encoding, in simple terms, is the process of converting potentially harmful characters
+   in user-generated content into a safe format before displaying it on a web page. This helps prevent malicious
+   scripts from being executed in the browser.
+
+   CSRF  (Cross Site Request Forgery)
+   -------------------------------------
+
+   What do you mean by XSRF or CSRF attack ?
+-> CSRF stands for Cross-Site Request Forgery. It's a type of security vulnerability where an attacker tricks a
+   user's web browser into making an unintended request to a web application on which the user is authenticated.
+
+   How we can prevent XSRF or CSRF attacks ?  
+-> To prevent CSRF (Cross-Site Request Forgery) attacks, web developers can implement several security measures:
+
+1. CSRF Tokens: Include unique tokens in forms or requests that are verified by the server to ensure that the 
+   request originates from a legitimate source. These tokens are generated on the server and included in each 
+   form or request. The server validates the token upon receiving the request, rejecting requests without a 
+   valid token.
+
+2. Referrer Policy: Use the Referrer-Policy header to control the information included in the HTTP Referer 
+   header. By limiting the Referer header to same-origin requests or stripping it entirely, you can prevent 
+   attackers from exploiting Referer information to perform CSRF attacks.   
+
+3. Origin Validation: Validate the origin of incoming requests to ensure they originate from trusted sources. 
+   Check the Origin or Referer header to verify that requests come from expected origins. Reject requests from 
+   unexpected or untrusted origins.   
+
+4. SameSite Cookies: Set the SameSite attribute on cookies to restrict cross-origin cookie sharing. SameSite 
+   cookies can prevent CSRF attacks involving cookies by ensuring that cookies are only sent with requests 
+   originating from the same site. 
+
+   CORS (Cross Origin Resource Sharing)
+   -------------------------------------
+
+   What do you mean by CORS ?
+-> CORS stands for Cross-Origin Resource Sharing. It is a security feature that browsers use to prevent one website 
+   from making requests to another website unless that other website explicitly allows it.  
+
+   Why we need CORS ?
+-> We need CORS to enhance the security of web applications. 
+   CORS allows web servers to specify which domains are allowed to access their resources, helping prevent 
+   unauthorized access and protect user data. It ensures that only trusted websites can interact with each 
+   other's resources, maintaining the integrity and security of the web ecosystem.   
+
+   How CORS works ?
+-> Here's a simplified overview of how it works:
+
+1. Browser Sends PreFlight Request: When a web page hosted on one domain makes a request to another domain, the 
+   browser attaches an "Origin" header to the request. This header indicates the origin (domain) from which the 
+   request originated.
+
+2. Server Receives Request: The server receiving the request checks the "Origin" header to see if the requesting
+   domain is allowed to access its resources.
+
+3. Server Sends CORS Headers: If the server determines that the requesting domain is allowed, it includes 
+   specific CORS headers in the response. These headers include:
+   Access-Control-Allow-Origin: Specifies which origins are allowed to access the resource. It can be a specific 
+   domain, "*", or null.
+   Access-Control-Allow-Methods: Specifies which HTTP methods are allowed for the request (e.g., GET, POST, etc.).
+   Access-Control-Allow-Headers: Specifies which HTTP headers are allowed in the request.
+   Access-Control-Allow-Credentials: Indicates whether the browser should include credentials (such as cookies) 
+   in the request.
+
+4. Browser Processes CORS Headers: The browser checks the CORS headers in the response. If the requesting domain
+   is allowed, and the browser allows the request to proceed. Otherwise, it blocks the request, preventing access
+   to the resource.   
+
+   CSP  (Content Security Policy)
+   -------------------------------------
+
+   What do you mean by CSP (Content Security Policy) ?
+-> CSP stands for Content Security Policy. It's a security feature implemented by web browsers to help protect 
+   websites against various types of attacks, including Cross-Site Scripting (XSS) and data injection attacks. 
+
+   How CSP Content Security Policy works ?
+-> Simplified explanation of how CSP works:
+1. Policy Declaration - The website administrator declares a Content Security Policy by including a 
+   Content-Security-Policy HTTP header in the server's response.
+
+2. Directive Types - CSP directives define what types of content are allowed and where they can be loaded from.
+   e.g - default-src , script-src, img-src, font-src etc. 
+
+3. Policy Enforcement-  Once the browser receives the CSP header, it enforces the specified policy. Any attempts
+   to load content from disallowed sources will be blocked by the browser.
+
+4. Reporting - CSP also provides a mechanism for reporting violations of the defined policy. Administrators can 
+   configure the browser to send violation reports to a specified endpoint, allowing them to monitor and analyze
+   potential security issues.
+
+5. Fallback Mechanism - In case a browser doesn't support CSP or encounters an invalid policy, it can fall back 
+   to a default behavior specified by the website administrator.   
+
+    OSASP Top 10
+   -------------------------------------
+
+   What do you mean by OSASP Top 10 ?
+-> The OWASP Top 10 is a list of the most critical security risks faced by web applications.
+
+   Why OSASP Top 10 is useful to developers ?
+-> The OWASP Top 10 raises awareness about common security vulnerabilities that developers, security professionals,
+   and organizations should be mindful of when designing, developing, and deploying web applications.   
+
+   Most Recent OSASP Top 10 Security vulnerabilities ?
+-> Most Recent OSASP Top 10 Security vulnerabilities are as follows - =
+
+1. Injection: This includes vulnerabilities such as SQL injection, NoSQL injection, OS command injection, and 
+   LDAP injection, where untrusted data is sent to an interpreter as part of a command or query.
+
+2. Broken Authentication: Weaknesses in authentication mechanisms, such as incorrect implementation of session 
+   management, weak password policies, and vulnerabilities in authentication-related functions.
+
+3. Sensitive Data Exposure: This involves exposing sensitive data, such as credit card numbers, passwords, or 
+   personal information, due to improper protection or insufficient encryption.
+
+4. XML External Entities (XXE): Vulnerabilities that occur when an XML parser processes XML data that contains 
+   external entity references, which can lead to information disclosure, server-side request forgery (SSRF), or
+   denial of service (DoS) attacks.
+
+5. Broken Access Control: Flaws in access control mechanisms, such as improper enforcement of user permissions, 
+   missing authorization checks, and insecure direct object references (IDOR), which can allow unauthorized 
+   access to sensitive functionality or data.
+
+6. Security Misconfigurations: This includes weaknesses caused by insecure default configurations, incomplete or 
+   inconsistent security configurations, and other misconfigurations in the application or server environment.
+
+7. Cross-Site Scripting (XSS): Vulnerabilities that allow attackers to inject malicious scripts into web pages 
+   viewed by other users, leading to session hijacking, data theft, or unauthorized actions within the 
+   application.
+
+8. Insecure Deserialization: Flaws in deserialization processes that can lead to remote code execution, 
+   injection attacks, or other security vulnerabilities when untrusted data is deserialized without proper 
+   validation or sanitization.
+
+9. Using Components with Known Vulnerabilities: This involves using outdated or vulnerable third-party components
+   , libraries, frameworks, or modules within the application, which can be exploited by attackers to gain 
+   unauthorized access or execute malicious code.
+
+10. Insufficient Logging & Monitoring: Weaknesses in logging and monitoring capabilities, such as lack of logging
+    of security-related events, insufficient monitoring of system activity, and failure to detect and respond to
+    security incidents in a timely manner.
+
+
+   What is the difference between logging, tracing and monitoring ? 
+-> Logging - 
+   Logging provide a historical record of what happened in the application, including errors, warnings, 
+   informational messages, and debug output.
+  
+   Monitoring - 
+   Monitoring involves continuously observing and collecting metrics, statistics, and other data about the 
+   health, performance, and behavior of an application or system in realtime.
+
+   Tracing:
+   Tracing involves monitoring and recording the flow of requests or transactions as they propagate through a
+   distributed system or application. It provides a detailed view of how requests are processed across multiple
+   components, services, or microservices.
+ 

@@ -1,0 +1,80 @@
+                                           LeaderShip 
+                               ---------------------------------------
+
+   Can you talk me through how you would onboard a new member to your team ?  OR     
+   How would the first week look if you were onboarding a new member to your team ?  
+-> Firstly I will connect with new joinee to know about his background , expertise and experience.
+   I will share him onboarding roadmap to provide him prerequites he should be prepared with.
+   I will provide him resource and tech stack details which we are using the project.
+   I will provide him sessions for project culture, its working, its architecture.
+   I will provide him confluence pages link for more details regarding project and details for local setup for 
+   the applicaiton and much more.
+   I will also check and ensure with the him he will have all necessary accesss.    
+   I will connect with him to address his doubts and issues.
+   I will share with him invites for calls.
+
+   You have to remove a member from your team, who do you choose ? OR 
+   You are asked by the client to remove a team member.  What factors would you consider when removing a team 
+   member ? OR 
+   You need to remove a member from your team due to cost, what factors would you take into account when deciding
+   who to remove ?
+-> If I have to remove someone from team I will consider following things -
+   1. Performance and Contribution
+   2. Skills and Expertise
+   3. Communication and Collaboration
+   4. Attitude and Behavior
+   5. Impact on Team Dynamics
+
+   Can you tell me how you would deal with a low performer on your team ? OR 
+   A member of your team is under-performing, what do you do ?
+-> I will follow below things while tackling with low performer -
+   1. Open Communication - setup meeting with candidate and discuss about his performance.
+   2. Identify Root Causes - I will discuss with him for the rootcause of his low performance, it could be anything 
+      like workload, skillgap, lacking domain experience, personal issues etc.
+   3. Provide Support and Resources - Offer support, guidance, and resources to help the team member improve 
+      their performance. This could include additional training, mentoring, coaching, or assistance in overcoming specific 
+      challenges they may be facing.
+   4. Set Clear Goals and Action Plan - I will setup an action plan for improvement. Break down the goals into smaller, 
+      manageable steps and set deadlines for progress checkpoints.  
+   5. Regular Check-ins and Feedback - Schedule regular check-ins to monitor progress and provide ongoing feedback and support.
+   6. Be Prepared for Tough Decisions - While the goal is to support the team member in improving their performance, also be 
+      prepared to make tough decisions if performance does not improve despite efforts. 
+
+   Consider a situation where a junior developer is struggling to meet the coding standards set by the team, 
+   leading to code review feedback that they find demotivating. How would you provide constructive feedback to 
+   help them improve without discouraging their progress ?
+-> I would start by acknowledging the junior developer's effort and highlighting any positive aspects of their 
+   work. Then, I would gently point out the specific areas where improvements can be made, highlight relevant 
+   best practices or coding standards. Instead of simply pointing out flaws, I would offer suggestions for how 
+   the code could be refactored or improved to align with best practices and maintainability. It's crucial to 
+   provide feedback in a constructive and supportive manner to foster the junior developer's growth and 
+   confidence.     
+
+   You're team lead on a new project, what is your current plan of action ?
+-> Starting a new project as a team lead involves several key steps to ensure a successful kickoff and smooth 
+   execution. Here's my plan of action:
+
+   1. Understand the Project Scope and Objectives - Begin by thoroughly understanding the project scope, 
+      objectives, requirements, and constraints. 
+   2. Formulate a Project Plan - Develop a detailed project plan outlining the timeline, deliverables, 
+      milestones, and dependencies. Identify key resources, roles, and responsibilities within the team.
+   3. Assemble the Team - Identify and assemble a cross-functional team with the necessary skills and expertise 
+      to execute the project effectively. 
+   4. Define Communication Channels - Establish clear communication channels and protocols for regular updates, 
+      progress tracking, and issue resolution within the team and with stakeholders. Ensure open and transparent
+      communication throughout the project lifecycle.
+   5. Set Up Project Infrastructure -  Set up project infrastructure including version control systems, 
+      collaboration tools, project management software, and any other necessary tools or resources to support
+      team collaboration and productivity.
+   6. Define Development Processes - Define development processes and methodologies tailored to the project's
+      needs, whether it be Agile, Waterfall, or a hybrid approach. Establish guidelines for requirements 
+      gathering, design, development, testing, and deployment.
+   7. Prioritize and Plan Iterations - Break down the project into manageable iterations or sprints, 
+      prioritizing features and tasks based on business value, complexity, and dependencies. Conduct sprint 
+      planning sessions to allocate work and set achievable goals for each iteration.
+   8. Monitor Progress and Performance - Implement mechanisms for monitoring project progress and performance 
+      against established metrics and KPIs. Conduct regular status meetings, retrospectives, and reviews to 
+      track progress, identify bottlenecks, and make necessary adjustments. 
+
+   
+                                    

@@ -38,7 +38,7 @@
 ->  Event Queue is a Queue which is responsible for keeping track of Synchronus Functions 
     and Operations. It sends Synchronus Functions and Operations to the Call Stack for execution based on call order.
 
-    What do you mean by callback Queue ?
+    What do you mean by callback Queue or Marco Task Queue ?
 ->  The callback queue (also known as the task queue or message queue) is a data structure that holds 
     callback functions waiting to be executed. It follows first in and first out order.
 
@@ -47,12 +47,12 @@
     The Callback Queue waits until the call stack is empty. Afterwards, the codes in it are 
     executed in First In, First Out (FIFO) order. 
 
-    What do you mean by Microtask Queue in JavaScript ?
+    What do you mean by Micro Task Queue in JavaScript ?
 ->  Microtask Queue is a Queue which is mostly used for Promise Jobs.
     Microtask Queue follows first-in-first-out Approach.
     
-    Execution of a Microtask task is initiated only when nothing else is left in the Call Stack.   
-    Microtask Queue get higher Priorty over Callback Queue, once Microtask Queue is empty then only 
+    Execution of a Micro Task is initiated only when nothing else is left in the Call Stack.   
+    Micro Task Queue get higher Priorty over Callback Queue, once Micro Task Queue is empty then only 
     Callback Queue is executed.
 
    What do you mean by async and defer Attribute in Script Tag ?
@@ -73,9 +73,6 @@
    and when Scripts are needed there Execution starts, During that time Interval the HTML document
    parsing is blocked, once Scripts Execution is completed then HTML document Parsing continues.
    The defer attribute is a boolean attribute.
-
-    What do you mean by Functional Programming ?
-->  Functional Programming is the Programming language which Majorly deals with the functions.  
 
     What do you mean by setPrototypeOf method of JavaScript ?
 ->  The Object.setPrototypeOf() method sets the prototype of one object to another object.    
@@ -101,75 +98,55 @@
     Target Phase is the Phase when the Event reaches the target element.
     Bubbling Phase is the Phase when the Event Bubbles up from the target element.
 
+   Explain how Event Bubbling and Event Capturing works in JavaScript ?   
+-> Event Capturing (or Capture Phase) - 
+   -------------------------------------
+   1. In the event capturing phase, the event traverses the DOM from the root to the target element to 
+      determine if any ancestor elements have event handlers for the event. 
+   2. During this phase, the event starts from the outermost ancestor element and moves inward toward
+      the target element.     
+   3. Event handlers attached to ancestor elements are triggered first before the event reaches the
+      target element.   
+   4. Event capturing is rarely used in practice and is mostly used for advanced event handling scenarios.
 
-    <html>
-    <body>
-    <div class="container">
-        <button id="btn">Click Me!</button>
-    </div>
-      
-    <script type="text/javascript">
-        document.getElementById('btn')
-            .addEventListener('click', 
-            function () {
-                alert('Button Clicked!');
-            })
-    </script>
-    </body>
-    </html>
+   Event Bubbling (or Bubbling Phase) -
+   ---------------------------------------
+   1. In the event bubbling phase, after the event reaches the target element and triggers its event handlers, 
+      the event then bubbles up through the ancestor elements of the target.
+   2. During this phase, the event moves from the target element to its parent elements, then to their parent 
+      elements, and so on, until it reaches the root of the document (or the top-level window object).
+   3. Event handlers attached to the target element and its ancestor elements are triggered in reverse order 
+      of their attachment, starting from the target element and moving outward toward the root of the document.
+   4. Event bubbling is the default behavior for most DOM events in JavaScript and is commonly used in event 
+      handling.
 
+    What do you mean by Super and this keyword in JavaScript ?
+->  super Keyword -
+    -------------------
+    super keyword is used to access parent class constructor, method, variable in child class.
 
-    OUTPUT - Alert with message Button Clicked
-
-         (Event Capturing)   Document                 
-            Phase 1          HTML   
-                             Body 
-                             div                  
-                             Button               (Event Target ) Phase 2 & (Event bubbling) Phase 3 
-                       
-
-
-    The addEventListener() method will be called during the Bubbling phase. The code
-    shown above will use addEventListener() with two arguments. However, in the above
-    code, .addEventListener() can be called with the third argument capture as “true” which 
-    will invoke the listener earlier during the capturing phase.
+    this Keyword -
+    -------------------
+    this keyword is used to refer current context and object.
 
 
-    <DOCTYPE html>
-	<html>
+    If you are asked to go through the DOM tree containing DIVs and log the levels (0,1,2,..) of those divs, how 
+    would you approach implementing this ?
+->  function logDivLevels(element, level = 0) {
+    // Check if the element is a DIV
+    if (element.tagName === 'DIV') {
+      // Log the level of the DIV
+      console.log(`Level ${level}: ${element.textContent.trim()}`);
+    }
 
-	<body id="bdy">
-		<div id="container">
-			<button id="btn">Click Me!</button>
-		</div>
-		<script type="text/javascript">
-			document.getElementById('bdy')
-				.addEventListener('click', function () {
-				alert('Body!');
-			})
-			document.getElementById('container')
-				.addEventListener('click', function () {
-				alert('Div!');
-			}, true)
-			document.getElementById('btn')
-				.addEventListener('click', function () {
-				alert('Button!');
-			})
-		</script>
-	</body>
+    // Recursively traverse child nodes
+    for (let i = 0; i < element.children.length; i++) {
+      logDivLevels(element.children[i], level + 1);
+     }
+    }
 
-	</html>
-
-
-    OUTPUT - 1. Alert with message Div  2. Alert with message Button   3. Alert with message Body
-
-
-    In the above code, the body and button are in the bubbling phase (default) while div is set to 
-    capturing phase. When a button is clicked it starts at the top again. When it comes to the body 
-    element, it does not run function because we are still in the capturing phase. But when it reaches 
-    div it runs the function because the third parameter of addEventListener() is “true”. So it has to 
-    run in the capturing phase. When it reaches the button it switches from the capturing phase to the 
-    target phase and lastly to the bubbling phase. It fires the addEventListener which is in default mode.
+    // Example usage: Log DIV levels starting from the document body
+    logDivLevels(document.body);
 
     What do you mean by Event Propagation ?
 ->  Event propagation is a mechanism that defines how events propagate or travel through the DOM tree to 
@@ -205,22 +182,6 @@
     The .nodeName property of the .target allows us to identify a specific node. 
     If our parent element contains more than one child element then we can identify
     specific elements by using the .nodeName property.
-  
-    const customUI = document.createElement('ul');
-
-    function responding(evt) {
-    if (evt.target.nodeName === 'li')
-        console.log('Responding')
-    }
-
-    for (var i = 1; i <= 10; i++) {
-    const newElement = document.createElement('li');
-    newElement.textContent = "This is line " + i;
-    customUI.appendChild(newElement);
-    }
-
-    customUI.addEventListener('click', responding);
-
 
    What do you mean by IndexedDB ?
 -> IndexedDB is a transactional database System in our Web browsers.
@@ -255,24 +216,6 @@
       6  It uses indexing concept for                   6. It do not uses Indexing concept. 
          accessing data.      
 
-      
-       Working with IndexDB
-       -----------------------
-       Uers Writes  ->  IndexDB   -> Server 
-
-       IndexedDB have some Limitations also It can cause UI Blockage becuase it uses Structured 
-       Clone Alogrithm.          
-        
-        Sends Objects to IndexDB   ---------->    Clone   ------------->  Data Stored
-                                   Main Thread
-
-        Larger the size of Object more will be chances of UI Blockage 
-
-
-        We can Prevent IndexDB causing UI Blockage using two ways 
-        1. Skiping Sending Larger size of data to IndexDB.
-        2. Skiping Structured Clone Alogrithm by sending data in buffer format.
-
    What do you shadow DOM in Javascript ?
 -> Shadow DOMs are the hidden DOMs that are attached to the elements of the regular DOM.
 
@@ -293,6 +236,96 @@
 -> Web Workers is a feature in JavaScript that allows developers to run scripts in background threads 
    apart from the main thread of the web page. This enables concurrent execution of scripts, improving 
    performance and responsiveness. 
+
+   How does Browser Rendering work? Explain the Critical Rendering Path.
+-> Browser rendering involves the process of converting HTML, CSS, and JavaScript into a visual representation 
+   that users can interact with on their screens. 
+
+   Here's an overview of the critical rendering path:
+
+   1. HTML Parsing: The browser parses the HTML document to create the Document Object Model (DOM) tree. It 
+      parses the HTML from top to bottom, constructing the structure of the page.
+
+   2. CSS Parsing and Styling: As the HTML is parsed, the browser encounters CSS references. It then begins to 
+      fetch and parse the CSS files, constructing the CSS Object Model (CSSOM). The CSSOM represents the styles 
+      applied to the elements in the DOM. The browser then combines the DOM and CSSOM to create the Render 
+      Tree, which contains only the nodes needed to render the visible part of the page. 
+      Note - CSS is rendering blocking resource.
+             JavaScipt is parser blocking resource.
+
+   3. Layout (Reflow): Once the Render Tree is constructed, the browser calculates the layout of each node. This
+      process is known as reflow. It determines the exact position and size of each element on the screen based 
+      on the CSS styles applied to them.    
+
+   4. Painting: After layout calculations are done, the browser paints the pixels on the screen according to the 
+      Render Tree and layout information. This process involves converting each node in the Render Tree into 
+      actual pixels on the screen.    
+
+   5. Compositing: If there are multiple layers due to overlapping elements, the browser composites these layers
+      to create the final visual output. Compositing involves blending the pixels of different layers to produce
+      the final image that the user sees. 
+
+   The Critical Rendering Path (CRP) refers to the sequence of steps the browser takes to render a web page on 
+   the user's screen     
+
+   How we can optimize Critical Rendering Path ?
+-> Several techniques to optimize the critical rendering path:    
+
+   1. Minimize Render-Blocking Resources: -
+      CSS: Minimize the amount of CSS needed to render the initial view of the page. Use techniques like inline 
+      critical CSS or asynchronous loading of non-critical CSS.
+      JavaScript: Minimize and defer JavaScript execution, especially for scripts that are not needed for 
+      initial page rendering. Use async or defer attributes for external script tags. Consider lazy loading or 
+      code-splitting for large JavaScript files.
+      Fonts: Optimize font loading by using font-display property to control font rendering behavior and 
+      preloading fonts using the preload directive.
+
+   2. Reduce Server Response Time: -
+      Optimize server response time by minimizing network latency, using CDN (Content Delivery Network) to serve
+      resources from geographically closer servers, and optimizing backend code and database queries. 
+
+   3. Lazy Loading: -
+      Implement lazy loading for images, videos, and other non-critical resources that are below the fold or 
+      outside the viewport initially. Lazy loading defers the loading of these resources until they are needed, 
+      reducing the initial page load time.    
+
+   4. Browser Caching and Compression: -
+      Leverage browser caching by setting appropriate cache-control headers for static resources. Utilize 
+      techniques like gzip or Brotli compression to reduce the size of transmitted data and speed up resource 
+      loading.  
+
+   5. Optimize Images: -
+      Compress and optimize images to reduce their file size without sacrificing quality. Use modern image 
+      formats like WebP, JPEG 2000, or AVIF for better compression and performance.   
+
+   What is repaint and reflow ? What is application profilling ? 
+-> Reflow  
+   ---------
+   Reflow refers to the process of calculating the layout of elements on a web page. It happens when changes are 
+   made to the DOM that affect the geometry of elements, such as adding, removing, or changing the size or 
+   position of elements.
+   When a reflow occurs, the browser recalculates the dimensions and positions of all affected elements in the 
+   Render Tree, as well as their relationships to each other. This process can be computationally expensive and 
+   can lead to performance issues if not managed properly.  
+
+   Repaint 
+   ----------
+   Repaint refers to the process of updating the visual appearance of elements on a web page without changing 
+   their layout. It occurs when changes are made to properties that affect only the visual appearance of elements
+   , such as color, background, or visibility.
+   Unlike reflow, repaint does not involve recalculating the layout of elements. Instead, it updates the pixels 
+   on the screen to reflect the changes in visual appearance.   
+
+   Application Profiling
+   ------------------------
+   Application profiling is the process of analyzing and measuring the performance of a software application to 
+   identify bottlenecks, resource usage patterns, and areas for optimization. In the context of web development,
+   application profiling involves using various tools and techniques to monitor the performance of web 
+   applications, including page load times, network requests, CPU usage, memory consumption, and rendering 
+   performance.
+
+   Profiling tools provide developers with insights into how their web applications are performing in real-world
+   scenarios and help them identify performance issues that may affect user experience. 
 
 
    

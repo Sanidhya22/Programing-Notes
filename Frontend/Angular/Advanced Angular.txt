@@ -1,0 +1,509 @@
+                                          Advanced Angular
+                               ------------------------------------------ 
+   
+   What do you mean by Rxjs ? 
+-> RxJS stands for (Reactive Extensions for JavaScript). It is a JavaScript library that allows us to work with 
+   asynchronous data stream.
+
+   What do you mean by observables ?
+-> Observables represents a stream of data that it emits over a period of time. 
+   It is used handling asynchronous data streams. Observables are Unicast.
+
+   we can use some methods from the RxJS library that create simple observables of frequently used types:
+   1. of(...items)	- Converts the arguments to an observable sequence.
+   2. from(iterable) - This method is used to convert an array to an observable Sequence.
+
+   What do you mean by Observers ?
+-> Observers are the entities that subscribe to observables to receive notifications whenever new data is emitted
+   from the observable.   
+   It is an object that defines callback methods to handle the three types of notifications - 
+
+   1. next (Required) - A handler for each delivered value. Called zero or more times after execution starts.
+   2. error (Optional) - A handler for an error notification. An error halts execution of the observable instance.
+   3. complete (Optional) - A handler for the execution-complete notification. It executes when the observable 
+   execution is completed.    
+
+   What do you mean by Multicasting ?
+-> Multicasting means one observable execution is shared among multiple subscribers.
+
+   What do you mean by Unicasting ?
+-> Unicasting means that each subscriber receives its own independent execution of the observable. 
+    
+   What do you mean by Subscribe ?
+-> subscribe method is used to listen to the values emitted by an observable.
+
+   What is the differnece between Observables and Promises ?
+->         Observables                           |                      Promises
+   ------------------------------------------------------------------------------------------------------
+
+     1. Obervables are not executed until we          1. Promises executes immediately after creation.
+        subscribe to them using subscribe method.
+
+     2. Observables are cancellable using             2. Promises are not cancellable.
+        unsubscribe method, which stops the
+        listener from futher receving values.   
+
+     3. Observables can emit multiple values over     3. Promies Represent a single value that may be 
+        time.                                            available now, or in the future, or never.
+
+   What do you mean by Subjects ?
+-> Subject is a special type of observable that allows both the emitting of values and the subscription of 
+   values. Subject is both an observable and an observer. Subjects are multicast.
+
+   What do you mean by Behavioural Subject ?
+-> Behavioural Subject is a special type of subject that has a intial value.
+
+   What do you mean by ReplaySubject ?
+-> ReplaySubject is a variant of Subject which buffers old values and emit those values to new Subscribers.  
+   Replay Subject does not holds any initial value.  
+
+   What do you mean by AsyncSubject ?
+-> AsyncSubject is a type of subject that only emits the last value emitted by the source observable, but only
+   after the source observable completes.
+
+   What are diffrences between hot and cold Observables ?
+->               Cold Observables                    |                Hot Observables 
+   -------------------------------------------------------------------------------------------------
+   1. In Cold observables the values are declared,      1. In Hot obervables the value producer exist outside
+      created, produced inside the code that defines       the observable. since the value is outside the
+      an observable.                                       observable it can execute if there are no Observers also.
+                                                                                      
+   2. They are Unicast.                                 2. They are Multicast. 
+
+   3. Cold observables are lazy; they do not start      3. Hot observables are eager; they start emitting values 
+      emitting values until a subscription is made.        immediately upon creation, even if there are no subscribers.
+
+   4. e.g - of(), from(), or ajax()                     4. Subject, BehaviorSubject, and ReplaySubject   
+     
+   What do you mean by ChangeDetection Strategy in Angular ?
+-> Change Detection Strategy refers to the mechanism by which Angular determines when and how to update the DOM
+   based on changes in the application's data.
+
+   There are 2 types of Change Detection Strategy in Angular
+   Default : - 
+   With the default change detection strategy, Angular checks for changes in every component and its descendants
+   on every change detection cycle.
+   Any change to a component's input properties, events, or DOM events triggers change detection for that 
+   component and all its children.
+   This strategy can be resource-intensive, especially in large applications, as it can lead to unnecessary 
+   checks and updates.
+
+   OnPush: -
+   With the OnPush change detection strategy, Angular only checks for changes in a component when one of the 
+   following events occurs:
+   The component's input properties change or reference change.
+   An event originated from the component or one of its children.
+   when we are using Async Pipe.
+   A change detection cycle is explicitly triggered by calling ChangeDetectorRef.markForCheck() or 
+   ChangeDetectorRef.detectChanges().
+   If none of these events occur, Angular skips change detection for the component and its children, improving
+   performance by reducing unnecessary checks and updates.
+   
+   What are the different methods of ChangeDetectorRef Class ?
+-> These are the Different methods of ChangeDetectorRef 
+   1. markForCheck - Marks the component as it was changed, so that it can be checked for an Update. 
+   2. deatch - Excludes the view from the change detection tree, which means no check will be triggered for that
+      component until that view is reattached again. 
+   3. detectChanges - Checks the view and its child components for changes.
+   4. checkNoChanges - Check the view and its child components for no changes and it will throw some error if 
+      some changes are detected.
+   5. reattach - reattach the view that was previously detached so that new changes can be detected.   
+
+   What do you mean by TestBed ?
+-> TestBed is the primary api for writing unit tests for Angular applications and libraries.
+
+   What do you mean by Map operator ?
+-> The map operator is used to transform the items emitted by an observable into new items. It allows you to 
+   apply a function to each item emitted by the source observable and then emit the result of that function as 
+   the output of the observable.
+
+   What do you mean by MergeMap operator ?
+-> The mergeMap operator in RxJS is used to map each value emitted by an observable into another observable, and
+   then merge the emissions of these inner observables into a single observable stream. 
+
+   What do you mean by SwitchMap in Angular ?
+-> The switchMap operator in RxJS is used to map each value emitted by an observable into another observable, and
+   then merge the emissions of these inner observables into a single observable stream but insted of working with
+   all emitting values, it only works with latest emitted value and cancels the previous emitted values.
+
+   What do you mean by ConcatMap ?
+-> The switchMap operator in RxJS is used to map each value emitted by an observable into another observable, and
+   then merge the emissions of these inner observables into a single observable stream. It also maintains the 
+   order of emissions. 
+
+   What do you mean by Interceptors in Angular ?
+-> Interceptors are a feature provided by the HttpClientModule that allow us to intercept HTTP requests and 
+   responses. Interceptors provide a way to modify or handle requests and responses globally across our application.
+ 
+                  Request                    Request
+   Angular App  ---------->  Interceptors  ----------->  Server 
+                <----------                <-----------
+                  Response                   Response 
+
+   Operations Using Interceptors
+   1. Modify HTTP Headers 
+   2. Modify the Request Body 
+   3. Set Authentication / Set Authorization Token 
+   4. Mocked the Backend API 
+   5. Modify the Response 
+   6. Error Handling      
+
+
+   What are the different attributes we use for declaration of Interceptor in Module.ts file ?
+-> we typically use providers array in NgModule to provide the Interceptors
+   We use three Attributes for declaration of Interceptor -
+   1. useClass - Specifies the class that implements the interceptor.
+   2. provide  - Specifies the token used to inject the interceptor. For interceptors, we typically use the
+                 HTTP_INTERCEPTORS token from @angular/common/http.
+   3. multi    - Indicates whether the interceptor should be appended to the existing list of interceptors 
+                 (true) or replace the existing list (false).
+
+
+   What do you mean by ElementRef ?
+-> ElementRef is a class that represents a reference to a DOM element within a component's template.
+   It allows us to manipulate elements of browsers DOM by touching the DOM directly.
+
+   What do you mean by Renderer ?
+-> Renderer2 is a class that allows us to manipulate elements of browsers DOM without touching the DOM directly.   
+
+   Why we use Renderer Over ElementRef ?
+-> Using Renderer for manipulating the DOM does not break server side rendering or web workers
+   because we are indirectly accessing the DOM elements.  
+   While Using ElementRef for accessing DOM elements break server side rendering or web workers
+   because we are directly accessing DOM elements.    
+
+   What do you mean by Dynamic Component in Angular ?
+-> Dynamic components are components that are created and rendered dynamically at runtime based on certain 
+   conditions or user interactions. 
+
+   What do you mean by ViewcontainerRef ?
+-> ViewContainerRef is a class that represents a container where one or more views can be attached dynamically.
+   It is mainly used in scenarios where you want to dynamically create or manipulate components at runtime.
+
+   What do you mean by ComponentFactoryResolver ?
+-> ComponentFactoryResolver is a class responsible for dynamically creating components at runtime.                           
+   
+   What do you mean by Ngrx in Angular ?
+-> Ngrx stands for Angular Reactive Extensions. NgRx is a state management system that is based on the Redux pattern.   
+
+   What do you mean By Actions?
+-> Actions are plain javaScript objects that have a type property that tells which action is performed. 
+
+   What do you mean by Reducers?
+-> Reducers are functions that take the current state and an action as arguments and return a new state result.
+
+   What do you mean by Store?
+-> A store is a state container which holds the application's state.
+
+   Notes -- 
+   The only way to change the state is to dispatch an action.
+   The global state of our application is stored as an object inside a single store.
+
+   What do you mean Server side Rendering ?
+-> Server-side rendering (SSR) is a technique used in web development to render web pages on the server and 
+   send fully rendered HTML pages to the client's browser instead of sending just JavaScript files.
+
+   The SSR working process 
+   ------------------------------------------
+   1. Client Request: The client sends a request to the server for a specific web page.
+   2. Server-Side Rendering: The server receives the request and dynamically generates the HTML content for the 
+      requested web page by executing server-side code. This may involve fetching data from a database, processing
+      templates, and rendering HTML.
+   3. Fully Rendered HTML: Once the server has rendered the HTML content for the web page, it sends the fully 
+      rendered HTML, along with any necessary assets (such as CSS and JavaScript files), back to the client as the
+      response to the initial request.
+   4. Client Display: The client's browser receives the fully rendered HTML response from the server and begins to 
+      display the web page to the user immediately, without waiting for additional JavaScript to execute or fetch
+      additional data.
+
+   Advantages of Server Side Rendering 
+   ------------------------------------------
+   1. Server-side rendered application enables pages to load faster, improving the user experience.
+   2. Server-Side rendering efficiently load webpages for users with slow internet connection or outdated devices.
+   3. SSR can simplify caching strategies by caching the fully rendered HTML on the server or using CDN caching. 
+
+   Disadvantages of Server Side Rendering 
+   ------------------------------------------
+   1. Server Side rendering is good for smaller static application but is not good for bigger complex applications
+      because rendering on server will take more time for complex applications.
+   2. Server-Side rendering can be costly and resource-intensive as the server takes on the full burden of 
+      rendering content for users.  
+   3. In applications with unpredictable traffic patterns or sudden spikes in traffic, SSR may lead to server 
+      overload or performance degradation. Servers may struggle to handle a large number of concurrent requests,
+      especially if rendering is resource-intensive.   
+
+   What do you mean by Internationalization in Angular ?
+-> Internationalization is the process of supporting multiple languages in our Angular applications.    
+
+   What do you mean by View Encapsulation in Angular ?
+-> View encapsulation is a feature that encapsulates the styles defined in a component only apply to that
+   component's template and don't leak out to other parts of the application.   
+   The Component's decorator provides the encapsulation option which can be used to control how the
+   encapsulation is applied on a per component basis. 
+
+   Angular provides three types of view encapsulation:
+
+   1. Emulated -  One unique attribute will get attached with each component element which helps in keeping style
+                  limited to component only. It is the by default View Encapsulation Strategy.
+   2. Native -    Angular uses the browser's native shadow DOM implementation to encapsulate styles. T
+   3. ShadowDom - Angular uses the browser's native shadow DOM implementation to encapsulate styles.
+   4. None -      Angular disables view encapsulation entirely, allowing component styles to affect the entire
+                  application. Styles defined in a component's CSS file will be applied globally, affecting all
+                  elements in the application.
+
+   What are the different compilation phases of Angular ?
+-> Angular Compilation has three phases
+   1. Code Analysis - 
+      In this Phase Analysis of Code is done, It looks for relationship between files and their decorators.
+   2. Code Generation -
+      In this Phase It interprets the Metadata Decorator and Generates additional Code for the Metadata
+      Decorators.
+   3. Template type Checking - 
+      In this phase Angular template compiler uses the TypeScript compiler to validate the binding expressions 
+      in templates.  
+
+   What are the different compiler we have in Angular ?
+-> Angular Offers two compilers for Compilation 
+   1. JIT Just-In-Time compilation (JIT) - 
+      The JIT compiler is the default compiler used in development mode in Angular applications. It compiles 
+      Angular components and templates in the browser at runtime, translating TypeScript code into JavaScript 
+      and processing templates to render views dynamically.
+
+      Use Cases:  - The JIT compiler is suitable for development environments where rapid development and 
+      debugging are priorities. It allows developers to make changes to code and templates and see the results
+      immediately in the browser.
+
+      Benefits: - 
+      1. Rapid Development: The JIT compiler allows developers to make changes to code and templates and see the
+         results immediately in the browser.
+      2. Dynamic Compilation: With the JIT compiler, Angular components and templates are compiled dynamically
+         in the browser at runtime.   
+      3. No Build Configuration Required: Unlike the AOT (Ahead-Of-Time) compiler, which requires additional 
+         build configuration and tooling setup, the JIT compiler works out-of-the-box with minimal configuration.   
+
+   2. AOT Ahead-of-Time compilation (AOT) -
+      The AOT compiler precompiles Angular components and templates during the build process, translating 
+      TypeScript code into optimized JavaScript and generating precompiled views that can be rendered efficiently
+      in the browser.
+
+      Use Cases: The AOT compiler is primarily used in production environments where performance and efficiency
+      are critical. Precompiling templates and components reduces startup time, improves application performance,
+      and enables better tree shaking and dead code elimination, resulting in smaller bundle sizes.
+
+      Benefits: - 
+      1. Faster Startup Time: AOT compilation precompiles Angular components and templates during the build 
+         process, resulting in faster startup time for Angular applications.
+      2. Improved Runtime Performance: Precompiled templates and components execute more efficiently at runtime,
+         as they do not require parsing and compilation in the browser.
+      3. Reduced Bundle Size: AOT compilation eliminates the need to ship Angular's compiler to the client's 
+         browser, resulting in smaller bundle sizes.       
+  
+   Why we need unit Testing and why it is being required ?
+-> The main objective of unit testing is to test our code and check if it works as intended. 
+   1. Detecting Bugs Early: Unit tests help detect bugs and errors in the codebase early in the development 
+      process.    
+   2. Maintaining Code Quality: Unit tests serve as a safety net for code changes. When developers refactor or 
+      modify existing code, they can run unit tests to ensure that the behavior remains unchanged.
+   3. Enforcing Modularity: Unit tests encourage developers to write modular and loosely coupled code. When code
+      is broken down into smaller units, it becomes easier to test and reason about.
+
+   Can we use ngIf and ngFor for the same element ?
+-> Yes, It’s very common scenario where we want to repeat a block of HTML using ngFor only when a 
+   particular condition is true.    
+
+   What is the difference between ngIf , ngShow and ngHide ?
+-> ngshow - ngshow is a directive that will show html element if expression results true.
+   ngHide - nghide is a directive that will hide html element if expression results false.
+   ngIf - ngIf is a directive that recreates or removes a portion of the DOM tree based on expression. 
+
+   What do you mean by angular.json file ?
+-> The angular.json file is a configuration file used in Angular projects to define project settings, build 
+   options, and other metadata related to the project's structure and build process.
+
+   Here's why the angular.json file is important in an Angular project: 
+   1. Build Configurations: One of the primary purposes of the angular.json file is to define build configurations
+      for different environments (e.g., development, production). 
+   2. Project Configuration: The angular.json file defines the overall configuration of the Angular project, 
+      including metadata such as project name, version, and default project settings. 
+   3. Asset Management: The angular.json file allows you to configure how assets (e.g., images, fonts, 
+      stylesheets) are handled in the project. You can specify asset paths, file extensions, and additional 
+      settings related to asset processing and optimization.    
+   4. Dependency Management: angular.json also includes configurations related to dependencies and third-party
+      libraries used in the project. You can specify npm packages, package versions, and additional package 
+      manager options.    
+
+   What do you mean by MVC Pattern ?
+->  MVC Stands for Model  View Controller.This pattern is used to seprate Application concerns
+    1. Model - Model contains only the pure application data, it contains no logic describing
+               how to present the data to a user.
+    2. View - The View presents the model’s data to the user. The view knows how to access the model’s data.
+    3. Controller - The Controller exists between the view and the model. It listens to 
+                    events triggered by the view (or another external source) and executes 
+                    the appropriate reaction to these events.          
+
+
+   How we can improve overall application performance ? Different ways we can optimise application performance 
+   by just considering change detection ?
+-> Optimizing change detection in Angular can have a significant impact on the overall performance of your 
+   application. Here are several ways to optimize change detection specifically --
+
+   1. ChangeDetectionStrategy:
+      Use OnPush change detection strategy for components that don't need to be checked frequently. This tells
+      Angular to run change detection only when the component's input properties change or when events are 
+      emitted explicitly. This reduces the number of change detection cycles and improves performance. 
+
+   2. Immutable Data Structures:
+      Use immutable data structures to minimize object mutations. Instead of modifying objects directly, create
+      new copies of objects or arrays when making changes. This allows Angular to optimize change detection by
+      comparing object references instead of deep checking object properties.    
+
+   3. TrackBy Function for ngFor:
+      When using ngFor to render lists, provide a trackBy function to help Angular track changes efficiently.
+      The trackBy function provides a unique identifier for each item in the list, allowing Angular to identify
+      which items have changed and re-render only those items instead of the entire list.  
+
+   4. Async Pipe with Observable Streams:
+      Use the async pipe with Observable streams to handle asynchronous data efficiently. The async pipe 
+      subscribes to Observable streams and automatically unsubscribes when the component is destroyed. This
+      ensures that change detection is triggered only when new data is emitted.   
+
+   5. Lazy Loading:
+      Use lazy loading to load components and modules asynchronously when needed. This reduces the initial 
+      bundle size of the application and improves loading performance. Lazy-loaded modules are initialized 
+      only when they are navigated to, reducing the overall change detection workload.  
+
+   6. Memoization:
+      Implement memoization techniques to cache the results of expensive computations or function calls. 
+      Memoization can prevent unnecessary recalculations and improve the performance of change detection in 
+      components that rely on computed properties or functions.      
+
+   What do you mean by NgZone in angular ?
+-> NgZone in Angular is a service provided by the Angular framework that helps manage asynchronous tasks and 
+   change detection. It wraps around the Zone.js library to intercept and track asynchronous operations in the 
+   application. NgZone is particularly useful when dealing with third-party libraries, browser APIs, or other
+   asynchronous tasks.
+
+   What are the different methods provided by NgZone ?
+-> The different methods provided by NgZone -
+
+   1. run(()=> any) - The run() method is used to execute code within Angular's zone. It takes a callback 
+      function as an argument, which contains the code to be executed within the Angular zone. This method ensures
+      that change detection is triggered after the code execution completes when it detect change. 
+
+   2. runOutsideAngular(callback: () => any): any:
+      The runOutsideAngular() method is used to execute code outside Angular's zone. It takes a callback function
+      as an argument, which contains the code to be executed outside Angular's zone. This method is useful for 
+      running tasks that don't require Angular's change detection, such as heavy computations or interacting with
+      third-party libraries.  
+
+   3. runGuarded(callback: () => any): any:
+      Similar to run(), the runGuarded() method executes code within Angular's zone. However, it provides 
+      additional error handling by catching any errors that occur during the execution of the callback 
+      function. This ensures that errors are captured and logged without disrupting the application.   
+
+   What do you mean by zone.js in Angular ?
+-> zone.js is a standalone library developed by the Angular team that provides a generic implementation of 
+   zones for managing asynchronous tasks in JavaScript applications. 
+
+   What do you mean by ChangeDetectorRef ?
+-> ChangeDetectorRef is a service provided by the Angular framework that allows us to manually control change
+   detection and interact with the change detection mechanism programmatically. It provides methods for 
+   triggering change detection, checking the current state of change detection, and scheduling change detection 
+   to occur.
+
+   Usecases of ChangeDetectorRef  - 
+   1. Triggering Change Detection: ChangeDetectorRef provides the detectChanges() method, which triggers change
+      detection for the component and its children. When you call detectChanges(), Angular will perform change 
+      detection for the component and update the view if any changes are detected.
+   2. Marking for Check: ChangeDetectorRef also provides the markForCheck() method, which marks the component 
+      and its ancestors as dirty, indicating that they should be checked for changes during the next change
+      detection cycle.   
+
+   How angular change detection works ?
+-> Zone.js is a library that provides a mechanism for wrapping JavaScript code and executing it in a specific 
+   context or zone. In Angular, Zone.js is used to create a new zone for each component and to track changes 
+   within that component’s zone. 
+   Each time a component is created, Angular creates a new zone for that component. The zone tracks any changes
+   that occur within the component and triggers the change detection mechanism when necessary.
+   zone.js uses a concept called “zone hooks”. Zone hooks are functions that are executed before and after 
+   asynchronous operations, and they intercept and monitor these operations.
+   Angular provides the NgZone service, which provides two methods Inner and Outer zone.
+   whenever we want to execute something that require Angular's change detection we execute it in the inner scope.
+   whenever we want to execute something that don't require Angular's change detection, such as heavy computations
+   or interacting with third-party libraries we execute it in the outer scope.
+   Angular uses Zones internally to trigger change detection.
+
+   Change Detection Cycle: Angular's change detection process consists of multiple cycles, where each cycle 
+   traverses the change detection tree to detect and propagate changes. During a change detection cycle, Angular
+   performs the following steps:
+   Start: The change detection process starts at the root component of the tree.
+   Check: Angular checks each component in the tree for changes based on its change detection strategy. For 
+   components using the default strategy, change detection is triggered for all components and their descendants.
+   For components using the OnPush strategy, change detection is triggered only for components with changes to 
+   input properties or events.
+   Update: If changes are detected during the check phase, Angular updates the component's view to reflect the 
+   changes. This may involve re-rendering templates, updating DOM elements, or triggering lifecycle hooks.
+   Propagate: Changes detected in child components are propagated upwards in the tree to their parent components.
+   This ensures that changes made in child components are reflected in their parent components as well.
+   End: Once the change detection process completes for all components in the tree, the cycle ends, and Angular
+   waits for the next event to trigger another cycle.
+
+   What do you mean by tick in angular ?
+-> tick() is a utility function used primarily in unit tests to execute some task after specified time and 
+   trigger change detection.
+
+    
+
+    What do you mean by Angular sanitization ?
+->  Sanitization refers to the process of ensuring that any user input or dynamic content rendered in the 
+    application does not contain malicious code that could lead to security vulnerabilities, such as cross-site
+    scripting (XSS) attacks. Angular provides built-in mechanisms for sanitizing user input to mitigate these
+    risks. 
+
+    Angular's default security schema relies on a concept called "Trusted Types," which enforces a strict 
+    policy for handling user-generated content and helps prevent XSS attacks by default. Angular automatically
+    sanitizes certain types of content, such as interpolations ({{ }}) and property bindings ([property]), 
+    before rendering them in the DOM.     
+
+    What are the different ways we can pass data from child component to parent component in Angular ?
+->  The different ways we can pass data from child component to parent component are as follows - 
+    1. Using @Output() EventEmitter
+    2. Using ViewChild
+    3. Using Services
+
+    What are singnals in Angular ?
+->  Angular Signals is a system that granularly tracks how and where your state is used throughout an application,
+    allowing the framework to optimize rendering updates.
+
+    What are the advantages and disadvantages of Angular ?
+->  The advantages of angular are as follows - 
+    1. Full Featured framework - Angular is a full-featured framework that provides everything you need to build
+       large-scale, feature-rich web applications. It comes with a comprehensive set of tools, libraries, and 
+       features out of the box, including data binding, routing, forms handling, HTTP client, and more.
+    2. TypeScript Integration - TypeScript offers benefits such as improved code maintainability, better tooling
+       support, and enhanced error checking, which can help catch bugs early in the development process.
+    3. Module Architecture -  Angular encourages modular development through its component-based architecture. 
+       Components are reusable, self-contained building blocks that encapsulate HTML, CSS, and JavaScript logic,
+       making it easier to maintain and scale applications.
+    4. Dependency Injection -  Angular provides a built-in dependency injection system that helps manage the 
+       dependencies between different parts of your application.
+    5. Community -  Angular has a large and active community of developers, which means there are plenty of 
+       resources, tutorials, and third-party libraries available to help you learn and extend the framework.
+
+    The disadvantages of angular are as follows -
+    Steep Learning Curve: Angular has a relatively steep learning curve, especially for developers who are new to front-end development or who are not familiar with TypeScript. The framework has a lot of concepts and features to grasp, which can be overwhelming at first.
+    Complexity: Angular applications can become complex, especially as they grow in size and complexity. Managing state, handling asynchronous operations, and understanding the lifecycle hooks of components can be challenging, requiring a good understanding of the framework's internals.
+    Performance Overhead: Angular applications may have a higher performance overhead compared to lighter-weight libraries like React or Vue.js. The framework's powerful features and abstractions come at the cost of increased bundle size and runtime complexity, which can impact performance, especially on lower-end devices or slower network connections.
+    Version Migration: Angular has a history of significant version updates, which can require migration efforts for existing projects. While the Angular team provides tools and guidance to assist with migrations, keeping up with the latest versions and upgrading can be time-consuming and disruptive.
+    Size: Angular applications tend to have a larger bundle size compared to some other frameworks or libraries. While tree-shaking and lazy loading can help reduce the size of the final bundle, it's still something to consider, especially for applications where performance and load times are critical.      
+    
+    What are Injectables ? How it is widely used in Angular framework ?
+->  Injectables are Decorator that makes a class as available to be provided and injected as a dependency.    
+    Injectables are used for dependency injection.
+
+ 
+    
+    
+
+
+  

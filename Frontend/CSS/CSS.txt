@@ -10,7 +10,7 @@
  2. What are the Different Positions we have in CSS ?
  -> The Position Propery Specifies the type of Positioning Method used for an Element.
     The Different Types Of Positions are 
-    1. Static - Static Postion is the default Position in a Web Page.An ELement with Static
+    1. Static - Static Postion is the default Position in a Web Page. An ELement with Static
        Position is placed According to the flow of the Page.
     2. Relative - An ELement with Position Relative is Positioned Relative to its normal 
        Position.
@@ -40,49 +40,41 @@
          }
        }
 
+5. What is the Difference between CSS Grid and CSS Flexbox ?
+->                 CSS Grid                          |                    CSS FlexBox
+   --------------------------------------------------------------------------------------------------------
 
-5. What do you mean by Flexbox in CSS ?
--> FlexBox in CSS is a Flex Container that treat all the elements inside the box as flex 
-   Elements or inline Elements. 
+   1. CSS Grid is a two-dimensional layout system,     1. Flexbox is a one-dimensional layout model, focusing 
+      meaning it deals with both rows and columns.        on either rows or columns, not both simultaneously.
 
-6. What is the Difference between CSS Grid and CSS Flexbox ?
-->                 CSS Grid           |                    CSS FlexBox
+   2. It's best suited for creating complex layouts,   2. Flexbox is excellent for creating flexible and dynamic
+      like multi-column and multi-rows websites.          layouts within a container, especially when dealing 
+                                                          with items of different sizes and content. 
 
-   1. Two Dimentional                        1. One Dimentional
-
-7  Which is better CSS Grid or CSS Flexbox ?
--> Both are better and each one has it's own usecase. flexbox is used for one dimentional layout and 
-   grid is used for 2 dimentional layout.
-    
+6  Which is better CSS Grid or CSS Flexbox ?
+-> Both Grid and flexbox are powerful. Each of them has it own usecase.
+   Use CSS Grid when you need to create complex, two-dimensional layouts with precise control over rows and 
+   columns.
+   Use Flexbox when you need to create flexible, one-dimensional layouts with dynamic alignment and distribution
+   of items within a container.
 
 8. What do you mean by Cascading in CSS ?
--> Cascading is Rules based Priorty and Hierarchy in Applying Styles.
-    Priorties of Styling in CSS - 
-      
-    Note --
-    If we Provide Multiple Styles to the same element in the same Scope then Last Style will 
-    get Implemented.
-    Styling Proprioties
-    -------------------------------------------------------------
-    Inline Style > Internal Style > External CSS
+-> Cascading is Rules based Priorty and Hierarchy for Applying Styles in CSS.
+   Priorties of Styling in CSS  
+   -------------------------------   
+   Inline Style > Internal Style > External CSS
 
-    Parent Style Properties values. >  Default Style Properties Values of the Browser in
-    Which it is Openned.
+   Id > Class > Generic Selector
 
-    Id > Class > Generic Selector
-
-    !Important Keyword has the Heightest Proiorty Over other Elements.
+   !Important Keyword has the Heightest Proiorty Over other Elements.
 
 9.  What do you mean by Specificity in CSS ?
-->  If there are two or more CSS rules that point to the same element, the selector with the
-    highest specificity value will get Applied to the ELement.
-    There is a Specificity value Calculator that Calculates the Specificity Value.
-    Think of specificity as a score/rank that determines which style declaration is ultimately applied 
-    to an element.
+->  Specificity in CSS refers to the set of rules that determine which style declaration will get applied to an 
+    element when multiple conflicting styles are defined.
 
 10. What do you mean by Inheritence in CSS ?
-->  CSS Inheritence is the Process Where Child HTML ELement Inherites CSS Properties value 
-    from the Parent HTML ELements.  
+->  CSS Inheritence is the Process Where Child HTML ELement Inherites CSS Properties value from the Parent HTML
+    ELements.  
 
     There are Three Main Properties of Inheritence in CSS -
     1.Inherit - In Case of Inherit the Elements will Inherit Properties from the Parent to
@@ -102,7 +94,7 @@
       4. in (Inches)
       5. pt (Points)
 
-    2.Reactive Unit lengths 
+    2.Reactive Length Units
       1. 1vh (view height) 1 % of the height of the viewport.
       2. 1vw (view width)  1 % of the width of the viewport.
       3. % (present) percent relative to the viewport.
@@ -111,23 +103,59 @@
 ->  LESS stands for Leaner Style Sheets.
     LESS is a CSS pre-processor.
     LESS reduces repeation of CSS and therefore saves time.  
-    It allows us to use features like variables, nesting, mixins, etc, all in a CSS-compatible syntax.                                                  
+    It allows us to use features like variables, nesting rules, mixins, mathematical operations etc.
+
+    1. LESS is Platform independent.
+    2. Variables - 
+       @primary-color: #007bff;
+       @font-size: 16px;
+
+      .element {
+         color: @primary-color;
+         font-size: @font-size;
+      }
+
+
+    3. Mixins - 
+       .rounded-corners {
+          border-radius: 5px;
+       }
+
+       .button {
+         .rounded-corners;
+         background-color: #007bff;
+         color: white;
+         }
+
+    4. It allows us to do mathematical operation
+      // Less
+      @base-padding: 10px;
+
+      .container {
+         padding: @base-padding * 2;
+      }   
+
+     5. @import directive allows you to include the content of one file in another.
+        @import filename;                                                 
 
 13. What do you mean by SASS and why we use it ?
 ->  SASS stands for Syntactically Awesome StyleSheet.
     SASS is a CSS pre-processor.
-    SASS reduces repeation of CSS and therefore saves time.   
+    SASS reduces repeation of CSS and therefore saves time.
+    It allows us to use features like variables, nesting rules, mixins,  mathematical operations etc.      
 
     Note --
 
     1. SASS is Platform independent.
-    2. In SASS Variables are a way to store information that you can re-use later.  
-    3. Sass uses the $ symbol to declare a variable.
-    e.g - 
-       we use @import "filename" to import a Sass file without specifying .sass.
-    
-    4. @extends directive lets us share a set of CSS properties from one selector to another.
-       e.g - 
+    2. Variables - 
+   
+         $primary-color: #007bff;
+
+         .element {
+             color: $primary-color;
+         }
+
+    3. @extends directive lets us share a set of CSS properties from one selector to another.
        .button-basic  {
         border: none;
         padding: 15px 30px;
@@ -141,52 +169,55 @@
        background-color: red;
        }
 
-    5. The @mixin directive lets you create CSS code that is to be reused throughout the website.
-       e.g - 
-           @mixin important-text {
-           color: red;
-           font-size: 25px;
-           font-weight: bold;
-           border: 1px solid blue;
-           }
+    4. Mixins -
+      @mixin important-text {
+         color: red;
+         font-size: 25px;
+         font-weight: bold;
+         border: 1px solid blue;
+      }
+      .danger {
+         @include important-text;
+         background-color: green;
+      }
 
-     6. The @include directive is used to use the mixin.
-        e.g - 
-           @mixin important-text {
-            color: red;
-            font-size: 25px;
-            font-weight: bold;
-            border: 1px solid blue;
-          }
-         .danger {
-            @include important-text;
-            background-color: green;
-          }
+    5. It allows us to do mathematical operation
+      // Sass
+      $base-padding: 10px;
+
+      .container {
+         padding: $base-padding * 2;
+      }
+
+    6. @import directive allows you to include the content of one file in another.
+       @import filename;
+
+
 14. What is better among SASS and LESS ?
-->  Less is better than Sass because LESS has an advantage in functions where users can activate mixins when 
-    certain conditions occur which Sass does not.     
+->  Both Sass and Less are powerful. There are some factors which we can consider when deciding between 
+    Sass and Less
+
+   1. Community and Adoption: Sass has been around longer and has a larger community and ecosystem of tools and 
+      libraries. It's widely adopted in the industry and has strong support in frameworks like Bootstrap and 
+      Compass. LESS has a smaller community but is still popular and actively maintained.
+
+   2. Features: Both Sass and LESS offer similar features, but there may be slight differences in syntax or 
+      behavior. For example, Sass has more advanced features like control directives (@if, @for, @each, @while),
+      whereas LESS has a simpler feature set. However, the essential features like variables, mixins, and 
+      nesting are available in both preprocessors.   
 
 15. What do you mean by System font ?
-->  A system font or web-safe font is one that's already assumed to be present on the vast majority of users' 
-    devices, with no need for a web font to be downloaded.    
+->  System font refers to the default font that a user's operating system uses for rendering text in various 
+    applications and interfaces.
 
     What do you mean by @font-face ?
-->  font-face is a CSS rule which allows you to show a font on a Web page even if that font is not installed 
-    on the users' computer.
+->  @font-face is a CSS at-rule that allows you to define custom fonts and use them in your web pages. It enables
+    web designers to specify font files to be downloaded and used on-demand when rendering text in HTML elements.
 
 16. What do you mean by PostCSS ?
-->  PostCSS is a JavaScript tool that transforms your CSS code into an abstract syntax tree (AST) and then 
-    provides an API (application programming interface) for analyzing and modifying it using JavaScript 
-    plugins.
-    PostCSS we can use as in  Conjuction with existing presprocessors like SASS, LESS or we can use 
-    it as an alternative to all of them. 
+->  PostCSS is a tool that helps us make our CSS better and more efficient. It works by taking your regular CSS
+    code and running it through a series of plugins, which can do things like adding vendor prefixes 
+    automatically, minifying the code to make it smaller, or even transforming future CSS syntax into something
+    that current browsers can understand.
 
-17. Why we need before and after as pseudo elements instead of adding elements normally before 
-    and after the elements.
-->  CSS ::before and ::after pseudo-elements allow you to insert “content” before and after any non-replaced 
-    element (e.g. they work on a <div> but not an <input>). This effectively allows you to show something on 
-    a web page that might not be present in the HTML content. You shouldn’t use it for actual content 
-    because it’s not very accessible in that you can’t even select and copy text inserted on the page.
-    it’s just decorative content which might not be the case with the normal way of inserting elements
-    elements into the HTML Content.
 

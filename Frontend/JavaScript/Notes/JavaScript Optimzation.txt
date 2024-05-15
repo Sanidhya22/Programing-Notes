@@ -1,0 +1,275 @@
+                                JavaScript Performance Optimization
+                        ---------------------------------------------------
+
+
+   What are JavaScript page load Optimization techniques ?
+-> There are several techniques you can employ to optimize the loading speed of JavaScript on web pages:- 
+
+1. Minification - Minify your JavaScript files by removing unnecessary characters like whitespace, comments, and
+   newlines. This reduces file size and improves loading times.
+2. Concatenation - Combine multiple JavaScript files into one to reduce the number of HTTP requests required to
+   load a page. This can significantly speed up loading times, especially for larger websites.
+3. Asynchronous Loading: Use the async or defer attributes when including external JavaScript files. This allows
+   the browser to continue parsing the HTML while the script is being downloaded, improving overall page load
+   times.
+4. Lazy Loading - Implement lazy loading for non-critical JavaScript resources. This means delaying the loading
+   of certain scripts until they are actually needed, such as when a user interacts with a specific part of the
+   page.
+5. CDN Hosting - Host your JavaScript files on a Content Delivery Network (CDN) to take advantage of distributed
+   servers that can serve files from locations closer to your users, reducing latency.
+6. Caching - Set appropriate caching headers for your JavaScript files to enable browser caching. This allows the
+   browser to store a copy of the file locally, reducing the need to download it again on subsequent visits.
+7. Code Splitting - Split your JavaScript code into smaller, more manageable chunks and load them asynchronously
+   based on user interactions or page navigation. This can improve initial page load times by only loading 
+   essential code upfront.
+
+   What are Javascript Obfuscation and Minification ?
+-> Minification ---
+   Minification is the process of removing unnecessary characters (whitespace, comments, and newline characters) 
+   from JavaScript code without changing its functionality. 
+
+   Obfuscation ---
+   Obfuscation is the process of intentionally making JavaScript code more difficult to understand. This is 
+   achieved by renaming variables and functions to shorter or cryptic names and restructuring the code to make 
+   it less readable.
+
+   What are Memory Leaks in JavaScript ?
+-> In JavaScript, memory leaks occur when objects are no longer needed by an application but are still being
+   held in memory, preventing them from being garbage collected. This can lead to the consumption of excessive
+   memory over time, which can degrade the performance of the application.
+
+   Cause of Memory Leaks   
+   ------------------------------
+   1. Circular References - Circular references occur when two or more objects reference each other in a loop. If 
+      there are no external references to these objects, they cannot be garbage collected .     
+   2. Unused Variables and References - This often happens when developers forget to remove event listeners, 
+      timers, or references to DOM elements.   
+   3. InProper Asynchronous Code Management - Memory leaks can occur in asynchronous code when callbacks or 
+      promises are not properly managed.   
+
+   What are Memory Leaks prevention techniques in JavaScript ?
+-> Preventing memory leaks in JavaScript involves adopting various techniques as follows - 
+1. Remove Event Listeners - Always remove event listeners when they are no longer needed, especially for long
+   -lived elements. 
+2. Nullify References - Set references to objects or variables to null when they are no longer needed. This 
+   allows the JavaScript garbage collector to reclaim memory occupied by those objects. 
+3. Avoid Circular References - Be cautious when creating circular references between objects, as they can prevent
+   garbage collection. 
+4. Proper Asynchronous Code Management - Properly manage asynchronous operations, such as callbacks, promises, and 
+   timers. Avoid retaining unnecessary references , as they can lead to memory leaks.
+
+   What are Memory Leaks detection tools techniques ?
+-> There are several tools and techniques available for detecting memory leaks in JavaScript applications.
+
+1. Browser Developer Tools - Chrome offers comprehensive memory profiling capabilities through its DevTools. You can 
+   access the Memory panel to record and analyze memory usage, track allocations, and detect memory leaks.
+2. Browser Extensions - LeakCanary is a Chrome browser extension that helps detect memory leaks in 
+   web applications. It works by monitoring memory usage in real-time and alerting you to potential memory leaks. 
+3. Memory Profiling Libraries - 
+   heapdump: heapdump is a Node.js module that allows you to take heap snapshots of your Node.js applications. 
+   You can analyze these snapshots to identify memory leaks and optimize memory usage.
+   memory-usage: memory-usage is a lightweight Node.js module for monitoring memory usage and detecting memory
+   leaks in Node.js applications. 
+
+   What is RAIL ?
+-> RAIL is a framework used for improving the performance of web applications by focusing on key user 
+   interactions and experiences.   
+   Here's a brief overview of each component of the RAIL model:
+
+   Response - Response time refers to the time it takes for a web application to respond.
+   To ensure a responsive user experience, response times should generally be kept under 100 milliseconds.
+
+   Animation - Animation performance is crucial for creating smooth and fluid user interfaces. To achieve
+   this, animations should be optimized to minimize layout thrashing, avoid unnecessary repaints.
+   
+   Idle - Idle time refers to periods when the browser is not actively processing user input or animations. 
+   These idle periods can be utilized to perform non-critical tasks such as prefetching resources, lazy-loading
+   content, or caching data in the background. 
+
+   Load: Load time refers to the time it takes for a web page to load and become interactive To optimize load
+   times, developers should prioritize critical resources, minimize render-blocking scripts and stylesheets.
+
+   Why we need RAIL ?
+-> RAIL is used for optimizing the performance of web applications by focusing on key user interactions and experiences. 
+
+   What are Network Optimizations in JavaScript ?
+-> Network optimizations in web development focus on improving the speed and efficiency of data transmission 
+   between a web server and client over the internet. Here are some common network optimizations -
+
+1. Content Delivery Networks (CDNs) - CDNs distribute website content across multiple servers located in various
+   geographic locations. By caching static assets like images, CSS files, and JavaScript libraries on CDN servers
+   closer to users, CDNs reduce latency and speed up content delivery.  
+2. Prefetching and Preloading - Prefetching and preloading resources like fonts, scripts, and stylesheets can 
+   improve perceived performance by fetching them in advance, before they are needed. 
+3. Caching: - Caching static assets in the browser or on intermediary servers like CDNs can speed up subsequent 
+   page loads by serving cached content instead of making repeated requests to the origin server.    
+4. Minification - Minification involves removing unnecessary characters like whitespace, comments, and line breaks from web 
+   assets such as CSS and JavaScript files. 
+5. Lazy Loading - Lazy loading defers the loading of non-essential resources, such as images, videos, and iframes, until they 
+   are needed. 
+6. HTTP/2 and HTTP/3: - These enhancements enable faster and more efficient data transfer between servers and 
+   clients, leading to reduced latency and improved performance.  
+
+   What do you mean by Google Lighthouse/PageSpeed Insight ?
+-> Google Lighthouse is an open-source tool used for auditing and generating detailed reports with actionable
+   recommendations for optimization of web pages. It evaluates various aspects of web page like performance, 
+   accessibility, best practices, and SEO.   
+   
+   PageSpeed Insights is a web-based tool used for analyzing the performance of web pages on both
+   mobile and desktop devices. It measures various performance metrics and provides recommendations for 
+   optimizing web page loading speed and user experience.  
+
+   What do you mean by Chrome User Experience Report (CrUX) ?
+-> The Chrome User Experience Report (CrUX) is a dataset provided by Google that contains real-world performance
+   data collected from users' experiences while browsing the web with Google Chrome. 
+
+    What do you mean by Cookie and how does it works ?
+->  A cookie is a small piece of data that a website sends to a user's web browser. The browser stores this data
+    and sends it back to the website with subsequent requests. Cookies are commonly used for various purposes in
+    web development, such as session management, tracking, and storing user preferences.  
+
+    Here's how cookies work:
+
+    1. Creation: When a user visits a website, the server can send one or more cookies to the user's browser along 
+       with the response. Each cookie consists of a name-value pair and optional attributes such as expiration date,
+       domain, and path.
+    2. Storage: The browser stores the received cookies locally on the user's device, typically in a cookie file. 
+       Cookies are associated with the domain of the website that set them, and each cookie has its own 
+       expiration time.
+    3. Transmission: When the user interacts with the website by clicking links, submitting forms, or making 
+       AJAX requests, the browser automatically includes any relevant cookies in the request headers. This 
+       allows the server to identify the user and maintain stateful interactions.
+    4. Server-side Handling: On the server side, the web application can read and parse the incoming cookies 
+       from the request headers to access stored information about the user. This information can be used to 
+       personalize the user experience, manage sessions, or track user behavior.
+    5. Expiration and Deletion: Cookies can have an expiration date set by the server, after which they are 
+       automatically deleted by the browser. Additionally, the user can manually delete cookies or configure 
+       their browser to reject certain types of cookies. 
+
+    What do you mean by JWT and how does it works ?   
+->  JWT stands for JSON Web Token. JSON Web Tokens are most commonly used to identify an authenticated user.
+
+   Here's how JWT work:
+   1. Creation: When a user logs in or performs some authentication action on a server, the server generates a 
+      JWT. This token contains a set of claims encoded in a JSON format.
+   2. Transmission: The JWT is then sent to the client, typically as part of the response to the authentication
+      request. It can be included in the response body, headers (usually the Authorization header), or cookies,
+      depending on the application's design.
+   3. Storage: The client receives the JWT and stores it securely, typically in local storage, session storage,
+      or a cookie.
+   4. Inclusion in Requests: For subsequent requests to protected resources or endpoints, the client includes 
+      the JWT in the request, typically in the Authorization header using the Bearer scheme.
+   5. Validation: When the server receives a request with a JWT, it validates the token's integrity and 
+      authenticity. If the token is signed, the server verifies the signature using the appropriate key. It also
+      checks the token's expiration date, issuer, and other claims to ensure that it's valid and hasn't been 
+      tampered with.
+   6. Access Control: After validating the JWT, the server extracts the claims from the token and uses them to
+      make access control decisions. For example, it may use the user's identity stored in the token to 
+      determine whether the user has permission to access the requested resource.
+
+
+   What do you mean by Session and how does it works ?
+-> A session refers to a way of maintaining state information about a user’s interactions with a website or 
+   web application.
+   
+   Here's how sessions typically work:
+
+   1. Session Creation: When a user accesses a web application for the first time, the server creates a unique 
+      session identifier (session ID) for that user. This session ID is often stored in a cookie on the user's 
+      browser or passed as part of the URL.
+   2. Session Initialization: During session creation, the server may also initialize session data or variables
+      to store information about the user's interactions with the application. \
+   3. Session Management: As the user interacts with the application, the session ID is sent back and forth 
+      between the server and the browser with each request and response. This allows the server to associate 
+      subsequent requests with the correct session and access the session data stored for that user.
+   4. Session Termination: The session ends when the user explicitly logs out, closes the browser, or if the 
+      session times out due to inactivity. When the session ends, the server releases any resources associated
+      with that session and removes the session data.
+
+   What do you mean by OAuth and how does it works ?
+-> OAuth (Open Authorization) is an open standard for access delegation, commonly used as a way for internet 
+   users to grant websites or applications access to their information on other websites without giving them
+   their passwords. OAuth enables users to authorize third-party applications to access their resources on a
+   server without sharing their credentials (e.g., username and password) directly.  
+
+   Here's how OAuth works:
+
+   1. User Authorization: The user (resource owner) wants to grant a third-party application (client) access to 
+      their resources on a server (resource server). The user initiates the OAuth flow by clicking a "Login with
+      (provider)" button on the client application.
+   2. Authorization Request: The client application redirects the user to the authorization server, where they 
+      are prompted to authenticate and authorize the client application to access their resources. The user may
+      need to log in to their account on the authorization server if they're not already authenticated.
+   3. User Consent: After authenticating, the user is presented with a consent screen where they can review the 
+      permissions requested by the client application (e.g., read contacts, post on behalf of the user). The 
+      user can choose to grant or deny access to their resources.
+   4. Authorization Grant: If the user grants access, the authorization server issues an authorization grant to 
+      the client application. This grant is a temporary token representing the user's consent to access their 
+      resources.
+   5. Token Exchange: The client application exchanges the authorization grant for an access token and, 
+      optionally, a refresh token. The access token is a credential that the client application can use to 
+      access the user's resources on the resource server.
+   6. Accessing Resources: The client application includes the access token in requests to the resource server
+      when accessing the user's resources. The resource server validates the access token and grants access to 
+      the requested resources if the token is valid and authorized.
+   7. Token Expiry and Refresh: Access tokens have a limited lifespan (expires). If the access token expires, 
+      the client application can use the refresh token (if provided) to obtain a new access token without 
+      requiring the user to re-authenticate.   
+
+   What is the difference between npm, yarn and npx ?
+-> npm  - 
+   npm, short for Node Package Manager, is the default package manager bundled with Node.js.  
+   Dependency management for Node.js projects. 
+   Installation, update, and removal of packages.
+   Installation of packages happens sequentially.
+
+   npx - 
+   npx is a tool that comes with npm (since npm version 5.2.0) and is used to execute Node.js packages.
+   It allows you to run packages installed from npm without having to install them globally or locally in
+   your project.
+   npx downloads the package temporarily, executes the specified command, and then removes the package, ensuring 
+   that the latest version is always used.
+
+   yarn -
+   Yarn is an alternative package manager for Node.js, created by Facebook in collaboration with other companies.
+   It is compatible with npm and provides similar functionalities but is known for its speed and reliability.
+   Yarn also supports offline mode and parallel installation of packages, which can improve performance.          
+
+     What are the different events invoved in Page lifecycle of page in web ?
+->  The page lifecycle in web development refers to the sequence of events that occur from the moment a web 
+    page is requested by a user to the point when the page is closed or navigated away from.
+    1. Request: The page lifecycle begins when a user requests a web page by entering its URL in a web browser 
+       or clicking on a link. This triggers an HTTP request to the server hosting the page.       
+    2. Server Processing: Upon receiving the request, the server processes it by retrieving the requested HTML, 
+       CSS, JavaScript files, and any other required resources. Server-side logic may also be executed at this 
+       stage, such as fetching data from a database or performing authentication.
+    3. HTML Rendering: Once the server processes the request and generates the HTML content, it is sent back to
+       the client (browser) as the response. The browser then begins to parse the HTML and render the initial 
+       layout of the page.   
+    4. DOMContentLoaded: As the browser parses the HTML, it constructs the Document Object Model (DOM) 
+       representing the structure of the web page. When the parsing reaches the end of the document's <head> 
+       section or encounters the DOMContentLoaded event in JavaScript, the DOM content is fully loaded and ready
+       for manipulation.
+    5. CSSOM Construction and Rendering: After parsing the HTML, the browser constructs the CSS Object Model 
+       (CSSOM) by parsing and applying the stylesheets linked in the HTML. Once the CSSOM is constructed, the
+       browser calculates the styles for each element and performs layout (reflow) to determine the position 
+       and size of each element on the page. Finally, the rendered content is painted onto the screen. 
+    6. JavaScript Execution: If the web page includes JavaScript code, it is executed asynchronously during or 
+       after the HTML parsing and CSSOM construction stages.  
+    7. Load Event: When all external resources (such as images, stylesheets, and scripts) have finished loading,
+       the load event is triggered on the window object. This event indicates that the entire page, including
+       its external dependencies, is fully loaded and ready for interaction. 
+    8. Interaction and Updates: Once the page is fully loaded and rendered, users can interact with its elements
+       triggering events such as clicks, mouse movements, and keyboard inputs. JavaScript code can respond to 
+       these events by updating the DOM, making AJAX requests, or performing other actions to provide a dynamic
+       and interactive user experience.   
+    9. Unload and Closing: When a user navigates away from the page, closes the browser tab, or shuts down the
+       browser, the browser triggers the beforeunload event, allowing developers to perform cleanup tasks or
+       prompt the user before leaving the page. Finally, the page is unloaded, and the browser releases its 
+       resources. 
+
+   What do you mean by CSSOM ?
+->  CSSOM stands for CSS Object Model. Similar to the DOM (Document Object Model) for HTML, the CSSOM represents
+    CSS stylesheets as a structured set of objects, allowing JavaScript to interact with and manipulate CSS 
+    styles dynamically.
+   

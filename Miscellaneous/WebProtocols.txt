@@ -1,0 +1,254 @@
+                                      Web Communication Protocols
+                        --------------------------------------------------------------
+
+
+   What do you mean by HTTP ?
+-> HTTP stands for Hypertext Transfer Protocol. HTTP defines the rules and conventions for communication between
+   web browsers and web servers. 
+
+   What are the key principles of HTTP ?
+-> The key principles of HTTP are as -
+   1. Client-Server Model - HTTP follows a client-server model, where the client sends requests to the server, and 
+      the server responds with the requested resources.
+   2. Request-Response Cycle - Each interaction between a client and server follows a request-response cycle.
+   3. Stateless Protocol - HTTP is a stateless protocol, meaning that each request-response cycle is independent of 
+      previous interactions. The server does not maintain any information about past requests from the same client.
+   4. Uniform Resource Identifier (URI) - HTTP requests specify the resource to be accessed using a Uniform Resource 
+      Identifier (URI).
+   5. HTTP Methods - HTTP defines several methods (also known as verbs) that indicate the desired action to be 
+      performed on the specified resource. The most commonly used HTTP methods are: Get, Post, Put, Delete.
+   6. Status Codes: - HTTP responses include status codes that indicate the outcome of the request.
+
+   What do you mean by HTTPS ?
+-> HTTPS stands for Hypertext Transfer Protocol Secure. It's an extension of HTTP that adds a layer of security by
+   using encryption to protect the data exchanged between a web browser and a web server.  
+
+   What are the key principles of HTTPS ?
+-> The key principles of HTTPS are as follows -
+   1. Encryption - HTTPS uses SSL/TLS for encryption. encryption ensures that any data transmitted over the network
+      is encrypted and cannot be intercepted or tampered with by attackers.
+   2. Digital Certificates - HTTPS relies on digital certificates issued by trusted Certificate Authorities (CAs)
+      to verify the identity of the server.  
+   3. Data Integrity - HTTPS ensures that the data received by the client is exactly the same as the data sent by the server.   
+   4. Authentication: HTTPS also provides authentication mechanisms to verify the identity of server and client.
+   
+   Difference between HTTP and HTTPS ?
+->                            HTTP                   |                      HTTPS  
+   -----------------------------------------------------------------------------------------------------------
+
+  1. URLs for HTTP websites start with "http://"          1. URLs for HTTPS websites start with "https://" 
+
+  2. HTTP stands for HyperText Transfer Protocol.         2. HTTPS stands for HyperText Transfer Protocol Secure.
+
+  3. HTTP is considered to be unsecure.                   3. HTTPs is considered as secure.  
+
+  4. Encryption is absent in HTTP.                        4. Encryption is present in HTTPS.
+
+  5. HTTP faster than HTTPS.                              5. HTTPS slower than HTTP.
+
+  6. HTTP uses port number 80 for communication.          6. HTTPs uses 443 port number for communication.
+
+    What do you mean by Restful API ?
+->  It stands for Representational State Transfer (REST), it provides set of principles for building scalable and
+    flexible web services.
+
+    What are the advantages and disadvantages(challengages) of Rest APIs ?
+->  Disadvantages of Rest APIs are as follows - 
+    1. Overfetching and Underfetching - RESTful APIs often return a fixed set of data fields for a resource, 
+       which can lead to overfetching  or underfetching for certain use cases. 
+    2. Security Concerns -  RESTful APIs have security vulnerabilities such as injection attacks, CSRF, and XSS. 
+
+    Advantages of Rest APIs are as follows -
+1.  Scalability: RESTful architectures are inherently scalable, allowing systems to handle increasing numbers
+    of users and requests efficiently.
+2.  Flexibility - RESTful APIs allow clients to interact with resources using different representations (such 
+    as JSON or XML) and request different representations of the data based on their needs.
+3.  Caching - RESTful APIs leverage the HTTP protocol's built-in caching mechanisms to improve performance and
+    reduce server load. 
+4.  Simplicity - RESTful APIs use standard HTTP methods and simple data formats like JSON, making them easy to
+    understand and use.
+
+   What is mean by Idempotent in REST ?
+-> Idempotent in REST means making the same request multiple times should result in the same outcome as 
+   making it once.      
+   REST APIs for GET, PUT, DELETE, HEAD, OPTIONS, and TRACE methods are indepotent.
+   Only POST and PATCH APIs are not idempotent. 
+
+
+   Difference between TCP(Transmission Control Protocol) and UPD(User Datagram Protcol)
+->                           TCP                    |                     UPD
+   -----------------------------------------------------------------------------------------------------------
+
+    1. Connection-oriented protocol. Before               1. Connectionless protocol. UDP does not establish 
+       data exchange, TCP establishes a connection           a connection before transmitting data. Each packet 
+       between the sender and receiver, ensuring             is sent independently and may arrive out of order, 
+       reliable, ordered transmission.                       duplicated, or not at all.
+
+    2. Ensures that data packets are delivered to         2. Does not guarantee the order of packet delivery. 
+       the receiver in the same order they were sent.        Packets may arrive out of order due to variations  
+                                                             in network conditions.
+
+    3. Generally has higher latency compared to UDP       3. Lower latency compared to TCP since it lacks 
+       due to connection establishment, reliability          connection setup and does not implement reliability 
+       mechanisms.                                           mechanisms.   
+
+   Difference between TCP/IP and OSI model ?
+->                            TCP                       |                    OSI 
+
+    1. TCP stands for Transmission Control Protocol.         1. OSI stands for Open Systems Interconnection.
+
+    2. It has 4 layers.                                      2. It has 7 layers.
+
+    3. It is protocol-dependent.                             3. It is protocol-independent.
+
+    4. It is more reliable than OSI Model.                   4. It is less reliable than TCP/IP Model.
+
+    5. Connection-oriented protocol. Before                  5. The Open Systems Interconnection (OSI) model 
+       data exchange, TCP establishes a connection              is a conceptual framework that divides network  
+       between the sender and receiver, ensuring                communications functions into seven layers.  
+       reliable, ordered transmission.
+
+   What do you mean by GraphQL ?
+-> GraphQL is a query language for APIs. GraphQL enables clients to request only the data they need from a server.
+    
+   Key features of GraphQL include: - 
+   1.  Client-Defined Queries
+   2.  Single Endpoint
+   3.  Flexible Responses
+   4.  Schema-Driven
+
+   What the difference between a query and a mutation is in GraphQL ?  
+-> Query ---
+   A query in GraphQL is used to request data from the server. It resembles a GET request in RESTful APIs.
+   Queries are read-only operations. They do not modify any data on the server.
+
+   Mutation ---
+   A mutation in GraphQL is used to modify data on the server. It resembles a POST, PUT, PATCH, or DELETE 
+   request in RESTful APIs.
+   Mutations can include input arguments to provide data for the operation. These arguments specify the new 
+   data to be created or the changes to be made to existing data. 
+
+   What do you mean by RPC (Remote Procedure Call) ?
+-> Remote Procedure Call is a protocol that one program can use to request a service from a program located 
+   in another computer on a network without having to understand the network details. 
+
+   What do you mean by Polling ?
+-> Polling refers to a method where the client repeatedly checks the server for new information or updates. 
+
+   There are two main types of polling 
+   ---------------------------------------
+   1. Regular Polling - In this method, the client sends periodic requests to the server asking for updates. 
+      Even if there are no updates, the client still sends requests at regular intervals. This can lead to 
+      unnecessary network traffic and server load, especially if updates are infrequent.
+   2. Long Polling - Long polling is a variation where the client sends a request to the server, and the server 
+      keeps the request open until there is new information available. Once new information is available, the
+      server responds to the request, and the client immediately sends another request to keep the connection 
+      open. This reduces the number of unnecessary requests compared to regular polling but still incurs some 
+      overhead due to keeping connections open.
+
+   What do you mean by WebSocket communication Protocol ?
+-> WebSocket is a communication protocol that provides full-duplex communication channels over a single TCP 
+   connection. It allows for real-time, bidirectional communication between clients and servers.   
+
+   Difference between WebSocket and Polling ?
+->                          WebSocket                 |                   Polling         
+    --------------------------------------------------------------------------------------------------------
+    1. Data can be sent in both directions called        1. Only one way of data transmission is possible at 
+       Full−duplex.                                         once and is called Half−duplex.
+
+    2. WebSocket uses a single TCP connection to send    2. Polling uses multiple HTTP connections to send 
+       and receive data.                                    and receive data.
+
+    3. It is less resource−intensive on the server       3. It is more resource−intensive on the server than 
+       because it uses a single TCP connection.             WebSocket because it requires multiple HTTP connections.
+
+    4. WebSocket requires a modern web browser with      4. Polling is supported by all web browsers.
+       HTML5 support.
+
+    5. WebSocket has lower latency.                      5. It has higher latency.    
+
+   What are the Advantages and disadvantages of WebSocket and Polling ?
+-> The Advantages of Polling -
+   ------------------------------
+   1. Simplicity - Polling is straightforward to implement and understand.  
+   2. Compatibility - Polling works well in environments where other methods like WebSockets or Server-Sent 
+      Events (SSE) are not available or supported.  
+   3. Control - Polling gives clients control over the frequency and timing of requests. Clients can adjust the
+      polling interval based on their requirements.
+    
+   The Disadvantages of Polling - 
+   -------------------------------
+   1. Increased Network Traffic - Polling generates additional network traffic because clients send requests to 
+      the server at regular intervals, regardless of whether updates are available or not.
+   2. Server Load - Polling can put a significant load on the server, especially when handling a large number 
+       of concurrent clients.Each polling request requires processing resources on the server to generate a 
+       response, leading to increased CPU and memory usage. 
+   3. Latency - It has higher latency.
+
+   The Advantages of WebSockets - 
+   ---------------------------------
+   1. Full Duplex Communication - WebSockets provide full-duplex communication channels, allowing both the 
+      client and server to send data to each other simultaneously.
+   2. Efficiency - WebSockets are more efficient than traditional polling methods because they maintain 
+      persistent connections between the client and server.   
+   3. Reduced Server Load - By maintaining persistent connections, WebSockets reduce the load on the server 
+      compared to polling or long-polling. 
+   4. Real-time Updates - WebSockets enable real-time updates and notifications to be pushed from the server 
+      to the client immediately as they occur.     
+
+   The Disadvantages of WebSockets - 
+   -------------------------------------
+   1. Firewall and Proxy Limitations - Some network environments, such as corporate firewalls or proxy servers, 
+      may restrict or block WebSocket connections. 
+   2. Limited Browser Support - While modern web browsers generally support WebSockets, older versions may have
+      limited or incomplete support. 
+   3. Increased Complexity - Implementing WebSocket-based communication may introduce additional complexity 
+      compared to traditional request-response-based communication methods.    
+
+   What are the usecases for using WebSocket and Polling ?
+-> Usecases for WebSocket - 
+   1. Real-time Chat Applications
+   2. Live Streaming and Broadcasting
+   3. Multiplayer Online Games
+
+   Usecases for Polling -
+   1. Low-Frequency Updates ( Stock prices, Weather forecasts, or News updates )
+   2. Compatibility with Legacy Systems
+
+   Difference between HTTP vs HTTP/2 ?
+->  HTTP/1.1   
+   ----------------------------------------------
+    1. HTTP (HOL)Head of Line Blocking problem 
+    2. Opening of multiple TCP connections for requesting multiple resources   
+    3. Textual nature of data transfer
+    4. Long HTTP headers
+    5. Slow web page loading speed
+
+    HTTP 2 
+    ------------------------------------------------------
+    1. No Head of Line Blocking problem
+    2. It supports Multiplexing
+       ( Multiple requests and responses can be sent and received in parallel over a single TCP connection, 
+        reducing latency and improving performance. )
+    3. It uses a Binary protocols instead of plain text.    
+    4. It supports Header compression.   
+    5. Faster page loading speed
+       ( Servers can proactively push resources to clients before they are requested, reducing the need 
+       for additional round trips and speeding up page load times. )
+
+   Difference between HTTP/2 and HTTP/3 ?
+->                            HTTP/2                     |               HTTP/3                 
+   -------------------------------------------------------------------------------------------------------
+
+     1. HTTP/2 is based on the Transmission Control    1. HTTP/3 is based on the QUIC (Quick UDP Internet Connections)
+        Protocol (TCP).                                   protocol.
+
+     2. HTTP/2 uses HPACK for header compression.      2. HTTP/3 uses QPACK header compression.
+
+     3. Connection establishment is slower.            3. Connection establishment is faster.
+
+   What do you mean by HTTP head of line (HOL) blocking problem ?
+-> HTTP Head of Line blocking in HTTP/1 refers to issue where browser/client has to wait for the prior request
+   to it to complete before it can fire it off another over a single TCP connection. 
+
+    

@@ -3,9 +3,9 @@
 // objects, called prototypes.
 
 // What do you mean by Prototypes in JavaScript?
-// Prototypes serve as a mechanism for implementing inheritance and sharing behavior between objects.
-// Every object in JavaScript has an internal property called [[Prototype]], which references another object 
-// known as its prototype. 
+// The prototype is an internal property of an object that reference to another object. When we access a property 
+// or method on an object, and if that property or method does not exist on the object 
+// itself, JavaScript will look for it on the object's prototype.
 
 function Emp(name, age, sal, designation) {
   this.name = name;
@@ -22,12 +22,12 @@ console.log(e1);
 console.log(e2);
 
 //Adding Properties and Methods to Arrays
+const cities = ["Bangalore", "Bokaro", "Nodia"];
 Array.prototype.show = function () {
   return this;
 };
 console.log(cities.show());
 
-const cities = ["Bangalore", "Bokaro", "Nodia"];
 Array.prototype.convertIntoObject = function () {
   const newObj = {};
   this.forEach((element) => {
@@ -52,6 +52,7 @@ const obj1 = {
 
 console.log(obj1);
 console.log(obj1.getName());
+console.log(obj1.prototype.name);
 
 //Adding a New Property to String as a Prototype for Reversing String
 String.prototype.reverseString = function () {

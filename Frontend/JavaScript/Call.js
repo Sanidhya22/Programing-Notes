@@ -1,23 +1,17 @@
-// Call Function --
+// Call --
 
 // The call() method is a predefined JavaScript method Using which an object can use a 
 // method belonging to another object
 
 const person = {
-    fullName: function () {
-        return this.firstName + " " + this.lastName;
-    }
-}
+  fullName: function (city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  },
+};
+
 const person1 = {
-    firstName: "John",
-    lastName: "Doe"
-}
-const person2 = {
-    firstName: "Mary",
-    lastName: "Doe"
-}
+  firstName: "John",
+  lastName: "Doe",
+};
 
-person2.fullName = person.fullName;
-console.log(person2.fullName());
-
-console.log(person.fullName.call(person1));
+console.log(person.fullName.call(person1, "Oslo", "Norway"));

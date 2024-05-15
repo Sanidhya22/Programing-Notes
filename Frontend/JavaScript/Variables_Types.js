@@ -24,9 +24,6 @@ These Variables can have local and global scope.
 These Variables can not be Redecalred in the same scope.
 These Variables must be decalred before they are used.
 
-If we observe the variables defined with var keyword are stored or attached with
-global window object whether In case of let and const they are attached or 
-stored in some another Context space.
 the variable which are declared without keywords have global scope.
 
 */

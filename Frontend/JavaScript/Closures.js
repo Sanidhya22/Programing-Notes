@@ -1,6 +1,6 @@
 // Closures -
 // Closures is a concept in JavaScript that allow inner function to retains access to parameters of
-// its outer function, even if outer function has finished executing.
+// its outer function, even if outer function has finished executing or returned inner function.
 
 //Example 1
 function createCounter() {
@@ -30,6 +30,4 @@ var z = x();
 console.log(z);
 z();
 
-// Here the memory will remain occupied in the stack till we comeout of the outer function and by using 
-// return function statement we are passing the reference of function.
 

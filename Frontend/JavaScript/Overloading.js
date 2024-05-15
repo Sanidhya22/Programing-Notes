@@ -52,9 +52,9 @@ class Emp{
     }
 }
 
-let e1 = new Emp();
-let e2 = new Emp("Sujit");
-let e3 = new Emp("Anjali",22);
+const e1 = new Emp();
+const e2 = new Emp("Sujit");
+const e3 = new Emp("Anjali",22);
 
 e1.display();
 e2.display();

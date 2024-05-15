@@ -166,7 +166,243 @@
    33.git revert Hashvalue(Commit)          -  This command will discard changes of specific commit from 
                                                our Repository.                                  
 
+                                               Git
+                             ---------------------------------------
 
+   What do you mean by .gitignore file ?
+-> The .gitignore file is a text file used by Git. It allows developers to exclude certain files or patterns 
+   from being committed to the repository, which helps keep the repository clean and focused on versioning 
+   important files.   
+
+   Difference between SSH and HTTPS ?
+->                          SSH                       |                  HTTPS 
+
+   1.   SSH is a protocol that provides a secure           1. SSH is a protocol that provides a secure way to
+        way to access and manage remote systems.              access and  manage remote systems.
+
+   2.   Uses SSH keys for authentication. Users            2. Requires either a username and password or
+        generate a key pair (public and private keys).        a personal access token (PAT) for authentication. 
+                            
+   3.   It provides high level of security due to the      3. Relies on passwords or tokens, which can be 
+        use of cryptographic key pairs.                       vulnerable to brute force attacks.
+
+
+   What do you mean by Git Hooks ?
+-> Git hooks are scripts that run automatically every time a particular event occurs in a Git repository.
+   Git hooks are stored in the .git/hooks directory of a Git repository and can be written in any scripting 
+   language supported by the system (e.g., Bash, Python, Perl).
+
+   There are two types of Git hooks -
+
+1. Client-side Hooks: - Client-side hooks are executed on the local machine where the developer is interacting
+   with the Git repository. 
+   Examples of client-side hooks include pre-commit, pre-push, and post-checkout hooks.  
+   Common use cases for client-side hooks include:
+   Enforcing coding standards and formatting rules before committing changes.
+   Running automated tests to ensure code quality before pushing changes to a shared repository.
+
+2. Server-side Hooks: - Server-side hooks are executed on the remote repository server in response to actions
+   like receiving pushed commits.   
+   Examples of server-side hooks include pre-receive, update, and post-receive hooks.
+   Common use cases for server-side hooks include:
+   Triggering automated deployment or CI/CD pipelines after receiving new commits.
+   Performing code analysis, security scans, or other automated checks before accepting changes into the repository.
+   
+   What are the advantages and disadvantages of Githooks ?
+-> The advantages of git hooks are as follows - 
+   1. Automation: Git hooks automate tasks, reducing manual effort and ensuring consistency.
+   2. Error Prevention: They help prevent errors and maintain code quality by enforcing standards and running 
+      checks before changes are committed or pushed. 
+   3. Enforcement of Policies: Git hooks can enforce project-specific policies, such as code formatting rules, 
+      linting, or running tests before allowing commits to be pushed.   
+
+   What do you mean by tags in Git ?
+-> tags are references that point to specific commits in a repository's history.
+
+   Why we need tags ?
+-> Tags are useful for the following reasons -
+1. Versioning and Releases: Tags are commonly used to mark specific releases or versions of a project. They 
+   provide a stable reference point for accessing a particular state of the codebase, making it easy to retrieve
+   and work with specific versions of the project.   
+
+2. Documentation and History: Tags provide a way to document and label important points in a project's history.
+   By tagging specific commits, developers can provide context and information about significant changes, 
+   milestones, or releases. This helps maintain a clear and organized history of the project's development. 
+
+   What are important tags command in git ?
+-> git tag tagname                        - create tag with specific name 
+   git tag -a tagname -m "message"        - create annotated tag with specific message 
+   git tag                                - shows all tags in the repository
+   git show tag                           - show specific tag  
+   git push origin <tag_name>             - pushes specific tags to the remote repository
+   git push origin --tags                 - pushes all the tags to the remote repository
+
+   How to resolve conflicts on pull/push in git ?
+-> Resolving conflicts in Git typically occurs when you try to pull or push changes to a remote repository, and 
+   Git detects that there are conflicting changes between your local branch and the remote branch.
+
+1. Pulling Changes:
+   When you pull changes from a remote repository and encounter conflicts, Git will notify you about the conflicts
+   and stop the pull process and show conflict files under merge changes.
+a. Manually resolve the conflicts by editing the affected files. Decide which changes to keep and which to 
+   discard, and remove the conflict markers.
+b. After resolving the conflicts, save the files and stage them for commit using git add.
+c. Once all conflicts are resolved and staged, commit the changes using git commit.
+
+2. Pushing Changes:
+   When you push changes to a remote repository and encounter conflicts, Git will reject the push and provide an
+   error message indicating the conflicts. To resolve conflicts:
+a. Pull the changes from the remote repository using git pull. 
+b. If conflicts occur during the merge process, it will show conflict files under merge changes, Manually resolve
+   the conflicts by editing the affected files.
+c. After resolving conflicts and committing the changes, attempt to push again using git push. 
+
+   What are git branching strategies in Git ?
+-> GIT branching strategies are patterns or approaches that tech teams use to organize & manage their code 
+   through different branches in a GIT system. 
+
+    1. Feature Branching: -
+       Feature Branching is a popular branching strategy in Git that involves creating separate branches for 
+       each new feature or task. Here's how it works:  
+
+       1. Main Branch - The main branch represents the stable, production-ready code.
+       2. Feature Branches - When starting work on a new feature or task, a developer creates a new branch from 
+          the main branch.   
+       3. Development - Developers work on implementing the feature or task in the feature branch, making code 
+          changes, adding new functionality, or fixing bugs.
+       4. Testing - Developers may run tests locally on the feature branch to ensure that the changes function as 
+          expected.
+       5. Integration - Once the feature is complete and tested, A pull request (PR) is created to propose 
+          merging the feature branch into the main branch.  
+          Once the feature branch has been merged, it can be safely deleted to keep the repository clean and 
+          avoid clutter.
+       6. Deployment - The changes are deployed to production as part of the regular release process, or as needed, depending 
+          on the team's deployment strategy.
+            
+       Advantages of feature branching strategy 
+       ----------------------------------------------
+       1. Provides clear structure for managing code changes.
+       2. Separates ongoing development from stable release. 
+
+       Disadvantages of feature branching strategy
+       -----------------------------------------------
+       1. Possibility of merge conflict
+       2. Potential for larger number of branches
+
+
+    2. GitFlow Branching: -
+       Git Flow is a branching strategy that uses two main long-lived branches - main and develop - that remain 
+       in the project during its entire lifetime. Additionally, it employs several short-lived branches - 
+       feature, release, and hotfix - that are created as needed to manage the development process and deleted 
+       once they have fulfilled their purpose.    
+
+       1. Master branch - This branch represents the production-ready code. It should only contain code that has 
+          been thoroughly tested and is considered stable.
+       2. Develop branch - This branch serves as the integration branch for ongoing development work.
+       3. Feature branches - These branches are used for developing new features or implementing bug fixes. They 
+          are branched off from the develop branch and merged back into it once the feature is complete.
+       4. Release branches - Release branches are used to prepare a new release of the software. They are branched
+          off from the develop branch when the code is in a state that is ready for release. Any final bug fixes 
+          or minor adjustments can be made on the release branch before it is merged into both master and develop.
+       5. Hotfix branches: Hotfix branches are used to quickly address critical issues in the production code. 
+          They are branched off from the master branch, and once the fix is complete, they are merged back into 
+          both master and develop. 
+
+       The typical workflow in Gitflow looks like this:
+       Start a new feature: Create a new feature branch from the develop branch.
+       Develop the feature: Implement and test the new feature on the feature branch.
+       Complete the feature: Merge the feature branch back into the develop branch.
+       Prepare a release: Create a release branch from the develop branch.
+       Test the release: Perform any necessary testing and bug fixes on the release branch.
+       Finish the release: Merge the release branch into both master and develop, and tag the release in master.
+       Address hotfixes: If any critical issues arise in the production code, create a hotfix branch from master
+       , fix the issue, and merge the hotfix back into both master and develop.  
+
+       Advantages of GitFlow branching 
+       -------------------------------------------
+       Provides clear structure for managing code changes
+       Separates ongoing development from stable releases
+
+       Disadvantages of Gitflow branching 
+       -------------------------------------------
+       Potential for larger number of branches
+       Possibility of merge conflicts
+
+    3. Trunk Based Development Branching: -   
+       Trunk-Based Development (TBD) is a branching strategy in Git where the main branch serves as the central 
+       line of development. Here's how it works:
+       1. Main Branch (Trunk) - The main branch represents the production-ready codebase.
+          All development work occurs directly on the main branch, without creating long-lived feature branches. 
+       2. Small and Incremental Changes and Code Reviews - Developers focus on making small, incremental changes
+          to the codebase, committing frequently to the main branch. Automated tests and checks are run on the 
+          main branch to ensure that all changes integrate smoothly and do not break existing functionality. 
+          Code reviews are conducted directly on the main branch.
+       3. Deployment - Changes are deployed to production regularly, often multiple times per day, as soon as they are ready 
+          and tested on the main branch.  
+       4. Rollbacks and Hotfixes - In case of any issues introduced by a change on the main branch, rollbacks 
+          can be quickly implemented by reverting the problematic commit.
+
+       Advantages of Trunk Based Development Branching 
+       -------------------------------------------------
+       1. Reduces overhead of multiple feature branches.
+       2. Promotes early issue detection and quick resolution.
+       3. Simplifies codebase management by keeping all developers on the same branch.
+
+       Disadvantages of Trunk Based Development Branching
+       ---------------------------------------------------
+       1. Single point of failure makes main becomes unstable.
+       2. May not be suitable for larger teams or complex projects.
+
+    4. GitHub Flow Branching  - 
+       GitHub Flow is a branching strategy that focuses more on continuous deployment where When a new feature 
+       or fix is initiated, a new feature branch is created off main. Once the feature is tested and reviewed,
+       it’s merged back into main via a pull request, ready for deployment.
+
+       1. Main Branch - The main branch represents the production-ready codebase. 
+       2. Feature Branches - When starting work on a new feature, bug fix, or task, developers create a dedicated
+          branch from the main branch.  
+       3. Code review - Once feature is done PR is created against main branch and sent to fellow developers for
+          code review.
+       4. Deployment: Once the pull request is approved and passes all tests, the changes are merged into the main branch.
+          Deployments to production can be triggered automatically or manually.
+
+       Advantages of GitHub flow branching 
+       -------------------------------------------
+       Rapid Releases - By focusing on the main branch and continuous delivery, features and fixes can go live faster.    
+       Simplicity- With fewer branches to manage, GitHub Flow is straightforward, making it suitable for smaller 
+       teams and projects.
+       
+       Disadvantages of GitHub flow branching 
+       -------------------------------------------  
+       Over-reliance on main-  The heavy reliance on the main branch might be a point of vulnerability if not 
+       managed meticulously.  
+       Requires Rigorous Testing-  With the emphasis on continuous deployment, automated tests become paramount.
+       Any lapse in testing could lead to the deployment of unstable code.
+
+    5. Release branching -
+       The Release Branching strategy in Git involves creating separate branches for managing release cycles. 
+       Here's how it works: 
+       1. Main Development Branch - Development of new features, bug fixes, and other changes typically occurs 
+          in a main development branch. This branch represents the latest state of the codebase.
+       2. Release Branch Creation - When it's time to prepare for a new release, a release branch is created 
+          from the main development branch. This release branch typically follows a naming convention such as 
+          release-x.x, where x.x represents the version number of the upcoming release.
+       3. Stabilization and Testing - Developers work on stabilizing the release branch by fixing bugs, 
+          addressing issues, and ensuring that the code is ready for release. 
+       4. Release Tagging - Once the release branch is deemed stable and ready for deployment, a release tag is
+          applied to mark the specific commit that represents the release. 
+       5. Merge and Deployment - After tagging the release, changes from the release branch are merged back into
+          the main development branch to incorporate any bug fixes or improvements made during the release cycle.
+
+       Advantages of release branching
+       --------------------------------------
+        1. Isolation of release work
+        2. Parallel developement
+
+       Disadvantages of release branching
+       ---------------------------------------
+        1. Merge conflict
+        2. Need to maintain multiple branches 
 
 
 

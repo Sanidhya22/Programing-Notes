@@ -23,30 +23,6 @@
       3. Function
       4. Date
 
-    What is Call Function in JavaScript?
-->  The call() method is a predefined JavaScript method Using which an object can use a method belonging 
-    to another object. The call() method takes arguments separately.
-
-    What is Apply Function in JavaScript?
-->  Apply function is similar like Call function but only difference it has is it take arguments as an 
-    array whereas Call function take arguments seprately.
-
-    What is Bind Function in JavaScript?
-->  Bind method is a builtin function in Javascript using which we can borrow a method from an object
-    on different Objects.
-
-    What do you mean by Synchronous?
-->  Synchronous means to be in a sequence, i.e. every statement of the code gets executed one
-    by one. So, basically a statement has to wait for the earlier statement to get executed
-    then only it will move to the next line.
-  
-    What do you mean by ASynchronus?  
-->  Asynchronous means Executions running in parrallel .eg Statements running parallely.
-
-    What do you mean by Async Await?
-->  Async Await is a concept in Javascript which is introduced to simplify the promise syntax to consume
-    promise-based APIs. Async functions always return a promise and await makes a function wait for a Promise.
-
     What do you mean by Objects ?
 ->  A JavaScript object is an entity having state and behavior (properties and method).
     Datas in the object are stored in the key value pairs.
@@ -66,7 +42,7 @@
      e1.name = "Sujit";
      e1.age =  23;
 
-    Case 2. Using Functional Constructor --
+    Case 2. Using Functional Constructor / Class Constructor --
       function Emp(name, age)
      {
          this.name = name;
@@ -97,71 +73,16 @@
 
    Case 3. Using the Array.from() 
            const arr3 = Array.from([1, 2, 3, 4, 5]);
-           console.log(arr3);`
-
-   What are the Different Methods of Array ?
--> These are Differnt Array Methods --
-
-   1. pop() --    this method pops last element from the array and returns poped element from 
-                  the array.
-
-   2. shift() --  this method pops first element from the array and shifts all the elments to 
-                  lower index and returns poped element from the array.
-
-   3. push() --   this method appends element at the end of the array.It returns the length of 
-                  the new Array.
-
-   4. unshift() -- this method appends element at the begining of the array.It returns the new 
-                   Array Length.
-                   e.g - 
-                   const fruits = ["Banana","Mango","Orange"];
-                   fruits.unshift("Guava","Apple")
-                   [ 'Guava', 'Apple', 'Banana', 'Mango', 'Orange' ]
-                   we can unshift more than one element at a time.
-
-   5. delete arr[index] -- this method clear particular index element but memory exits there
-                           fruits = ["Apple","Banana","Mango];
-                           del fruits[1]
-                           OUTPUT - ["Apple",Empty item,"Mango];
-
-   6. splice() -- this method does both insertion and removal operation.
-                  It Returns the updated Array.
-
-                  At position 2, add 2 elements:
-                  const fruits = ["Banana", "Orange", "Apple", "Mango"];
-                  fruits.splice(2, 0, "Lemon", "Kiwi"); 
-                  [ 'Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango' ]
-  
-                  At position 2, remove 2 items:
-                  const fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
-                  fruits.splice(2, 2); 
-                  [ 'Banana', 'Orange', 'Kiwi' ]
-
-   7. slice() -- this method slice out elements from the given array but does not affect
-                 Original array.
-                 e.g - arr4 = ["Mango","Apple","Potato","Tomato","Chilli"];
-                 const arr5  = arr4.slice(3);
-                 console.log(arr5)
-                 OUTPUT - ["Tomato","Chilli"]
-
-  8. concat() -- this method concates two arrays but this method does not affect original
-                 arrays ,it will return concatenated array as a output
-                 e.g arr1.concat(arr2)
-
-                 It can be done in other way also  
-                 arr3 = [...arr1,...arr2]; the result will be concatenated array
-
-  9. sort() --    this method will sort the array in the ascending order.
-
-  10.reverse() -- this method sorts the array in the descending order.
+           console.log(arr3);
    
    What do you mean by Babel?
--> Babel is a javascript Compiler
-   Babel is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of
+-> Babel is a javascript Compiler. Babel is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of
    JavaScript in browsers environments.
 
    What do you mean by Webpack?
--> Webpack is a static module bundler for modern JavaScript applications.
+-> Webpack is a module bundler for modern JavaScript applications.
+   It is used to bundle assets, such as JavaScript files, CSS stylesheets, images, and fonts, into a 
+   single output file or multiple files that can be efficiently served to browsers.
 
    What do you mean by Use Strict ?
 -> "use strict" Defines that JavaScript code should be executed in "strict mode".
@@ -185,17 +106,7 @@
 
    What do you mean by Shadowing in JavaScipt ?
 -> Shadowing in javascript happens when a variable declared in a certain scope (e.g. 
-   a local variable) has the same name as a variable in the outer scope (e.g. a global variable).  
-
-    What are the different Timer functions in Javascript ?
-->  Different Timer functions in JavaScipt are - 
-    1. SetTimeout 
-    2. ClearTimeout 
-    3. SetImmediate 
-    4. SetInterval
-    5. ClearInterval
-    6. RequestAnimationFrame     
-
+   a local variable) has the same name as a variable in the outer scope (e.g. a global variable).    
 
     What do you mean by Function Statement ?
 ->  Function defined with parameters or without parameters is known as Function Statement.
@@ -228,8 +139,8 @@
         console.log("Sujit Kumar Verma");
     } 
 
-    var res = function (){
-        console.log("Rresult");
+    const res = function (){
+        console.log("Result");
     }
 
     If we call function show before Defining it will execute successfully and will give the result.
@@ -253,9 +164,9 @@
 ->  Those functions which has the ability to be used as values , they can be passed as parameter to a function
     or can be returned from another function, these functions are called as First Class Functions.
 
-    What do you mnean by Arrow functions ?
+    What do you mean by Arrow functions ?
 ->  Arrow function is one of the features introduced in the ES6 version of JavaScript. It allows us to 
-    create functions in a cleaner way compared to regular functions. It cannot exist standalone.
+    create functions in a cleaner way compared to regular functions. It cannot exist standalone. 
 
     What is the Difference between Syntax Error, Reference Error and Type Error ?
 ->  Syntax Error -
@@ -336,7 +247,6 @@
       });
     });
 
-
     What is the difference between const and Object Freeze ?
 ->  Const property means that we cannot do the reassignment of the variable or object but can modify the 
     properties of the object.
@@ -360,6 +270,32 @@
     effect rendering of the page in case of specifing it in head tag whereas in case of end of the 
     body tag the scripts will loaded at the end so it will not effect the rendering of the page.
     
+    What is the Difference between Functional programming and Object Oriented programming ?
+->                         FP                         |                          OOP
+   ------------------------------------------------------------------------------------------------------------
+   1. FP is based on the concepts of functions.           1. OOP is based on the concept of objects.
+   2. It follows declarative programming model.           2. It follows imperative programming model.
+   3. It supports parallel programming.                   3. It does not supports parallel programming.
+   4. In FP statements can execute in any order.          4. In OOP statements should be executed in particular order.
+   5. FP uses immutable data.                             5. OOP uses mutable data. 
+
+   Note --
+   Parallel programming in JavaScript involves executing multiple tasks simultaneously to improve performance
+   and take advantage of multi-core processors. JavaScript uses techniques such as Web Workers, SharedArrayBuffer,
+   and SIMD to support parallel programming.
+
+   Declarative programming is a programming paradigm that focuses on describing what should be accomplished, 
+   rather than how to accomplish it.
+
+   Imperative programming is a programming paradigm that focuses on describing the step-by-step instructions 
+   for achieving a particular outcome.
+
+   What is the difference between prototype and proto ?
+-> [[Prototype]] is a hidden private property that all objects have in Javascript, it holds a reference to the 
+   object’s prototype.
+
+   __proto__  is a property of Object.prototype that exposes the hidden [[Prototype]] property of an object 
+   and allows us to access or modify it.
     
 
 

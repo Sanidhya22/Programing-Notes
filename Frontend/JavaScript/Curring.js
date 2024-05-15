@@ -6,10 +6,11 @@
 
 //   Advantages of Curring in Javasript
 //    ----------------------------------
-//    1. It facilitates the use of higher-order functions.
-//    2. It is easier to read the code and understand what it’s doing using Curring.
-//    3. It can simplify unit testing Since curried functions accept their arguments one at a time, 
-//       it's easier to provide inputs and test the behavior of the function for various scenarios.
+//    1. Currying allows you to create specialized versions of functions by partially applying arguments.
+//       This means you can fix some arguments upfront and create a new function that takes the remaining arguments.
+//    2. Currying can improve the readability of your code by breaking down complex functions into smaller,
+//       focused units.
+//    3. Curring function provides reusuability.
 
 
 

@@ -1,0 +1,99 @@
+                                          Software Qaulity 
+                              ----------------------------------------            
+   
+   What do you mean by Test Driven Development ?
+-> Test-Driven Development (TDD) is a software development approach where tests are written before the actual 
+   code. Here's a simplified explanation:
+1. Write Tests - Developers begin by writing automated tests that define the desired behavior of the code. 
+2. Run Tests (and Fail) - Once the tests are written, they are run against the empty or incomplete codebase. 
+3. Write Code - Developers then write the code necessary to make the tests pass. 
+4. Run Tests (and Pass): After writing the code, the tests are run again.
+5. Refactor Code (if needed): Once the tests pass, developers can refactor the code to improve its structure.
+
+   What do you mean by Testing Pyramid ?
+-> The Testing Pyramid is a conceptual Pyramid like structure consisting of different layer of testing. It tells 
+   to have a larger number of low-level tests at the base of the pyramid and fewer high-level tests at the top.
+   
+   At the bottom, we have a lot of small tests called unit tests. These tests check individual parts of your 
+   code, like functions or classes, to make sure they work as expected.
+
+   In the middle of the pyramid, we have integration tests. These tests check how different parts of your 
+   code work together, like testing if two functions interact correctly.
+
+   At the top of the pyramid, we have fewer tests called end-to-end tests. These tests simulate how a user would
+   interact with your entire application, checking if everything works together smoothly.
+
+   During a code review, you notice that a junior developer has implemented a feature in a way that violates 
+   best practices and may introduce bugs in the future. How would you provide constructive feedback ? OR
+   How do you deliver feedback to the colleague from a code review ? OR
+   A junior developer joins the team, in their first PR you notice there are numerous issues.  How would you 
+   communicate this to the junior developer ?
+-> I would start by acknowledging the junior developer's effort and highlighting any positive aspects of their 
+   work. Then, I would gently point out the specific areas where improvements can be made, highlight relevant 
+   best practices or coding standards. Instead of simply pointing out flaws, I would offer suggestions for how 
+   the code could be refactored or improved to align with best practices and maintainability. It's crucial to 
+   provide feedback in a constructive and supportive manner to foster the junior developer's growth and 
+   confidence. 
+
+   A developer in your team has made a PR, and another developer does not agree with the solution, what do 
+   you do ?
+->  When a developer in the team disagrees with the solution proposed in a Pull Request (PR), it's essential to 
+    address the situation promptly and effectively. Here's what you can do:   
+
+    1. Review the PR Together - Bring both developers together to review the PR collaboratively. Encourage them 
+       to discuss their concerns openly and provide constructive feedback. 
+    2. Understand Concerns - Listen carefully to both sides to understand their perspectives and concerns 
+       regarding the proposed solution. Ensure that all viewpoints are heard and respected.       
+    3. Involve Senior Team Members - If the disagreement persists or if the proposed solution involves critical 
+       decisions, involve senior team members or technical leads to provide guidance and expertise. 
+    4. Common Ground - Facilitate a discussion to find common ground and reach a consensus on the best approach. 
+       Encourage compromise and exploration of alternative solutions if necessary. 
+    6. Document Discussions - Document the discussions, decisions, and any agreed-upon changes regarding the PR. 
+       This helps maintain transparency and ensures that everyone is on the same page. 
+
+   The customer tells you to skip testing to save money, how you convince them that testing is essential ?
+-> I will try to convince him by highlighting benefits of testing like below - 
+   1. Quality Assurance 
+   2. Reduced Maintainance Cost 
+   3. Risk Mitigation
+   4. Long Term Saving 
+   5. Customer Satisfaction
+
+   How do you review pull requests ? OR
+   What are the things you consider while reviewing PR ? 
+    What are code reviewing standards ? 
+-> I follow below steps to Review PR - 
+
+1. Understand the Context - Begin by understanding the purpose of the PR and the problem it aims to solve.
+2. Read the Code Changes - Carefully examine the code changes introduced in the PR. Pay attention to the logic
+   , naming conventions, coding style, and overall design.  
+3. Evaluate Working - Verify working of feature / bug fix as mentioned.   
+4. Check for Bugs - Look for potential bugs, logical errors, and edge cases that may not have been considered.   
+5. Check for Coding Standards - Ensure that the code follows the established coding standards and best 
+   practices of the project or organization. 
+6. Test Coverage - Verify that the code changes are adequately covered by tests. 
+7. Performance Considerations - compare the performance of the application after changes. 
+
+  Describe Static/Dynamic Code Analysis ?       
+-> Static Code Analysis -
+   Static code analysis tools examine code without executing it. These tools can identify
+   potential issues such as syntax errors, code style violations, security vulnerabilities, and performance 
+   bottlenecks.  
+
+   Dynamic Code Analysis -
+   Dynamic code analysis involves analyzing code while it's running. This includes 
+   techniques like profiling to identify performance bottlenecks, memory leak detection to find memory usage
+   issues, and security scanning to detect vulnerabilities during runtime.  
+
+   What are Code Qaulity Standards in react ?
+-> It aims to insure that our code should be maintainable, readable, scalable, and efficient.
+   Here are some specific code quality standards for React development:
+   1. Consistent Code Formatting 
+   2. Follow Best Practices 
+   3. State Management 
+   4. Error Handling  
+   5. Performance Optimization 
+   6. Code Reviews      
+   7. Documentation 
+   8. Testing 
+

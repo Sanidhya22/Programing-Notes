@@ -35,7 +35,7 @@ console.log(m);
 //                Map                        |                 WeakMap
 // --------------------------------------------------------------------------------------------
 
-//  1.A Map an accept primitive datatype         1.A weakMap can accept objects as keys.
+//  1.A Map an accept any datatype               1.A weakMap can accept objects as keys.
 //    as keys.
 
 //  2.Use .size to find the number of            2.Use .length to find the number of elements.

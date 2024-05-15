@@ -1,0 +1,147 @@
+                                     Solid Principles
+                                    -----------------
+
+   What do you mean by Solid Principles ?
+-> Solid Principles are the principles in object-oriented programming intended to make software designs more 
+   understandable, flexible, and maintainable. 
+
+   There are Main 5 Solid Principles
+
+   1. Single Responsibility Principle 
+   2. Open and Closed Principle
+   3. Liskov Substitution Principle
+   4. Interface Segregation Principle
+   5. Dependency Inversion Principle
+
+
+   1. Single Responsibility Principle - 
+      Java
+      ---------------------
+      Each class should have one responsibility, one single purpose.
+      JavaScript
+      ----------------------
+      A class or module should have only one reason to change. In JavaScript, this principle is typically applied
+      to functions, classes, or modules.
+
+   2. Open and Closed Principle - 
+      Java
+      ----------------------
+      class should be open for extension but closed for modification.
+      JavaScript
+      ----------------------
+      Classes or Modules should be open for extension but closed for modification. This means that you should be 
+      able to extend the behavior of a class without modifying its source code.
+
+   3. Liskov Substitution Principle - 
+      Java / JavaScript
+      ----------------------
+      Any subclass object should be replaceable for the superclass object from which it is derived without 
+      affecting the correctness of the program. In simpler terms, it means that a subclass should behave in such 
+      a way that it does not break the functionality that the superclass promises.
+      
+   4. Interface Segregation Principle - 
+      Java / JavaScript
+      -----------------------
+      We should break larger interfaces into smaller ones.  
+      It suggests that interfaces should be specific to the needs of the clients to prevent them from being burdened with
+      unnecessary methods.
+
+   5. Dependency Interversion Principle - 
+      Java / JavaScript
+      -----------------------
+      High level modules should not depend on low level modules, both should depend on Abstractions.   
+
+      High-level modules (such as business logic or application components) should not directly depend on 
+      low-level modules (such as specific implementations of data access or external services).
+
+      Both high-level and low-level modules should depend on abstractions (interfaces or abstract classes) 
+      instead of concrete implementations.
+
+   What are the negatives to using SOLID ?
+-> The disadvantages of Solid Principles are as follows - 
+
+   1. Increased Development Time: Implementing SOLID principles often requires more upfront design and planning, 
+      which can increase development time.    
+
+   2. Complexity: Applying SOLID principles can sometimes result in overly complex code structures, especially 
+      if not implemented thoughtfully. 
+
+   3. Resistance to Change: Introducing SOLID principles to an existing codebase or team culture may face 
+      resistance from developers who are aware to different coding practices.
+
+   4. Performance Overhead: Introducing SOLID principles to application may cause a performance overhead.   
+ 
+
+   Explain DRY, KISS and YAGNI ?   
+-> DRY (Don't Repeat Yourself): -
+   ---------------------------------------
+   1. DRY is a principle aimed at reducing repetition of code within a software application. 
+
+   2. When you find yourself repeating the same code or logic in multiple places, it's a sign that you might 
+      need to refactor your code to avoid duplication. Duplication can lead to maintenance issues, such as 
+      inconsistencies and bugs, and makes it harder to update or extend the system. 
+  
+
+   KISS (Keep It Simple, Stupid): -  
+   ----------------------------------------  
+   1. KISS is a design principle that aims at keeping code simple and clear in software application. 
+
+   2. Complex solutions can be harder to understand, debug, and maintain. They also increase the likelihood of 
+      introducing bugs and performance issues. By keeping things simple, developers can reduce the risk of 
+      errors and improve the overall quality of the software.  
+
+   YAGNI (You Aren't Gonna Need It): -
+   -----------------------------------------
+   1. YAGNI is a principle that tells developers not to add unnecessary functionality to a system until it is 
+      actually needed.
+   2. Adding unnecessary features or functionality prematurely can lead to bad code, increased complexity, 
+      and wasted effort. It can also make the system harder to understand and maintain.  
+
+   What are the advantages of Design Principles ?
+-> The advantages of Design Principles are as follows -
+   1. Scalability: By following design principles, you can create scalable solutions that are flexible and 
+      adaptable to changing requirements and environments. 
+   2. Maintainability: Design principles focues on writing clean, modular, and well-organized code, making it 
+      easier to understand, debug, and maintain.   
+   3. Reuse: Design principles encourage the reuse of code and design patterns, allowing developers to leverage 
+      existing solutions and components instead of writing again same solutions.    
+   4. Quality: Design principles contribute to the overall quality of a solution. High-quality design leads to 
+      higher customer satisfaction and better business outcomes.   
+        
+   Which design pattern do Event Emitters follow ?
+-> Event Emitters typically follow the Observer design pattern.    
+   In the Observer pattern, an object (known as the subject or observable) maintains a list of dependents 
+   (known as observers) that need to be notified of changes in its state. When the state of the subject 
+   changes, it notifies all its observers, typically by calling a method on each observer.  
+
+   Similarly, in many programming languages and frameworks, including Angular and Node.js, Event Emitters are 
+   used to implement a publisher-subscriber model, which is a variation of the Observer pattern. The Event 
+   Emitter acts as the subject, and components or objects that listen to events are the observers. When an event
+   occurs, the Event Emitter notifies all registered listeners by emitting the event, and they respond 
+   accordingly.
+
+   Which design pattern do you think is followed in Redux and in Logger instances ?
+-> Logger instances typically implement the Decorator design pattern.
+
+   In the Decorator pattern, you enhance or extend the behavior of an object dynamically by wrapping it with one
+   or more decorators. These decorators add additional responsibilities to the object without modifying its code
+   directly. For example, a logger instance can be seen as a decorator that wraps around other objects or 
+   functions to log information about their behavior or state changes.
+
+   Redux follows the Flux Architecture pattern.
+
+   Flux is a design pattern that emphasizes unidirectional data flow and a centralized data store. It was 
+   popularized by Facebook for building client-side web applications. Redux, inspired by Flux, implements 
+   similar principles.
+
+   If you have a requirement to create instances of different types of database connectors (MySQL, MongoDB, etc.
+   ) dynamically. So which design pattern you would recommend?
+-> For dynamically creating instances of different types of database connectors, the Factory Method design 
+   pattern is well-suited.
+   
+   The Factory Method pattern is a creational pattern that provides an interface for creating objects in a 
+   superclass but allows subclasses to alter the type of objects that will be created. In this scenario, you 
+   can define an abstract class or interface for the database connector, and then have concrete subclasses for
+   each type of database (MySQL, MongoDB, etc.) that implement the creation logic specific to each database 
+   type.
+

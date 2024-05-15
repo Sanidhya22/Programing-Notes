@@ -2,7 +2,7 @@
 // Memoization is a technique for speeding up applications by caching the results of
 // Expensive function calls and returning them when the same inputs are used again.
 
-const calc = (n) => {
+const calculate = (n) => {
   let sum = 0;
   for (i = 0; i <= n; i++) {
     sum = sum + i;
@@ -10,17 +10,17 @@ const calc = (n) => {
   return sum;
 };
 
-var cache = {};
+const cache = {};
 const memoize = (func) => {
   return function (...args) {
-    let n = args[0];
+    const n = args[0];
     if (n in cache) {
       console.log("Cache Used");
       return cache[n];
     } else {
-      console.log("Calculating for the First Time");
-      let result = func(n);
-      cache[n] = result;
+      console.log("calculateulating for the First Time");
+      const sum = func(n);
+      cache[n] = sum;
       console.log(cache);
       return result;
     }
@@ -28,11 +28,11 @@ const memoize = (func) => {
 };
 
 console.time();
-const check = memoize(calc);
-console.log(check(5));
+const check1 = memoize(calculate);
+console.log(check1(5));
 console.timeEnd();
 
 console.time();
-const check1 = memoize(calc);
-console.log(check1(5));
+const check2 = memoize(calculate);
+console.log(check2(5));
 console.timeEnd();

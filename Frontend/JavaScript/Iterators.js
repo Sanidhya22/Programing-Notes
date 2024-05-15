@@ -1,6 +1,7 @@
  
 // What do you mean by Iterators in Javascript ?
-// An iterator is an object which returns a Sequnce of values.    
+// Iterators are objects that provide a way to access the elements of a collection 
+// sequentially, one at a time.  
 
 // An iterator is any object which implements the Iterator protocol by having
 // a next() method that returns an object with two properties:

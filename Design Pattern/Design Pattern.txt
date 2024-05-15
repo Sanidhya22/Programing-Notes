@@ -40,11 +40,10 @@
    while keeping the relationships between them flexible and efficient. These patterns focus on how classes and 
    objects can be combined to form larger structures and promote code reusability and maintainability.
 
-   1. Adapter Design Pattern - The Adapter Design Pattern in JavaScript allows incompatible interfaces to work 
-      together. It acts as a bridge between two interfaces, converting the interface of a class into another 
-      interface that a client expects. This pattern is particularly useful when you want to use an existing 
-      class with a different interface without modifying its source code.
-
+   1. Adapter Design Pattern - the Adapter pattern allows objects with incompatible interfaces to work together.
+      It acts as a bridge between the client and the adaptee, translating requests and responses so that they 
+      can interact without needing to change their code.
+      
    2. Bridge Design Pattern - The Bridge Design Pattern in JavaScript is a structural pattern that decouples 
       abstraction from implementation, allowing them to vary independently. It involves creating separate 
       hierarchies for abstraction and implementation and then connecting them through composition. This pattern 
@@ -56,52 +55,51 @@
       the Composite pattern lets you treat objects and groups of objects in a uniform way, making it easier to 
       work with complex hierarchical structures.
 
-   4. Decorator Design Pattern - The Decorator Design Pattern in JavaScript is a structural design pattern that 
-      allows behavior to be added to individual objects dynamically, without affecting the behavior of other 
-      objects from the same class. It is useful for extending the functionality of objects at runtime.
+   4. Decorator Design Pattern - The Decorator pattern allows you to add new features or behavior to an object 
+      dynamically by wrapping it with one or more decorators.
 
-   5. Facade Design Pattern - The Facade Design Pattern is used to provide a simplified interface to a complex 
-      system of classes, functions, or APIs. It allows clients to interact with a high-level interface without 
-      needing to understand the underlying subsystems.
+   5. Facade Design Pattern - The Facade pattern provides a single, simplified interface to a complex system, 
+      hiding its complexity and making it easier to use. 
 
-   6. Flyweight Design Pattern - The Flyweight Design Pattern is a structural design pattern that aims to 
-      minimize memory usage or computational expenses by sharing as much as possible with similar objects. It's 
-      particularly useful when you need to create a large number of similar objects, which would otherwise 
-      consume a lot of memory if each object stored all its data independently.
+   6. Flyweight Design Pattern - The Flyweight design pattern is like having a shared resource pool that helps
+      conserve memory by reusing objects instead of creating new ones every time.
 
-   7. Proxy Design Pattern  - The Proxy Design Pattern in JavaScript provides a surrogate or placeholder for 
-      another object to control access to it. Using this pattern we controls and manage access to the object we 
-      are protecting.
-      Note - Proxy objects are the objects representing another objects
+   7. Proxy Design Pattern  - The Proxy design pattern is pattern that provides us placeholder for another 
+      object, allowing us to control access to the original object or add additional functionality.
 
 
    Behavioural Design Pattern 
    -------------------------------------
    Behavioral Design Patterns in JavaScript focus on how objects communicate and interact with each other.
 
-   1. Chain of Responsibility - Responsibilty is given to indivisual modules based on that 
-   request crossponding functionality is executed. 
+   1.Chain of Responsibility - The Chain of Responsibility is a design pattern that allows multiple 
+     objects to handle a request without the sender needing to know which object will ultimately process it. 
+     It helps us to achieve loose coupling in software application. 
 
-   2. Interpreter - The Interpreter Design Pattern in JavaScript is a behavioral pattern that defines a way to 
-      interpret or evaluate sentences in a language. It provides a way to evaluate language grammar or 
-      expressions. This pattern involves defining an expression interface which tells to interpret a particular 
-      context. It's often used when you have a language to interpret, like a query language, mathematical 
-      expressions, or regular expressions.
+   2.Interpreter - The Interpreter is a design pattern that helps us in interpreting or evaluating a language 
+     or grammar. 
    
-   3.Commad - Instructions are there in the object based on which Execution takes place.
-   4.Iterator - Iterating over the Objects.
-   5.Mediator-  Connects between two similar Objects.
-   6.Observer - In the Observer Design Pattern Objects called observer observes to obseravables.
-   7.State -    If we have to change behavior of an object based on its state, we can have a 
-             state variable in the Object and use if-else condition block to perform different
-             actions based on the state. 
-   8.Strategy  - It enables selecting algorithm at runntime.
-   9.Template -  Template design pattern that allows you to defines a skeleton of an algorithm
-              in a base class and let subclasses override the steps without changing the 
-              overall algorithm's structure.
-   10.Visitor -  Visitor Design pattern that allows adding new behaviors to existing class 
-              hierarchy without altering any existing code.
-   11.Memento - it provides the ability to restore an object to its previous state 
+   3.Commad -   The Commad pattern is a pattern that deals with command.
+   4.Iterator - The Iterator design pattern is a design pattern that provides a way to access the elements of an
+                collection sequentially.
+   5.Mediator - The Mediator design pattern is a design pattern that simplifies complex communication patterns 
+                by providing a centralized point of control, making it easier to manage interactions between 
+                multiple objects or components.
+   6.Observer - The Observer design pattern is design pattern that is based on observable and observer behaviour.
+                Its like group of subscribers are listening for the updates from observable.
+   7.State -    The State design pattern is a design pattern that allows an object to change its behavior or 
+                internal state based on external events or conditions.
+   8.Strategy  - The Strategy design pattern is a pattern that allows us to have different strategies or 
+                 approaches to solve a problem, and being able to choose the best strategy based on the 
+                 situation.
+
+   9.Template -  The Template design pattern is design pattern that allows us to define a template or blueprint
+                 for accomplishing a task, where some parts of the task are fixed (template) and some can be 
+                 customized by subclasses or implementations.
+   10.Visitor -  The Visitor pattern allows you to define a separate visitor object that can visit and interact 
+                 with different types of elements in a collection or hierarchy.
+   11.Memento -  The Memento pattern is a pattern that allows us to save our progress at any point and restore
+                 it later if needed.
 	
 
 

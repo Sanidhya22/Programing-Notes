@@ -1,0 +1,195 @@
+                                           SDLC
+                                  -----------------------
+
+   What is Agile methodology ?
+-> Agile methodology is a set of practices for software development.
+   In agile methodology we receive regular feedback from customers and deliver regular updates and requirement is
+   not fixed and it can change any time.
+
+   What is Sprint ?
+-> Sprint is a time interval cycle for software development.
+   usually 2 Weeks = 1 Sprint                                  
+
+   What is sprint planning meeting ?
+-> Planning for upcoming sprint where we plan for upcoming sprint like what tickets we will take or if tickets
+   taken assign pointers to it.
+
+   What is PI Planning (Program Increment Planning) ?
+-> Planning for work for upcoming quater and setting quater goal.
+
+   What is Daily standup meeting ?
+-> Daily standup meeting is a meeting where we dicuss about what work we have done yesterday and what work you 
+   are gonna do today and also raise our concers if any.
+
+   What is Sprint Retrospective meeting ?
+-> It is a meeting that we set after the end of the sprint to dicuss what have done well and what we can improve
+   Here we also setup actions items to work on it afterwards.
+
+   What is Story points ?
+-> Story points are the points which defines what amount of work is needed to perform a task.
+
+   What is Epic ?
+-> It is a group of stories for a functionality that we can not cover in a single sprint.
+
+   What is a scrum master ?
+-> The person who leads the sprint planning or sprint related meeting is called scrum master.
+
+   What is zero sprint ?
+-> Before first sprint whatever time we have for planning that we call zero sprint.
+
+   What is spike ?
+-> Spike is term used for a defining work where we do R&D , where requirement and conclusion is not clear.
+
+   What is velocity ?
+-> velocity tells us in a particular sprint how much work is delivered. 
+
+   Difference between burn-up and burn-down chart ?
+-> Burn-up chart: A burn-up chart shows how much work completed against the total work.  
+   Burn-down chart: A burn-down chart shows how much work is left to be completed against the total work.
+
+   Difference between Waterfall model and Agile model in software development ?
+-> Waterfall Model: -
+1. It involves phase wise development.
+2. It involves collecting all project requirements at the begining.
+3. It provides limited flexibility, when one phase is completed it is challenging to go back to previous phase.
+4. It involves late customer feedback.   
+
+   Agile Model -
+   ----------------------------
+1. It breaks down the development process into small, iterative cycles.
+2. It provides customer satifaction. 
+3. Faster delivery of new updates.
+4. Requirement is not clear it can change anytime.
+5. It does not involve collecting all project requirements at the begining.
+
+   What do you mean by Scrum ?
+-> Scrum is a framework for managing and completing projects.  
+
+   Defines the roles in the Scrum ? 
+-> There are 3 different primary roles in Scrum -
+   Scrum Master  -- The Scrum Master is a person who facilitate Scrum events (such as Daily Stand-ups, Sprint 
+   Planning, Sprint Review, and Sprint Retrospective).
+   Product Owner -- The Product Owner represents the stakeholders and define the product vision, prioritize the
+   product backlog.
+   Team -- Developers and QA members
+ 
+   Difference between Product backlog and Sprint backlog ? 
+-> Product Backlog: - 
+1. Product backlog as a to-do list for the entire project. It's a prioritized list of all the features, 
+   enhancements, bug fixes, and other tasks that need to be done to complete the project.
+2. It is managed by product owner.
+
+   Sprint Backlog: -
+1. The sprint backlog is like a subset of the product backlog but for a sprint in Agile development.
+2. It is managed by scrum master.
+   
+   Explain Iterative and Incremental development in agile ?   
+-> Iterative Development -- 
+   Iterative development is about development happens in repetitive cycles and in each cycle we do some work, get 
+   feedback, and then improve the project.
+   
+   Incremental Development --
+   Incremental development is about adding new features or improvements to the project in small increments.
+
+   What is kanban ?
+-> Kanban is a visual workflow management method used to manage and optimize the flow of work in a project or 
+   process.  
+
+   What are the pros and cons of Agile methodlogy ?
+-> Pros of Agile methodlogy -
+   1. It breaks down the development process into small, iterative cycles.
+   2. It provides customer satifaction. 
+   3. Faster delivery of new updates.
+   4. Requirement is not clear it can change anytime.
+   5. It does not involve collecting all project requirements at the begining.
+
+   Cons of Agile methodlogy -
+   1. It has adaptability challenges.
+   2. It is resource intensive.
+   3. It involves dependency management. 
+
+   What are the different types of Agile Methodologies ?
+-> There are several Agile methodologies, each with its own approach to software development. Here are some of 
+   the most commonly used ones:   
+1. Scrum - Scrum is a framework for managing and completing projects. It consists of iterative development cycles
+   called Sprints. Scrum includes specific roles (Scrum Master, Product Owner, Development Team), events (Sprint
+   Planning, Daily Stand-ups, Sprint Review, Sprint Retrospective), and artifacts (Product Backlog, Sprint Backlog).
+
+2. Kanban - Kanban is a visual workflow management method used to manage and optimize the flow of work in a project or 
+   process. It uses a Kanban board to visualize the flow of work items through various stages of a process. 
+   Work items are represented as cards or sticky notes, and columns represent different stages of the workflow.
+
+3. Extreme Programming (XP) - Extreme Programming (XP) is a method of software development that focuses on high-quality code.
+   It's like a set of practices designed to make sure the software being developed is the best it can be.
+
+4. Lean Software Development - Lean software development is like applying the principles of efficiency 
+   in the process of software development to minimizing waste. 
+
+5. Dynamic Systems Development Method - It is method of software development that focus on Rapid Application 
+   Development (RAD), which involves rapid prioritizing and iteration development based on user feedback.
+
+   What do you mean by Planning Poker ? 
+-> Planning poker is a estimation technique used in Agile and Scrum methodologies to estimate the size of user
+   stories or tasks. 
+
+   Benefits of Planning Poker - 
+   1. Shared Understanding
+   2. Improved Estimation Accuracy
+   3. Risk Identification 
+   4. Speed and Efficiency     
+
+   When we are estimating tickets, what are a different estimation techniques we can use ?
+-> The following are the estimation techniques we use for estimating ticket points - 
+   1. Planner Pocker - 
+      Planning poker is a collaborative estimation technique where team members vote pointers for ticket and 
+      at last average of pointers is considered for final assignment of point to ticket.
+
+   2. Bucket System - 
+      Estimating tickets based on their complexity in small, medium and large sizes work instead of extact 
+      pointer estimation.
+
+   3. Affinity Maping system -
+      Estimation technique used during the early stages of a project or when gathering requirements.
+      In this estimation technique we group similar kind of tasks together.
+
+   4. T Shirt size estimation - 
+      Estimating tickets based on their complexity in small, medium and large sizes work instead of extact 
+      pointer estimation.
+
+   5. Dot voting
+      Estimating tickets based on vote by team members. most favoured vote is considered as final pointer.
+
+   What is the difference between functional and non-functional requirements ?
+->                      Functional                       |                    Non Functional   
+   -------------------------------------------------------------------------------------------------------------
+    1. Functional requirements describe the specific       1. Non-functional requirements describe the qualities 
+       behaviors software application that it must            or attributes that a software application should possess,
+       perform to meet the needs of its users                 such as performance, reliability, security,
+       or stakeholders.                                       and scalability.
+
+    2. Functional requirements describe what the           2. Non-functional requirements describe how well the 
+       software does.                                         software does it.
+
+    3. Functional requirements are more easy to            3. Non-functional requirements are more challenging 
+       measurable and verifiable.                             to measure precisely.
+
+    4. Functional Testing methods involves methods         4. Non functional Testing involves methods like 
+       like unit testing, integration testing ,               performance testing, security testing, compatibility
+       system testing and acceptance testing.                 scalability testing.   
+
+
+   What do you mean by task and user story ?
+-> A user story is a simple, non-technical description of a feature or functionality from the perspective of an
+   end user.    
+   A task is a specific piece of work that needs to be done to complete a user story or achieve a goal.  
+
+
+  
+   
+   
+
+
+
+
+
+        

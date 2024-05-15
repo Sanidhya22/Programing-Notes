@@ -1,0 +1,38 @@
+                                            Negotiations 
+                               -------------------------------------         
+
+
+    The client does not agree with a solution put forward by the team, what do you do ?
+->  I will follow below steps - 
+
+    1. Listen to the client's concerns and understand their reasons for disagreeing.
+    2. Clearly explain the team's solution and why it was chosen, focusing on how it meets the client's needs 
+       and objectives.
+    3. Address the client's concerns one by one and offer alternatives or adjustments if possible.  
+    4. If the disagreement persists, involve a senior member or project manager to help facilitate the 
+       discussion and find a compromise.
+    5. Conclude the solution that both the team and the client can agree on.
+    6. Keep communication channels open and ensure that everyone understands the decisions made and on the same page.   
+                                                                  
+    You want to introduce testing into your project.  However the client just wishes to see features delivered 
+    instead.  How do you convince the client that testing is a good idea ?   OR 
+    You want to include integration testing on the project, however, the client does not see any value in this 
+    and just wants to see features delivered.  How would you convince the client that including testing is a 
+    good idea?
+->  I will try to convince him by highlighting benefits of testing like below - 
+    1. Quality Assurance 
+    2. Reduced Maintainance Cost 
+    3. Risk Mitigation
+    4. Long Term Saving 
+    5. Customer Satisfaction    
+
+    Consider you are using Scrum methodology and the customer wants to add a new ticket in the sprint. What would 
+    you do ?
+->  Adding ticket into the current sprint depends on multiple factors like severity of the ticket, current sprint
+    bandwith, current sprint ticket priorty etc. For this case if client wants to add ticket to current sprint
+    ,I will check about the serverity of the ticket which we have to add, if it is critical and on high priorty 
+    to implement then I will current sprint bandwith, current sprints tickets priorty, if we have bandwidth then 
+    will add the ticket into current sprint and implement the ticket, if we don't have bandwidth then will 
+    ask client can we move this ticket to next sprint, if client says yes then it's fine, if not then 
+    will ask client about the current ticket which we should keep on pause and inplace start working on that 
+    high priorty ticket which we want to add.                                                     

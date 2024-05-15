@@ -1,4 +1,4 @@
-//  What Do you mean by DataTypes ? 
+//    What Do you mean by DataTypes ? 
 // -> Datatypes specify what type of values a Variable will store.
 
 //    What are the Different types of datatypes in Javascript ?

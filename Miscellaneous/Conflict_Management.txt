@@ -1,0 +1,45 @@
+                                      Conflict Management 
+                              --------------------------------------       
+
+
+   A developer in your team has made aa PR, and another developer does not agree with the solution, what do you 
+   do ? OR 
+   One of the engineers opened a pull request,  another engineer doesn't agree on a solution, how would you manage 
+   this conflict ?
+-> When a developer in the team disagrees with the solution proposed in a Pull Request (PR), it's essential to 
+   address the situation promptly and effectively. Here's what you can do:   
+
+   1. Review the PR Together - Bring both developers together to review the PR collaboratively. Encourage them 
+      to discuss their concerns openly and provide constructive feedback. 
+   2. Understand Concerns - Listen carefully to both sides to understand their perspectives and concerns 
+      regarding the proposed solution. Ensure that all viewpoints are heard and respected.       
+   3. Involve Senior Team Members - If the disagreement persists or if the proposed solution involves critical 
+      decisions, involve senior team members or technical leads to provide guidance and expertise. 
+   4. Common Ground - Facilitate a discussion to find common ground and reach a consensus on the best approach. 
+      Encourage compromise and exploration of alternative solutions if necessary. 
+   6. Document Discussions - Document the discussions, decisions, and any agreed-upon changes regarding the PR. 
+      This helps maintain transparency and ensures that everyone is on the same page. 
+
+   You witness a conflict between 2 members of your team about how a certain technical issue should be resolved.  
+   How do you handle this issue? OR 
+   You notice 2 members of your team have caused a dispute over a particular implementation.  How would you handle
+   this situation ?
+-> When two team members have conflict about certain technical implementation , I follow below steps to 
+   resolve the conflict -
+
+   1. Review both Proposed solution - Bring both developers together to review the solution collaboratively. Encourage
+      them.
+   2. Understand Concerns - Listen carefully to both sides to understand their perspectives and concerns 
+      regarding the proposed solution. Ensure that all viewpoints are heard and respected.       
+   3. Involve Senior Team Members - If the disagreement persists or if the proposed solution involves critical 
+      decisions, involve senior team members or technical leads to provide guidance and expertise. 
+   4. Common Ground - Facilitate a discussion to find common ground and reach a consensus on the best approach. 
+      Encourage compromise and exploration of alternative solutions if necessary. 
+   6. Document Discussions - Document the discussions, decisions, and any agreed-upon changes regarding the PR. 
+      This helps maintain transparency and ensures that everyone is on the same page. 
+
+
+   Can you give me some examples of what you consider to be "Healthy Conflict" ?
+-> PR conflicts
+   Feature implementation conflicts
+   Tech stack chossing conflict for project                            

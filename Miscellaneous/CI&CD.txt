@@ -1,0 +1,148 @@
+                                            CI / CD 
+                                ----------------------------------------      
+
+   What do you mean by CI and CD ?                  
+-> CI/CD stands for Continuous Integration (CI) and Continuous Deployment (CD). These practices are commonly 
+   used in software development to automate and streamline the process of delivering code changes into production.
+
+   What is the difference between CI and CD ?
+-> Continuous Integration (CI) involves automatically integrating code changes from multiple developers into a 
+   shared repository several times a day. Each integration triggers automated tests to ensure that the new code
+   doesn't break existing functionality.  
+
+   Continuous Deployment (CD) automates the deployment of code changes to production or other environments after
+   passing through the CI process. It ensures that new features, bug fixes, and updates are released quickly and 
+   frequently, often with minimal manual intervention.    
+
+   How is CI and CD is useful to us ?
+-> 1. Detect and fix integration errors early.
+   2. Maintain a consistent and reliable codebase.
+   3. Automate the testing and deployment processes, reducing manual effort and human error.
+   4. Accelerate the delivery of new features and updates to users.    
+
+   What do you think are ideal CI-CD stages to ensure a quality application ?
+-> Implementing a robust CI/CD (Continuous Integration/Continuous Deployment) pipeline involves several stages
+   to ensure the quality and reliability of the application. Here are the ideal stages in a CI/CD pipeline: 
+   
+   1. Build 
+   2. Unit test 
+   3. Lint 
+   4. SonarQube 
+      ( SonarQube is an open-source platform used for continuous inspection of code quality and security 
+      vulnerabilities in software projects. )
+   5. Semgrep 
+      ( Semgrep is a powerful static analysis tool for finding code patterns )
+   6. Blackduck
+      ( Black Duck allows you to scan applications and detect any open source security vulnerabilities, compliance
+      issues, or code-quality risks )
+   7. Deployment 
+   8. Bump package json version   
+
+   How we can configure a CI CD pipeline ?
+-> Configuring a Continuous Integration/Continuous Deployment (CI/CD) pipeline involves combining the steps of
+   Continuous Integration (CI) with automated deployment processes. Here’s a guide on how to configure a CI/CD
+   pipeline 
+   1. select a CI/CD Platform: Choose a platform that supports both CI and CD, such as GitLab CI/CD, Jenkins, 
+   CircleCI, Travis CI, or GitHub Actions. Ensure it integrates well with your version control system and meets
+   your project’s requirements.  
+   2. Set Up Version Control: Host your project in a version control system like Git (GitHub, GitLab, Bitbucket).
+     This allows the CI/CD pipeline to monitor changes and trigger automated processes.
+   3. Create a CI/CD Configuration File: Define the pipeline’s stages, jobs, and steps in a configuration file
+     (e.g., YAML). This file typically resides in the root directory of your project.  
+
+     CI Stages:
+      Build: Compile code, run tests, and perform static code analysis.
+      Test: Execute automated tests (unit tests, integration tests, etc.).
+      Code Quality: Perform code quality checks (linting, code formatting, static code analysis).
+     CD Stages:
+      Deploy to Staging: Deploy the application to a staging environment for testing.
+      Deploy to Production: Automatically deploy to production if all tests and checks pass.
+
+    4.Define Jobs and Steps: Within each stage, define the jobs and the specific steps to be executed. These 
+      steps typically include:
+        Building: Compile code, package artifacts.
+        Testing: Run automated tests.
+        Code Quality: Run code quality analysis tools.
+        Deployment: Deploy the application to the target environment.
+
+    5. Configure Deployment Targets: Define the environments where you want to deploy your application (e.g., 
+       staging, production). Configure deployment settings for each environment, including authentication
+       credentials and deployment scripts.
+
+    6. Automate Deployment: Set up automated deployment scripts or integrations with deployment tools (e.g., 
+       Kubernetes, AWS, Heroku) to deploy your application to the target environments.    
+
+     What are the ideal CI-CD stages to ensure a quality application ?
+->   The following are the ideal CI CD stages for successfully delivery of quality application     
+
+     1. Build  -  
+        Code Build is the stage in the CI/CD pipeline. Once the code changes are merged, this stage 
+        compiles the source code, bundles dependencies, and builds the application artifact.
+        Build tools like Maven, Gradle, or Docker are commonly used in this stage to automate the build process.
+
+     2. Autmated Testing -
+        After the code is successfully built, the pipeline proceeds to the automated testing stage. This stage 
+        involves running a comprehensive suite of automated tests to ensure the integrity and quality of the 
+        software. Different types of tests, such as unit tests, integration tests, and end-to-end tests are executed.
+
+     3. Code Quality Analysis - 
+        In parallel with automated testing, the CI/CD pipeline performs code quality analysis. This stage 
+        involves using static code analysis tools, such as SonarQube or ESLint, to evaluate the code for
+        compliance with coding standards, identify potential code smells, and enforce best practices.
+
+     4. Artifact Packaging - 
+        Once the code passes all the tests and quality checks, the next stage in the CI/CD pipeline is artifact
+        packaging. The deployable artifact produced during the build stage is packaged in a format suitable for
+        deployment. It could be a container image, a ZIP file, or any other format.
+
+     5. Deployment - 
+        The deployment stage is where the packaged artifact is deployed to the target environment. This could be
+        a staging environment for further testing or directly to production. 
+        Tools like Kubernetes, Amazon Web Services (AWS) Elastic Beanstalk, or Jenkins are commonly used for 
+        orchestrating the deployment process in this stage.
+
+     6. Monitering and feedback - 
+        The final stage in the CI/CD pipeline is monitoring and feedback. Once the software is deployed, 
+        monitoring tools are set up to continuously monitor its performance and collect valuable metrics. 
+
+    What are Canary Releases ?
+->  In a canary release, the new version of the software is gradually rolled out to a small subset of users
+    before being deployed to the entire user base.  
+
+    A canary release involves deploying a new version of the software to a small subset of users or 
+    infrastructure components, often referred to as the "canary group" or "canary servers." The behavior and 
+    performance of the new version are closely monitored in this controlled environment
+
+    Advantages of canary releases 
+    ---------------------------------------------------
+    1. Risk Mitigation: Canary releases help mitigate the risk of deploying new features or updates by limiting 
+       their impact to a small subset of users or infrastructure initially. This allows developers to catch and
+       address any issues early on, reducing the impact on the broader user base. 
+
+    2. Gradual Expansion: Assuming the canary release is successful and no significant issues are detected, the
+       new version is gradually rolled out to a larger audience or infrastructure. This gradual expansion allows
+       developers to identify and address potential issues before reaching the entire user base.  
+
+   What is Staging server and why we need it ?
+-> A staging server serves as an intermediary environment between development and production environments in the
+   software development lifecycle. It plays several important roles, including:  
+
+   1. Testing Environment: A staging server provides a controlled environment for testing changes before they are 
+      deployed to the production environment.
+
+   2. Quality Assurance: Staging servers are used for quality assurance (QA) activities, such as user acceptance 
+      testing (UAT) and regression testing. QA teams can thoroughly test software changes in the staging environment
+      without impacting the live production environment. 
+
+   3. Client Demonstrations: Staging servers provide a platform for demonstrating new features or changes to 
+      clients, stakeholders, or management before they are released to the public. This allows stakeholders to 
+      preview and provide feedback on upcoming changes, ensuring alignment with project requirements and 
+      expectations.
+
+   4. Risk Mitigation: By thoroughly testing changes in a staging environment before deploying them to production,
+      organizations can mitigate the risk of introducing critical bugs, security vulnerabilities, or performance 
+      issues into the live environment. 
+
+   5. Performance Testing: Staging environments can also be used for performance testing, load testing, and stress 
+      testing. Developers and QA teams can simulate real-world usage scenarios to evaluate the performance and 
+      scalability of the application before deploying changes to production. 

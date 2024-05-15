@@ -1,5 +1,6 @@
 // Rest --
-// Rest parameter allows a function to accept an indefinite number of arguments as an array. 
+// It is a feature introduced in ES6 and it allows a function parameter to accept an 
+// indefinite number of arguments as an array. 
 
 function add(...a) {
   let res = 0;
