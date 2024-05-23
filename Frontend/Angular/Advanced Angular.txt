@@ -334,8 +334,7 @@
 
    What do you mean by MVC Pattern ?
 ->  MVC Stands for Model  View Controller.This pattern is used to seprate Application concerns
-    1. Model - Model contains only the pure application data, it contains no logic describing
-               how to present the data to a user.
+    1. Model - Model contains only the pure application data.
     2. View - The View presents the model’s data to the user. The view knows how to access the model’s data.
     3. Controller - The Controller exists between the view and the model. It listens to 
                     events triggered by the view (or another external source) and executes 
@@ -378,7 +377,7 @@
       components that rely on computed properties or functions.      
 
    What do you mean by NgZone in angular ?
--> NgZone in Angular is a service provided by the Angular framework that helps manage asynchronous tasks and 
+-> NgZone in Angular is a service provided by the Angular framework that helps manage asynchronous tasks and trigger
    change detection. It wraps around the Zone.js library to intercept and track asynchronous operations in the 
    application. NgZone is particularly useful when dealing with third-party libraries, browser APIs, or other
    asynchronous tasks.
@@ -452,8 +451,6 @@
 -> tick() is a utility function used primarily in unit tests to execute some task after specified time and 
    trigger change detection.
 
-    
-
     What do you mean by Angular sanitization ?
 ->  Sanitization refers to the process of ensuring that any user input or dynamic content rendered in the 
     application does not contain malicious code that could lead to security vulnerabilities, such as cross-site
@@ -472,8 +469,21 @@
     3. Using Services
 
     What are singnals in Angular ?
-->  Angular Signals is a system that granularly tracks how and where your state is used throughout an application,
-    allowing the framework to optimize rendering updates.
+->  Signals are a specific type of observable designed to optimize change detection for asynchronous data.
+
+    How Signals Work in Angular
+    1. Creating a Signal: You create a signal for a piece of data you want to watch. This can be a variable or a
+       more complex data structure.
+    2. Listening to a Signal: You set up listeners (or subscribers) that react to the signal. When the signal 
+       emits an alert (because the data has changed), these listeners perform specific actions.
+    3. Emitting a Signal: When you update the data, the signal automatically emits an alert. All listeners will 
+       receive this alert and react accordingly.
+
+    What are the benefits of signals ?
+->  The benefits of signals are as follows - 
+    1. Automatic Data Binding
+    2. Improved Performance
+    3. Cleaner Codebase      
 
     What are the advantages and disadvantages of Angular ?
 ->  The advantages of angular are as follows - 
@@ -500,6 +510,22 @@
     What are Injectables ? How it is widely used in Angular framework ?
 ->  Injectables are Decorator that makes a class as available to be provided and injected as a dependency.    
     Injectables are used for dependency injection.
+
+   What are the new features added in Angular 17 ?
+-> The new features added in Angular 17 are as follows -
+   1. New built-in control flow
+   2. Enhanced deferred loading
+   3. Improved Server-Side Rendering (SSR)
+   4. Improved performance with esbuild
+
+   What do you mean by standalone components in angular ?
+-> Standalone components are a new type of Angular component that does not need to be declared in a NgModule. 
+   These are components that can be used directly in the template of another component without being part of an
+   NgModule, or imported in an NgModule.   
+
+   What do you mean by Angular Universal ?
+-> By default, Angular renders applications only in a browser. Angular Universal allows Angular to render an
+   application on the server.   
 
  
     

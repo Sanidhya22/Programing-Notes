@@ -35,8 +35,10 @@
     A Call Stack is a way for the Javascript Engine to keep track of its place in the code,
 
     What do you mean by Event Queue ?
-->  Event Queue is a Queue which is responsible for keeping track of Synchronus Functions 
-    and Operations. It sends Synchronus Functions and Operations to the Call Stack for execution based on call order.
+->  Event Queue is a Queue where events and their associated callbacks are stored.
+    can include various types of events, such as DOM events (e.g., click, keypress), timer events (e.g., 
+    setTimeout, setInterval), and asynchronous I/O events (e.g., network requests). When an event occurs, 
+    its associated callback is added to the event queue.
 
     What do you mean by callback Queue or Marco Task Queue ?
 ->  The callback queue (also known as the task queue or message queue) is a data structure that holds 
@@ -94,7 +96,7 @@
     2. Target Phase
     3. Bubbling Phase
 
-    Capturing Phase is the Phase when the event goes down to the target element.
+    Capturing Phase is the Phase when the event goes down to the target element from the root element.
     Target Phase is the Phase when the Event reaches the target element.
     Bubbling Phase is the Phase when the Event Bubbles up from the target element.
 
@@ -128,7 +130,6 @@
     this Keyword -
     -------------------
     this keyword is used to refer current context and object.
-
 
     If you are asked to go through the DOM tree containing DIVs and log the levels (0,1,2,..) of those divs, how 
     would you approach implementing this ?
@@ -224,12 +225,11 @@
    behaviour then we need Shadow DOM element.
 
    What do you mean by WebSockets in JavaScript ?
--> The WebSocket API is an advanced technology that makes it possible to open a two-way interactive 
-   communication session between the user's browser and a server.
+-> WebSocket is a communication protocol that provides full-duplex communication channels over a single TCP 
+   connection. It allows for real-time, bidirectional communication between clients and servers.   
 
    Why we need WebSockets ?
--> WebSockets were invented by developers to effectively facilitate real-time results. WebSockets work by 
-   initiating continuous, full-duplex communication between a client and server. This reduces unnecessary 
+-> WebSockets were invented by developers to effectively facilitate real-time results. This reduces unnecessary 
    network traffic, as data can immediately travel both ways through a single open connection.    
 
    What do you mean by webWorkers ?
@@ -240,6 +240,7 @@
    How does Browser Rendering work? Explain the Critical Rendering Path.
 -> Browser rendering involves the process of converting HTML, CSS, and JavaScript into a visual representation 
    that users can interact with on their screens. 
+   Browser rendering works on the concept of critical rendering path.
 
    Here's an overview of the critical rendering path:
 

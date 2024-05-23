@@ -21,7 +21,7 @@
   ----------------------------------------------------------------------------------------
    1. It has virtual DOM.                            1. It does not have virtual DOM.
       
-   2. It is written in Javascript.                   2. It is written in the Typescript.
+   2. React primarily uses JavaScript.               2. Angular is built with TypeScript.
 
    3. Reactjs does not uses Dependency               3. It uses Dependency Injection Concept.
       Injection Concept.  
@@ -268,7 +268,8 @@
    navigating to a specific route.
 
    What do you mean By Services ?
--> Services are a framework used for organizing and sharing code and data across different parts of an application.
+-> A service is a class that encapsulates business logic, data access, and other reusable functionality that 
+   can be shared across different components of the application.
      
    Key characteristics of Angular services include --
    -----------------------------------------------------
@@ -354,7 +355,7 @@
    and dynamically set or update the host element's properties. 
 
    What is Karma ?
--> Karma is a testing automation tool created by the Angular JS team at Google.   
+-> Karma is a testing automation tool in angular created by the Angular JS team at Google.   
     
    What do you mean by Content Projection ?
 -> Content projection in Angular refers to the technique of passing content, such as HTML markup or components,
@@ -480,7 +481,7 @@
                    
    ngOnChanges 
    ------------------------
-   It is called when it detects changes to data-bound input property.
+   It is called when it detects changes in data-bound input property.
    Conditons for first time execution order ngOninit and ngOnChanges 
    ------------------------------------------------------------------- 
    If the component has data bound input property then ngOnChanges is before ngOnInit.

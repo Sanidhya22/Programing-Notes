@@ -64,7 +64,7 @@
    -------------------------------   
    Inline Style > Internal Style > External CSS
 
-   Id > Class > Generic Selector
+   Id > Class > Tag Selector
 
    !Important Keyword has the Heightest Proiorty Over other Elements.
 
@@ -202,7 +202,7 @@
       Compass. LESS has a smaller community but is still popular and actively maintained.
 
    2. Features: Both Sass and LESS offer similar features, but there may be slight differences in syntax or 
-      behavior. For example, Sass has more advanced features like control directives (@if, @for, @each, @while),
+      behavior. For example, Sass has more advanced features like control directives (@if, @for, @while),
       whereas LESS has a simpler feature set. However, the essential features like variables, mixins, and 
       nesting are available in both preprocessors.   
 
@@ -219,5 +219,18 @@
     code and running it through a series of plugins, which can do things like adding vendor prefixes 
     automatically, minifying the code to make it smaller, or even transforming future CSS syntax into something
     that current browsers can understand.
+
+17. What do you mean by CSS preprocessors ?
+->  CSS preprocessors are tools that extend the functionality of CSS by introducing features like variables, 
+    nesting, and mixins.     
+
+18. What is the difference between Responsive vs Adaptive design ?
+->  Responsive design uses fluid grids and flexible layouts that adjust proportionally to the screen size of 
+    the device. Elements on the page resize and reflow based on the viewport size, ensuring that content remains
+    readable and usable on any device. 
+
+    Adaptive design involves creating multiple fixed layout for specific device sizes. Adadaptive design uses 
+    predefined layout breakpoints to switch between different layouts based on the device's screen size or 
+    capabilities. 
 
 

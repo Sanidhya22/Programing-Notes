@@ -2,19 +2,18 @@
                               -----------------------
 
 1. What do you mean by Ecmascript ?
--> Ecamscript is a javascript standard meant to ensure the standard syntax of web pages
-   accross different web browsers.
+-> Ecamscript a scripting-language specification that was developed to create a standardized JavaScript 
+   implementation across all web browsers.
 
 2. What are the new features which where added in Ecamscript6 ?
 -> These are the following features which were added in Ecmascript6
    1. Let and const keywords
    2. Arrow functions
-   3. Multiline String
-   4. Default Parameter
-   5. Destructuring Assignment
-   6. Promises
-   7. Template Literals
-   8. classes 
+   3. Default Parameter
+   4. Destructuring Assignment
+   5. Promises
+   6. Template Literals
+   7. classes 
 
 3. What do you understand by Callback and Callback hell in JavaScript?
 -> Callback: It is used to handle the execution of function after the completion of the 

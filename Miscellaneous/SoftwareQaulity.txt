@@ -61,7 +61,7 @@
 
    How do you review pull requests ? OR
    What are the things you consider while reviewing PR ? 
-    What are code reviewing standards ? 
+   What are code reviewing standards ? 
 -> I follow below steps to Review PR - 
 
 1. Understand the Context - Begin by understanding the purpose of the PR and the problem it aims to solve.
@@ -85,9 +85,9 @@
    techniques like profiling to identify performance bottlenecks, memory leak detection to find memory usage
    issues, and security scanning to detect vulnerabilities during runtime.  
 
-   What are Code Qaulity Standards in react ?
+   What are Code Qaulity Standards ?
 -> It aims to insure that our code should be maintainable, readable, scalable, and efficient.
-   Here are some specific code quality standards for React development:
+   Here are some specific code quality standards for software development:
    1. Consistent Code Formatting 
    2. Follow Best Practices 
    3. State Management 

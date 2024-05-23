@@ -1,0 +1,220 @@
+                                  Situational Based Questions
+                           --------------------------------------------
+
+1.  You're tasked with optimizing the performance of a web application that's experiencing slow load times. How
+    would you approach this problem ?  
+->  First, I would analyze the application's performance metrics and the web application to pinpoint areas
+    causing slow load times, such as server response time, database queries, large file sizes, or excessive 
+    network requests. Then, I would prioritize improvements based on their impact on user experience 
+    and resource consumption.
+    I will try below techniques -
+
+    Optimize Frontend: Minimize CSS, JavaScript, and image file sizes, utilize browser caching, and reduce 
+    the number of HTTP requests by combining resources. Implement lazy loading for images and scripts to 
+    improve initial load times.
+
+    Browser Caching: Leverage browser caching to store static resources locally, reducing the need for repeated 
+    downloads on subsequent visits.
+
+    Backend Optimization: Optimize database queries, utilize caching mechanisms (like Redis), and implement 
+    efficient server-side processing to reduce response times.
+
+    Minimize Redirects: Minimize the number of redirects, as each redirect adds an additional HTTP 
+    request-response cycle, increasing load times.
+
+    I would also conduct load testing to simulate heavy traffic scenarios and identify performance issues under 
+    stress and ensure that optimizations don't introduce new issues under heavy traffic.
+
+
+2.  A critical security vulnerability has been discovered in one of the libraries used by your application. How 
+    would you handle this situation ?
+->  I will take below steps to handle this situation -
+    1. Assess the Severity: Understand the impact and severity of the vulnerability. Determine if it's a critical
+       issue that requires immediate attention or if it can be patched during the next regular update.
+
+    2. Identify Affected Components: Identify which parts of the application are using the vulnerable library 
+       and assess the potential risk to the system.   
+
+    3. Find Patch or Update: Check if a patch or update is available for the vulnerable library. If yes, apply 
+       the patch immediately to fix the vulnerability.
+
+    4. Implement Workarounds (if needed): If a patch is not available or cannot be applied immediately, 
+       consider implementing temporary workarounds to mitigate the risk until a proper fix can be applied. 
+
+    5. Notify Stakeholders: Inform relevant stakeholders, including the development team, management, and 
+       possibly users/customers, about the vulnerability and the actions being taken to address it. 
+
+    6. Monitor for Exploitation: Keep a close eye on the application for any signs of exploitation or 
+       unauthorized access resulting from the vulnerability.
+
+    7. Review Security Practices: Conduct a review of security practices to identify any weaknesses that may 
+       have contributed to the vulnerability and implement measures to prevent similar issues in the future.
+
+    8. Stay Informed: Stay informed about security updates and vulnerabilities related to the application's 
+       dependencies to proactively address any future issues.
+
+
+3.  You're leading a team of developers on a project with tight deadlines. One of the team members is 
+    consistently missing deadlines and delivering subpar work. How would you address this issue ? 
+->  I would start by having a one-on-one conversation with the team member to understand the reasons behind 
+    their performance issues. It could be due to workload, skill gaps, personal issues, or other factors. Once 
+    the root cause is identified, I would work with the individual to create a plan for improvement, which may 
+    involve providing additional support, adjusting workload, or offering training opportunities. It's important 
+    to maintain open communication and set clear expectations regarding deadlines and quality standards. 
+
+4.  During a code review, you notice that a junior developer has implemented a feature in a way that violates 
+    best practices and may introduce bugs in the future. How would you provide constructive feedback ?
+->  I would start by acknowledging the junior developer's effort and highlighting any positive aspects of their 
+    work. Then, I would gently point out the specific areas where improvements can be made, highlight relevant 
+    best practices or coding standards. Instead of simply pointing out flaws, I would offer suggestions for how 
+    the code could be refactored or improved to align with best practices and maintainability. It's crucial to 
+    provide feedback in a constructive and supportive manner to foster the junior developer's growth and 
+    confidence.    
+
+5.  Your team is transitioning from a monolithic architecture to microservices. What factors would you consider 
+    when planning and executing this transition ?
+->  I would start by conducting a thorough analysis of the current monolithic architecture to identify its pain 
+    points, dependencies, and areas for decomposition. Then, I would prioritize services based on business 
+    requirements, domain boundaries, and technical feasibility. During the transition, I would focus on 
+    establishing clear communication channels, implementing appropriate monitoring and testing strategies, and 
+    managing dependencies between services. It's important to iterate gradually, starting with low-risk services 
+    and gradually migrating more critical components while ensuring minimal disruption to the existing system. 
+
+
+6.  Your team is experiencing a high rate of bugs in the production environment. How would you address this 
+    issue and prevent similar incidents in the future ?   
+->  I would conduct a thorough root cause analysis to identify the reasons behind the high bug rate, such as 
+    inadequate testing, lack of code reviews, or deployment issues. Then, I would implement measures to address 
+    these issues, such as improving testing practices (unit, integration, and end-to-end testing), implementing 
+    code reviews, enhancing monitoring and alerting systems, and automating deployment processes with continuous
+    integration/continuous deployment (CI/CD) pipelines. Additionally, implementing a culture of quality and 
+    accountability within the team would be essential to prevent similar incidents in the future.    
+
+
+7.  Your company is planning to adopt a new technology stack for an upcoming project. How would you evaluate and
+    decide on the most suitable technologies to use ?
+->  I would start by conducting a thorough evaluation of the project requirements, considering factors such as 
+    performance, scalability, maintainability, and compatibility with existing systems. Then, I would research 
+    and compare different technology options, considering factors like community support, documentation, 
+    ecosystem maturity, and potential risks. Additionally, I would involve relevant stakeholders, such as 
+    team members, architects, and product owners, in the decision-making process to ensure alignment with 
+    business goals and technical expertise.
+
+
+8.  You've been assigned to lead a cross-functional team on a project with tight deadlines. How would you plan 
+    and manage the project to ensure its successful delivery ? 
+->  I would start by defining clear project objectives, scope, and deliverables in collaboration with 
+    stakeholders. Then, I would create a detailed project plan, breaking down tasks, assigning responsibilities,
+    and estimating timelines realistically. Throughout the project, I would closely monitor progress, identify 
+    and resolve risks, and adjust plans as needed to ensure alignment with project goals and deadlines. 
+    Effective communication, regular status updates, and fostering a collaborative team culture would be 
+    essential for project success. 
+
+
+9.  You're tasked with designing a new system for a large e-commerce platform. What factors would you consider 
+    in designing a scalable and robust architecture ? 
+->  I would start by identifying the system requirements, including expected traffic, data volume, and 
+    performance goals. Then, I would design a distributed architecture that can handle horizontal scaling, using
+    technologies like microservices, message queues, and caching layers. I would also consider fault tolerance, 
+    data consistency, security, and maintainability factors.
+
+    When designing a scalable and robust architecture for a large e-commerce platform, several factors need 
+    consideration
+
+    1. Scalability: Ensure the system can handle increasing loads and traffic over time without sacrificing 
+                    performance.
+
+    2. High Availability: Design the system to minimize downtime and ensure continuous operation, even in the 
+                          event of failures or maintenance. 
+
+    3. Fault Tolerance : Implement redundancy and failover mechanisms to prevent single points of failure and 
+                         maintain system functionality in case of component failures.   
+
+    4. Security: Implement robust security measures to protect sensitive user data and prevent unauthorized 
+                 access or attacks.   
+
+    5. Data Management: Use efficient data storage and retrieval techniques, such as distributed databases or 
+                        caching mechanisms, to manage large volumes of data effectively.  
+
+    6. Load Balancing: Distribute incoming traffic evenly across multiple servers or instances to prevent 
+                       overloading any single component. 
+
+    7. Monitoring and Logging: Implement comprehensive monitoring and logging systems to track system 
+                               performance, detect issues, and troubleshoot problems proactively.   
+
+10. How will you make a client switch to typescript from javascript who is not willing to ?
+->  To persuade a client to switch from JavaScript to TypeScript when they're hesitant, I can highlight several 
+    benefits in simple terms  
+
+    1. Improved Code Quality: Explain that TypeScript helps catch errors early in development, leading to fewer 
+       bugs and smoother code maintenance. 
+
+    2. Better Scalability: Mention that TypeScript allows for easier code refactoring and scaling as the project 
+       grows, making it more manageable in the long run. 
+
+    3. Enhanced Productivity: Point out that TypeScript offers features like type checking and IDE support, 
+       which can speed up development and reduce debugging time.      
+
+    4. Community Support: Highlight the growing popularity of TypeScript within the development community and 
+       the availability of resources, libraries, and frameworks that support it.
+
+    5. Case Studies and Success Stories: Share examples of successful projects that have benefited from 
+       switching to TypeScript, demonstrating its effectiveness in real-world scenarios. 
+
+    6. Gradual Adoption: Assure the client that TypeScript can be adopted gradually, allowing for a smooth 
+       transition without disrupting ongoing development or existing code.     
+
+
+11. A developer in your team has made aa PR, and another developer does not agree with the solution, what do 
+    you do ?
+->  When a developer in the team disagrees with the solution proposed in a Pull Request (PR), it's essential to 
+    address the situation promptly and effectively. Here's what you can do:   
+
+    1. Review the PR Together: Bring both developers together to review the PR collaboratively. Encourage them 
+       to discuss their concerns openly and provide constructive feedback. 
+
+    2. Understand Concerns: Listen carefully to both sides to understand their perspectives and concerns 
+       regarding the proposed solution. Ensure that all viewpoints are heard and respected.       
+
+    3. Involve Senior Team Members: If the disagreement persists or if the proposed solution involves critical 
+       decisions, involve senior team members or technical leads to provide guidance and expertise. 
+
+    4. Seek Consensus: Facilitate a discussion to find common ground and reach a consensus on the best approach. 
+       Encourage compromise and exploration of alternative solutions if necessary. 
+
+    5. Evaluate Technical Merits: Assess the technical merits of the proposed solution objectively. Consider 
+       factors such as code quality, performance, maintainability, and adherence to coding standards. 
+
+    6. Document Discussions: Document the discussions, decisions, and any agreed-upon changes regarding the PR. 
+       This helps maintain transparency and ensures that everyone is on the same page.   
+
+
+12.  You have to remove a member from your team, who do you choose ?    
+
+
+13.  The client does not agree with a solution put forward by the team, what do you do ?
+->   If the client disagrees with a solution proposed by the team, here's what I would do in simple terms
+
+     1. Listen Carefully: Listen to the client's concerns and understand their reasons for disagreeing.
+     2. Explain the Solution: Clearly explain the team's solution and why it was chosen, focusing on how it 
+        meets the client's needs and objectives.
+     3. Address Concerns: Address the client's concerns one by one and offer alternatives or adjustments if 
+        possible.  
+     4. Find Common Ground: Work together to find a solution that both the team and the client can agree on.
+     5. Communicate Effectively: Keep communication channels open and ensure that everyone understands the 
+        decisions made. 
+
+     6. Stay Professional: Remain calm and professional throughout the discussion, focusing on finding a 
+        resolution that satisfies the client's requirements while still meeting project goals.    
+
+     7. Involve Senior Member (if needed): If the disagreement persists, involve a senior member or project manager 
+        to help facilitate the discussion and find a compromise.   
+
+
+
+
+
+
+
+
+     

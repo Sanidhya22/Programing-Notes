@@ -14,7 +14,7 @@
     4. email
     5. tel
 
-   What do you mean By Box Model?
+   What do you mean By Box Model? 
 -> Box Model Basically Wraps HTML elements Into Box. It Consists of Margin, Padding, Border and Actual Content.
 
    What do you mean by Flex Display?
@@ -24,6 +24,12 @@
 -> Semantic element clearly describes its meaning to both the browser and the developer.
    Semantic elements: <form>, <table>,<article>,<footer>,<header>and <section>   
    Non-Semantic elements: <div> and <span> - Tells nothing about its content.
+
+   What are the benefits of Semantic tags ?
+-> The benefits of semantic tags are as follows -
+   1. SEO benefit ( Using semantic tags can potentially improve a site's SEO by making it easier for search engines to index the conten)
+   2. Better accessibility
+   3. Better readability and maintainability   
 
    What do you mean by HTML Quatations ?
 -> The HTML Quotations is used to create quotation in HTML. The HTML <q> tag is used to 
@@ -67,9 +73,11 @@
    What is the difference between Canvas and SVG ?
 ->  ->                          Canvas                |                  SVG 
     --------------------------------------------------------------------------------------------------
-    2. It is not based on XML Format.                2. It is based on XML format. 
-    3. No support for Event Handlers.                3. Support Event Handlers.
-    4. Canvas has poor scalability.                  4. SVG has Better scalability
+    1. It is Pixel based graphics.                   1. It is vector based graphics. 
+    2. Canvas has poor scalability.                  2. SVG has better scalability.                                               
+    3. Best for dynamic, interactive graphics,       2. Ideal for static graphics, icons, logos, illustrations,
+       game graphics, and real-time data                scalable graphics.
+       visualizations.                        
 
     What are different priorty orders in CSS ?
 ->  Note -
@@ -120,7 +128,7 @@
 
     2. HTML is not XML-compatible.                      2. XHTML is designed to be compatible with XML standards.   
 
-    3. HTML has a more losser syntax.                   3. It has a less stricter syntax.
+    3. HTML has a less stricter syntax.                 3. It has a more stricter syntax.
  
     4. HTML is widely supported by web browsers         4. XHTML adoption has been slower due to its stricter 
        and other web-related technologies.                syntax requirements, especially in older web browsers.
@@ -147,3 +155,12 @@
    What do you mean by Markup language ?
 -> A markup language is a system of annotating a document to describe its structure and presentation.
    It usea tags for annotating a document.   
+   
+   What is the role of semantic tags ?
+-> The semantic tags is useful for the following scenarios -
+   1. Search Engine Optimization (SEO): Search engines use semantic tags to better understand the content and 
+      context of a webpage. By using appropriate semantic tags, developers can improve the visibility and 
+      ranking of their webpages in search engine results pages (SERPs).  
+   2. Accessibility: Semantic tags improve the accessibility of web content by providing screen readers and 
+      other assistive technologies with meaningful information about the structure and purpose of different 
+      parts of the webpage. 

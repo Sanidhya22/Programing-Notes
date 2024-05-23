@@ -1,5 +1,27 @@
    What do you mean by Design Pattern ?
--> Design Pattern Provides a general solution to a design problem that occurs repeatedly in many projects. 
+-> Design Pattern Provides a general solution for a design problem that occurs repeatedly in many projects. 
+
+   What are the advantages and disadvantages of Design Pattern ?
+-> The advantages of design Pattern are as follows -
+
+   1. Scalability: By following design pattern, you can create scalable solutions that are flexible and 
+      adaptable to changing requirements and environments. 
+   2. Maintainability: Design pattern focues on writing clean, modular, and well-organized code, making it 
+      easier to understand, debug, and maintain.   
+   3. Reuse: Design pattern encourage the reuse of code and design patterns, allowing developers to leverage 
+      existing solutions and components instead of writing again same solutions.    
+   4. Quality: Design pattern contribute to the overall quality of a solution. High-quality design leads to 
+      higher customer satisfaction and better business outcomes.   
+
+   The disadvantages of Design Patterns are as follows - 
+
+   1. Increased Development Time: Implementing design pattern often requires more upfront design and planning, 
+      which can increase development time.    
+   2. Complexity: Applying design pattern can sometimes result in overly complex code structures, especially 
+      if not implemented thoughtfully. 
+   3. Resistance to Change: Introducing design pattern to an existing codebase or team culture may face 
+      resistance from developers who are aware to different coding practices. 
+   4. Learning Curve -  It will be something new for those how have not worked with design pattern.     
 
    Creational Design Pattern 
    --------------------------------
@@ -100,6 +122,51 @@
                  with different types of elements in a collection or hierarchy.
    11.Memento -  The Memento pattern is a pattern that allows us to save our progress at any point and restore
                  it later if needed.
+
+   Which design pattern do Event Emitters follow ?
+-> Event Emitters typically follow the Observer design pattern.    
+   In the Observer pattern, an object (known as the subject or observable) maintains a list of dependents 
+   (known as observers) that need to be notified of changes in its state. When the state of the subject 
+   changes, it notifies all its observers, typically by calling a method on each observer.  
+
+   Similarly, in many programming languages and frameworks, including Angular and Node.js, Event Emitters are 
+   used to implement a publisher-subscriber model, which is a variation of the Observer pattern. The Event 
+   Emitter acts as the subject, and components or objects that listen to events are the observers. When an event
+   occurs, the Event Emitter notifies all registered listeners by emitting the event, and they respond 
+   accordingly.
+
+   Which design pattern do you think is followed in Redux and in Logger instances ?
+-> Logger instances typically implement the Decorator design pattern.
+
+   In the Decorator pattern, you enhance or extend the behavior of an object dynamically by wrapping it with one
+   or more decorators. These decorators add additional responsibilities to the object without modifying its code
+   directly. For example, a logger instance can be seen as a decorator that wraps around other objects or 
+   functions to log information about their behavior or state changes.
+
+   Redux follows the Flux Architecture pattern.
+
+   Flux is a design pattern that emphasizes unidirectional data flow and a centralized data store. It was 
+   popularized by Facebook for building client-side web applications. Redux, inspired by Flux, implements 
+   similar principles.
+
+   If you have a requirement to create instances of different types of database connectors (MySQL, MongoDB, etc.
+   ) dynamically. So which design pattern you would recommend?
+-> For dynamically creating instances of different types of database connectors, the Factory Method design 
+   pattern is well-suited.
+   
+   The Factory Method pattern is a creational pattern that provides an interface for creating objects in a 
+   superclass but allows subclasses to alter the type of objects that will be created. In this scenario, you 
+   can define an abstract class or interface for the database connector, and then have concrete subclasses for
+   each type of database (MySQL, MongoDB, etc.) that implement the creation logic specific to each database 
+   type.
+
+   What pattern is followed in RxJS ?
+-> Rxjs follows Observer pattern.  
+
+   What design pattern Angular follows ?
+-> Singleton design Pattern , Observer design pattern, Factory design pattern    
+
+
 	
 
 

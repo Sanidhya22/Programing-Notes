@@ -1,6 +1,6 @@
 // Types of Programming Language
 // 1. Object Oriented Programming Language -  C++, Java, C#
-// 2. Functional Oriented Programming Language - JavaScript, Scala
+// 2. Functional Programming Language - JavaScript, Scala
 // 3. Procedural Oriented Programming Language - C
 
 // Class - It is a blueprint for creating objects consisting of data members , methods and

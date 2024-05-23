@@ -4,9 +4,11 @@
    Can you talk me through how you would onboard a new member to your team ?  OR     
    How would the first week look if you were onboarding a new member to your team ?  
 -> Firstly I will connect with new joinee to know about his background , expertise and experience.
-   I will share him onboarding roadmap to provide him prerequites he should be prepared with.
-   I will provide him resource and tech stack details which we are using the project.
-   I will provide him sessions for project culture, its working, its architecture.
+   I will share him onboarding roadmap to provide him prerequites he should be prepared with, It will include 
+   setting up tools , os and MFA related to clients.
+   I will provide him resource and tech stack details which we are using the project, will ask him to brush up
+   his skills if needeed.
+   I will provide him sessions for project, its working, its architecture.
    I will provide him confluence pages link for more details regarding project and details for local setup for 
    the applicaiton and much more.
    I will also check and ensure with the him he will have all necessary accesss.    
@@ -55,11 +57,11 @@
    execution. Here's my plan of action:
 
    1. Understand the Project Scope and Objectives - Begin by thoroughly understanding the project scope, 
-      objectives, requirements, and constraints. 
-   2. Formulate a Project Plan - Develop a detailed project plan outlining the timeline, deliverables, 
+      objectives, requirements, and constraints.
+   2. Understand the team -  Identify and assemble a cross-functional team with the necessary skills and expertise 
+      to execute the project effectively.   
+   3. Formulate a Project Plan - Develop a detailed project plan outlining the timeline, deliverables, 
       milestones, and dependencies. Identify key resources, roles, and responsibilities within the team.
-   3. Assemble the Team - Identify and assemble a cross-functional team with the necessary skills and expertise 
-      to execute the project effectively. 
    4. Define Communication Channels - Establish clear communication channels and protocols for regular updates, 
       progress tracking, and issue resolution within the team and with stakeholders. Ensure open and transparent
       communication throughout the project lifecycle.

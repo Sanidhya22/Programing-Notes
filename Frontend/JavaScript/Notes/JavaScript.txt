@@ -68,7 +68,7 @@
            console.log(arr);
 
    Case 2. By Using Array Constructor
-           var arr2 = new Array("Suman",32,2500,"SOftware Engineer");
+           var arr2 = new Array("Suman",32,2500,"Software Engineer");
            console.log(arr2);
 
    Case 3. Using the Array.from() 
@@ -232,7 +232,7 @@
        MacroTask Queue.                                     Queue.                                                       
 
     What do you mean by Callback Hell ?
-->  Callback hell refers to the situation that arises when working with asynchronous code in JavaScript, 
+->  Callback hell refers to the situation that we use when working with asynchronous code in JavaScript, 
     it is a nesting multiple levels of callbacks inside one another. This nesting can quickly lead to 
     code that is difficult to read, understand, and maintain due to its deeply nested structure. 
 
@@ -250,14 +250,10 @@
     What is the difference between const and Object Freeze ?
 ->  Const property means that we cannot do the reassignment of the variable or object but can modify the 
     properties of the object.
-    Object.freeze methods means that we cannot modify the values of properties of the object.      
+    Object.freeze methods means that we cannot do reassignment and modify the values of properties of the object.      
 
     What do you mean Object.preventExtensions ?
 ->  This methods prevents from adding new properties to an object.
-
-    What do you mean by Object.freeze ?
-->  The Object.freeze() method freezes an object that prevents new properties from being added to it. 
-    This method prevents the modification of existing property and values.   
 
     What do you mean by Object.Seal in JavaScript ?
 ->  The Object.seal() method of JavaScript seals an object which prevents new properties from being 
@@ -296,8 +292,116 @@
 
    __proto__  is a property of Object.prototype that exposes the hidden [[Prototype]] property of an object 
    and allows us to access or modify it.
-    
 
+   What do you mean by Pure functions in functional programming ?
+-> In functional programming, a pure function is a function that has two main characteristics
+   Deterministic - Given the same input, a pure function will always produce the same output, regardless of when
+   or where it is called. 
+   No sideeffects - : A pure function does not modify any external state. This means it doesn't change any 
+   variables outside its scope.   
+
+   What are the pros and cons of functional programming ?
+-> The pros of functional programming are as follows - 
+   1. Immutable Data: Immutable data structures make it easier to reason about the code and help prevent bugs 
+      related to unintended state changes.  
+   2. Pure Functions: Pure functions lead to more predictable behavior, easier testing, and better modularity. 
+   3. Parallel programming - FP supports parallel programming.      
+
+   The cons of parallel programming are as follows - 
+   1. Performance Overhead: Functional programming typically relies on recursion and higher-order functions, 
+      which can sometimes lead to performance overhead compared to oop.
+   2. Debugging Complexity: Debugging functional code can sometimes be more challenging, especially when dealing
+      with complex function compositions or higher-order functions.   
+   3. Limited Mutability: While immutability has its advantages, there are cases where mutable state is necessary 
+      or more efficient, which can be more challenging to implement in a purely functional style.   
+
+   What are the pros and cons of OOP ?
+-> The pros of OOP are as follows - 
+   1. Reusability: OOP facilitates code reuse through mechanisms like inheritance and polymorphism. 
+   2. Encapsulation: Encapsulation hides the internal state of objects and only exposes necessary functionality
+      through methods, which helps prevent unintended manipulation of data and ensures better data integrity.
+   3. Modularity: Object-oriented programming (OOP) promotes modularity by organizing code into objects, which 
+      encapsulate data and behavior.  
+
+   The cons of OOPS are as follows - 
+   1. Complexity: OOP can lead to complex class hierarchies, especially in large projects, which can be 
+      challenging to understand and maintain.
+   2. Performance Overhead: Object creation and method invocation in OOP can sometimes incur performance 
+      overhead compared to procedural or functional programming, especially in resource-constrained environments.
+   3. Mutability: Managing state in object-oriented systems, especially mutable state, can lead to issues 
+      like race conditions, concurrency bugs, and unexpected side effects, particularly in multithreaded applications. 
+    
+    Difference between Single Page application and Multiple Page application ?
+->                    SPA                           |                       MFA 
+   ----------------------------------------------------------------------------------------------------------
+
+   the entire application runs within a single           Each distinct page of the application is served as a 
+   web page.                                             separate HTML document from the server.
+
+   SPAs minimize page reloads and server requests,       MPAs may involve more frequent page reloads and 
+   they tend to offer faster and more seamless user      server requests compared to SPAs.
+   experiences.
+
+   SPAs may face challenges with search engine           MPAs are generally more SEO-friendly out of the box
+   optimization (SEO), initial load times.               since each page has its own URL and metadata, making 
+                                                         it easier for search engines to crawl and index content.
+
+   What are the pros and cons of SPA ?
+-> The pros of SPAs are as follows -
+   -----------------------------------
+   1. Enhanced User Experience: SPAs offer faster and more seamless user experiences by minimizing page reloads
+      and providing smoother interactions.
+   2. Improved Performance: They reduce server requests, optimize data transfer, and leverage client-side caching, 
+      resulting in better overall performance, especially for complex applications.   
+   3. Seamless Navigation: Client-side routing in SPAs facilitates seamless navigation within the application 
+      without interrupting the user experience.   
+
+   The cons of SPA are as follows -
+   -------------------------------------
+   1. SEO Challenges: SPAs may face challenges with search engine optimization due to the reliance on client-
+      side rendering and dynamic content loading.  
+   2. Initial Load Time: The initial load time of SPAs can be longer compared to traditional multi-page 
+      applications, especially for larger applications with significant JavaScript bundles. 
+   3. Browser Compatibility: SPAs may encounter issues with browser compatibility, particularly when relying 
+      on modern JavaScript features that are not supported in older browsers.     
+
+   What are the pros and cons of MFA ?
+-> The pros of MFA are as follows -
+   -----------------------------------
+   1. SEO-Friendly: MPAs typically have individual URLs for each page, making them more search engine-friendly 
+      and easier to index compared to SPAs.
+   2. Simplicity: MPAs follow a more traditional web development approach, with each page responsible for 
+      rendering its own content.   
+   3. Compatibility: MPAs tend to have better compatibility with older browsers and devices since they don't
+      rely as heavily on modern JavaScript frameworks.     
+
+   The cons of MFA are as follows -
+   ---------------------------------
+   1. Slower User Experience: MPAs often require full-page reloads when navigating between different sections 
+     of the application, leading to slower and less seamless user experiences.  
+   2. Server Load: MPAs typically require more server resources since each page load involves fetching and 
+      rendering a new HTML document from the server, potentially leading to higher server load and slower 
+      performance, especially under heavy traffic.
+   3. Complexity with State Management: Since each page in an MPA is independent, managing application state 
+      across multiple pages can be more complex compared to SPAs, which often have centralized state management.
+
+   What do you mean by Function composition ?
+-> Function composition is a fundamental concept in functional programming where two or more functions are 
+   combined to produce a new function. 
+   This allows for the creation of more complex functions by combining simpler ones, promoting code reusability,
+   and improving readability.   
+
+   What do you mean by Encapsulation, Abstraction, Inheritance, Polymorphism ?
+-> Abstraction - Hide internal implementation and just highlight the set of services, is called abstraction. 
+   By using abstract classes and interfaces we can implement abstraction.
+   Encapsulation - Binding of data and corresponding methods into a single unit is called Encapsulation.
+   Inheritance -  It is a concept that enables a new class to inherit the properties and methods of an existing class.
+   Polymorphism - the ability of something to have more than one form.
+
+   What do you mean by cohesion and coupling ?
+-> Cohesion means how well component maintain a clear well defined functionality of a module.
+   Coupling is the the degree of dependency between the components.
+   high cohesion and low coupling is recommended for modular application.
 
 
 

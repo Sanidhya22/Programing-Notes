@@ -20,7 +20,7 @@
    3. Automate the testing and deployment processes, reducing manual effort and human error.
    4. Accelerate the delivery of new features and updates to users.    
 
-   What do you think are ideal CI-CD stages to ensure a quality application ?
+   What are the CI-CD stages you are using in your current/ previous application ?
 -> Implementing a robust CI/CD (Continuous Integration/Continuous Deployment) pipeline involves several stages
    to ensure the quality and reliability of the application. Here are the ideal stages in a CI/CD pipeline: 
    

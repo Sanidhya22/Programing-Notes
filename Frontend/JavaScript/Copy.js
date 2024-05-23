@@ -7,8 +7,7 @@
 //    slice() or concat() for arrays.
 
 // 2. Deep Copy -
-//    Deep copying creates a new object or array and recursively copies all nested elements into the new structure.
-//    Changes made to the elements in the deep copy do not affect the original, and vice versa.   
+//    Deep copying creates a new object or array and creates independent copy of original array or object Data.  
 
 
 // Original object

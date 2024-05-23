@@ -213,4 +213,32 @@
    Tracing involves monitoring and recording the flow of requests or transactions as they propagate through a
    distributed system or application. It provides a detailed view of how requests are processed across multiple
    components, services, or microservices.
+
+   Explain different Security issues and their protections ?
+-> The different Security issue are as follows -
+   1. Injection Attacks: 
+      Injection attacks, such as SQL injection and XSS (Cross-Site Scripting), occur when untrusted data is 
+      sent to an interpreter as part of a command or query, leading to unintended execution.        
+      Prevention - 
+      Implement input validation and output encoding to prevent XSS attacks.
+      Use parameterized queries for database interactions to prevent SQL injection. 
+
+   2. Cross-Site Request Forgery (CSRF):
+      CSRF occurs when an attacker tricks a user into executing unwanted actions on a web application where the
+      user is authenticated. 
+      Prevention -
+      Implement anti-CSRF tokens in web forms to validate the origin of requests and ensure they are coming 
+      from trusted sources  
+
+   3. Cross-Site Scripting (XSS):
+      XSS occurs when an attacker injects malicious scripts into web pages viewed by other users.
+      Prevention - 
+      Sanitize and validate user input, use content security policy (CSP) headers, and implement output 
+      encoding to prevent XSS attacks.   
+
+   4. Denial of Service (DoS) and Distributed Denial of Service (DDoS):
+      DoS and DDoS attacks overload servers or networks, causing service disruption. 
+      Prevention - 
+      Implement rate limiting, use firewalls and intrusion prevention systems (IPS), and utilize content delivery
+      networks (CDNs) to mitigate the impact of DoS and DDoS attacks.  
  

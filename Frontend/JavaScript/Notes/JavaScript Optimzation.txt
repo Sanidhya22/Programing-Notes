@@ -41,7 +41,7 @@
    Cause of Memory Leaks   
    ------------------------------
    1. Circular References - Circular references occur when two or more objects reference each other in a loop. If 
-      there are no external references to these objects, they cannot be garbage collected .     
+      there are no external references to these objects, they cannot be garbage collected.     
    2. Unused Variables and References - This often happens when developers forget to remove event listeners, 
       timers, or references to DOM elements.   
    3. InProper Asynchronous Code Management - Memory leaks can occur in asynchronous code when callbacks or 
@@ -124,12 +124,11 @@
    data collected from users' experiences while browsing the web with Google Chrome. 
 
     What do you mean by Cookie and how does it works ?
-->  A cookie is a small piece of data that a website sends to a user's web browser. The browser stores this data
+->  A cookie is a small piece of data that a website stores on a user's web browser. The browser stores this data
     and sends it back to the website with subsequent requests. Cookies are commonly used for various purposes in
     web development, such as session management, tracking, and storing user preferences.  
 
     Here's how cookies work:
-
     1. Creation: When a user visits a website, the server can send one or more cookies to the user's browser along 
        with the response. Each cookie consists of a name-value pair and optional attributes such as expiration date,
        domain, and path.
@@ -169,16 +168,14 @@
 
 
    What do you mean by Session and how does it works ?
--> A session refers to a way of maintaining state information about a user’s interactions with a website or 
-   web application.
+-> A session refers to the period of time during which a user interacts with a website or web application.
    
    Here's how sessions typically work:
-
    1. Session Creation: When a user accesses a web application for the first time, the server creates a unique 
       session identifier (session ID) for that user. This session ID is often stored in a cookie on the user's 
       browser or passed as part of the URL.
    2. Session Initialization: During session creation, the server may also initialize session data or variables
-      to store information about the user's interactions with the application. \
+      to store information about the user's interactions with the application.
    3. Session Management: As the user interacts with the application, the session ID is sent back and forth 
       between the server and the browser with each request and response. This allows the server to associate 
       subsequent requests with the correct session and access the session data stored for that user.
@@ -193,7 +190,6 @@
    server without sharing their credentials (e.g., username and password) directly.  
 
    Here's how OAuth works:
-
    1. User Authorization: The user (resource owner) wants to grant a third-party application (client) access to 
       their resources on a server (resource server). The user initiates the OAuth flow by clicking a "Login with
       (provider)" button on the client application.
@@ -221,7 +217,7 @@
    npm, short for Node Package Manager, is the default package manager bundled with Node.js.  
    Dependency management for Node.js projects. 
    Installation, update, and removal of packages.
-   Installation of packages happens sequentially.
+   Installation of packages happens sequentially and less speed and less reliable.
 
    npx - 
    npx is a tool that comes with npm (since npm version 5.2.0) and is used to execute Node.js packages.
@@ -235,41 +231,41 @@
    It is compatible with npm and provides similar functionalities but is known for its speed and reliability.
    Yarn also supports offline mode and parallel installation of packages, which can improve performance.          
 
-     What are the different events invoved in Page lifecycle of page in web ?
+    What are the different events invoved in Page lifecycle of page in web ?
 ->  The page lifecycle in web development refers to the sequence of events that occur from the moment a web 
     page is requested by a user to the point when the page is closed or navigated away from.
-    1. Request: The page lifecycle begins when a user requests a web page by entering its URL in a web browser 
-       or clicking on a link. This triggers an HTTP request to the server hosting the page.       
-    2. Server Processing: Upon receiving the request, the server processes it by retrieving the requested HTML, 
-       CSS, JavaScript files, and any other required resources. Server-side logic may also be executed at this 
-       stage, such as fetching data from a database or performing authentication.
-    3. HTML Rendering: Once the server processes the request and generates the HTML content, it is sent back to
-       the client (browser) as the response. The browser then begins to parse the HTML and render the initial 
-       layout of the page.   
-    4. DOMContentLoaded: As the browser parses the HTML, it constructs the Document Object Model (DOM) 
-       representing the structure of the web page. When the parsing reaches the end of the document's <head> 
-       section or encounters the DOMContentLoaded event in JavaScript, the DOM content is fully loaded and ready
-       for manipulation.
-    5. CSSOM Construction and Rendering: After parsing the HTML, the browser constructs the CSS Object Model 
-       (CSSOM) by parsing and applying the stylesheets linked in the HTML. Once the CSSOM is constructed, the
-       browser calculates the styles for each element and performs layout (reflow) to determine the position 
-       and size of each element on the page. Finally, the rendered content is painted onto the screen. 
-    6. JavaScript Execution: If the web page includes JavaScript code, it is executed asynchronously during or 
-       after the HTML parsing and CSSOM construction stages.  
-    7. Load Event: When all external resources (such as images, stylesheets, and scripts) have finished loading,
-       the load event is triggered on the window object. This event indicates that the entire page, including
-       its external dependencies, is fully loaded and ready for interaction. 
-    8. Interaction and Updates: Once the page is fully loaded and rendered, users can interact with its elements
-       triggering events such as clicks, mouse movements, and keyboard inputs. JavaScript code can respond to 
-       these events by updating the DOM, making AJAX requests, or performing other actions to provide a dynamic
-       and interactive user experience.   
-    9. Unload and Closing: When a user navigates away from the page, closes the browser tab, or shuts down the
-       browser, the browser triggers the beforeunload event, allowing developers to perform cleanup tasks or
-       prompt the user before leaving the page. Finally, the page is unloaded, and the browser releases its 
-       resources. 
+
+   1. Request: The page lifecycle begins when the browser sends a request to the web server for a particular URL.
+   2. Server Reponse: After recieving request server sends the response.
+   3. Browser Processing:
+      HTML Parsing: The browser receives the HTML response and parses it to construct the Document Object Model (DOM) tree, representing the structure of the web page.
+      CSS Parsing and Styling: As the browser encounters CSS resources, it parses them to construct the CSS Object Model (CSSOM) and applies styles to the elements in the DOM tree, creating the render tree.
+      Layout (Reflow): The browser calculates the layout of the render tree, determining the size and position of each element on the page.
+      Painting: Finally, the browser paints the pixels on the screen according to the layout and styles of the render tree.
+      DOMContentLoaded: This event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+
+   4. Load: This event is fired when all resources on the page (including stylesheets, images, and subframes) 
+      have finished loading. This indicates that the page is fully rendered and ready for user interaction.
+
+   5. User Interaction: Once the page is fully loaded, the user can interact with it by clicking links, 
+      submitting forms, scrolling, etc. This can trigger additional events and modify the page dynamically.
+
+   6. Unload: If the user navigates away from the page or closes the browser window/tab, the browser may fire
+      the unload event, allowing the page to perform cleanup tasks before being unloaded.
 
    What do you mean by CSSOM ?
 ->  CSSOM stands for CSS Object Model. Similar to the DOM (Document Object Model) for HTML, the CSSOM represents
     CSS stylesheets as a structured set of objects, allowing JavaScript to interact with and manipulate CSS 
     styles dynamically.
+
+   What are the different application Profiling techniques in JavaScript ?
+-> We can do profiling of the application by the following ways -
+   1. Browser developer tools  - Performance Tab  , Memory Tab
+   2. Third-Party Tools - Google Lighthouse and PageInsights
+
+   What is the difference between Debouncing and throttling ?
+-> Debouncing delays the execution of a function until after a specified period of inactivity. If the function
+   is invoked multiple times within this period, only the last invocation is executed after the delay.
+   Throttling limits the frequency of function invocations to a specified maximum rate, when mulitple calls
+   are made.  
    

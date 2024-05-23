@@ -2,7 +2,7 @@
                                 ---------------------------------
 
     What do you mean by Git ?
-->  Git is a DevOps tool used for source code management. It is a free and open-source version control 
+->  Git is a DevOps tool usedfor source code management.  It is a free and open-source version control 
     system used to handle small to very large projects efficiently. Git is used to tracking changes in 
     the source code, enabling multiple developers to work together on non-linear development.
     Git is a Distributed Version Control System.
@@ -170,9 +170,8 @@
                              ---------------------------------------
 
    What do you mean by .gitignore file ?
--> The .gitignore file is a text file used by Git. It allows developers to exclude certain files or patterns 
-   from being committed to the repository, which helps keep the repository clean and focused on versioning 
-   important files.   
+-> A .gitignore file is used in Git repositories to specify which files and directories should be ignored by Git.
+   When you place certain patterns in a .gitignore file, Git will not track changes to those files.   
 
    Difference between SSH and HTTPS ?
 ->                          SSH                       |                  HTTPS 
@@ -281,7 +280,7 @@ c. After resolving conflicts and committing the changes, attempt to push again u
             
        Advantages of feature branching strategy 
        ----------------------------------------------
-       1. Provides clear structure for managing code changes.
+       1. Provides proper structure for managing code changes.
        2. Separates ongoing development from stable release. 
 
        Disadvantages of feature branching strategy
@@ -320,7 +319,7 @@ c. After resolving conflicts and committing the changes, attempt to push again u
 
        Advantages of GitFlow branching 
        -------------------------------------------
-       Provides clear structure for managing code changes
+       Provides proper structure for managing code changes
        Separates ongoing development from stable releases
 
        Disadvantages of Gitflow branching 

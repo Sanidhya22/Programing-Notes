@@ -109,7 +109,7 @@
        reliable, ordered transmission.
 
    What do you mean by GraphQL ?
--> GraphQL is a query language for APIs. GraphQL enables clients to request only the data they need from a server.
+-> GraphQL is a query language for APIs. GraphQL enables clients to request only those data we need from a server.
     
    Key features of GraphQL include: - 
    1.  Client-Defined Queries
@@ -129,8 +129,8 @@
    data to be created or the changes to be made to existing data. 
 
    What do you mean by RPC (Remote Procedure Call) ?
--> Remote Procedure Call is a protocol that one program can use to request a service from a program located 
-   in another computer on a network without having to understand the network details. 
+-> Remote Procedure Call is a protocol that one program can execution of another program located in another 
+   different address space location.
 
    What do you mean by Polling ?
 -> Polling refers to a method where the client repeatedly checks the server for new information or updates. 
@@ -250,5 +250,26 @@
    What do you mean by HTTP head of line (HOL) blocking problem ?
 -> HTTP Head of Line blocking in HTTP/1 refers to issue where browser/client has to wait for the prior request
    to it to complete before it can fire it off another over a single TCP connection. 
+
+   
+   What is the difference between Restfull and Restless ?
+->                         Restfull                     |                 Restless
+   --------------------------------------------------------------------------------------------------------
+   1. It is a web service that uses REST architecture.        1. It is a web service that does not obey REST 
+                                                                 architecture.
+
+   2. It supports JSON, HTML, etc format.                     2. It supports only XML format.
+   3. RESTful is less secure since it inherits security       3. RESTless is comparatively more secure since it
+      measures from the underlying transport protocols.          defines its own security layer.    
+   4. RESTful services are easier and more flexible.          4. RESTless services can be complex and slow.  
+
+
+   What is gulp and rollup ?
+-> Rollup is a module bundler that bundles JavaScript modules into a single file for deployment. 
+   Rollup is focused on bundling JavaScript modules and optimizing code for production.   
+
+   Gulp is a task runner built on Node.js that allows developers to automate repetitive tasks such as 
+   compiling Sass to CSS, minifying JavaScript, optimizing images, and more.
+   Gulp is primarily used as a task runner for automating build tasks and workflow automation.
 
     

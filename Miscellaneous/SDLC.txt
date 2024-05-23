@@ -7,12 +7,12 @@
    not fixed and it can change any time.
 
    What is Sprint ?
--> Sprint is a time interval cycle for software development.
+-> A sprint is a short time period when a scrum team works to complete a set amount of work.
    usually 2 Weeks = 1 Sprint                                  
 
    What is sprint planning meeting ?
 -> Planning for upcoming sprint where we plan for upcoming sprint like what tickets we will take or if tickets
-   taken assign pointers to it.
+   taken assign pointers to it. In sprint planning we also set goal of the sprint.
 
    What is PI Planning (Program Increment Planning) ?
 -> Planning for work for upcoming quater and setting quater goal.
@@ -22,8 +22,20 @@
    are gonna do today and also raise our concers if any.
 
    What is Sprint Retrospective meeting ?
--> It is a meeting that we set after the end of the sprint to dicuss what have done well and what we can improve
-   Here we also setup actions items to work on it afterwards.
+-> It is a meeting that held after the sprint review and before the next sprint planning to dicuss what have 
+   done well and what we can improve. Here we also setup actions items to work on it afterwards.
+
+   What is Sprint Review Meeting ?
+-> A meeting held at the end of the sprint to tell what are the work items we completed in current sprint. The 
+   team demonstrates the work done and gathers feedback from stakeholders.   
+
+   What are the different scrum events ?
+-> The different scrum events are - 
+   1. Sprint Planning  
+   2. Sprint Daily Scrum 
+   3. Sprint Backlog Refinement / Sprint Grooming
+   4. Sprint Review
+   5. Sprint Retrospective
 
    What is Story points ?
 -> Story points are the points which defines what amount of work is needed to perform a task.
@@ -32,13 +44,13 @@
 -> It is a group of stories for a functionality that we can not cover in a single sprint.
 
    What is a scrum master ?
--> The person who leads the sprint planning or sprint related meeting is called scrum master.
+-> The person who implements scrum and lead sprint events like sprint planning, sprint review and etc.
 
    What is zero sprint ?
 -> Before first sprint whatever time we have for planning that we call zero sprint.
 
    What is spike ?
--> Spike is term used for a defining work where we do R&D , where requirement and conclusion is not clear.
+-> Spike is term used for a defining work where we do investigations , where requirement and conclusion is not clear.
 
    What is velocity ?
 -> velocity tells us in a particular sprint how much work is delivered. 
@@ -53,17 +65,22 @@
 2. It involves collecting all project requirements at the begining.
 3. It provides limited flexibility, when one phase is completed it is challenging to go back to previous phase.
 4. It involves late customer feedback.   
+5. It has fixed and clear requirements.
+6. Slower delivery of updates.
 
    Agile Model -
    ----------------------------
 1. It breaks down the development process into small, iterative cycles.
-2. It provides customer satifaction. 
-3. Faster delivery of new updates.
-4. Requirement is not clear it can change anytime.
-5. It does not involve collecting all project requirements at the begining.
+2. It does not involve collecting all project requirements at the begining.
+3. It has better flexibility.
+4. It involves instant customer feedback.
+5. It has not fixed and clear requirements, it can change anytime.
+6. Faster delivery of new updates.
 
    What do you mean by Scrum ?
--> Scrum is a framework for managing and completing projects.  
+-> Scrum is a widely used framework within Agile project management. It provides a structured way for teams to 
+   approach problem-solving and project execution through iterative progress, continuous feedback method.
+   It allows us to develop, deliver, and sustain complex products.  
 
    Defines the roles in the Scrum ? 
 -> There are 3 different primary roles in Scrum -
@@ -80,7 +97,8 @@
 2. It is managed by product owner.
 
    Sprint Backlog: -
-1. The sprint backlog is like a subset of the product backlog but for a sprint in Agile development.
+1. The sprint backlog is like a subset of the product backlog that contains a list of tasks, user stories, and 
+   other work items that the development team commits to completing during a specific sprint.
 2. It is managed by scrum master.
    
    Explain Iterative and Incremental development in agile ?   
@@ -119,14 +137,14 @@
    process. It uses a Kanban board to visualize the flow of work items through various stages of a process. 
    Work items are represented as cards or sticky notes, and columns represent different stages of the workflow.
 
-3. Extreme Programming (XP) - Extreme Programming (XP) is a method of software development that focuses on high-quality code.
-   It's like a set of practices designed to make sure the software being developed is the best it can be.
+3. Extreme Programming (XP) - Extreme Programming (XP) is a method of software development that focuses on software 
+   quality and our responsiveness to changing customer requirements.
 
 4. Lean Software Development - Lean software development is like applying the principles of efficiency 
-   in the process of software development to minimizing waste. 
+   in the process of software development aiming to deliver value to customers with the least amount of waste possible. 
 
-5. Dynamic Systems Development Method - It is method of software development that focus on Rapid Application 
-   Development (RAD), which involves rapid prioritizing and iteration development based on user feedback.
+5. Dynamic Systems Development Method - It is method of software development that focuses on delivering projects
+   on time and within budget while accommodating changing requirements and providing high-quality outputs.
 
    What do you mean by Planning Poker ? 
 -> Planning poker is a estimation technique used in Agile and Scrum methodologies to estimate the size of user
@@ -183,6 +201,72 @@
    end user.    
    A task is a specific piece of work that needs to be done to complete a user story or achieve a goal.  
 
+    What do you mean by delegation and What are the different delegation techniques ?
+->  Delegation refers to the process of assigning responsibility from one person (usually a manager
+    or leader) to another (often a subordinate or team member) to carry out specific tasks or activities.
+
+    The different delegation are -
+    1. Define clear objectives and expectations
+    2. Assess team member capabilities
+    3. Provide necessary resources and support
+    4. Establish clear lines of communication
+    5. Provide constructive feedback and recognition
+    6. Evaluate and adjust 
+   
+    How to solve under-/over- estimation problems for their tasks ?
+->  We can eliminate above scenarios by following ways -
+    1. Involve the Team
+    2. Use Planning Poker
+    3. Break Down Tasks
+    4. Refine Estimations
+
+    How to estimate unknown tasks ?
+->  Unknown tasks can be estimated by following ways -
+    1. Analogous Estimation - Look for similar tasks or features that have been completed in the past. Use the 
+       effort and complexity of these known tasks as a reference point to estimate the unknown task.
+    2. Expert Judgment - Gather input from team members who have experience or expertise related to the task. 
+       Their insights can help in estimating the effort required based on their knowledge and past experiences.
+    3. Breakdown into Smaller Parts - Break down the unknown task into smaller, more manageable components. 
+       Estimate each component separately, focusing on breaking down the complexity and identifying areas of 
+       uncertainty.   
+    4. Research and Spike Tasks - Allocate time for research or spike tasks to gather more information and 
+       reduce uncertainty. This involves dedicating a fixed amount of time to investigate the unknowns and 
+       gather insights before estimating the task. 
+    5. Relative Sizing - Use relative sizing techniques such as story points or t-shirt sizing to estimate the 
+       unknown task in comparison to other known tasks.    
+
+
+    How would you estimate a large piece of feature implementation ?
+->  A large piece of work can be estimated by following ways -
+    1. Break Down the Feature
+    2. Define Acceptance Criteria
+    3. Estimate Each User Story
+    4. Consider Dependencies
+    5. Allocate Buffer for Unknowns
+    6. Involve the Team
+    7. Validate Estimates with Stakeholders
+
+    In your opinion, is it ever acceptable for unestimated items to be brought into a sprint ?
+->  yes , It is acceptable in special cases.   
+
+    What are the different phases of SDLC ?
+->  The different phases of SDLC -
+    1. Planning
+    2. Requirement Analysis 
+    3. Design 
+    4. Coding
+    5. Testing
+    6. Deployment   
+    7. Maintance 
+
+  
+
+
+
+
+  
+  
+   
 
   
    

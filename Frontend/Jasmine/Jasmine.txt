@@ -8,7 +8,7 @@
     What are the common naming file extensions for testing file in Jasmine ?
 ->  Common file extensions are - 
     1. .spec.js 
-    2. .test.js 
+    2. .test.js     
 
     What do you mean by Test Suite ?
 ->  A Test suite is simply a group of specs or a group of tests.
@@ -97,7 +97,7 @@
 
      What do you mean by any Matcher ?
 ->   This Matcher is used to check wheather if the actual value being compared is an instance of the 
-     specified class/constructor.
+     specified class constructor.
 
      What do you mean by anything Matcher ?
 ->   This Matcher is used to check whether if the actual value being compared is not null and undefined.    
@@ -215,7 +215,10 @@
      promise returned from whenStable.
 
      How you can run specific tests ?
-->   we can do this by appending f before describe and it.     
+->   we can do this by appending f before describe and it. 
+
+     How we mock Http requests ?
+->   Using HttpClientTestingModule, HttpTestingController     
 
 
      Jasmine Documentation - https://jasmine.github.io/pages/docs_home.html
