@@ -312,7 +312,7 @@
     What do you mean Controlled Components ?
 ->  Controlled Components are those components that are handled by the component’s state.
 
-    What do you mean by Controlled Componenets ?
+    What do you mean by Uncontrolled Components ?
 ->  Uncontrolled Components are the components that are not controlled by the React state and are 
     handled by the DOM (Document Object Model) So in order to access any value that has been entered we 
     take the help of refs.    
@@ -453,8 +453,7 @@
     createRef is same like useRef which has access to HTML DOM elements directly but it is used in 
     case of class components.
 
-    forwardRef allows us to forward a component's ref to another one. 
-    forwardRef is a function used to pass the ref to a child component.
+    forwardRef allows us to forward a component's ref to another component. 
     This way, the parent component can access the child's DOM node or React element directly via the ref.
 
     What do you mean by Redux toolkit in React ?
@@ -538,7 +537,7 @@
     3. Inline If with Logical && operator
     4. Switch case operator
     5. Conditional Rendering with enums 
-    6. Higher Order Componenets
+    6. Higher Order Components
 
     What do you mean by Lifting State up ?
 ->  Lifting state up is a technique where the state is moved to a common ancestor component, enabling 

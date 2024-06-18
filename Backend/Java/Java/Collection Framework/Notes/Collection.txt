@@ -373,10 +373,10 @@
 
    Methods of Map
    ---------------------------------
-   1. clear() - remove all elements from HashMap.
-   2. clone() - Makes the copy of the Hashmap.
-   3. isEmpty() - Checks if the HashMap is empty. 
-   4. size() - returns the number of items in HashMap.
+   1. clear() - remove all elements from Map.
+   2. clone() - Makes the copy of the Map.
+   3. isEmpty() - Checks if the Map is empty. 
+   4. size() - returns the number of items in Map.
    5. get(Object key) - returns the value using the Specified key.
    6. entrySet() - It is used to return a Collection view of the mappings contained in this Map. 
    7. put(Object key, Object value) - It is used to insert an entry in the Map.
