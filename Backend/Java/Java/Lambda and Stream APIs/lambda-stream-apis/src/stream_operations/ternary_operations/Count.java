@@ -14,5 +14,3 @@ public class Count {
 }
 
 //Note - Counts the number of elements in the stream
-
-//Note - Combines the elements of the stream into a single result.

@@ -20,7 +20,7 @@
      (SQLexception).
   6. In JDBC, one needs to write code to map the object    6. Hibernate maps the object model’s data to 
      model’s data representation to the schema of the         the schema of the database itself with the 
-     relational model.                                        help of annotations.
+     relational database model.                               help of annotations.
                                                               
 • What are the advantages of Hibernate over JDBC ?
   The advantages of Hibernate over JDBC :-
@@ -230,6 +230,61 @@
   ---------------------------------------------------------------------
   session.beginTransaction();
   session.delete(employee);
+
+• Can you tell something about the N+1 SELECT problem in Hibernate ?
+
+• How to solve N+1 SELECT problem in Hibernate?
+
+• What is single Table strategy in Hibernate ?
+
+• What is criteria API in hibernate ?
+
+• What is cascading and what are different types of cascading ?
+  Cascading can be said as , an action performed like ( save , updated , delete ) on one object/entity will 
+  reflected on the another object/enitity which is associated with the corsponding object.
+
+  There is no default cascade type in JPA. By default no operations are cascaded.
+
+  Cascade types supported by the Java Persistence Architecture are as below:
+
+  CascadeType.PERSIST : When the parent entity is persisted (saved) to the database, all its associated child 
+  entities are also persisted.
+  CascadeType.MERGE : When the parent entity is merged (updated) in the database, all its associated child 
+  entities are also merged.
+  CascadeType.REFRESH : When the parent entity is refreshed (reloaded from the database), all its associated 
+  child entities are also refreshed.
+  CascadeType.REMOVE : When the parent entity is removed (deleted) from the database, all its associated 
+  child entities are also removed.
+  CascadeType.DETACH : When the parent entity is detached from the persistence context, all its associated 
+  child entities are also detached.
+  CascadeType.ALL : This is a shorthand for specifying all the above cascade types. When the parent entity 
+  undergoes any of the above operations, all its associated child entities are also affected accordingly.
+
+• How transaction management works in Hibernate ?
+  Transaction management in Hibernate ensures that a group of operations on the database are executed as a 
+  single unit of work, meaning either all operations succeed or none of them are applied. This is crucial for 
+  maintaining data integrity and consistency.
+  
+  Hibernate relies on the underlying JDBC or JPA provider to manage transactions. Transactions can be managed 
+  either programmatically using the Transaction interface or declaratively using annotations (typically in 
+  combination with Spring).  
+
+  1. Programmatic Transaction Management -
+     Begin Transaction: Start a new transaction.
+     Perform Operations: Execute CRUD operations within the transaction.
+     Commit Transaction: Apply the changes to the database.
+     Rollback Transaction: Revert the changes if any operation fails   
+
+  2. Declarative Transaction Management -
+     Declarative transaction management is often used with Spring, which allows you to manage transactions using
+     annotations and configuration, removing the need for boilerplate code.
+
+     Example using Spring and Hibernate:
+
+     Configuration: Define transaction management in Spring configuration file or using Java configuration.
+     Annotations: Use @Transactional annotations to manage transactions.   
+
+• What is difference between Hibernate save() and  persist() methods in hibernate ?   
 
 
 

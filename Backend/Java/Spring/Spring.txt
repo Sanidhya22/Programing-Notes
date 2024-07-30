@@ -24,16 +24,15 @@
      WebTestClient.   
 
 • What do you mean Dependency Injection ?
-  Dependency Injection is a design pattern in which a class requests dependencies from
-  external sources rather than creating them.
+  Dependency Injection is a design pattern in which a class requests dependencies from external sources rather 
+  than creating them.
   In Dependency Injection class object receives other objects on which it depends on.
 
 • What are the different layers during application devlopment ?
   There are Three main layers during application development -- 
   1. UI Layers -- Deals With Accepting the Client request for a service.
   2. Business / Service Layer -- Deals with the business logic implementation.
-  3. Data Access Layer  -- Deals with making connection with the database and performing 
-     database operations.
+  3. Data Access Layer  -- Deals with making connection with the database and performing database operations.
 
 • What are the core Spring Modules ?
   The core spring modules are as follow -
@@ -44,9 +43,9 @@
 
 
 • What do you mean by Spring IOC Conatiner ?
-  Spring IoC Container is the core of Spring Framework. It creates the objects, configures
-  and assembles their dependencies, manages their entire life cycle from the creation of
-  objects till the dependency injection of objects.
+  Spring IoC Container is the core of Spring Framework. It creates the objects, configures and assembles their 
+  dependencies, manages their entire life cycle from the creation of objects till the dependency injection of 
+  objects.
 
   It Requires two things
   1. Bean Objects  

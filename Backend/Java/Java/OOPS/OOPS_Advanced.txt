@@ -1,0 +1,327 @@
+                                OOPS (Object Oriented Programming)
+                            --------------------------------------------
+                            
+Data Hiding  -
+----------------------
+Data Hiding is the process of restricting access to the internal state of an object.
+By using private modifier we can implement data hiding.
+e.g - 
+     class Account {
+        private double balance;
+        ......................;
+        ......................;
+     }
+
+Abstraction - 
+-----------------------
+Hide internal implementation and just highlight the set of services, is called abstraction.
+By using abstract classes and interfaces we can implement abstraction.
+
+Encapsulation - 
+-----------------------
+Binding of data and corresponding methods into a single unit is called Encapsulation.
+If any java class follows data hiding and abstraction such type of class is said to be encapsulated class.
+Every data member should be declared as private and for every member we have to maintain getter & Setter methods.
+
+Encapsulation = Datahiding + Abstraction
+
+Tightly Encapsulated class -
+-------------------------
+A tightly encapsulated class in Java is one where all the fields (or instance variables) are private, and the 
+only way to access or modify these fields is through public getter and setter methods. This ensures that the 
+internal state of the object is protected from direct access, promoting better control over the data and 
+maintaining the integrity of the object.
+
+Note: if the parent class is not tightly encapsulated then no child class is tightly encapsulated.
+
+Is-A Relationship -
+-------------------------
+It is also known as Inheritance. By using "extends" keywords we can implement IS-A relationship.
+
+Note - 
+1. Whatever the parent has by default available to the child but whatever the child has by default not available
+   to the parent. Hence on the child reference we can call both parent and child class methods. But on the 
+   parent reference we can call only methods available in the parent class and we can't call child specific 
+   methods.
+2. Parent class reference can be used to hold child class object but by using that reference we can call only 
+   methods available in parent class and child specific methods we can't call.
+3. Child class reference cannot be used to hold parent class object.
+
+Types of Inheritance in Java 
+-----------------------------
+1. Single Inheritance -
+In single inheritance, a class inherits from only one superclass.
+
+2. Multilevel Inheritance -
+In multilevel inheritance, a class is derived from a class which is also derived from another class.
+
+3. Mutiple Inheritance (through interfaces) - 
+Java does not support multiple inheritance through classes to avoid ambiguity problem. However, multiple 
+inheritance is possible using interfaces.
+
+4. Hybrid Inheritance -
+Hybrid Inheritance is a combination hierarchical and multiple Inheritance using interfaces. 
+
+5. Hierarchical Inheritance - 
+In hierarchical inheritance, multiple classes inherit from a single superclass.
+
+Why java won't provide support for multiple inheritance?
+There may be a chance of raising ambiguity problems.
+
+Why ambiguity problem won't be there in interfaces?
+Interfaces having dummy declarations and they won't have implementations hence no ambiguity problem.
+
+Cyclic Inheritance - 
+-----------------------
+Cyclic inheritance, also known as circular inheritance, occurs when a class is made to inherit from another 
+class in a way that creates a cycle. This is not allowed in Java and results in a compilation error.
+
+
+Polymorphism - 
+------------------------
+Same name with different forms is the concept of polymorphism.
+
+Polymorphism has two types - 
+--------------------------
+1. Compile time / Static / EarlyBinding - 
+   Compile-time polymorphism is achieved by method overloading. This occurs when multiple methods in the same 
+   class have the same name but different parameters (different type or number of parameters).
+
+   Note - 
+   In overloading compiler is responsible to perform method resolution(decision) based on the reference type
+   (but not based on run time object). Hence overloading is also considered as compile time polymorphism(or)
+   static polymorphism (or)early biding.
+
+   In overloading if compiler is unable to find the method with exact match we won't get any compile time error 
+   immediately. 1st compiler promotes the argument to the next level and checks whether the matched method is 
+   available or not if it is available then that method will be considered if it is not available then compiler
+   promotes the argument once again to the next level. This process will be continued until all possible 
+   promotions stillif the matched method is not available then we will get compile time error. This
+   process is called automatic promotion in overloading.
+
+   The following are various possible automatic promotions in overloading 
+
+   Byte -> Short -> Int -> Long -> Float -> Double 
+   Char
+
+   In general var-arg method will get less priority that is if no other method matched then only var-arg method
+   will get chance for execution it is almost same as default case inside switch.
+
+   While resolving overloaded methods exact match will always get high priority,
+   While resolving overloaded methods child class will get the more priority than parent class.
+
+2. Runtime / Dynamic / Latebinding -
+   Runtime polymorphism is achieved by method overriding. This occurs when a subclass provides a specific 
+   implementation of a method that is already defined in its superclass. The method in the subclass should have
+   the same name, return type, and parameters as in the superclass.
+
+   The Parent class method which is overridden is called overridden metho   Note - 
+   The Child class method which is overriding is called overriding method.
+
+   Note - 
+   In overriding method resolution is always takes care by JVM based on runtime object hence overriding is also 
+   considered as runtime polymorphism or dynamic polymorphism or late binding.
+   The process of overriding method resolution is also known as dynamic method dispatch.
+
+   Until 1.4 version the return types must be same but from 1.5 version onwards covariant return types are 
+   allowed.
+   According to this Child class method return type need not be same as Parent class method return type its 
+   Child types also allowed.
+
+   Parent class final methods we can't override in the Child class.
+
+   Private methods are not visible in the Child classes hence overriding concept is not applicable for
+   private methods. Based on own requirement we can declare the same Parent class private method
+   in child class also. It is valid but not overriding.
+
+   Co-variant return type concept is applicable only for object types but not for primitives.
+
+   Parent class non final methods we can override as final in child class. but final methods in parent class
+   cannot be overridden as non final methods in child class.
+   Parent class abstract methods we can override as non abstract in child class and also non abstract methods
+   in Parent class as abstract methods in child.
+   Parent class synchronized methods we can override as non synchronized in child class and also non synchronized
+   methods in Parent class as synchronized methods in child.
+
+   While overriding we can't reduce the scope of access modifier.
+
+   We can't override a static method as non static. Similarly we can't override a non static method as static.
+   It seems to be overriding concept is applicable for static methods but it is not overriding it is method hiding.
+
+   A var-arg method should be overridden with var-arg method only. If we are trying to override with normal 
+   method then it will become overloading but not overriding.
+
+   private < default < protected < public
+
+   Checked and Unchecked Expections 
+   ------------------------------------
+
+   Checked Exceptions - Checked exceptions are exceptions that are checked at compile-time. they are 
+   checked by the compiler for smooth execution of the program at runtime.
+
+   Unchecked Exceptions - Unchecked exceptions are exceptions that are not checked at compile-time.
+
+   Note - 
+   RuntimeException and its child classes, Error and its child classes are unchecked except these the remaining
+   are checked exceptions.
+
+   While overriding if the child class method throws any checked exception compulsory the parent class method 
+   should throw the same checked exception or its parent otherwise we will get compile time error.
+   But there are no restrictions for un-checked exceptions.
+
+
+   Method Hiding - 
+   -------------------
+   All rules of method hiding are exactly same as overriding except the following differences
+
+                    Overriding                      |             Method Hiding 
+   -----------------------------------------------------------------------------------------------------
+
+   1. Both Parent and Child class methods should be    1. Both Parent and Child class methods should be 
+      non static.                                         static.
+
+   2. Method resolution is always takes care by JVM    2. Method resolution is always takes care by
+      based on runtime object.                            compiler based on reference type. 
+
+   Constructors - 
+   -----------------
+   Constructor is used to perform initialization of an object.
+
+   Constructor Vs instance block:
+   -------------------------------
+   Both instance block and constructor will be executed automatically for every object creation but instance 
+   block 1st followed by constructor.
+   The main objective of constructor is to perform initialization of an object.
+   Other than initialization if we want to perform any activity for every object creation we have to define that
+   activity inside instance block.
+   Constructor can take arguments but instance block can't take any arguments hence we can't replace constructor
+   concept with instance block.
+
+   Rules to write constructors 
+   -----------------------------
+   Name of the constructor and name of the class must be same.
+   Return type concept is not applicable for constructor even void also by mistake if we are declaring the return
+   type for the constructor we won't get any compile time error and runtime error compiler simply treats it as 
+   a method.
+   The only applicable modifiers for the constructors are public, default, private, protected.
+
+   Default Constructor - 
+   ----------------------
+   For every class in java including abstract classes also constructor concept is applicable. 
+   If we are not writing at least one constructor then compiler will generate default constructor.  
+   Default constructor contains only one line. super(); it is a no argument call to super class constructor.
+
+   Super / This  - 
+   ---------------------------
+
+   Super keyword - 
+   The super keyword in Java is used in various contexts to refer to the superclass. It serves several purposes,
+   including calling superclass constructors, accessing superclass methods, and referring to superclass fields.
+   
+   This keyword - 
+   It is used in various contexts to refer to the current instance of the class. The this keyword can be used 
+   to refer current object within a class, calling other constructors in the same class, invoking methods of 
+   the current class and disambiguating instance variables from local variables. 
+
+
+   Super and This in Context of Constructor -
+   The 1st line inside every constructor should be either super() or this() if we are not writing anything 
+   compiler will always generate super().
+   We have to take super() (or) this() only in the 1st line of constructor. If we are taking anywhere else we 
+   will get compile time error.
+   We can use either super() (or) this() but not both simultaneously.
+   We can use super() (or) this() only inside constructor. If we are using anywhere else we will get compile 
+   time error.
+
+   Note - 
+   Non-static variable super cannot be referenced from a static context.
+
+   Overloaded constructors :
+   --------------------------
+   A class can contain more than one constructor and all these constructors having the same name but different
+   arguments and hence these constructors are considered as overloaded constructors.
+   Parent class constructor by default won't available to the Child. Hence Inheritance concept is not applicable
+   for constructors and hence overriding concept also not applicable to the constructors. But constructors can 
+   be overloaded.
+   We can take constructor in any java class including abstract class also but we can't take constructor inside 
+   interface.  
+
+   We can't create object for abstract class but abstract class can contain constructor what is the need ?
+   Abstract class constructor will be executed for every child class object creation to perform initialization 
+   of child class object only.
+
+   If Parent class constructor throws some checked exception compulsory Child class constructor should throw the
+   same checked exception (or) its Parent.
+
+   Note: -
+   Compiler is responsible for the following checkings
+   ----------------------------------------------------
+   1. Compiler will check whether the programmer wrote any constructor or not. If we didn't write at least one 
+   constructor then compiler will generate default constructor.
+   2. If the programmer wrote any constructor then compiler will check whether he wrote super() or this() in the
+   1st line or not. If his not writing any of these compiler will always write (generate) super().
+   3. Compiler will check is there any chance of recursive constructor invocation. If there is a possibility 
+   then compiler will raise compile time error.
+
+   We are not allowed to create child class but class is not final , How it is Possible ?
+   By declaring every constructor has private.
+   class Parent { private
+   Parent() {}
+    }
+   We can't create child class for this class
+   Note : When ever we are creating child class object automatically parent class constructor will be executed 
+   but parent object won't be created.
+
+   Type Casting  -
+   ----------------
+   Type casting in programming is the process of converting a variable from one data type to another. 
+   Parent class reference can be used to hold Child class object but by using that reference we can't call Child
+   specific methods.
+   Similarly we can use interface reference to hold implemented class object.
+   1. Implict (Automatic) Type Casting -
+   Implicit type casting, also known as automatic type conversion, occurs when the compiler automatically 
+   converts one data type to another without explicit instruction from the programmer. 
+   This usually happens when converting a smaller data type to a larger data type.
+
+   2. Explicit Type Casting -
+   Explicit type casting, also known as casting, requires the programmer to specify the conversion. This is 
+   typically used when converting a larger data type to a smaller data type or converting incompatible data
+   types.
+
+
+   A(Class/Interface)  b(Name of the reference variable) = C(class/interface) d(name of the reference variable/object);
+
+   Compile time checking : -  
+   Rule 1: The type of "d" and "c" must have some relationship [either Child to Parent(or) Parent to Child (or) 
+   same type] otherwise we will get compile time error saying inconvertible types.
+
+   Rule 2: "C" must be either same (or) derived type of "A" otherwise we will get compile time error saying 
+   incompatible types.
+
+
+   Coupling - 
+   ----------------
+   The degree of dependency between the components is called Coupling.
+   Tightly coupling is not a good programming practice because it has several serious disadvantages.
+   1. Without effecting remaining components we can't modify any component hence enhancement(development) will 
+   become difficult.
+   2. It reduces maintainability of the application.
+   3. It doesn't promote reusability of the code.
+
+   It is always recommended to maintain loosely coupling between the components.
+
+   Cohesion - 
+   -----------------
+   For every component we have to maintain a clear well defined functionality such type of component is said to 
+   be follow high cohesion.
+
+   High cohesion is always good programming practice because it has several advantages.
+   1. Without effecting remaining components we can modify any component hence enhancement will become very easy.
+   2. It improves maintainability of the application.
+   3. It promotes reusability of the application.(where ever validation is required we can reuse the same 
+   validate servlet without rewriting )
+   Note: It is highly recommended to follow loosely coupling and high cohesion.
+
+
+
+

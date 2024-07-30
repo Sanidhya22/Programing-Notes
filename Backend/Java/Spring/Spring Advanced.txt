@@ -1,0 +1,223 @@
+
+
+   What is Spring Framework ?
+-> The Spring Framework is a powerful, feature-rich framework for building enterprise-level Java applications.   
+   The key features and components of Spring framework are as follows - 
+   -------------------------------------------------------------------
+   1. Intervesion of Control
+   2. Dependency Injection
+   3. Aspect Oriented Programming AOP
+   4. Spring MVC
+   5. SpringBoot
+   6. Spring Security
+   7. Spring Cloud
+   8. Data Access
+   9. Spring Batch 
+   10.Spring Integration
+
+   Which is the best way of injecting beans in spring and why ?
+-> The three main types of dependency injection in Spring are: -
+   Constructor Injection
+   Setter Injection
+   Field Injection   
+
+   Constructor Injection
+   -----------------------
+   Pros:
+
+   Immutability: It encourages making dependencies final, thus promoting immutability.
+   Mandatory Dependencies: Ensures that all required dependencies are provided at object creation time, 
+   preventing objects from being in an inconsistent state.
+   Thread Safety: Immutable objects are inherently thread-safe, which is advantageous in multi-threaded 
+   environments.
+
+   Setter Injection
+   -----------------------
+   Pros:
+
+   Flexibility: Allows changing dependencies without creating a new instance, which can be useful in some cases 
+   like reconfiguration or testing.
+   Readability: Separates the initialization logic from the construction, which can make the code more readable.
+
+   Field Injection
+   ------------------------
+   Pros:
+
+   Simplicity: Requires less boilerplate code, making it simpler and cleaner.
+   Convenience: It's straightforward, especially for smaller projects or components where quick and easy setup 
+   is needed.
+
+   Constructor Injection is generally considered the best practice for most scenarios due to its advantages in 
+   promoting immutability, ensuring mandatory dependencies, and improving testability.
+
+   What Is a Spring Bean ?
+-> A Spring Bean is an object that is instantiated, managed, and controlled by the Spring IoC (Inversion of 
+   Control) container.   
+
+   Lifecycle of a Spring Bean
+   ----------------------------
+   Instantiation:
+   The bean is instantiated by the Spring container.
+
+   Property Population:
+   The container populates all the properties defined for the bean.
+
+   Initialization:
+   Any initialization methods defined for the bean are called. This can include methods annotated with 
+   @PostConstruct or specified in the XML configuration.
+
+   Usage:
+   The bean is ready to be used by the application.
+
+   Destruction:
+   When the container is shut down, it calls the destruction methods on the beans, such as methods annotated with 
+   @PreDestroy or specified in the XML configuration.
+
+   What are the different bean scopes in Spring framework ?
+-> In the Spring Framework, bean scopes define the lifecycle and visibility of a bean within the context of the 
+   container. Different scopes allow you to control how many instances of a bean are created and how they are shared.   
+
+   1. Singleton (Default Scope): -
+      There is only one shared instance of the bean per Spring IoC container.
+      This instance is cached and reused for each request.
+      Use Case:-
+      Use when you want a single, shared instance for stateless beans.
+
+   2. Prototype: -
+      A new instance is created each time the bean is requested.
+      Use Case:-
+      Use when you need a new instance for each use, typically for stateful beans.   
+
+   3. Request (Web Application Scope): - 
+      A new instance is created for each HTTP request.
+      Use Case:-
+      Use when you need a bean instance per HTTP request, typically in web applications.   
+
+   4. Session (Web Application Scope): -
+      A new instance is created for each HTTP session.
+      Use Case:-
+      Use when you need a bean instance to be session-scoped, typically for user-specific data.  
+
+   5. Application (Web Application Scope): -
+      A single shared instance is created for the lifecycle of a ServletContext.
+      Use Case:-
+      Use when you need a bean instance shared across the entire web application.   
+
+   6. WebSocket (Web Application Scope): -
+      A new instance is created for the lifecycle of a WebSocket session.  
+      Use Case:-
+      Use when you need a bean instance for each WebSocket session.
+
+   Are Singleton Beans Thread-Safe ?
+-> Singleton beans in the Spring Framework are not inherently thread-safe. The singleton scope in Spring means 
+   that there is a single instance of the bean per Spring IoC container. This instance is shared across multiple
+   threads that may access it concurrently, leading to potential thread-safety issues if the bean maintains 
+   mutable state.
+
+   What is the Spring Java-Based Configuration ?
+-> Spring Java-based configuration is a method of configuring the Spring framework using Java classes rather 
+   than traditional XML configuration files.     
+
+   Key Annotations used in Java based Configuration
+   ---------------------------------------------------
+
+   @Configuration - Marks a class as a source of bean definitions. It is analogous to an XML <beans> element.
+
+   @Bean - Marks a method to produce a bean managed by the Spring container. It is used within @Configuration 
+   classes to define beans.
+
+   @ComponentScan - Configures component scanning directives for use with @Configuration classes. It specifies 
+   base packages to scan for Spring components like @Component, @Service, @Repository, and @Controller.
+
+   @Import - Allows importing additional @Configuration classes.
+
+   @PropertySource - @PropertySource is an annotation in Spring that is used to declare a property file to be 
+   read and loaded into the Spring Environment. This is particularly useful for externalizing configuration 
+   into property files, which can be used to configure various aspects of your Spring application.
+
+   Note - 
+   It is used on a configuration class to specify the location of the property file.
+   It Works with Environment and @Value to inject property values into Spring beans.
+   It Supports loading multiple property files.
+
+   What is Spring Security ?
+-> Spring Security is a security framework for Java applications. It provides robust authentication, 
+   authorization, and other security features for enterprise applications.   
+
+   How Does the Scope Prototype Work ?
+-> In Spring, the prototype scope indicates that a new instance of a bean should be created each time it is 
+   requested from the Spring container.   
+
+   What is Auto Wiring in spring ?
+-> Autowiring in Spring is a feature that allows Spring to automatically inject dependencies into a bean. It
+   reduces the need for explicit wiring and simplifies configuration by allowing Spring to resolve dependencies
+   based on various criteria such as type, name, or qualifiers. Autowiring can be used in both XML-based and
+   annotation-based configurations.   
+
+   Autowiring Modes
+   -------------------  
+   Spring provides several modes for autowiring:
+   1. No Autowiring (no): Default mode, where no autowiring is performed. Dependencies must be explicitly 
+      defined in the configuration.
+
+   2. By Type (byType): Spring looks for a bean with a type that matches the property to be autowired. If 
+      a match is found, it is injected.
+
+   3. By Name (byName): Spring looks for a bean with a name that matches the property name. If a match is
+      found, it is injected.
+
+   4. Constructor (constructor): Spring looks for a constructor with arguments that can be satisfied by beans 
+      in the context. It is used for constructor-based dependency injection.   
+
+
+    What are Bean Factory and Application Context in Spring ?
+->  In the Spring Framework, BeanFactory and ApplicationContext are two core concepts used for managing beans 
+    (objects) and their lifecycle. They are part of the Spring IoC (Inversion of Control) container, which 
+    is responsible for instantiating, configuring, and assembling the beans.   
+
+    BeanFactory: -
+    BeanFactory is the simplest container providing basic dependency injection capabilities. It is the root 
+    interface for accessing the Spring container. BeanFactory is suitable for simple applications or when memory
+    and performance constraints are critical.
+
+    Key Features of BeanFactory:
+    ---------------------------
+    Basic Dependency Injection:
+    Provides fundamental IoC capabilities, such as dependency injection.
+
+    Lazy Initialization:
+    Beans are instantiated only when they are requested for the first time, which can save memory and improve 
+    startup time.
+
+    Basic Lifecycle Management:
+    Supports bean lifecycle callbacks, such as InitializingBean and DisposableBean.
+
+    ApplicationContext:-
+    ApplicationContext is a more advanced container compared to BeanFactory. It extends BeanFactory and adds 
+    more enterprise-specific functionality, making it more suitable for enterprise applications.
+
+
+    Key Features of ApplicationContext:
+    -------------------------------------
+    Eager Initialization:
+    By default, all singleton beans are created and initialized during context startup, which can lead to a 
+    more predictable and efficient application.
+    
+    Internationalization:
+    Supports message resource handling for internationalization (i18n).
+
+    Event Propagation:
+    Provides a framework for application events, allowing beans to publish and listen for events.
+
+    Declarative Mechanisms:
+    Supports declarative mechanisms for creating a bean (e.g., through annotations like @Component, @Service, 
+    @Repository, @Controller).
+
+    Automatic Bean Post Processing:
+    Automatically detects and applies BeanPostProcessor and BeanFactoryPostProcessor beans.
+
+    Integration with Spring AOP:
+    Provides better integration with Spring’s AOP capabilities.
+
+    Web Application Context:
+    Specifically designed subclasses like WebApplicationContext for web applications

@@ -1,0 +1,47 @@
+                                           Lamda and Stream APIs
+                                --------------------------------------------
+
+   Functional Interface - 
+   ------------------------
+   A functional interface in Java is an interface that has exactly one abstract method. These interfaces can be
+   implemented using lambda expressions, method references, or anonymous classes. 
+
+   Characterstics of Functional Interfaces 
+   ---------------------------------------
+
+   Single Abstract method - A functional interface has exactly one abstract method. This is the method that gets
+   implemented by a lambda expression.
+
+   @FunctionalInterface Annotation: This annotation is optional but recommended. It indicates that the interface
+   is intended to be a functional interface and enforces the single abstract method rule at compile time.
+
+
+   Lambda Expressions - 
+   -----------------------
+   A lambda expression is a short block of code which takes in parameters and returns a value. Lambda expressions
+   are similar to methods, but they do not need a name and they can be implemented right in the body of a method.
+
+   Method References - 
+   -----------------------
+
+   Method references in Java are a shorthand notation of a lambda expression to call a method. They enhance the 
+   readability of code by providing a clear and concise way to refer to methods. 
+
+   Types of Method References
+   Static Method Reference: ClassName::methodName
+   Instance Method Reference of a Particular Object: instance::methodName
+   Instance Method Reference of an Arbitrary Object of a Particular Type: ClassName::methodName
+   Constructor Reference: ClassName::new
+
+   There are two types of Stream Operations 
+   ----------------------------------------
+   1. Intermediate Operations - 
+      Intermediate operations return a new stream. They are lazy and do not execute until a terminal operation 
+      is invoked.
+
+      Example - filter, map, distinct, sorted etc. 
+
+   2.  Terminal Operations -    
+       Terminal operations produce a result and mark the end of the stream processing.
+
+

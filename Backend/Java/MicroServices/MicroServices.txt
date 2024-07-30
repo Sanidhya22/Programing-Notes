@@ -58,30 +58,50 @@
       environment can be difficult.   
 
    What is the difference between Monolithic, SOA and Microservices Architecture ?   
--> Monolithic Architecture - 
-   Monolithic architecture refers to a traditional approach where an entire application is built as a 
-   single, tightly integrated unit. In this setup, all components of the application, such as user 
-   interface, database access, and business logic, are tightly coupled together and run as a single 
-   program on a single platform.
+->                Monolethic           |             SOA                  |            Microservices
+   -------------------------------------------------------------------------------------------------------------
+   1. A single application where all      Collection of services and          Collection of small services and 
+      software components are             loosely coupled.                    services independently deployable.
+      assembled and tightly coupled.
 
-   Service-Oriented Architecture (SOA) is an approach to building software where different parts of an 
-   application are designed as individual, independent services. Each service performs a specific 
-   function or task and communicates with other services through well-defined interfaces, such as APIs 
-   (Application Programming Interfaces).
+   2. Within the same application,        Using some standardized protocols,  Through some lightweight protocols, 
+      components communicate with         services communicate with each      all the services communicate with 
+      each other.                         other.                              each other.
 
-   Microservices in Java refer to a software development approach where a large application is built as a 
-   collection of small, independent services. Each service is responsible for a specific function or 
-   feature of the application and communicates with other services through well-defined interfaces, 
-   typically using lightweight protocols like HTTP.  
+   3. Scaling is required according       All services can be scaled          All the services can be scaled 
+      to the needs of the entire          independently.                      independently according to the 
+      application.                                                            business requirement.
 
-   What is Domain Driven Design ?
--> 
+   4. It maintains centralized            It also maintains centralized       It maintains decentralized 
+      development and components          development and here the            development and services deployed
+      deployed as a single unit.          services are deployed as monolithic independently.
+                                          applications.
+                                          
+   What are the Main Components of Java Spring Boot Microservices ? 
+-> The main components of Java Spring Boot Microservices include: - 
+   1. Services
+   2. Service Registry
+   3. API Gateway
+   4. Cloud Infrastructure
+   5. Containerization and Orchestration
+   6. Message Broker
+   7. Security
+   8. Monitoring   
 
+   Name three commonly used tools for Java Spring Boot Microservices.
+-> There are different tools used for Java Spring Boot Microservices, some important tools are 
+   1. Docker: This is a containerization tool that allows developers to put applications and their dependencies 
+              in a lightweight container, and provide stability across multiple environments.
+   2. Kubernetes: This is an open-source container orchestration tool and it automates the scaling, deployment, 
+                  and management of containerized applications. It offers features like service discovery, load 
+                  balancing etc.
+   3. Spring Cloud: This is a framework in the Spring ecosystem for building microservice-based applications. 
+                    It is used to develop cloud-native applications. It offers features like service discovery,
+                    configuration management, circuit breakers etc.                                        
    
    What are the key differences between SOA and Microservices Architecture ?
 -> The key differences between SOA and microservices are as follow  -
 
-   What is Domain-Driven Design (DDD) and how is it related to microservices ?
 
    How would you decompose a monolithic application into microservices ?
 -> Decomposing a monolithic application into microservices involves breaking down a larger piece of 
@@ -173,3 +193,263 @@
 
    5. Monitoring and Visibility: The Circuit Breaker pattern often includes monitoring and alerting 
       capabilities, providing visibility into the health and performance of services in the system.   
+
+
+   How do microservices communicate with each other ?
+-> Inter-Service Communication Methods
+   1. RESTful APIs: Simple and clean, they utilize HTTP's request-response mechanism. Ideal for stateless, 
+      cacheable, and stateless resource interactions.  
+   2. Messaging: Deploys a message broker whereby services use HTTP or a messaging protocol (like AMQP or MQTT).
+      This approach offers decoupling, and the broker ensures message delivery. Common tools include RabbitMQ, 
+      Apache Kafka, or AWS SQS.    
+   3. Event-Based Communication: Here, services interact by producing and consuming events. A service can publish
+      events into a shared event bus, and other services can subscribe to these events and act accordingly. This
+      pattern supports decoupling and scalability. Common tools include Apache Kafka, AWS SNS, and GCP Pub/Sub.
+
+
+   In Microservices, multiple services run independently. Services communicate with each other through,
+
+   HTTP/REST: These are light-weight protocols used for perform communication between two services.
+   Message queues: Message queues such as Kafka or RabbitMQ used to make connection.
+   RPC (Remote Procedure Call) Framework: RPC frameworks such as gRPC uses in services for communication 
+   purposes.
+
+
+   What is WebClient and How Java Microservices Communicate using WebClient ?
+-> An interface called WebClient represents the primary access point for web requests. It is also known as 
+   Reactive Web Client that is introduced in Spring 5. The new client is a non-blocking. Also, it is the 
+   replacement of classic RestTemplate. 
+
+   Key Features of WebClient:
+   --------------------------------
+   1. Reactive and Non-Blocking - Built on top of Project Reactor, WebClient supports non-blocking I/O operations.
+   2. Full HTTP Method Support: Provides easy-to-use methods for common HTTP operations (GET, POST, PUT, DELETE).
+   3. Exception Handling: Handles HTTP errors and exceptions seamlessly.
+
+   Microservices Communicate using WebClient:
+   In a microservices architecture, different services often need to communicate with each other. WebClient is 
+   an excellent tool for such inter-service communication due to its non-blocking, reactive nature. Here’s how
+   you can use WebClient to facilitate communication between Java microservices:
+
+
+   Steps to do Webclient setup and use in our project
+   ----------------------------------------------------
+   1. First, include the spring-boot-starter-webflux dependency in our pom.xml for a Spring Boot application.
+   2. Create a WebClient bean in your Spring configuration to use across our application.
+   2. Create intance variable of WebClient type in services.
+   3. Use WebClient intance to make a GET request to another microservice.
+
+
+   What is RestTemplate and How Java Microservices Communicate using RestTemplate ?
+-> The RestTemplate is a synchronous REST client that performs HTTP requests by using a simple API of template 
+   style.
+
+   This is a synchronous client and it is designed to call the REST services.
+   RestTemplate class plays a very major in Spring Boot Microservices Communication.
+
+   Key Features of RestTemplate:
+   --------------------------------
+   1. Synchronous and Blocking: All operations are blocking, meaning the thread is blocked until the request 
+      completes.
+   2. Simplified API: Provides easy-to-use methods for common HTTP operations (GET, POST, PUT, DELETE).
+   3. Exception Handling: Handles HTTP errors and exceptions seamlessly.
+
+   Java Microservices Communicate using RestTemplate:
+   In a microservices architecture, different services often need to communicate with each other. RestTemplate 
+   can facilitate this communication by making HTTP requests to other microservices. 
+
+    Steps to do RestTemplate setup and use in our project
+   ----------------------------------------------------
+   1. First, include the spring-boot-starter-web dependency in our pom.xml for a Spring Boot application.
+   2. Create a RestTemplate bean in your Spring configuration to use across your application.
+   3. Create intance variable of RestTemplate type in services.
+   4. Use RestTemplate intance to make a GET request to another microservice.
+
+   What is FeignClient and How Java Microservices Communicate using FeignClient ?
+-> FeignClient is a declarative web service client provided by Spring Cloud. It simplifies the process of making
+   HTTP calls to external services by abstracting the underlying REST client and providing a cleaner, more 
+   concise way to define and call REST endpoints.
+
+   Key Features of FeignClient
+   -------------------------------
+   1. Declarative Approach: Allows you to define REST clients using interfaces, reducing boilerplate code.
+   2. HTTP Client Abstraction: Abstracts the underlying HTTP client, allowing for easy configuration and 
+      customization.
+   3. Error Handling and Retries: Provides mechanisms for error handling and retrying failed requests.  
+   4. Request Interceptors: Allows customization of requests using interceptors.
+   5. Integration with Eureka: Supports service discovery with Eureka for locating services.
+   6. Load Balancing: Integrates with Ribbon for client-side load balancing.
+
+    Steps to do FeignClient setup and use in our project
+   -----------------------------------------------------
+   1. First, include the spring-cloud-starter-openfeign dependency in your pom.xml for a Spring Boot application.
+   2. Enable Feign clients in your Spring Boot application by adding the @EnableFeignClients annotation to our 
+      main application class.
+
+   3. Define a Feign client interface to represent the external service you want to communicate with. Use the 
+      @FeignClient annotation to specify the service name and the base URL or service ID.   
+   4. Autowire the Feign client into your service class and use it to make HTTP calls to the external service.
+
+   How Client Side Load Balancing Happens in Java Spring Boot Microservices ?
+   Client-side load balancing in Java Spring Boot microservices typically involves distributing network traffic 
+   across multiple instances of a service to ensure high availability and reliability. Spring Cloud provides 
+   several tools and libraries to facilitate client-side load balancing, with the most commonly used being 
+   Ribbon, although it is being replaced by Spring Cloud LoadBalancer in newer versions.
+
+   Key Components for Client-Side Load Balancing in Spring Boot 
+   --------------------------------------------------------------   
+   1. Service Discovery: Using Eureka for registering and discovering services.
+   2. Ribbon: An older client-side load balancer integrated with Eureka.
+   3. Spring Cloud LoadBalancer: A newer and more flexible client-side load balancer.
+   4. Feign: Declarative HTTP client which can integrate with Ribbon and Spring Cloud LoadBalancer.
+
+   We can setup Client side loading balancing by following below steps - 
+   1. Setup Eureka for Service Discovery
+   2. Annotate your main application class with @EnableEurekaClient.
+   3. Ribbon will automatically integrate with Eureka to discover instances of your microservices. we can 
+      configure Ribbon settings in application.yml.
+   4. Autowire RestTemplate with Ribbon for load balancing.
+   5. Use RestTemplate to make requests to your services.
+
+
+   What is Client Side Service Discovery in Java Microservices and Provide Some Examples of It ?
+-> Client-side service discovery in Java microservices involves the process where the client, typically a 
+   microservice, is responsible for discovering the instances of other services it needs to communicate with. 
+   This is done by querying a service registry and selecting an appropriate instance of the target service. 
+   This approach contrasts with server-side service discovery, where a load balancer or proxy sits between 
+   the client and the service instances to direct traffic.
+
+   Key Components of Client-Side Service Discovery:
+   ---------------------------------------------------
+   Service Registry: A centralized service where all service instances register themselves. Eureka is a popular 
+   choice in the Spring ecosystem.
+   Service Discovery Client: A component integrated into the client service that queries the service registry 
+   to get the instances of a service. This is often a part of the client library or framework.
+
+   Client-Side Service Discovery Works:
+   -------------------------------------
+   1. Service Registration: Each service instance registers itself with the Eureka server. It sends a heartbeat 
+      periodically to keep its registration active.
+   2. Service Discovery: The client service uses a discovery client (part of Ribbon, Feign, or Spring Cloud 
+      LoadBalancer) to query the Eureka server for instances of the target service.
+   3. Load Balancing: The discovery client retrieves a list of instances and selects one based on the configured
+      load balancing strategy.
+   4. Service Invocation: The client makes a direct HTTP call to the selected instance.
+   
+   Examples - Netflix Eureka, Zookeeper, Consul.
+
+
+   What is Server Side Service Discovery in Java Microservices and Provide Some Examples of It ?
+-> Server-side service discovery in Java microservices involves the process where a centralized server component,
+   such as a load balancer or proxy, is responsible for discovering service instances and routing client requests 
+   to the appropriate service instances. This approach abstracts the service discovery logic away from the 
+   client, simplifying the client's responsibilities and centralizing control over how requests are distributed.
+
+   Key Components of Server-Side Service Discovery
+   ------------------------------------------------
+   1. Service Registry: A centralized repository where all service instances register themselves. Examples 
+      include Eureka, Consul, and Zookeeper.   
+   2. Load Balancer/Proxy: A server-side component that queries the service registry to get the instances of a 
+      service and routes client requests accordingly. Examples include Netflix Zuul, Spring Cloud Gateway, and 
+      NGINX.  
+
+   Server-Side Service Discovery Works 
+   ---------------------------------------
+   1. Service Registration: Each service instance registers itself with the service registry (e.g., Eureka).
+   2. Service Discovery: The load balancer or proxy (e.g., Zuul, Spring Cloud Gateway) queries the service 
+      registry to get the instances of the target service.
+   3. Load Balancing: The load balancer or proxy selects an appropriate instance based on its load balancing 
+      strategy.
+   4. Service Invocation: The load balancer or proxy forwards the client request to the selected service 
+      instance   
+
+   Example  - Netflix Zuul, Spring Cloud Gateway and NGINX.     
+
+   Why Use Spring Cloud for Microservices Development ?
+-> Spring Cloud is a comprehensive framework that simplifies the development and management of microservices. It
+   provides a suite of tools to address the common challenges faced when building distributed systems. Here are
+   some reasons why Spring Cloud is beneficial for microservices development: -
+
+   1. Service Discovery: Each microservice registers itself with Eureka, allowing other services to discover and 
+      communicate with it dynamically.
+   2. API Gateway: Spring Cloud Gateway routes incoming client requests to the appropriate service, providing 
+      centralized entry points and security.
+   3. Configuration Management: Spring Cloud Config manages configurations for all services, allowing dynamic 
+      updates and centralization.
+   4. Fault Tolerance: Hystrix or Resilience4j ensures that if one service fails, others can still function using 
+      fallback methods.
+   5. Tracing: Spring Cloud Sleuth tracks the flow of requests across services, aiding in debugging and performance
+      monitoring.
+
+   How Eureka Server and Client Communicate with Each Other in Java Microservices ?   
+-> Eureka Server and Eureka Client communicate with each other in a typical Java microservices setup:     
+
+   1. Service Registration - 
+      When a microservice starts, it registers itself with the Eureka Server. This registration process involves
+      sending a POST request to the Eureka Server with details such as the service name, instance ID, IP 
+      address, port, status, and other metadata.
+
+   2. Service Renewal (Heartbeat) - 
+      To ensure the Eureka Server knows that the service is still up and running, the Eureka Client sends 
+      periodic heartbeats (default every 30 seconds) to the Eureka Server. This is a PUT request that updates 
+      the server about the instance's status, preventing the Eureka Server from deregistering the service.   
+
+   3. Service Discovery
+      When a microservice needs to communicate with another service, it queries the Eureka Server to discover 
+      the instances of the target service. The Eureka Server responds with a list of available instances for 
+      the requested service.   
+
+   4. Service Deregistration
+      When a microservice shuts down gracefully, it sends a DELETE request to the Eureka Server to deregister 
+      itself. This ensures that the Eureka Server does not list the service as available to other clients. 
+
+
+   How to Develop API Gateway in Java Spring Boot Microservices ?
+-> To Develop an API Gateway using Spring Cloud Gateway involves various steps - 
+   1. Set Up the Project - First, create a new Spring Boot project for the API Gateway. You can use Spring 
+      Initializr to generate the project with the necessary dependencies.
+
+      Dependencies:
+      Spring Boot Starter Web
+      Spring Cloud Starter Gateway
+      Spring Cloud Starter Netflix Eureka Client (for service discovery)
+      Spring Boot Starter Actuator (optional, for monitoring)
+
+   2. Enable Eureka Client - To enable the API Gateway to register with Eureka and discover other services, 
+      annotate the main application class with @EnableEurekaClient.
+
+   3. Configure Application Properties -
+      Configure the application to connect to the Eureka Server and set up the basic routing for the gateway. 
+
+   4. Define Routes - In the application.yml file, you define the routes for the API Gateway. The uri specifies 
+      the service to route to, and the predicates define the conditions for routing.
+
+   5. Add Custom Filters - You can add custom filters to the gateway to modify requests and responses. Filters 
+      can be global or route-specific.
+
+   6. Run the Application - Start the Eureka Server and other microservices, then run the API Gateway application.
+      The API Gateway will register with Eureka and route requests to the appropriate microservices based on the 
+      defined routes.
+
+
+   Explain Different Deployment Techniques to Deploy Java Microservices.
+-> There are different ways to deploy Microservices. Some of them are mentioned below:
+
+   1. Single Machine, Multiple Services: Buy a server and run microservices as services.
+   2. Multiple Machines, Multiple Services: When application exceeds the capacity of the server, we can upgrade 
+      the server by scaling up (Add more Servers).
+   3. Containerization: Each microservices runs independently by enabling flexibility and scaling as per demand.
+   4. Orchestrators: It distributes the workload of a container over a group of servers. (Ex: Kubernetes)
+   5. Serverless Deployment: Processes or containers use cloud to run code on demand.    
+
+   What is the Main role of Docker in Microservices and How to deploy microservices in Docker ?  
+-> The main role of Docker in microservices is to provide containerization, which allows each microservice with 
+   its dependencies to coordinate with the runtime environment, ensuring stability in unique environments. 
+   Docker plays a crucial role in microservices architecture by providing a consistent and isolated environment 
+   for each service, which helps to achieve scalability, portability, and efficient resource utilization  
+
+   Steps to Deploy Microservices in Docker 
+   -----------------------------------------
+   1. Install Docker
+      Ensure Docker is installed on your system. You can download and install Docker from Docker's official 
+      website.

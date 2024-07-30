@@ -1,0 +1,209 @@
+                                            Input Output 
+                                      -------------------------
+
+
+Java perfoms IO operation in terms of bytes & characters. The java.io package has given 2 abstract class 
+called: InputStream & OutputStream for byte oriented IO operation, similarly 2 more abstract classes called: 
+Reader & Writer are used for character oriented IO operation.
+
+Stream - 
+In the context of Input/Output (I/O), streams in Java are used to read from and write to data sources such as 
+files, network connections, or memory buffers.
+There are two main types of streams - 
+1. Byte streams
+2. Character streams
+
+Byte Streams - 
+-----------------
+They are generally used for reading and writing binary data like images, videos, and other media. 
+
+Input Stream - An abstract class representing an input stream of bytes.
+               It reads sequence of bytes from an external source.
+OutputStream - An abstract class representing an output stream of bytes.
+               It writes a sequence of bytes to an external source.
+
+Character Streams -
+-------------------
+They are used for reading and writing text data.
+
+Reader - An abstract class representing a character stream for input.
+Writer - An abstract class representing a character stream for output.
+
+Reading methods of Input stream class 
+---------------------------------------
+1. abstract int read() - Reads the next byte of data from the input stream. It returns the byte read, or -1 if 
+   the end of the stream is reached.
+
+2. int read(byte[] b) - Reads some number of bytes from the input stream and stores them into the byte array b.
+   It returns the number of bytes read, or -1 if the end of the stream is reached.   
+
+3. int read(byte[] b, int off, int len) - It will read some bytes from the input stream & stores in byte array 
+   starting from offset upto the length of the byte array, and returns the no. of bytes successfully read.
+
+Reading methods of Reader class 
+---------------------------------------   
+1. int read() - It will read a characters of data from the reader, It returns the characters read, or -1 if 
+   the end of the stream is reached.
+
+2. int read(char[] c) - It will read some characters from the reader and stores them into the char array c, 
+   returns the no. of characters successfully read.
+
+3. abstract int read(char[] b, int offset, int length) - It will read some characters from the reader & 
+   stores in character array starting from offset upto the length of the character array, returns the no. of 
+   characters successfully read.
+
+Writing Methods of OutputStream class 
+-----------------------------------------
+1. abstract void write(int b) - It will write the specified byte to the OutputStream.
+
+2. void write(byte[] b) - It will write all bytes from the specified byte array to the OutputStream.
+
+3. void write(byte[] b, int offset, int length) - It will write a portion of byte array from the offset
+   upto the length of the array to the OutputStream.
+
+Writing Methods of Writer class 
+-----------------------------------------
+1. void write(int c) - It will write the specified character to the Writer.
+
+2. void write(char[] c) -  It will write all characters from this array to Writer.
+
+3. void write(char[] c, int offset, int length) - It will write a portion of character array from the offset upto
+   the length of the array to the Writer.
+
+4. void write(String str) - Writes entire string to Writer.   
+
+5. void write(String str, int off, int len) - Writes a portion of a string to the Writer.
+
+
+Other Methods of Input Output Operations are  - 
+-------------------------------------------
+
+1. void close() - This method closes the stream and releases any system resources associated with it. Once the 
+   stream has been closed, further read/write invocations will cause an IOException.
+
+2. void flush() - his method flushes the stream, ensuring that any buffered characters or bytes are written out.
+   This method is used to ensure that all data is properly written out before closing the stream.
+
+3. int available() - This method returns an estimate of the number of bytes that can be read from the input 
+   stream without blocking. This method is available for InputStream but not for Reader.
+
+4. long skip(long n) - This method skips over and discards n bytes of data from the input stream. The actual 
+   number of bytes skipped is returned. This method is available for InputStream and Reader.
+   
+   Serialization - 
+   -----------------------
+   Serialization in Java is the process of converting an object's state into a byte stream, which can then be 
+   easily saved to a file or transferred over a network.
+
+   Serialization is particularly useful for persisting objects, deep cloning, or sending objects over a network.
+   For an object to be serializable, its class must implement the java.io.Serializable interface. This interface
+   is a marker interface, meaning it does not contain any methods but simply signals to the JVM that the class 
+   can be serialized.
+
+   KeyPoints about Serialization
+   -----------------------------
+   1. Serializable Interface: A class must implement the Serializable interface to be serialized.
+   2. transient Keyword: Fields marked as transient are not serialized.
+   3. serialVersionUID: This is a unique identifier for each Serializable class. It's used during 
+      deserialization to verify that the sender and receiver of a serialized object have loaded classes for that 
+      object that are compatible with respect to serialization.
+
+   Deserialization -
+   -----------------------------
+   Deserialization in Java is the process of converting a byte stream back into a copy of the original object. 
+   This is the reverse process of serialization. Deserialization is useful for reconstructing an object from its
+   serialized form, typically for purposes like reading an object from a file or receiving an object over a network.   
+
+   KeyPoints about Deserialization
+   --------------------------------
+   1. Serializable Interface: To deserialize an object, the class of the object must implement the Serializable 
+      interface.
+   2. serialVersionUID: During deserialization, the serialVersionUID of the serialized object is compared to 
+      that of the class. If they do not match, an InvalidClassException is thrown.  
+
+   BufferedReader - 
+   ---------------------------
+   The BufferedReader class in Java is used to read the text from an input stream (like a file) efficiently by 
+   buffering the characters. This means that it reads large chunks of data from the input stream into a buffer,
+   which makes subsequent reads much faster. This class is part of the java.io package.   
+
+   Key Features
+   1. Efficiency: By buffering the input, it reduces the number of I/O operations, which are relatively 
+      expensive.
+   2. Line Reading: Provides a method readLine() that reads a line of text.
+   3. Character-based: It reads characters, arrays, and lines, not bytes.
+
+   Common Constructors
+   -----------------------
+   1. BufferedReader(Reader in): Creates a buffered character input stream that uses a default-sized input 
+      buffer.
+   2. BufferedReader(Reader in, int sz): Creates a buffered character input stream that uses an input buffer of
+      the specified size.
+
+   Common Methods of BufferedReader 
+   ---------------------------------
+   1. int read(): Reads a single character.
+   2. int read(char[] cbuf, int off, int len): Reads characters into a portion of an array.
+   3. String readLine(): Reads a line of text.
+   4. boolean ready(): Tells whether the stream is ready to be read.
+   5. void close(): Closes the stream and releases any system resources associated with it.
+
+
+   File class 
+   --------------- 
+   This class is avaialable in java.io package. This class is used to refer/access a file/ subdirectory 
+   from the java program, it is never used to perform io operation on afile, instead it is used to provide 
+   information about a file, such as what is the size of the file, when the file last modified, wheather the 
+   file is a read only, etc by its predefined method.
+
+   Common Constructors
+   -------------------
+   1. File(String pathname): Creates a new File instance by converting the given pathname string into an 
+      abstract pathname.
+   2. File(String parent, String child): Creates a new File instance from a parent pathname string and a 
+      child pathname string.
+   3. File(File parent, String child): Creates a new File instance from a parent abstract pathname and a child
+      pathname string.
+
+   FileInputStream : This class is used to read bytes from a file to the java program.  
+
+   Common Constructors
+   --------------------
+   1. FileInputStream(File file): Creates a FileInputStream by opening a connection to an actual file, the file 
+      named by the File object file.
+   2. FileInputStream(String name): Creates a FileInputStream by opening a connection to an actual file, the 
+      file named by the pathname name. 
+
+   FileReader : This class is used to read characters from a file to the java program.
+
+   Common Constructors
+   --------------------
+   1. FileReader(String fileName): Creates a new FileReader, given the name of the file to read from.
+   2. FileReader(File file): Creates a new FileReader, given the File object to read from.
+   3. FileReader(FileDescriptor fd): Creates a new FileReader, given a file descriptor to read from.
+
+   FileOutputStream : This class is used to write bytes to a file from the java program.
+
+   Common Constructors
+   ---------------------
+   1. FileOutputStream(String name): Creates a file output stream to write to the file with the specified name.
+   2. FileOutputStream(String name, boolean append): Creates a file output stream to write to the file with the
+      specified name, with an option to append to the file if it already exists.
+   3. FileOutputStream(File file): Creates a file output stream to write to the file represented by the specified
+      File object.
+   4. FileOutputStream(File file, boolean append): Creates a file output stream to write to the file represented
+      by the specified File object, with an option to append to the file if it already exists.
+
+   FileWriter : This class is used to write characters to a file.
+
+   Common Constructors
+   ---------------------
+   1. FileWriter(String fileName): Creates a FileWriter object using the specified file name.
+   2. FileWriter(String fileName, boolean append): Creates a FileWriter object using the specified file name, \
+      with an option to append to the file if it already exists.
+   3. FileWriter(File file): Creates a FileWriter object using the specified File object.
+   4. FileWriter(File file, boolean append): Creates a FileWriter object using the specified File object, with 
+      an option to append to the file if it already exists.
+   5. FileWriter(FileDescriptor fd): Creates a FileWriter object using the specified file descriptor.
+  
+

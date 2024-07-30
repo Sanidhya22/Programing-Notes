@@ -1,0 +1,67 @@
+
+
+   What is a ViewResolver ?
+-> ViewResolver helps in mapping view names to actual views. It acts as an intermediary between the controller 
+   and the actual view, which can be a JSP, a Thymeleaf template, or other types of views.  
+
+   What is Model ?
+-> Model is a central interface that defines a holder for model attributes, primarily to expose them to the view
+   layer. The Model interface works with data that is used for rendering the view and binds the view with the 
+   data it needs to display. The model attributes are essentially a map of key-value pairs. 
+
+   What is ModelAndView ?
+-> ModelAndView is a class in Spring MVC that holds both the model and the view. It is used to return both model
+   attributes and view name from a controller method in a single return value.   
+
+   What is RequestMapping ?
+-> it is an annotation used in Spring MVC for mapping web requests to specific handler methods or classes. It is
+   used to define the URL patterns to which a controller or a controller method should respond.
+
+   Key Points about @RequestMapping
+   URL Mapping: It maps HTTP requests to handler methods or controller classes.
+   HTTP Methods: It can be used to specify the HTTP method that the method should respond to.
+
+   What is Dispatcher Servlet ?
+-> It acts as the front controller in the MVC (Model-View-Controller) design pattern, which means it is 
+   responsible for managing the entire request-handling process.    
+
+   Request Processing Workflow
+   -------------------------------------
+   Receive Request: The DispatcherServlet receives an HTTP request.
+   Handler Mapping: It consults one or more handler mappings to determine which controller should handle the 
+   request.
+   Invoke Handler: The appropriate controller is invoked to handle the request.
+   Handle Request: The controller processes the request, often involving business logic and interaction with the
+   service layer.
+   Return ModelAndView: The controller returns a ModelAndView object containing the model data and view name.
+   View Resolution: The DispatcherServlet uses a view resolver to map the view name to an actual view 
+   implementation (e.g., JSP).
+   Render View: The view is rendered, typically generating HTML, which is sent back to the client as the HTTP response.
+
+   What is BindingResult ?
+-> BindingResult is an interface in the Spring Framework, It is used to capture validation and binding errors 
+   during the data binding process in Spring MVC.   
+   It allows the controller to check for errors and respond accordingly, ensuring that validation errors are 
+   properly handled and displayed to the user.
+
+   Key Points about BindingResult
+   Validation Errors: It stores the errors that result from validating a form or model object.
+   Binding Errors: It also holds errors that occur during the binding process, where data from the web request 
+   is bound to the model object.
+   Error Handling: It allows the controller to handle and respond to validation and binding errors effectively.
+
+   What is Path Variable ?
+-> Path variable is a part of the URL that can be used to pass parameters to a controller method. It is 
+   annotated with @PathVariable in Spring MVC. This annotation allows you to extract values from the URI and use
+   them as parameters in your controller methods.   
+
+   What is a Model Attribute ?
+-> @ModelAttribute can be used at the method parameter level to bind form data to an object and at the method 
+   level to initialize or prepare data before handling a request.
+   It is used to bind a method parameter or method return value to a named model attribute, and then expose it 
+   to a web view.      
+
+   What is a Session Attribute ?
+-> @SessionAttributes is an attribute that is stored in the HTTP session and is available across multiple HTTP 
+   requests in a web application. The @SessionAttributes annotation is used to indicate that a model attribute 
+   should be stored in the session and retrieved for subsequent requests.   
